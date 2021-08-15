@@ -3677,7 +3677,7 @@ export default {
     transition: transform 750ms ease-in;
 
     &.--unplaced {
-        transform: translateY(-35%);
+        transform: translateY(-50%);
     }
 }
 
@@ -3697,7 +3697,7 @@ export default {
 
 #dojang_floor {
     &.--unplaced {
-        transform: translateX(35%);
+        transform: translateX(0%);
     }
 }
 
