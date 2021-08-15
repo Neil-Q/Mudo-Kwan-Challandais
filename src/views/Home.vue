@@ -2,7 +2,6 @@
     <section class="dojang-scene">
         <transition appear @after-appear="dojangInitAnimations">
             <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
-
                 <defs>
                     <linearGradient
                         id="linearGradient1372-1"
@@ -49,8 +48,8 @@
                         <feGaussianBlur stdDeviation="7.2214848" />
                     </filter>
                 </defs>
-
-                <g id="dojang_floor" class="dojang_element --unplaced">
+                <g class="dojang_scene">
+                <g id="dojang_floor" class="dojang_element">
                     <path
                         d="m2645.8 1056.6v100.62l-200.54-81.178h-2445.3v-19.443z"
                         style="
@@ -98,7 +97,7 @@
                     />
                 </g>
 
-                <g id="dojang_exterior" class="dojang_element --unplaced">
+                <g id="dojang_exterior" class="dojang_element">
                     <g transform="translate(-714.29 -.1959)">
                         <g transform="translate(-477.8 4.5663)">
                             <rect
@@ -193,7 +192,7 @@
                     </g>
                 </g>
 
-                <g id="dojang_tatamis" class="dojang_element --unplaced">
+                <g id="dojang_tatamis" class="dojang_element">
                     <g transform="translate(2969.1 -59.432)">
                         <path
                             d="m-2099.7 1692.2 148.12-106.96h-148.12zm2434.8-106.96 211 118.19v302.55h-1268.8l95.6 474.79v14.316h-1472.7v-755.3h1322.8l-31.248-154.54zm-1183-196.78-22.186-109.72h658.04l195.88 109.72zm-1251.8-253.29h348.87l-58.259 19.314h453.98l26.745-19.314h429.23l3.9054 19.314h461.35l89.47 50.116h-540.68l-5.7562-28.468h-494.24l-39.421 28.468h-535.75l85.87-28.468h-225.32z"
@@ -244,7 +243,7 @@
                     </g>
                 </g>
 
-                <g id="dojang_local" class="dojang_element --unplaced">
+                <g id="dojang_local" class="dojang_element">
                     <g transform="translate(-46.984 -421.69)">
                         <g transform="translate(76.364 -201.16)">
                             <g transform="translate(-388.97 902.81)">
@@ -1063,7 +1062,7 @@
                     </g>
                 </g>
 
-                <g id="dojang_wall" class="dojang_element --unplaced">
+                <g id="dojang_wall" class="dojang_element">
                     <g transform="translate(-1812.2 -201.45)">
                         <path
                             d="m1812.2 670.74v-469.3l2565.8 0.1424-76.024 469.16z"
@@ -2027,6 +2026,9 @@
                             "
                         />
                     </g>
+                </g>
+
+                <g id="dojang_breastplate">
                     <g transform="translate(306.45 6.9369)">
                         <path
                             d="m1104.9 837.99c0-0.38665-0.1522-0.75768-0.4254-1.0312l-3.6029-3.6029c-0.9976-0.99759-0.9975-2.5389 0-3.5364 0.4987-0.49873 1.1334-0.7481 1.768-0.74811 0.6348-1e-5 5.1351-1e-3 5.1351-1e-3l-1.3086-1.3086c-1.0509-1.0509-2.4387-1.577-3.8264-1.577-1.3876 0-2.7753 0.52602-3.8263 1.577-2.1019 2.1021-2.102 5.5507 0 7.6528l3.1754 3.1732v3.1199c-12.026 0.11814-20.127 1.6678-25.229 3.2567-2.6577 0.82764-4.5247 1.6648-5.7492 2.316-1.2246 0.65131-1.8971 1.1902-1.8971 1.1902-0.7445 0.61292-0.8513 1.7132-0.2385 2.4578 0.6129 0.74448 1.7133 0.85129 2.4579 0.23848 0 0 0.2956-0.25707 1.3191-0.80135 1.0234-0.54428 2.684-1.3003 5.1454-2.0668 4.9231-1.533 13.047-3.1088 25.633-3.1088 12.586 0 20.712 1.5759 25.635 3.1088 2.4615 0.76648 4.1221 1.5225 5.1456 2.0668 1.0233 0.54428 1.3191 0.80135 1.3191 0.80135 0.7446 0.61281 1.8449 0.506 2.4578-0.23848 0.6128-0.74459 0.506-1.8449-0.2385-2.4578 0 0-0.6747-0.53889-1.8992-1.1902-1.2245-0.6512-3.0894-1.4884-5.7471-2.316-5.0976-1.5873-13.197-3.1356-25.203-3.2564z"
@@ -2175,764 +2177,726 @@
                     </g>
                 </g>
 
-                <g id="dojang_pictures" class="dojang_element --unplaced">
-                    <g
-                        transform="matrix(.26442 -.0091967 .0091967 .26442 -352.73 131.55)"
-                        style="stroke-width: 5"
-                    >
-                        <path
-                            d="m7905.1 2699.3h-87.649v-77.128h132.2v77.128h-24.188"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="
-                                fill-opacity: 0.5;
-                                fill: #ffcb99;
-                                opacity: 0.996;
-                            "
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26456 -.0037594 .0037594 .26456 -326.14 61.705)"
-                        style="stroke-width: 5"
-                    >
-                        <rect
-                            x="7817.5"
-                            y="2622.2"
-                            width="132.2"
-                            height="77.128"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="fill-opacity: 0.5; fill: #b6e572"
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26457 .0021844 -.0021844 .26457 -355.13 14.626)"
-                        style="stroke-width: 5"
-                    >
-                        <rect
-                            x="7817.5"
-                            y="2622.2"
-                            width="132.2"
-                            height="77.128"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="fill-opacity: 0.4; fill: #a3ddc0"
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26458 0 0 .26458 -424.51 110.51)"
-                        style="stroke-width: 5"
-                    >
-                        <g
-                            transform="rotate(3.4081 13147 11996)"
-                            style="stroke-width: 5"
-                        >
-                            <path
-                                d="m7870 2622.2h79.602v77.128h-132.2v-77.128h30.188"
+                <g id="dojang_pictures" class="dojang_element">
+                    
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(-.81414)"
+                                x="1741.4"
+                                y="750.86"
+                                width="34.978"
+                                height="20.407"
                                 style="
                                     fill: #fff3c0;
                                     opacity: 0.996;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <rect
-                                x="7826"
-                                y="2629.9"
-                                width="115.03"
-                                height="61.745"
-                                style="fill-opacity: 0.7; fill: #e2c188"
+                                transform="rotate(-.81414)"
+                                x="1743.7"
+                                y="752.89"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.5; fill: #b6e572"
                             />
-                        </g>
-                    </g>
-                    <g
-                        transform="matrix(.0026289 .26457 -.26457 .0026289 2427.9 -1451)"
-                        style="stroke-width: 5"
-                    >
-                        <g
-                            transform="rotate(3.4081 13147 11996)"
-                            style="stroke-width: 5"
-                        >
-                            <rect
-                                x="7817.5"
-                                y="2622.2"
-                                width="132.2"
-                                height="77.128"
-                                style="
-                                    fill: #fff3c0;
-                                    opacity: 0.996;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 5;
-                                    stroke: #404040;
-                                "
-                            />
-                            <rect
-                                x="7826"
-                                y="2629.9"
-                                width="115.03"
-                                height="61.745"
-                                style="fill-opacity: 0.6; fill: #e2c188"
-                            />
-                        </g>
-                    </g>
-                    <g
-                        transform="matrix(-.0066594 .2645 -.2645 -.0066594 2606.4 -1327.5)"
-                        style="stroke-width: 5"
-                    >
-                        <path
-                            d="m7886.9 2678.3h-54.435v-77.128h132.2v77.128h-52.126"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7841"
-                            y="2608.8"
-                            width="115.03"
-                            height="61.745"
-                            style="fill-opacity: 0.5; fill: #a3ddc0"
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26436 .010765 -.010765 .26436 -332.38 -94.148)"
-                        style="stroke-width: 5"
-                    >
-                        <path
-                            d="m7949.7 2684.3v15.081h-132.2v-77.128h132.2v48.953"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="fill-opacity: 0.7; fill: #b6e572"
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26442 -.0091967 .0091967 .26442 -342.32 66.483)"
-                        style="stroke-width: 5"
-                    >
-                        <rect
-                            x="7817.5"
-                            y="2622.2"
-                            width="132.2"
-                            height="77.128"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="
-                                fill-opacity: 0.6;
-                                fill: #ffcb99;
-                                opacity: 0.996;
-                            "
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26442 -.009228 .009228 .26442 -497.93 244.43)"
-                        style="stroke-width: 5"
-                    >
-                        <g
-                            transform="rotate(3.4081 13147 11996)"
-                            style="stroke-width: 5"
-                        >
-                            <rect
-                                x="7817.5"
-                                y="2622.2"
-                                width="132.2"
-                                height="77.128"
-                                style="
-                                    fill: #fff3c0;
-                                    opacity: 0.996;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 5;
-                                    stroke: #404040;
-                                "
-                            />
-                            <rect
-                                x="7826"
-                                y="2629.9"
-                                width="115.03"
-                                height="61.745"
-                                style="fill-opacity: 0.5; fill: #e2c188"
-                            />
-                        </g>
-                    </g>
-                    <g
-                        transform="matrix(.03558 .26218 -.26218 .03558 2135.4 -1385.3)"
-                        style="stroke-width: 5"
-                    >
-                        <rect
-                            x="7817.5"
-                            y="2622.2"
-                            width="132.2"
-                            height="77.128"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="
-                                fill-opacity: 0.7;
-                                fill: #ffcb99;
-                                opacity: 0.996;
-                            "
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.019104 .26389 -.26389 .019104 2407.8 -1341.4)"
-                        style="stroke-width: 5"
-                    >
-                        <rect
-                            x="7817.5"
-                            y="2622.2"
-                            width="132.2"
-                            height="77.128"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5;
-                                stroke: #404040;
-                            "
-                        />
-                        <rect
-                            x="7826"
-                            y="2629.9"
-                            width="115.03"
-                            height="61.745"
-                            style="fill-opacity: 0.6; fill: #b6e572"
-                        />
-                    </g>
-                    <g
-                        transform="matrix(.26436 .010765 -.010765 .26436 -397.92 -88.5)"
-                        style="stroke-width: 5"
-                    >
-                        <g transform="rotate(-2.5773 7904.6 2480.8)">
-                            <rect
-                                transform="matrix(.042094 .99911 -.99938 .035076 0 0)"
-                                x="2852.8"
-                                y="-7824.7"
-                                width="172.9"
-                                height="112.06"
-                                style="
-                                    fill: #fff3c0;
-                                    opacity: 0.996;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 5.0001;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m7848 2725.1 75.632-3.0797"
+                            <circle
+                                cx="1769.4"
+                                cy="727.83"
+                                r=".66146"
                                 style="
                                     fill: #404040;
                                     stroke-linecap: round;
-                                    stroke-width: 10;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m7843.1 2605.2 46.385-1.8887"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 5;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m7843.7 2620 25.688-1.046m8.5633-0.3487 12.133-0.494"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 5;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m7844.3 2634.9 46.385-1.8887"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 5;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m7846.5 2688.1 61.564-2.5068"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 5;
-                                    stroke: #cc3c3c;
                                 "
                             />
                         </g>
-                        <path
-                            transform="matrix(.056142 .99842 -.99896 .045629 0 0)"
-                            d="m2957.4-8528.7h112.52v97.828h-126.22v-91.786"
-                            style="
-                                fill: #fff3c0;
-                                opacity: 0.996;
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                                stroke-width: 5.0001;
-                                stroke: #404040;
-                            "
-                        />
-                        <g transform="rotate(1.8201 7934.7 2920.6)">
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(.47304)"
+                                x="1713.4"
+                                y="711.35"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(.47304)"
+                                x="1715.6"
+                                y="713.39"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.4; fill: #a3ddc0"
+                            />
+                            <circle
+                                cx="1724.9"
+                                cy="727.65"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
                             <path
-                                d="m8019.4 2857.7 0.4739 10.525m0.7628 16.937 7.5872 168.48-174.77 6.2458-12.283-272.75 174.77-6.2459 1.6576 36.808"
+                                d="m1740.3 701.05-0.1624 3.9868-34.949-1.4231 0.8303-20.39 34.949 1.4231-0.527 12.941"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(2.3317)"
+                                x="1734.7"
+                                y="615.28"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.7; fill: #b6e572"
+                            />
+                            <circle
+                                cx="1723.4"
+                                cy="685.97"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g  class="dojang_picture_item">
+                            <rect
+                                transform="rotate(-1.992)"
+                                x="1723.9"
+                                y="748.34"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(-1.992)"
+                                x="1726.2"
+                                y="750.37"
+                                width="30.435"
+                                height="16.337"
+                                style="
+                                    fill-opacity: 0.6;
+                                    fill: #ffcb99;
+                                    opacity: 0.996;
+                                "
+                            />
+                            <circle
+                                cx="1766.5"
+                                cy="689.39"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <path
+                                d="m1807.7 725.7 21.024 1.252-1.2131 20.371-34.916-2.0793 1.2131-20.371 7.973 0.47481"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(3.4081)"
+                                x="1836"
+                                y="618.99"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.7; fill: #e2c188"
+                            />
+                            <circle
+                                cx="1811.1"
+                                cy="727.94"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <path
+                                d="m1762.4 772.62-23.176 0.80608-0.7094-20.395 34.957-1.2158 0.7093 20.395-6.3959 0.22245"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(-1.992)"
+                                x="1713.5"
+                                y="815.04"
+                                width="30.435"
+                                height="16.337"
+                                style="
+                                    fill-opacity: 0.5;
+                                    fill: #ffcb99;
+                                    opacity: 0.996;
+                                "
+                            />
+                            <circle
+                                cx="1756"
+                                cy="754.46"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(1.4093)"
+                                x="1759.1"
+                                y="738"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(1.4093)"
+                                x="1761.4"
+                                y="740.04"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.5; fill: #e2c188"
+                            />
+                            <circle
+                                cx="1757.9"
+                                cy="783.51"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(82.272)"
+                                x="982.81"
+                                y="-1608.5"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(82.272)"
+                                x="985.08"
+                                y="-1606.5"
+                                width="30.435"
+                                height="16.337"
+                                style="
+                                    fill-opacity: 0.7;
+                                    fill: #ffcb99;
+                                    opacity: 0.996;
+                                "
+                            />
+                            <circle
+                                cx="1716.3"
+                                cy="761.2"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(92.839)"
+                                x="681.49"
+                                y="-1871.7"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(92.839)"
+                                x="683.76"
+                                y="-1869.7"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.6; fill: #e2c188"
+                            />
+                            <circle
+                                cx="1825.3"
+                                cy="775.11"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="rotate(85.86)"
+                                x="904.27"
+                                y="-1804.6"
+                                width="34.978"
+                                height="20.407"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(85.86)"
+                                x="906.54"
+                                y="-1802.6"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.6; fill: #b6e572"
+                            />
+                            <circle
+                                cx="1855.2"
+                                cy="774.62"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <path
+                                d="m1845.4 740.76 0.3625-14.398 20.4 0.51363-0.8804 34.967-20.4-0.51363 0.3471-13.787"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <rect
+                                transform="rotate(91.442)"
+                                x="681.94"
+                                y="-1881.9"
+                                width="30.435"
+                                height="16.337"
+                                style="fill-opacity: 0.5; fill: #a3ddc0"
+                            />
+                            <circle
+                                cx="1856"
+                                cy="728.89"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <path
+                                d="m1870.7 682.71 0.4607 29.767-25.883 0.12809-0.5168-33.393 24.285-0.12019"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1864.7 695.59c0.112-6e-3 1.2703-0.26689 1.2703-0.26689a1.9201 1.9201 0 0 0-0.8518-3.744v9.8e-4c-0.01 1e-3 -0.012 2e-3 -0.018 4e-3l-0.9348 0.21864a1.9046 1.9046 0 0 0-1.0779 0.69045c-0.01-9e-3 -0.012-0.0179-0.018-0.0265a1.7527 1.7527 0 0 0-2.0298-0.60778 0.48195 0.48195 0 0 0-0.08-0.0117 10.853 10.853 0 0 0-1.1744 6.7e-4l-2.6982 0.14884-2.4783-3.9337-3.7201-6.516a0.48003 0.48003 0 0 0-0.6549-0.17884l-2.7964 1.5965a0.48003 0.48003 0 0 0 0.047 0.85734l1.7649 0.76403 3.4515 11.539-0.217 13.399a0.48003 0.48003 0 0 0 0.5064 0.48708l3.355-0.18508a0.48003 0.48003 0 0 0 0.3577-0.76719l-0.9125-1.2177 1.7367-9.6185 2.201-0.12142 0.9173 1.6067a0.48003 0.48003 0 0 0 0.4433 0.24128l0.9216-0.0508 0.081 0.17413a0.48039 0.48039 0 0 0 0.115 0.15501l3.0344 2.7171a0.48003 0.48003 0 0 0 0.3467 0.12168c0.016-8.7e-4 0.031-3e-3 0.047-5e-3a0.48003 0.48003 0 0 0 0.34-0.23046l0.8792-1.4908a0.48003 0.48003 0 0 0-0.093-0.60151l-0.9535-0.85374-1.5017-2.6304-0.094-1.7022a1.8983 1.8983 0 0 0 0.4932 0.0384zm1.378-2.2773-0.2253-0.76321a0.95915 0.95915 0 0 1-0.101 1.8389l-0.09 0.0209 0.3822-0.74053a0.48003 0.48003 0 0 0 0.034-0.35606zm-15.978-9.2162a0.48003 0.48003 0 0 0-0.2692-0.30293l-1.089-0.47146 1.5458-0.88255 1.0081 1.7658-1.0401 0.41156zm3.3469 24.927 0.023-1.4436 1.4005-0.0773-0.067 0.37312a0.48003 0.48003 0 0 0 0.088 0.37319l0.5 0.66723zm3.038-14.004-1.5327 0.47427a0.48003 0.48003 0 1 0 0.2837 0.91713l0.7046-0.21801-1.1277 1.912a0.48003 0.48003 0 1 0 0.8269 0.48778l0.9531-1.616 0.042 0.75729-1.5885 8.7976-1.5602 0.0861 0.1709-10.552a0.47967 0.47967 0 0 0-0.02-0.14535l-3.105-10.38 1.2286-0.48622c0.01-2e-3 0.01-5e-3 0.016-7e-3l1.9988 3.501c0 6e-3 0.01 0.012 0.011 0.0179l2.5681 4.0762zm2.5589 1.8915 0.1471 0.25763-1.621 0.0894-0.238-4.3137s2.64-0.14426 2.7097-0.1466a1.7595 1.7595 0 0 0-0.086 0.24224l-0.9578 3.5065a0.48003 0.48003 0 0 0 0.046 0.3645zm2.2831 2.0628-0.2661-0.46608 0.7357-0.0406 0.1063 0.47489zm0.082-2.6035a0.48003 0.48003 0 0 0-0.02 0.27535l0.1951 0.87173-1.0551 0.0582-0.5526-0.96792 0.9055-3.3149a0.79354 0.79354 0 0 1 0.7228-0.58409 0.79462 0.79462 0 0 1 0.7864 1.0757zm4.4134 4.8206-0.3819 0.64743-0.6448-0.57739 0.6015-0.45078zm-1.0251-1.1309-0.731 0.54782-1.135-1.0164a0.48003 0.48003 0 0 0 0.033-0.30624l-0.6065-2.7087 0.6786-1.7862a1.8991 1.8991 0 0 0 0.1791 0.21482l0.1332 2.4149a0.47967 0.47967 0 0 0 0.062 0.21157zm-1.1336-6.1693a0.96005 0.96005 0 0 1 0.7162-1.1534l0.4934-0.11538 0.2297 0.77787-0.4228 0.81849a0.48003 0.48003 0 0 0-0.053 0.24658l0.01 0.16632a0.96137 0.96137 0 0 1-0.9733-0.74033z"
+                                style="fill: #404040; stroke-width: 0.30002"
+                            />
+                            <path
+                                d="m1857.3 683.49h8.4714"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1858.5 686.49h8.4713"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1859.5 709.12h8.4713"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <circle
+                                cx="1858.3"
+                                cy="681.12"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <rect
+                                transform="matrix(.046376 .99892 -.99923 .03936 0 0)"
+                                x="742.93"
+                                y="-1641.3"
+                                width="45.746"
+                                height="29.649"
+                                style="
+                                    fill: #fff3c0;
+                                    opacity: 0.996;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1650.4 717.14 20.007-0.90061"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-width: 2.6458;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1648.9 685.4 12.27-0.55233"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1649.1 689.33 6.7955-0.30588m2.2653-0.10198 3.2096-0.14446"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1649.3 693.26 12.27-0.55233"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                            <path
+                                d="m1649.9 707.35 16.286-0.73308"
+                                style="
+                                    fill: none;
+                                    stroke-linecap: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #cc3c3c;
+                                "
+                            />
+                            <circle
+                                cx="1660"
+                                cy="680.29"
+                                r=".66146"
+                                style="
+                                    fill: #404040;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-width: 1.3229;
+                                    stroke: #404040;
+                                "
+                            />
+                        </g>
+                        <g class="dojang_picture_item">
+                            <path
+                                d="m1691.8 754.04-0.077 2.7865m-0.1231 4.4842-1.2252 44.606-46.238-1.6995 1.9834-72.211 46.238 1.6995-0.2676 9.7449"
                                 style="fill: #fff3c0; opacity: 0.996"
                             />
                             <path
-                                d="m7976 2782.1-93.442 3.8049a51.158 53.812 87.668 0 0 47.772 23.918 51.158 53.812 87.668 0 0 45.67-27.723z"
+                                d="m1681.8 733.26-24.731-0.78586a14.238 13.535 1.8201 0 0 12.148 7.2268 14.238 13.535 1.8201 0 0 12.583-6.4409z"
                                 style="fill: #598fb2"
                             />
                             <path
-                                d="m7894.3 2870.8c3.9725 0.3554 4.5194 2.0097 6.0849 3.2781 1.6407-1.7432 4.5349-3.261 3.7454-5.4414 24.174 23.865 24.294 34.079 6.368 40.067-5.6228 1.4728-11.118 0.4312-23.55-10.169-34.627 15.897-36.537-25.399-16.919-42.062-0.2464-2.0858 20.123 9.7747 17.581 12.396 3.8051-0.2258 5.7499 0.5743 6.6877 1.9313z"
+                                d="m1658.6 755.1c1.0415 0.16988 1.1541 0.61691 1.5429 0.98161 0.4664-0.42858 1.2592-0.77367 1.0926-1.3642 5.9222 6.7609 5.7581 9.4584 0.913 10.695-1.5121 0.28095-2.9424-0.0992-6.0199-3.1347-9.4421 3.5318-9.1552-7.4023-3.659-11.424-0.025-0.55514 5.123 2.9649 4.402 3.6078 1.0085 0.0133 1.5064 0.26169 1.7278 0.63775z"
                                 style="
                                     fill: #666;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7965.2 2880.9c3.1773 3.3303 5.1318 8.2563 6.9342 13.38 32.191 18.486 36.302 62.691 52.387 95.928 0.6065 0.7712-76.696 35.45-78.188 28.085-0.4314-2.691 0.154-4.018 0.6932-10.055-9.5299-6.8999-14.221-19.347-15.861-32.983-13.239-23.914-7.171-25.919-3.8551-39.925-0.9108-3.7569-2.124-9.6203-2.2857-12.871 5.5535 1.7611 10.691 5.3813 18.255-1.8502 4.8988-4.1695 7.2134-7.699 7.4984-12.927 5.2377-4.8464 10.214-11.508 12.925-23.198-0.7702-1.5836-2.8557-3.1139-5.4861-4.6219 2.3242 0.2327 4.6389 0.2592 6.9843 1.0378z"
+                                d="m1677.1 759.12c0.7747 0.93969 1.1961 2.277 1.5736 3.6637 8.1406 5.495 8.3788 17.239 11.987 26.318 0.1453 0.21513-20.918 7.8858-21.171 5.9136-0.062-0.71839 0.1176-1.0574 0.3755-2.64-2.3826-2.0034-3.3821-5.3779-3.5538-9.0078-3.0355-6.5642-1.3959-6.977-0.2525-10.61-0.1684-1.0088-0.3762-2.5794-0.3567-3.4403 1.4318 0.57111 2.7182 1.6249 4.8528-0.13857 1.3726-1.0064 2.051-1.8935 2.2263-3.2676 1.475-1.1786 2.9157-2.8412 3.8551-5.8741-0.1729-0.43265-0.6939-0.87643-1.3592-1.3248 0.6089 0.10593 1.2192 0.15726 1.8232 0.40765z"
                                 style="
                                     fill: #666;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7972.1 2894.3c0.1733-0.1502-4.868 9.2794-9.0755 14.616s-14.962 14.411-22.509 25.069c-7.5465 10.658-13.689 25.34-9.3855 41.291 10.855 16.453 27.536 25.364 46.646 31.134"
+                                d="m1678.7 762.79c0.049-0.0363-1.4624 2.3555-2.6749 3.6832-1.2126 1.3277-4.2244 3.5162-6.42 6.1842-2.1956 2.6679-4.0979 6.4246-3.2677 10.716 2.5493 4.5496 6.7807 7.2207 11.713 9.1094"
                                 style="
                                     fill: none;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7951 2954.3c-2.4629 1.0918-3.4353 0.3605-7.8874 3.8815-9.01-1.0466-13.008-3.7918-17.23-6.4603-2.1567 0.1059-1.9314 1.3321-0.3505 3.1933l5.6517 6.5746c-5.0528-0.2875-9.087-0.1502-18.101-2.0848-3.7665-0.5897-4.2325 2.3565-0.491 4.0967 6.2217 1.0358 10.986 3.1721 15.37 5.594l-7.4792 4.541c-4.0149 2.3612-1.4769 3.2399 0.8935 2.6739l9.6647-1.3535-5.0605 6.4195c-1.3229 1.962-1.5463 3.1819 1.9584 1.8838 0 0 7.0323-2.9629 7.3404-2.5965 0.2003 0.238-2.1509 5.592-3.3775 8.3281-1.4616 3.2603 2.0315 3.1132 2.9 2.0533l12.411-10.663c14.157-3.0835 21.434-21.2 3.7877-26.081z"
+                                d="m1671.9 778.22c-0.6709 0.24093-0.9135 0.0293-2.1558 0.8732-2.3576-0.44878-3.3599-1.2498-4.4232-2.0349-0.5711-0.0134-0.5352 0.31453-0.1536 0.83597l1.3654 1.8432c-1.3278-0.17266-2.395-0.2137-4.7367-0.89689-0.9826-0.22776-1.162 0.54078-0.208 1.0717 1.622 0.39252 2.8382 1.0475 3.9489 1.7706l-2.0606 1.055c-1.1048 0.54618-0.4518 0.82668 0.1845 0.72273l2.5764-0.17205-1.4584 1.5971c-0.3867 0.49241-0.469 0.81005 0.4807 0.53463 0 0 1.9125-0.64717 1.9868-0.54458 0.048 0.0666-0.6747 1.4345-1.0508 2.133-0.4482 0.83236 0.4764 0.86045 0.7259 0.59739l3.4793-2.5762c3.795-0.54251 6.0623-5.1838 1.4992-6.81z"
                                 style="
                                     fill: #b6a471;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7972.1 2991.2c3.8686 6.6655 16.272-19.176 22.108-30.635-1.5752-10.848-5.3764-19.293-11.388-28.986-5.1703-4.7856-14.192-5.8898-18.403-4.3148-5.5535 5.2158-11.134 10.13-15.873 25.422 4.3904 2.9225 7.8547 6.5995 10.637 10.833"
+                                d="m1676.8 788.37c0.8932 1.833 4.6612-4.7486 6.4209-7.6607-0.2079-2.8929-1.0492-5.1942-2.45-7.8673-1.2727-1.3619-3.6323-1.8261-4.7737-1.4912-1.5655 1.27-3.1322 2.46-4.6757 6.4045 1.1026 0.85531 1.9463 1.892 2.5995 3.0626"
                                 style="
                                     fill: #666;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7947.3 2980.7c8.1512-4.9517 11.698-10.732 11.862-17.12 0 0 19.143 23.965 12.919 27.68-6.2236 3.7153-24.781-10.56-24.781-10.56z"
+                                d="m1670.5 785.11c2.2459-1.1506 3.2926-2.6079 3.4582-4.2906 0 0 4.5925 6.6908 2.879 7.552-1.7136 0.86121-6.3372-3.2614-6.3372-3.2614z"
                                 style="
                                     fill: #4d4d4d;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m8022.6 2986.1c1.3999-0.6279 1.2652 2.7882 1.9276 4.1557l3.2023 62.453-124.69 6.1791c10.372-11.907 20.427-22.723 28.259-25.831z"
+                                d="m1690.2 787.97c0.3815-0.13888 0.2805 0.76001 0.4291 1.1336l-0.3513 16.542-33.024-0.75799c2.965-2.9434 5.8257-5.6051 7.9519-6.2752z"
                                 style="
                                     fill: #e0e0e0;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m8021 2982.4c1.1091 2.657 2.2703 5.2664 3.5027 7.8113-19.512 19.028-61.793 34.299-61.793 34.299s6.445 4.473 7.4483 12.428l-8.3688 1.4973c-5.2512-11.326-23.805-6.331-30.519-5.4229 0.2369-4.7124 0.096-9.4641 2.2935-13.976 3.7665-1.5211 8.3707-0.8379 12.752-0.7395 3.7472-4.2385 5.6247-3.0459 8.5112-3.6727 10.308-1.3724 45.069-17.347 66.174-32.224z"
+                                d="m1689.9 786.98c0.2418 0.7224 0.4982 1.4332 0.7747 2.1284-5.5136 4.6474-16.964 7.8673-16.964 7.8673s1.6151 1.3038 1.7274 3.4222l-2.2371 0.23481c-1.1688-3.0893-6.1605-2.1267-7.9498-2.0157 0.1528-1.239 0.2066-2.4956 0.873-3.6443 1.023-0.32925 2.2249-0.0608 3.3791 0.0491 1.07-1.0467 1.5426-0.69604 2.3164-0.80615 2.7464-0.16471 12.226-3.7143 18.08-7.2358z"
                                 style="
                                     fill: #4d4d4d;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7961.8 3038.4c-2.5226 5.6078-4.4135 11.382-4.2248 17.705"
+                                d="m1673.2 800.63c-0.7731 1.4315-1.3827 2.919-1.454 4.5912"
                                 style="
                                     fill: none;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7904.1 2868.6c-0.3312-6.7799 23.464-34.487 36.454-19.334 27.484 1.0986 14.621 18.953 17.662 30.573-2.1625 2.7562-4.1343 4.4941-6.9053 7.7049-0.7683-3.03-42.953-27.502-41.42-1.0611-12.363-6.8032-3.8744-15.032-5.7904-17.883z"
+                                d="m1661.2 754.71c0.043-1.7955 6.8525-8.6513 9.9902-4.4036 7.2318 0.81639 3.4953 5.2816 4.0751 8.4061-0.6234 0.6859-1.1771 1.1068-1.9698 1.901-0.1447-0.8143-10.808-8.0802-10.91-1.0734-3.132-2.0321-0.7345-4.041-1.1855-4.83z"
                                 style="
                                     fill: #4d4d4d;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7910.5 2908.7c5.1415 6.9793 6.4047 10.355 14.556 13.769 5.5535 1.7611 10.691 5.3813 18.255-1.8502 4.8988-4.1695 7.2134-7.699 7.4984-12.927 5.2377-4.8464 10.214-11.508 12.925-23.198-0.7702-1.5836-2.8557-3.1139-5.4861-4.6219-2.1625 2.7562-4.1343 4.4941-6.9053 7.7049-0.7683-3.03-42.953-27.502-41.42-1.0611-1.6195 7.262-0.3659 14.761 0.5776 22.184z"
+                                d="m1662.1 765.41c1.223 1.9402 1.4917 2.8552 3.5773 3.9122 1.4318 0.57111 2.7182 1.6249 4.8528-0.13857 1.3726-1.0064 2.051-1.8935 2.2263-3.2676 1.475-1.1786 2.9157-2.8412 3.8551-5.8741-0.1729-0.43265-0.6939-0.87643-1.3592-1.3248-0.6234 0.6859-1.1771 1.1068-1.9698 1.901-0.1447-0.8143-10.808-8.0802-10.91-1.0734-0.5665 1.8853-0.3793 3.8883-0.2725 5.8653z"
                                 style="
                                     fill: #b6a471;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7887.6 2868.9c2.9886 57.146-54.68 26.684-17.581-12.396"
+                                d="m1656.8 754.46c-0.306 15.137-14.941 5.9942-4.402-3.6078"
                                 style="
                                     fill: #4d4d4d;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7870 2856.5c-0.2464-2.0858-1.2362-4.1416 0.1348-6.2935 1.9314-5.1187 9.5511 14.324 14.336 12.646 3.7473-2.4656 7.3463-2.8105 10.909-2.648-3.1965 5.7812-5.2569 6.0706-7.7988 8.6915-7.5427-0.7656-13.518 12.153-18.351 15.778-5.5805 4.1874-8.3611-15.214 0.7702-28.174z"
+                                d="m1652.4 750.85c-0.025-0.55514-0.2468-1.1166 0.1562-1.6582 0.6077-1.3138 2.246 3.963 3.5409 3.6116 1.0361-0.57886 1.9925-0.60094 2.9294-0.48981-0.9542 1.4644-1.5035 1.5013-2.2245 2.1442-1.9757-0.34652-3.8 2.948-5.1449 3.8121-1.5528 0.99811-1.915-4.1748 0.7429-7.42z"
                                 style="
                                     fill: #b6a471;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m8019.5 2857.8 0.4749 10.55m0.7646 16.978 7.6043 168.88-174.96 6.2516-12.31-273.4 174.96-6.2516 1.6613 36.895"
+                                d="m1691.9 754.06-0.077 2.7932m-0.1235 4.4949-1.2283 44.712-46.289-1.7017 1.9885-72.383 46.289 1.7017-0.2683 9.7681"
                                 style="
                                     fill: none;
                                     opacity: 0.996;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 5;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m8005.6 2797.2-21.995 25.469m13.285-32.17-21.995 25.469m13.517-33.043-21.995 25.469m-114.28-4.9459 23.993 23.597m-15.857-30.983 23.993 23.597m-16.159-31.835 23.993 23.597"
+                                d="m1689.4 737.81-6.2921 6.2997m4.1221-8.2347-6.2921 6.2997m4.2-8.4608-6.292 6.2997m-30.064-3.4944 5.8794 6.6865m-3.5909-8.4798 5.8794 6.6865m-3.6545-8.7104 5.8794 6.6865"
                                 style="
                                     fill: #404040;
                                     stroke-linecap: round;
-                                    stroke-width: 7;
+                                    stroke-width: 1.8521;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7876.5 2933.9 0.2697 6.6243m0.5723 14.057 0.3093 7.5938m0.5526 13.572 0.2763 6.7859m0.5263 12.926 0.2632 6.4628"
+                                d="m1652.7 771.42-0.056 1.7532m-0.1182 3.7204-0.064 2.0098m-0.1141 3.5921-0.057 1.796m-0.1087 3.421-0.054 1.7105"
                                 style="
                                     fill: none;
                                     stroke-linecap: round;
-                                    stroke-width: 10;
+                                    stroke-width: 2.6458;
                                     stroke: #404040;
                                 "
                             />
                             <path
-                                d="m7889.9 2833.4 77.877-3.1711"
+                                d="m1658.1 745.14 20.612 0.65496"
                                 style="
                                     fill: none;
                                     stroke-linecap: round;
-                                    stroke-width: 10;
+                                    stroke-width: 2.6458;
                                     stroke: #cc3c3c;
                                 "
                             />
-                        </g>
-                        <g
-                            id="outline"
-                            transform="matrix(.2266 -.0092267 .0092267 .2266 8580.2 2561.6)"
-                            style="fill: #404040"
-                        >
-                            <path
-                                d="m364.49 242.22c1.8662-0.10295 21.171-4.4479 21.171-4.4479a32 32 0 0 0-14.195-62.396l-0.0802 0.0164c-0.0989 0.0225-0.19821 0.038-0.29707 0.0615l-15.58 3.6437a31.742 31.742 0 0 0-17.963 11.507c-0.10822-0.14626-0.19769-0.29756-0.3028-0.44199a29.21 29.21 0 0 0-33.828-10.129 8.032 8.032 0 0 0-1.3408-0.19545 180.87 180.87 0 0 0-19.572 0.0111l-44.967 2.4806-41.303-65.557-61.999-108.59a8 8 0 0 0-10.914-2.9804l-46.605 26.607a8 8 0 0 0 0.78822 14.288l29.414 12.733 57.521 192.3-3.6165 223.3a8 8 0 0 0 8.4389 8.1175l55.915-3.0846a8 8 0 0 0 5.9608-12.786l-15.207-20.293 28.943-160.3 36.681-2.0235 15.287 26.777a8 8 0 0 0 7.3877 4.0212l15.36-0.84732 1.3509 2.902a8.006 8.006 0 0 0 1.9162 2.5834l50.571 45.283a8 8 0 0 0 5.7775 2.0278c0.2606-0.0144 0.52349-0.0419 0.78466-0.0824a8 8 0 0 0 5.665-3.8409l14.654-24.845a8 8 0 0 0-1.5545-10.025l-15.89-14.228-25.027-43.838-1.5649-28.368a31.636 31.636 0 0 0 8.2187 0.64027zm22.965-37.954-3.7543-12.72a15.985 15.985 0 0 1-1.6835 30.646l-1.494 0.34882 6.3689-12.342a8 8 0 0 0 0.563-5.934zm-266.28-153.59a8 8 0 0 0-4.4849-5.0486l-18.15-7.8572 25.762-14.708 16.8 29.428-17.332 6.8591zm55.78 415.43 0.38943-24.058 23.34-1.2875-1.1222 6.2182a8 8 0 0 0 1.4708 6.2194l8.3332 11.12zm50.629-233.39-25.543 7.904a8 8 0 1 0 4.7291 15.285l11.743-3.6333-18.794 31.866a8 8 0 1 0 13.781 8.1293l15.885-26.932 0.69624 12.621-26.473 146.62-26.002 1.4344 2.848-175.85a7.994 7.994 0 0 0-0.33393-2.4223l-51.746-172.99 20.475-8.1031c0.0901-0.03602 0.17382-0.0807 0.26181-0.1196l33.311 58.347c0.0564 0.097 0.11718 0.19985 0.17866 0.29761l42.8 67.934zm42.646 31.523 2.4512 4.2935-27.015 1.4903-3.9659-71.891s43.997-2.4041 45.159-2.4432a29.323 29.323 0 0 0-1.4358 4.0372l-15.963 58.438a8 8 0 0 0 0.76978 6.0748zm38.05 34.378-4.4346-7.7675 12.26-0.67635 1.7716 7.9144zm1.3571-43.39a8 8 0 0 0-0.32772 4.589l3.2522 14.528-17.585 0.9701-9.2095-16.131 15.091-55.245a13.225 13.225 0 0 1 12.046-9.7343 13.243 13.243 0 0 1 13.107 17.927zm73.554 80.339-6.3643 10.79-10.746-9.6227 10.024-7.5126zm-17.084-18.847-12.183 9.1299-18.916-16.939a8 8 0 0 0 0.5457-5.1038l-10.107-45.143 11.309-29.768a31.65 31.65 0 0 0 2.9837 3.5801l2.2202 40.246a7.994 7.994 0 0 0 1.0408 3.526zm-18.892-102.82a16 16 0 0 1 11.935-19.223l8.2236-1.9229 3.8269 12.964-7.0453 13.641a8 8 0 0 0-0.87498 4.1094l0.15291 2.7718a16.022 16.022 0 0 1-16.221-12.338z"
-                                style="fill: #404040"
-                            />
-                            <path
-                                d="m241.77 40.644 141.18 1e-6"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m261.94 90.558h141.18"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <path
-                                d="m278.58 467.79h141.18"
-                                style="
-                                    fill: none;
-                                    stroke-linecap: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
                             <circle
-                                cx="-1223.3"
-                                cy="779.51"
-                                r="11.024"
+                                cx="1669.5"
+                                cy="736.09"
+                                r=".66146"
                                 style="
                                     fill: #404040;
                                     stroke-linecap: round;
                                     stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-1964.7"
-                                cy="776.62"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-1989.1"
-                                cy="81.924"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-1272.1"
-                                cy="138.94"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-527.68"
-                                cy="781.43"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-1445.7"
-                                cy="1223.4"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-1415.2"
-                                cy="1707.6"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-2108.6"
-                                cy="1335.7"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-290.78"
-                                cy="1567.5"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="206"
-                                cy="1559.3"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="219.28"
-                                cy="797.24"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="258.02"
-                                cy="1.072"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-3047.2"
-                                cy="-12.705"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
-                                    stroke: #404040;
-                                "
-                            />
-                            <circle
-                                cx="-2888.6"
-                                cy="917.28"
-                                r="11.024"
-                                style="
-                                    fill: #404040;
-                                    stroke-linecap: round;
-                                    stroke-linejoin: round;
-                                    stroke-width: 22.047;
+                                    stroke-width: 1.3229;
                                     stroke: #404040;
                                 "
                             />
                         </g>
-                    </g>
+                    
                 </g>
 
-                <g id="dojang_table" class="dojang_element --unplaced">
+                <g id="dojang_table" class="dojang_element">
                     <path
                         d="m1664.6 931.48 16.972 44.059c0.7579 1.425 2.3979 2.4205 4.4395 2.4205h222.42c5.5572 0 4.2513-4.5328 3.2407-6.2852l-4.3706-10.492-17.058-41.356z"
                         style="fill-opacity: 0.2"
@@ -3046,7 +3010,7 @@
                     </g>
                 </g>
 
-                <g id="dojang_bottle" class="dojang_element --unplaced">
+                <g id="dojang_bottle" class="dojang_element">
                     <g transform="translate(91.706 24.026)">
                         <path
                             d="m1764.6 854.44v8.4246c0 1.0589-1.0284 1.3706-1.0284 2.7564s1.0284 1.6975 1.0284 2.7565l-1e-4 26.326c0 0.44323-3.6706 0.80256-8.1986 0.80256s-8.1986-0.35933-8.1985-0.80256v-3.078c0-1.059 1.0284-1.8018 1.0284-2.7565 0-0.95469-1.0284-1.6975-1.0284-2.7564 0-1.059 1.0284-1.8018 1.0284-2.7565 0-0.95464-1.0284-1.6975-1.0284-2.7564 0-1.0589 1.0284-1.8018 1.0284-2.7565 0-0.95467-1.0284-1.6975-1.0284-2.7565s1.0284-1.8018 1.0284-2.7564c0-0.9547-1.0284-1.6975-1.0284-2.7565v-1.1959c0-1.059 1.0284-1.3707 1.0284-2.7565s-1.0284-1.6975-1.0284-2.7564v-8.4246c0.062-0.57105-0.1159-1.0698 1.1585-2.0066-1e-4 0.34055 3.152 0.61661 7.0401 0.61661 3.8882 0 7.0402-0.27606 7.0401-0.61661 1.2744 0.93673 1.0966 1.4355 1.1585 2.0066z"
@@ -3115,7 +3079,7 @@
                     </g>
                 </g>
 
-                <g id="dojang_bob" class="dojang_element --unplaced">
+                <g id="dojang_bob" class="dojang_element">
                     <g transform="matrix(0 -2.5919 2.5919 0 2670.9 301.59)">
                         <path
                             d="m-280.45-190.7c0-10.513 0.53502-19.035 1.195-19.035h122.51c1.32 3e-5 2.3901 8.5224 2.3901 19.035 0 10.513-1.0701 19.035-2.3901 19.035-1.32 2e-5 -122.51 0-122.51 0-0.66001-4e-5 -1.195-8.5224-1.195-19.035zm-6.0496 22.412c1.7412-3.0159 3.0656-6.9596 4.6647-14.494-0.34232-4.4057-0.6072-8.9211 0-14.672-1.9164-9.3908-2.9801-17.739-7.8503-17.534l-18.594-0.10259c-0.42848-0.77198-0.63446-0.9193-1.505-1.1354-0.87048-0.21614-6.3376-0.4715-6.3376-0.4715-3.7943 0-6.8702 11.73-6.8702 26.2 0 14.47 3.0759 26.2 6.8702 26.2l6.3371-0.4715c0.77323 0 1.1963-0.55179 1.5207-1.1193 18.65 0.0604 19.928 0.7815 21.765-2.3991z"
@@ -3635,24 +3599,115 @@
                         />
                     </g>
                 </g>
+                </g>
             </svg>
         </transition>
     </section>
 </template>
 
 <script>
+import { gsap } from "gsap";
+
 export default {
     name: "Home",
     components: {},
     methods: {
         dojangInitAnimations() {
-            setTimeout(() => {
-                document
-                    .getElementsByClassName("dojang_element")
-                    .forEach((element) => {
-                        element.classList.replace("--unplaced", "--placed");
-                    });
-            }, 150);
+            let animDuration = 0.6;
+
+            gsap.from("#dojang_bob", {
+                y: -1000,
+                duration: 1,
+                delay: 1.3,
+                ease: "bounce.out",
+            });
+            gsap.from("#dojang_bob", {
+                rotation: 5,
+                transformOrigin: "50% 100%",
+                duration: 1.3,
+                delay: 1.8,
+                ease: "elastic.out(1,0.3)"
+            });
+
+            gsap.from("#dojang_bottle", {
+                x: -900,
+                duration: animDuration,
+                delay: 0.78,
+                ease: "power1.out",
+            });
+            gsap.to("#dojang_bottle", {
+                duration: 0.3,
+                yoyo: true,
+                transformOrigin: "100% 100%",
+                repeat: 1,
+                delay: 1.2,
+                rotation: 25,
+                ease: "slow (0.7, 0.7, false"
+            });
+
+            gsap.from("#dojang_exterior", {
+                x: 550,
+                duration: animDuration,
+                delay: 0.25,
+            });
+            gsap.from("#dojang_local", {
+                x: 600,
+                duration: animDuration,
+                delay: 0.25,
+            });
+            gsap.from("#dojang_table", {
+                x: -900,
+                duration: animDuration,
+                delay: 0.7,
+                ease: "power1.out",
+            });
+            gsap.from("#dojang_tatamis", {
+                x: -700,
+                duration: animDuration,
+                delay: 0.25,
+            });
+            gsap.from("#dojang_wall, #dojang_pictures, #dojang_breastplate", {
+                x: 700,
+                duration: animDuration,
+                delay: 0.25,
+            });
+
+            gsap.from(".dojang_picture_item", {
+                duration: 0.5,
+                delay: 1.3,
+                scale: 0,
+                ease: "bounce.out",
+                xPercent: "50",
+                stagger: 0.05
+            });
+
+            gsap.to(".dojang_scene", {
+                duration: 0.08,
+                yoyo: true,
+                repeat: 3,
+                delay: 1.65,
+                y:5
+            });
+
+            let breastplateTimeline = gsap.timeline();
+
+            breastplateTimeline.to("#dojang_breastplate",{
+                transformOrigin: "50% 0%",
+                rotate: -8,
+                duration: 0.6,
+                delay: 0.30,
+            });
+            breastplateTimeline.to("#dojang_breastplate",{
+                transformOrigin: "50% 0%",
+                rotate: 6,
+                duration: 0.3,
+            });
+            breastplateTimeline.to("#dojang_breastplate",{
+                transformOrigin: "50% 0%",
+                rotate: 0,
+                duration: 1,
+                ease: "elastic.out(1,0.3)"
+            });
         },
     },
 };
@@ -3665,78 +3720,10 @@ export default {
     height: 100vh;
 }
 
-.dojang_element {
-    transition: transform 450ms ease-in-out;
-
-    &.--placed {
-        transform: translateX(0%);
-    }
-}
-
-#dojang_bob {
-    transition: transform 750ms ease-in;
-
-    &.--unplaced {
-        transform: translateY(-50%);
-    }
-}
-
-#dojang_bottle {
-    transition: transform 900ms ease-out;
-
-    &.--unplaced {
-        transform: translateX(-47%);
-    }
-}
-
-#dojang_exterior {
-    &.--unplaced {
-        transform: translateX(34%);
-    }
-}
-
-#dojang_floor {
-    &.--unplaced {
-        transform: translateX(0%);
-    }
-}
-
-#dojang_local {
-    &.--unplaced {
-        transform: translateX(31%);
-    }
-}
-
-#dojang_pictures {
-    &.--unplaced {
-        transform: translateX(34%);
-    }
-}
-
-#dojang_table {
-    transition: transform 750ms ease-out;
-
-    &.--unplaced {
-        transform: translateX(-47%);
-    }
-}
-
-#dojang_tatamis {
-    &.--unplaced {
-        transform: translateX(-35%);
-    }
-}
-
-#dojang_wall {
-    &.--unplaced {
-        transform: translateX(34%);
-    }
-}
-
 //petits téléphones
 @media (max-width: 27em) {
     .dojang_svg {
-        transform: scale(2.5) translateX(-20%) translateY(30%);
+        transform: scale(3.5) translateX(-23%) translateY(30%);
     }
 }
 
