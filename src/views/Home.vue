@@ -1,5 +1,5 @@
 <template>
-    <section class="dojang-scene">
+    <section class="dojang-scene" @mousemove="dojangParallax">
         <transition appear @after-appear="dojangInitAnimations">
             <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
                 <defs>
@@ -3611,8 +3611,15 @@ import { gsap } from "gsap";
 export default {
     name: "Home",
     components: {},
+    data() {
+        return {
+            dojangPlacedElements: false
+        }
+    },
     methods: {
         dojangInitAnimations() {
+
+            this.dojangPlacedElements = false;
             let animDuration = 0.6;
 
             gsap.from("#dojang_bob", {
@@ -3708,9 +3715,40 @@ export default {
                 duration: 1,
                 ease: "elastic.out(1,0.3)"
             });
+
+            setTimeout(() => {
+                this.dojangPlacedElements = true
+            }, 2800);
         },
-    },
-};
+
+        dojangParallax(event) {
+            if (this.dojangPlacedElements == true) {                
+                let posX = (event.pageX * 2 / document.body.clientWidth) - 1 ;
+                let posY = (event.pageY * 2 / document.body.clientWidth) - 1 ;
+    
+                gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
+                    x: posX * 35,
+                });
+    
+                gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
+                    x: posX * 30
+                })
+    
+                gsap.to("#dojang_local", {
+                    x: posX * 24
+                })
+    
+                gsap.to("#dojang_exterior", {
+                    x: posX * 20
+                })
+    
+                gsap.to(".dojang_scene", {
+                    y: posY * 30
+                })
+            }
+        }
+    }
+}
 </script>
 
 <style lang="scss">
