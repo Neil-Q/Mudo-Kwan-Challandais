@@ -1,6 +1,6 @@
 <template>
-    <section class="dojang-scene" @mousemove="dojangParallax">
-        <transition appear @after-appear="dojangInitAnimations">
+    <section class="dojang-scene">
+        <transition appear @after-appear="dojangInitAnimations">        
             <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
                 <defs>
                     <linearGradient
@@ -3603,8 +3603,42 @@
                         </g>
                     </g>
                 </g>
-            </svg>
+                <g id="dojang_curtain">
+                    <rect
+                        x="0"
+                        y="0"
+                        width="2645.8"
+                        height="2645.8"
+                        style="fill-opacity:.2"
+                    />
+                </g>
+            </svg>         
         </transition>
+    </section>
+    <section id="dojang_banner_overlay" @mousemove="dojangParallax">
+        <div id="dojang_banner">
+            <h1>MUDO KWAN CHALLANDAIS</h1>
+            <div id="dojang_carousel">
+                <div class="dojang_carousel_slide slide_1">
+                    <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
+                    <p style="font-style: italic">Grand Maître Lee Kwan Young</p>
+                    <button>Incriptions et tarifs</button>
+                </div>
+                <div class="dojang_carousel_slide slide_2">
+                    <p>Notre club est fier de n'avoir fermé que 3 mois sur la saison 2020-2021. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
+                    <button>Rapport d'activité 2020-2021</button>
+                </div>
+                <div class="dojang_carousel_slide slide_3">
+                    <p>Nous sommes aussi présents sur les réseaux sociaux. Retrouvez nous sur instagram et facebook.</p>
+                    <span><button>Facebook</button><button>Instagram</button></span>
+                </div>
+            </div>
+            <div id="dojang_carousel_timeline">
+                <span class="dojang_carousel_pin pin_active" @click="switchSlide(1)"></span>
+                <span class="dojang_carousel_pin" @click="switchSlide(2)"></span>
+                <span class="dojang_carousel_pin" @click="switchSlide(3)"></span>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -3616,7 +3650,8 @@ export default {
     components: {},
     data() {
         return {
-            dojangPlacedElements: false
+            dojangPlacedElements: false,
+            carouselCurrentIndex: undefined
         }
     },
     methods: {
@@ -3719,6 +3754,19 @@ export default {
                 ease: "elastic.out(1,0.3)"
             });
 
+            gsap.from("#dojang_curtain", {
+                opacity: 0,
+                delay: 2.2,
+                duration: 0.5
+            });
+
+            gsap.from("#dojang_banner", {
+                opacity: 0,
+                delay: 2.2,
+                duration: 1,
+                x: -50
+            })
+
             setTimeout(() => {
                 this.dojangPlacedElements = true
             }, 2800);
@@ -3730,62 +3778,290 @@ export default {
                 let posY = (event.pageY * 2 / document.body.clientWidth) - 1 ;
     
                 gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
-                    x: posX * 35,
+                    x: posX * -35,
                 });
     
                 gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
-                    x: posX * 30
+                    x: posX * -30
                 })
     
                 gsap.to("#dojang_local", {
-                    x: posX * 24
+                    x: posX * -24
                 })
     
                 gsap.to("#dojang_exterior", {
-                    x: posX * 20
+                    x: posX * -20
                 })
     
                 gsap.to(".dojang_scene", {
-                    y: posY * 30
+                    y: posY * -30
                 })
             }
-        }
+        },
+
+        nextSlide() {
+            let index = this.carouselCurrentIndex;
+            index >= 3 ? index = 1 : index++;
+
+            this.switchSlide(index);
+        },
+
+        showSlide(index) {
+            let slides = document.querySelectorAll(".dojang_carousel_slide");
+            slides[index - 1].classList.add("slide_active");
+            slides[index - 1].style.display = "block";
+
+            let pins = document.querySelectorAll(".dojang_carousel_pin");
+            pins[index - 1].classList.add("pin_active");
+
+            gsap.fromTo(".slide_active", 
+                {
+                    x: -50,
+                    opacity: 0,
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.5
+                }
+            );
+
+            this.carouselCurrentIndex = index;
+        },
+
+        switchSlide(index) {
+            if (index != this.carouselCurrentIndex) {                
+                gsap.to(".slide_active", {
+                    x: 50,
+                    opacity: 0,
+                    duration: 0.5
+                });
+    
+                document.querySelector(".pin_active").classList.remove("pin_active");
+    
+                setTimeout(() => {
+                    document.querySelector(".slide_active").style.display = "none";
+                    document.querySelector(".slide_active").classList.remove("slide_active");
+    
+                    this.showSlide(index);                 
+                }, 500);
+            }
+        },
+    },
+    mounted() {
+        setTimeout(() => {
+            this.showSlide(1);
+
+            setTimeout(() => {
+                document.getElementById("dojang_carousel_timeline").style.display = "flex";
+                gsap.from("#dojang_carousel_timeline", {x: -50, opacity: 0, duration: 0.5});                
+            }, 200);
+           
+        }, 2500);
+
+        setInterval(() => {
+            setTimeout(() => {
+                this.nextSlide();
+            }, 1000);
+        }, 10000);
     }
 }
 </script>
 
 <style lang="scss">
-.dojang-scene {
+    .dojang-scene {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-}
+    }
 
-//petits téléphones
-@media (max-width: 27em) {
+    #dojang_banner_overlay {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    }
+ 
+    #dojang_banner {
+
+        margin-top: 15vmin;
+        margin-left: 8vmin;
+        width: 87vmin;
+        
+        color: white;
+        text-align: left;
+        text-shadow: 0px 0px 2vmin black, 0 0 5vmin black, 0 0 5vmin black;
+        font-weight: bold;
+
+        h1 {
+            font-size: 12vmin;
+            height: 28vmin;
+            margin-bottom: 0;
+        }
+        p {
+            margin-top: 0;
+            font-size: 3vmin;
+        }
+        button {
+            height: 6vmin;
+            font-size: 2.5vmin;
+            font-weight: bold;
+            padding: 0.25em;
+            padding-left: 5vmin;
+            padding-right: 5vmin;
+            background: black;
+            border: solid 0.25em;
+            box-shadow: 0px 0px 0em black, 0 0 1em black;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }        
+    }
+
+    #dojang_carousel {
+
+        display: flex;
+        flex-direction: column-reverse;
+        height: 32vmin;
+        width: 95%;        
+
+        .dojang_carousel_slide {
+            text-align: justify;
+        }
+        .slide_1 {
+            display: none;
+            button {
+                border-color: var(--blue-light-color);
+                color: var(--blue-light-color);
+
+                &:hover {
+                    border-color: var(--blue-strongLight-color);
+                    color: var(--blue-strongLight-color);
+                }
+            }
+        }
+
+        .slide_2 {
+            display: none;
+
+            button {
+                border-color: rgb(51, 255, 0);
+                color: rgb(51, 255, 0);
+
+                &:hover {
+                    border-color: rgb(172, 255, 47);
+                    color: rgb(172, 255, 47);
+                }
+            }
+        }
+
+        .slide_3 {
+            display: none;
+
+            button {
+                border-color: var(--blue-light-color);
+                color: var(--blue-light-color);
+                margin-right: 2vmin;
+
+                &:hover {
+                    border-color: var(--blue-medium-color);
+                    color: var(--blue-medium-color);
+                }
+            }
+        }
+    }
+
+    #dojang_carousel_timeline {
+        display: none;
+        justify-content: center;
+        height: 8vmin;
+
+        .dojang_carousel_pin {
+            border: 0.25em solid ;
+            height: 0.7em;
+            width: 0.7em;
+            border-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 2em;           
+            cursor: pointer;
+            align-self: center;
+            transition: 0.5s;
+    
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+
+        }
+        .pin_active {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-5px);
+            &:hover {
+                background: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+
+    
+    @media (max-height: 40vmax) {
+    #dojang_banner {
+        width: 35vmax;
+        margin-left: 3.2vmax;
+        margin-top: 6vmax;
+
+        h1 {
+            font-size: 4.8vmax;
+            height: 12vmax;
+        }
+        p {
+            font-size: 1.2vmax;
+        }
+        button {
+            height: 2.4vmax;
+            font-size: 1vmax;
+            padding-left: 2vmax;
+            padding-right: 2vmax;
+        }
+    }
+    #dojang_carousel {
+        height: 12.8vmax;
+    }
+    .dojang_carousel_pin {
+        border: 1vmax
+    }
+    }
+
+    //petits téléphones
+    @media (max-width: 27em) {
     .dojang_svg {
         transform: scale(3.5) translateX(-23%) translateY(30%);
     }
-}
+    #dojang_banner {
+        padding-top: 50%;
+    }
+    }
 
-//tablettes portrait ou grands téléphones [688 - 992 px]
-@media (min-width: 27em) {
+    //tablettes portrait ou grands téléphones [688 - 992 px]
+    @media (min-width: 27em) {
     .dojang_svg {
         transform: scale(2.2) translateX(-20%) translateY(15%);
     }
-}
 
-//ordinateurs portables ou tablettes paysage [992 - 1200 px]
-@media (min-width: 48em) {
-    .dojang_svg {
-        transform: scale(1.9) translateX(-20%) translateY(5%);
     }
-}
 
-//écrans de bureau [1200+ px]
-@media (min-width: 64em) {
+    //ordinateurs portables ou tablettes paysage [992 - 1200 px]
+    @media (min-width: 992px) {
     .dojang_svg {
-        transform: scale(1.75) translateX(-20%);
+        transform: scale(1.9) translateX(-20%) translateY(10%);
     }
-}
+    }
+
+    //écrans de bureau [1200+ px]
+    @media (min-width: 64em) {
+    .dojang_svg {
+        transform: scale(1.75) translateX(-20%) translateY(2%);
+    }
+    }
 </style>
