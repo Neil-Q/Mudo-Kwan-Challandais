@@ -3625,7 +3625,7 @@
                     <button>Incriptions et tarifs</button>
                 </div>
                 <div class="dojang_carousel_slide slide_2">
-                    <p>Notre club est fier de n'avoir fermé que 3 mois sur la saison 2020-2021. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
+                    <p>Notre club est fier de n'avoir enristré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
                     <button>Rapport d'activité 2020-2021</button>
                 </div>
                 <div class="dojang_carousel_slide slide_3">
@@ -3891,7 +3891,7 @@ export default {
         
         color: white;
         text-align: left;
-        text-shadow: 0px 0px 2vmin black, 0 0 5vmin black, 0 0 5vmin black;
+        text-shadow: 0px 0px 2vmin black;
         font-weight: bold;
 
         h1 {
@@ -3912,7 +3912,7 @@ export default {
             padding-right: 5vmin;
             background: black;
             border: solid 0.25em;
-            box-shadow: 0px 0px 0em black, 0 0 1em black;
+            box-shadow: 0 0 2vmin black;
 
             &:hover {
                 text-decoration: underline;
