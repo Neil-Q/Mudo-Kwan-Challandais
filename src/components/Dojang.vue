@@ -3869,6 +3869,8 @@ export default {
 </script>
 
 <style lang="scss">
+    
+
     .dojang-scene {
     overflow: hidden;
     width: 100vw;
@@ -4005,7 +4007,7 @@ export default {
     }
 
     
-    @media (max-height: 40vmax) {
+    @media (max-height: 40vw) {
     #dojang_banner {
         width: 35vmax;
         margin-left: 3.2vmax;
