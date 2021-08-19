@@ -3982,9 +3982,9 @@ export default {
         height: 8vmin;
 
         .dojang_carousel_pin {
-            border: 0.25em solid ;
-            height: 0.7em;
-            width: 0.7em;
+            border: 0.5vmin solid ;
+            height: 1.2vmin;
+            width: 1.2vmin;
             border-color: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             margin: 2em;           
@@ -4007,11 +4007,12 @@ export default {
     }
 
     
-    @media (max-height: 40vw) {
+@media (max-height: 40vw) {
     #dojang_banner {
         width: 35vmax;
         margin-left: 3.2vmax;
         margin-top: 6vmax;
+        text-shadow: 0px 0px 0.8vmax black;
 
         h1 {
             font-size: 4.8vmax;
@@ -4027,43 +4028,47 @@ export default {
             padding-right: 2vmax;
         }
     }
+
     #dojang_carousel {
-        height: 12.8vmax;
-    }
-    .dojang_carousel_pin {
-        border: 1vmax
-    }
+        height: 12vmax;
+        background: turquoise;
     }
 
-    //petits téléphones
-    @media (max-width: 27em) {
+    #dojang_carousel_timeline {
+        height: 3.2vmax;    
+    }
+}
+
+//petits téléphones
+@media (max-width: 27em) {
     .dojang_svg {
         transform: scale(3.5) translateX(-23%) translateY(30%);
     }
     #dojang_banner {
         padding-top: 50%;
     }
-    }
+    
+}
 
-    //tablettes portrait ou grands téléphones [688 - 992 px]
-    @media (min-width: 27em) {
+//tablettes portrait ou grands téléphones [688 - 992 px]
+@media (min-width: 27em) {
     .dojang_svg {
         transform: scale(2.2) translateX(-20%) translateY(15%);
     }
 
-    }
+}
 
-    //ordinateurs portables ou tablettes paysage [992 - 1200 px]
-    @media (min-width: 992px) {
+//ordinateurs portables ou tablettes paysage [992 - 1200 px]
+@media (min-width: 992px) {
     .dojang_svg {
         transform: scale(1.9) translateX(-20%) translateY(10%);
     }
-    }
+}
 
-    //écrans de bureau [1200+ px]
-    @media (min-width: 64em) {
+//écrans de bureau [1200+ px]
+@media (min-width: 64em) {
     .dojang_svg {
         transform: scale(1.75) translateX(-20%) translateY(2%);
     }
-    }
+}
 </style>
