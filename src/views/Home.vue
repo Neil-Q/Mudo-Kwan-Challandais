@@ -1,6 +1,15 @@
 <template>
     <Dojang />
     <NavBar />
+    <section id="welcome_message">
+        <div class="welcome">
+            <p>Bienvenue</p>
+            <div class="red_line"></div>
+        </div>
+        <div class="message">
+            <p>Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, recherchiez aussi bien la compétition que le simple loisir</p>
+        </div>
+    </section>
     <div id="body_dummy"></div>
 
 </template>
@@ -39,6 +48,39 @@ body{
 }
 #body_dummy {
     height: 2000px;
+    background: rgba(0,0,0,0.05);
+}
+#welcome_message {
+    display: flex;
+    flex-direction: column;
+
+    * {
+        align-self: center;
+    }
+
+    .welcome {
+        width: 900px;        
+
+        p {
+            font-size: 5em;
+            margin-bottom: 0;
+        }
+
+        .red_line {
+            background: var(--red-medium-color);
+            border-radius: 0.2em;
+            width: 90%;
+            height: 10px;
+            margin: auto;
+        }
+    }
+
+    .message {
+        width: 100%;
+        justify-content: center;
+        font-size: 1.5em;
+        max-width: 1200px;
+    }
 }
 
 </style>
