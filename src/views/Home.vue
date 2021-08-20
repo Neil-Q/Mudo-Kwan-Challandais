@@ -59,10 +59,11 @@ body{
     }
 
     .welcome {
-        width: 900px;        
+        width: 900px;  
+        max-width: 90%;      
 
         p {
-            font-size: 5em;
+            font-size: 3em;
             margin-bottom: 0;
         }
 
@@ -70,16 +71,24 @@ body{
             background: var(--red-medium-color);
             border-radius: 0.2em;
             width: 90%;
-            height: 10px;
+            height: 5px;
             margin: auto;
         }
     }
 
     .message {
-        width: 100%;
+        width: 90%;
         justify-content: center;
         font-size: 1.5em;
         max-width: 1200px;
+    }
+}
+
+@media (max-width: 992px) {
+    #welcome_message {
+        .message { 
+            font-size: 1.2em;
+        }
     }
 }
 
