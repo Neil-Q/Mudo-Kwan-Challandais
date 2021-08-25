@@ -10,6 +10,7 @@
             <p>Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, recherchiez aussi bien la compétition que le simple loisir</p>
         </div>
     </section>
+    <Practices />
     <div id="body_dummy"></div>
 
 </template>
@@ -18,12 +19,14 @@
 
 import Dojang from "@/components/Dojang.vue";
 import NavBar from "@/components/NavBar.vue";
+import Practices from "@/components/Practices.vue";
 
 export default {
     name: "Home",
     components: {
         Dojang,
-        NavBar
+        NavBar,
+        Practices
     },
     methods: {
     }
@@ -53,6 +56,9 @@ body{
 #welcome_message {
     display: flex;
     flex-direction: column;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    background-color: rgba(0,0,0,0.02);
 
     * {
         align-self: center;
@@ -60,7 +66,7 @@ body{
 
     .welcome {
         width: 900px;  
-        max-width: 90%;      
+        max-width: 90%;   
 
         p {
             font-size: 3em;
