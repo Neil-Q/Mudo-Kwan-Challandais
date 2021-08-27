@@ -11,8 +11,9 @@
         </div>
     </section>
     <Practices />
-    <div id="body_dummy"></div>
-
+    <div id="free_try_dummy"></div>
+    <div id="horraires_dummy"></div>
+    <div id="footer_dummy"></div>
 </template>
 
 <script>
@@ -49,10 +50,20 @@ body{
         display: none;
     }
 }
-#body_dummy {
-    height: 2000px;
-    background: rgba(0,0,0,0.05);
+//___________________________________________________________
+#free_try_dummy {
+    height: 35em;
+    background-color: var(--blue-dark-color);
 }
+#horraires_dummy {
+    height: 60em;
+}
+#footer_dummy {
+    height: 40em;
+    background-color: var(--red-medium-color);
+}
+//___________________________________________________________
+
 #welcome_message {
     display: flex;
     flex-direction: column;
