@@ -221,25 +221,20 @@ export default {
         const taekwondoMoustiqueIllustrationPosY = document.getElementById("taekwondo_moustique_SVG").getBoundingClientRect();
 
         window.addEventListener("scroll", () => {
-            const margin = document.body.clientHeight / 2;
-            const offsetY = window.scrollY;
+            const margin = document.body.clientHeight;
+            const offsetY = margin + window.scrollY;
 
-            if (hapkimudoIllustrationPosY < (offsetY + margin)) {
+            if (hapkimudoIllustrationPosY < offsetY) {
                 vivusHapkimudo.play();
-
-                
             }
-            if (taekwondoAdultIllustrationPosY < (offsetY + margin)) {
+            if (taekwondoAdultIllustrationPosY < offsetY) {
                 vivusTaekwondoAdult.play();
-                
             }
-            if (taekwondoChildIllustrationPosY < (offsetY + margin)) {
+            if (taekwondoChildIllustrationPosY < offsetY) {
                 vivusTaekwondoChild.play();
-                
             }
-            if (taekwondoMoustiqueIllustrationPosY < (offsetY + margin)) {
-                vivusTaekwondoMoustique.play();
-                
+            if (taekwondoMoustiqueIllustrationPosY < offsetY) {
+                vivusTaekwondoMoustique.play();                
             }
         });
 
