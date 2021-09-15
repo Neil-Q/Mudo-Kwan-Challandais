@@ -1,8 +1,4 @@
 <template>
-    <div id="our_courses">
-        <p>Nos cours</p>
-        <div class="blue_line"></div>
-    </div>
     <section id="hapkimudo_presentation" class="practice_section">
         <div class="practice_illustration">
             <svg id="hapkimudo_SVG" viewBox="0 0 119.06 119.06">
@@ -58,8 +54,6 @@
             </div>
         </div>
     </section>
-
-    <div class="separator"></div>
 
     <section
         id="taekwondo_adult_presentation"
@@ -119,8 +113,6 @@
         </div>
     </section>
 
-    <div class="separator"></div>
-
     <section id="taekwondo_children_presentation" class="practice_section">
         <div class="practice_illustration">
             <svg id="taekwondo_child_SVG" viewBox="0 0 119.06 119.06">
@@ -158,11 +150,7 @@
         </div>
     </section>
 
-    <div class="separator"></div>
-
-    <section
-        id="taekwondo_moustique_presentation"
-        class="practice_section reversed"
+    <section id="taekwondo_moustique_presentation" class="practice_section reversed"
     >
         <div class="practice_illustration">
             <svg id="taekwondo_moustique_SVG" viewBox="0 0 119.06 119.06">
@@ -215,14 +203,14 @@ export default {
         const vivusTaekwondoChild = new Vivus("taekwondo_child_SVG", vivusAnimProperties);
         const vivusTaekwondoMoustique = new Vivus("taekwondo_moustique_SVG", vivusAnimProperties);
 
-        const hapkimudoIllustrationPosY = document.getElementById("hapkimudo_SVG").getBoundingClientRect();
-        const taekwondoAdultIllustrationPosY = document.getElementById("taekwondo_adult_SVG").getBoundingClientRect();
-        const taekwondoChildIllustrationPosY = document.getElementById("taekwondo_child_SVG").getBoundingClientRect();
-        const taekwondoMoustiqueIllustrationPosY = document.getElementById("taekwondo_moustique_SVG").getBoundingClientRect();
+        const hapkimudoIllustrationPosY = document.getElementById("hapkimudo_SVG").getBoundingClientRect().y;
+        const taekwondoAdultIllustrationPosY = document.getElementById("taekwondo_adult_SVG").getBoundingClientRect().y;
+        const taekwondoChildIllustrationPosY = document.getElementById("taekwondo_child_SVG").getBoundingClientRect().y;
+        const taekwondoMoustiqueIllustrationPosY = document.getElementById("taekwondo_moustique_SVG").getBoundingClientRect().y;
 
         window.addEventListener("scroll", () => {
-            const margin = document.body.clientHeight;
-            const offsetY = margin + window.scrollY;
+            const margin = window.innerHeight * 0.2;
+            const offsetY = window.scrollY + margin;
 
             if (hapkimudoIllustrationPosY < offsetY) {
                 vivusHapkimudo.play();
@@ -243,27 +231,6 @@ export default {
 </script>
 
 <style  lang="scss">
-#our_courses {
-    display: none;
-    background-color: var(--blue-dark-color);
-    padding-bottom: 2em;
-
-    p {
-        padding-top: 1em;
-        margin: 0;
-        font-size: 2.5em;
-        color: white;
-    }
-
-    .blue_line {
-        background: white;
-        border-radius: 0.2em;
-        width: 40%;
-        max-width: 400px;
-        height: 5px;
-        margin: auto;
-    }
-}
 
 .practice_section {
     display: flex;
@@ -343,15 +310,6 @@ export default {
     }
 }
 
-.separator {
-    display: none;
-    height: 2px;
-    width: 90%;
-    max-width: 1600px;
-    background-color: grey;
-    margin: 0 auto;
-}
-
 #hapkimudo_presentation {
     color: var(--red-medium-color);
 
@@ -405,6 +363,12 @@ export default {
             background: var(--blue-light-color);
             color: white;
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    .practice_section {
+        flex-direction: column;
     }
 }
 </style>
