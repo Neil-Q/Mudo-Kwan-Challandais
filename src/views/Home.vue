@@ -52,14 +52,14 @@ body{
 }
 //___________________________________________________________
 #free_try_dummy {
-    height: 35em;
+    height: 35rem;
     background-color: var(--blue-dark-color);
 }
 #horraires_dummy {
-    height: 60em;
+    height: 60rem;
 }
 #footer_dummy {
-    height: 40em;
+    height: 40rem;
     background-color: var(--red-medium-color);
 }
 //___________________________________________________________
@@ -67,8 +67,8 @@ body{
 #welcome_message {
     display: flex;
     flex-direction: column;
-    padding-top: 1em;
-    padding-bottom: 2em;
+    padding-top: clamp(0.25rem, 0.5vw, 1rem);
+    padding-bottom: 2rem;
     background-color: rgba(0,0,0,0.02);
 
     * {
@@ -80,13 +80,13 @@ body{
         max-width: 90%;   
 
         p {
-            font-size: 3em;
+            font-size: clamp(2rem, 3vw, 3rem);
             margin-bottom: 0;
         }
 
         .red_line {
             background: var(--red-medium-color);
-            border-radius: 0.2em;
+            border-radius: 0.2rem;
             width: 90%;
             height: 5px;
             margin: auto;
@@ -96,16 +96,8 @@ body{
     .message {
         width: 90%;
         justify-content: center;
-        font-size: 1.5em;
+        font-size: clamp(1.1rem, 1.5vw, 1.5rem);
         max-width: 1200px;
-    }
-}
-
-@media (max-width: 992px) {
-    #welcome_message {
-        .message { 
-            font-size: 1.2em;
-        }
     }
 }
 
