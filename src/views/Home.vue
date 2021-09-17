@@ -1,6 +1,8 @@
 <template>
     <Dojang />
+
     <NavBar />
+
     <section id="welcome_message">
         <div class="welcome">
             <p>Bienvenue</p>
@@ -10,8 +12,10 @@
             <p>Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, recherchiez aussi bien la compétition que le simple loisir</p>
         </div>
     </section>
+
     <Practices />
-    <div id="free_try">
+
+    <section id="free_try">
         <div id="free_try_picture">
             <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
         </div>
@@ -20,8 +24,14 @@
             <p>Viens découvrir le Taekwondo ou le Hapkimudo durant deux séances et trouve la voie martiale  qui te correspond</p>
             <p>Tu peux venir avec un ou plusieurs de tes amis ou des membres de ta famille !</p>
         </div>
-    </div>
-    <div id="horraires_dummy"></div>
+    </section>
+
+    <section id="schedule_section">
+        <h2>Horraires des cours</h2>
+        <Schedule />
+        <button>Inscriptions et tarifs</button>
+    </section>
+
     <div id="footer_dummy"></div>
 </template>
 
@@ -30,13 +40,15 @@
 import Dojang from "@/components/Dojang.vue";
 import NavBar from "@/components/NavBar.vue";
 import Practices from "@/components/Practices.vue";
+import Schedule from "@/components/Schedule.vue";
 
 export default {
     name: "Home",
     components: {
         Dojang,
         NavBar,
-        Practices
+        Practices,
+        Schedule
     },
     data() {
         return {
@@ -63,9 +75,6 @@ body{
     }
 }
 //___________________________________________________________
-#horraires_dummy {
-    height: 60rem;
-}
 #footer_dummy {
     height: 40rem;
     background-color: var(--red-medium-color);
@@ -135,6 +144,29 @@ body{
             font-size: clamp(1rem, 1.5vw, 1.5rem);
             font-weight: bold;     
         }
+    }
+}
+
+#schedule_section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 3rem 0 5rem 0;
+    
+    h2 {
+        font-size: clamp(2rem, 2.5vw, 2.5rem);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        margin-top: 5rem;
+        background-color: var(--red-medium-color);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 2.5rem;
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
     }
 }
 
