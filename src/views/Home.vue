@@ -123,7 +123,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue-dark-color);
-    padding: 2rem 10% 2rem 10%;
+    padding: 5rem 10% 5rem 10%;
 
     #free_try_picture {
         width: 45%;
@@ -156,7 +156,7 @@ body{
         font-size: clamp(2rem, 2.5vw, 2.5rem);
         font-weight: bold;
         text-transform: uppercase;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     button {
@@ -173,7 +173,7 @@ body{
 @media (max-width: 40em) {
     #free_try {
         flex-direction: column;
-        padding: 2rem 0 2rem 0;
+        padding: 3rem 0 2rem 0;
 
         #free_try_picture {
             width: 85%;
