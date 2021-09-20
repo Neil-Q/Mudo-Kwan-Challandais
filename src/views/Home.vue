@@ -67,6 +67,7 @@ body{
     --blue-strongLight-color: #00ccff ;
 
     --red-medium-color: #C21111;
+    --red-light-color: #e71515;
 
     scrollbar-width: none;
 
@@ -123,7 +124,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: var(--blue-dark-color);
-    padding: 5rem 10% 5rem 10%;
+    padding: 5rem 5% 5rem 5%;
 
     #free_try_picture {
         width: 45%;
@@ -149,6 +150,7 @@ body{
 
 #schedule_section {
     max-width: 1000px;
+    width: 85%;
     margin: auto;
     padding: 3rem 0 5rem 0;
     
@@ -167,6 +169,10 @@ body{
         font-weight: bold;
         padding: 1rem 2.5rem 1rem 2.5rem;
         font-size: clamp(1rem, 1.2vw, 1.2rem);
+
+        &:hover {
+            background-color: var(--red-light-color);
+        }
     }
 }
 

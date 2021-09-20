@@ -82,11 +82,11 @@
                     </div>
 
                     <div class="schedule_cours_wrap">
-                        <div class="schedule_cours saturday_child_cours tkd_children">
+                        <div class="schedule_cours schedule_cours_double saturday_child_cours tkd_children">
                             <p>Taekwondo enfants (6 à 12 ans)</p>
                             <p class="small">(salle A)</p>
                         </div>
-                        <div class="schedule_cours hapkimudo">
+                        <div class="schedule_cours schedule_cours_double hapkimudo">
                             <p>Hapkimudo (12 ans +)</p>
                             <p class="small">(salle B)</p>
                         </div>
@@ -112,6 +112,7 @@ export default {
         display: flex;
         width: 25%;
         background-color: var(--red-medium-color);
+        padding: 1rem 0 1rem 0;
         
         p {
             color: white;
@@ -136,6 +137,7 @@ export default {
             display: flex;
             width: 30%;
             background-color: rgb(40, 40, 40);
+            padding: 1rem 0 1rem 0;
     
             p {
                 color: white;
@@ -156,15 +158,19 @@ export default {
     width: 62%;
 
     .schedule_cours {
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        height: 100%;
         text-align: center;
         border: 5px solid red;
         box-sizing: border-box;
-        padding: 0.5rem 0 0.5rem 0;
+        padding: 1rem 0 1rem 0;
 
         p {
-            margin: 0.5rem;
+            margin: auto;
             font-weight: bold;
+            align-self: center;
         }
 
         .small {
@@ -187,10 +193,14 @@ export default {
             border-color: var(--red-medium-color);
             color: var(--red-medium-color);
         }
+
+        &.schedule_cours_double{
+            height: auto;
+        }
     }
     
     .saturday_child_cours {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.6rem;
     }
 }
 
@@ -199,6 +209,68 @@ export default {
     height: 3px;
     background-color: rgb(40, 40, 40);
     margin: 2.5rem 0 2.5rem 0;
+}
+
+@media (max-width: 60em) {
+    .schedule_day {
+        flex-direction: column;
+        
+        margin: auto;
+
+        .schedule_day_label {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .schedule_session_wrap {
+        width: 100%;
+        
+        .schedule_session {
+            .schedule_hours {
+                width: 25%;
+
+                p {
+                    word-spacing: 100vw;
+                }
+            }
+        }
+    }
+
+    .schedule_cours_wrap {
+        width: 70%;
+    }
+
+    .schedule_separator {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media (max-width: 40em) {
+
+    .schedule_session_wrap {
+        width: 100%;
+        
+        .schedule_session {
+            flex-direction: column;
+
+            .schedule_hours {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                p {
+                    word-spacing: normal;
+                }
+            }    
+        }
+    }
+
+    .schedule_cours_wrap {
+        width: 100%;
+    }
+
 }
 
 </style>
