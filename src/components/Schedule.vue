@@ -214,7 +214,6 @@ export default {
 @media (max-width: 60em) {
     .schedule_day {
         flex-direction: column;
-        
         margin: auto;
 
         .schedule_day_label {

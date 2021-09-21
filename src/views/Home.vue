@@ -32,7 +32,7 @@
         <button>Inscriptions et tarifs</button>
     </section>
 
-    <div id="footer_dummy"></div>
+    <Footer />
 </template>
 
 <script>
@@ -41,6 +41,7 @@ import Dojang from "@/components/Dojang.vue";
 import NavBar from "@/components/NavBar.vue";
 import Practices from "@/components/Practices.vue";
 import Schedule from "@/components/Schedule.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
     name: "Home",
@@ -48,7 +49,8 @@ export default {
         Dojang,
         NavBar,
         Practices,
-        Schedule
+        Schedule,
+        Footer
     },
     data() {
         return {
