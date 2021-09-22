@@ -56,16 +56,18 @@ footer {
 
             button {
                 background-color: transparent;
-                border: white 4px solid;
+                border: white 2px solid;
                 color: white;
                 padding: 0.5rem 2rem 0.5rem 2rem;
                 font-size: 1rem;
                 text-transform: uppercase;
                 font-weight: bold;
-                transition: 0.2s;
+                cursor: pointer;
+                transition: 0.5s;
 
                 &:hover {
-                    background-color: rgba($color: white, $alpha: 0.2);
+                    background-color: rgba($color: black, $alpha: 0.2);
+                    border-radius: 20px;
                 }
             }
         }
@@ -135,9 +137,22 @@ footer {
 
     #footer_main {
         width: 100%;
-        #footer_contact #footer_contact_infos {
-            text-align: center;
+        #footer_contact {
+        
+            #footer_contact_infos {
+                text-align: center;
+            }
+
+            #footer_social_networks {
+                justify-content: space-between;
+                width: 10rem;
+
+                img {
+                    margin: 0;
+                }
+            }
         }
+
     }
 
     #footer_map {
@@ -150,6 +165,7 @@ footer {
     #footer_main #footer_sponsors {
         height: auto;
         padding: 2rem;
+
         #footer_sponsors_wrapper {
             width: auto;
             grid-template-columns: repeat(2, clamp(7rem, 25vw, 10rem));

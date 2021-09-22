@@ -171,9 +171,12 @@ body{
         font-weight: bold;
         padding: 1rem 2.5rem 1rem 2.5rem;
         font-size: clamp(1rem, 1.2vw, 1.2rem);
-
+        cursor: pointer;
+        transition: 0.5s;
+        
         &:hover {
             background-color: var(--red-light-color);
+            border-radius: 25px;
         }
     }
 }

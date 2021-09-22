@@ -233,6 +233,13 @@ export default {
             font-weight: bold;
             font-size: clamp(0.85em, 1vw, 1rem);
             background: none;
+            cursor: pointer;
+            transition: 0.5s;
+
+            &:hover{
+                border-radius: 10px;
+
+            }
         }
         .practice_hours {
             font-weight: normal;
