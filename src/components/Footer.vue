@@ -23,14 +23,19 @@
             </div>
         </div>
         <div id="footer_map">
-
+            <Map />
         </div>
     </footer>
 </template>
 
 <script>
+import Map from "@/components/Map.vue";
+
 export default {
-    name: "footer"
+    name: "footer",
+    components: {
+        Map
+    }
 }
 </script>
 
@@ -156,7 +161,7 @@ footer {
     }
 
     #footer_map {
-        height: 100vh;
+        height: 50vh;
         width: 100%;
     }
 }

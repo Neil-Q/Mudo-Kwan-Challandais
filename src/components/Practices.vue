@@ -238,7 +238,6 @@ export default {
 
             &:hover{
                 border-radius: 10px;
-
             }
         }
         .practice_hours {
