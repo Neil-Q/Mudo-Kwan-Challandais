@@ -11,6 +11,10 @@
   color: #2c3e50;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;

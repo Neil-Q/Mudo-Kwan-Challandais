@@ -17,7 +17,7 @@ export default {
         };
     },
     mounted() {
-        let myMap = leaflet.map('mapid').setView([46.840801, -1.877986], 14);
+        let myMap = leaflet.map('mapid').setView([46.845001, -1.877986], 14);
 
         leaflet.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYXJ0cm9zcyIsImEiOiJja3R2Zm5tN3gwa2hkMm5tcGlkMGpmdnZyIn0.POJnnhH_z5w5HutOD3thkw', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

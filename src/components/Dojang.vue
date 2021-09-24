@@ -1,7 +1,8 @@
 <template>
-    <section class="dojang-scene">
-        <transition appear @after-appear="dojangInitAnimations">        
-            <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
+    <div id="dojang_wrapper" @mousemove="dojangParallax">
+        <section class="dojang-scene">
+            <transition appear @after-appear="dojangInitAnimations">        
+                <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
                 <defs>
                     <linearGradient
                         id="linearGradient1372-1"
@@ -3612,34 +3613,41 @@
                         style="fill-opacity:.2"
                     />
                 </g>
-            </svg>         
-        </transition>
-    </section>
-    <section id="dojang_banner_overlay" @mousemove="dojangParallax">
-        <div id="dojang_banner">
-            <h1>MUDO KWAN CHALLANDAIS</h1>
-            <div id="dojang_carousel">
-                <div class="dojang_carousel_slide slide_1">
-                    <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
-                    <p style="font-style: italic">Grand Maître Lee Kwan Young</p>
-                    <button>Incriptions et tarifs</button>
+                </svg>         
+            </transition>
+        </section>
+
+        <section id="dojang_banner_overlay">
+            <div id="dojang_banner">
+                <h1>MUDO KWAN CHALLANDAIS</h1>
+                <div id="dojang_carousel">
+                    <div class="dojang_carousel_slide slide_1">
+                        <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
+                        <p style="font-style: italic">Grand Maître Lee Kwan Young</p>
+                        <button>Incriptions et tarifs</button>
+                    </div>
+                    <div class="dojang_carousel_slide slide_2">
+                        <p>Notre club est fier de n'avoir enristré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
+                        <button>Rapport d'activité 2020-2021</button>
+                    </div>
+                    <div class="dojang_carousel_slide slide_3">
+                        <p>Nous sommes aussi présents sur les réseaux sociaux. Retrouvez nous sur instagram et facebook.</p>
+                        <span><button>Facebook</button><button>Instagram</button></span>
+                    </div>
                 </div>
-                <div class="dojang_carousel_slide slide_2">
-                    <p>Notre club est fier de n'avoir enristré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
-                    <button>Rapport d'activité 2020-2021</button>
-                </div>
-                <div class="dojang_carousel_slide slide_3">
-                    <p>Nous sommes aussi présents sur les réseaux sociaux. Retrouvez nous sur instagram et facebook.</p>
-                    <span><button>Facebook</button><button>Instagram</button></span>
+                <div id="dojang_carousel_timeline">
+                    <span class="dojang_carousel_pin pin_active" @click="switchSlide(1)"></span>
+                    <span class="dojang_carousel_pin" @click="switchSlide(2)"></span>
+                    <span class="dojang_carousel_pin" @click="switchSlide(3)"></span>
                 </div>
             </div>
-            <div id="dojang_carousel_timeline">
-                <span class="dojang_carousel_pin pin_active" @click="switchSlide(1)"></span>
-                <span class="dojang_carousel_pin" @click="switchSlide(2)"></span>
-                <span class="dojang_carousel_pin" @click="switchSlide(3)"></span>
+            <div id="dojang_scrolldown_button">
+                <div class="arrow arrow_1"></div>
+                <div class="arrow arrow_2"></div>
+                <div class="arrow arrow_3"></div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -3767,6 +3775,35 @@ export default {
                 x: -50
             })
 
+            gsap.from("#dojang_scrolldown_button", {
+                opacity: 0,
+                delay: 2.2,
+                duration: 1,
+                y: 50
+            })
+
+            gsap.to(".arrow_1", {
+                delay: 2.5,
+                duration: 2,
+                repeat: -1,
+                y: 30,
+                yoyo: true
+            })
+            gsap.to(".arrow_2", {
+                delay: 2.5,
+                duration: 2,
+                repeat: -1,
+                y: 20,
+                yoyo: true
+            })
+            gsap.to(".arrow_3", {
+                delay: 2.5,
+                duration: 2,
+                repeat: -1,
+                y: 10,
+                yoyo: true
+            })
+
             setTimeout(() => {
                 this.dojangPlacedElements = true
             }, 2800);
@@ -3869,7 +3906,15 @@ export default {
 </script>
 
 <style lang="scss">
-    
+    #dojang_wrapper {
+        height: 100vh;
+        overflow: hidden;
+        transition: 1s;
+
+        &.hidden {
+            height: 0vh;
+        }
+    }
 
     .dojang-scene {
     overflow: hidden;
@@ -3878,19 +3923,21 @@ export default {
     }
 
     #dojang_banner_overlay {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0px;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0px;
+
+        &.hidden {
+            display: none;
+        }
     }
  
     #dojang_banner {
-
         margin-top: 15vmin;
         margin-left: 8vmin;
-        width: 87vmin;
-        
+        width: 87vmin;        
         color: white;
         text-align: left;
         text-shadow: 0px 0px 2vmin black;
@@ -4006,6 +4053,87 @@ export default {
         }
     }
 
+    #dojang_scrolldown_button {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 9vh;
+        width: 15vh;
+        padding-bottom: 2vh;
+        top: 100vh;
+        left: 50vw;
+        transform: translate(-50%, -100%);
+        border-radius: 50% 50% 0 0;
+        cursor: pointer;
+
+        &:hover {
+            .arrow {
+                border: solid rgba($color: white, $alpha: 0.2);
+                border-left: 0;
+                border-top: 0;
+            }        
+        }
+
+        .arrow {
+            border: solid rgba($color: black, $alpha: 0.2);
+            border-left: 0;
+            border-top: 0;
+            border-radius: 3px;
+            transform: rotate(45deg);
+            margin-bottom: 0;
+            margin: auto;
+            top: -1.5vh;
+
+            &:after {          
+                content: '';
+                position: absolute;
+                border: solid rgba($color: white, $alpha: 0.8);
+                border-radius: 3px;
+                border-left: 0;
+                border-top: 0;
+            }
+
+            &:nth-child(3) {
+                width: 1.2vh;
+                height: 1.2vh;
+                border-width: 0.3vh;
+
+                &:after {
+                    top: 0px;
+                    left: 0px;
+                    width: 1.5vh;
+                    height: 1.5vh;
+                    border-width: 0.3vh;
+                }
+            }
+            &:nth-child(2) {
+                width: 1.6vh;
+                height: 1.6vh;
+                border-width: 0.4vh;
+
+                &:after {
+                    top: 0px;
+                    left: 0px;
+                    width: 2vh;
+                    height: 2vh;
+                    border-width: 0.4vh;
+                }
+            }
+            &:nth-child(1) {
+                width: 2.1vh;
+                height: 2.1vh;
+                border-width: 0.5vh;
+
+                &:after {
+                    top: 0px;
+                    left: 0px;
+                    width: 2.5vh;
+                    height: 2.5vh;
+                    border-width: 0.5vh;
+                }
+            }
+        }
+    }
     
 @media (max-height: 40vw) {
     #dojang_banner {
