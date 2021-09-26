@@ -56,12 +56,15 @@ export default {
     data() {
         return {
             clubPicture: require('@/assets/club_pictures/2021-2022_new_season_group.jpg'),
-            dojangExpanded: true
+            dojangExpanded: true,
+            dojangAnimationOngoing: false
         }
     },
 
     methods: {
         hideDojang() {
+            this.dojangAnimationOngoing = true;
+
             document.querySelector("#dojang_wrapper").classList.add("hidden");
             document.querySelector("#dojang_banner_overlay").classList.add("hidden");
 
@@ -69,14 +72,20 @@ export default {
                 document.querySelector("body").style.height = "auto";
                 document.querySelector("body").style.overflow = "auto";
                 this.dojangExpanded = false;
+                this.dojangAnimationOngoing = false;
             }, 1000);
         },
         showDojang() {
+            this.dojangAnimationOngoing = true;
+
             document.querySelector("#dojang_wrapper").classList.remove("hidden");
             document.querySelector("body").style.height = "100%";
             document.querySelector("body").style.overflow = "hidden";
 
-            setTimeout(() => {document.querySelector("#dojang_banner_overlay").classList.remove("hidden")}, 1000);            
+            setTimeout(() => {
+                document.querySelector("#dojang_banner_overlay").classList.remove("hidden");
+                this.dojangAnimationOngoing = false;
+                }, 1000);        
             this.dojangExpanded = true;
         },
     },
@@ -89,13 +98,13 @@ export default {
         //Défillement depuis souris
 
         window.addEventListener("wheel", (e) => {
-            if (e.deltaY > 0 && this.dojangExpanded) { 
+            if (e.deltaY > 0 && this.dojangExpanded && !this.dojangAnimationOngoing) { 
                 this.hideDojang();
             }
         });
 
         window.addEventListener("wheel", (e) => {
-            if (e.deltaY < 0 && window.pageYOffset == 0 && !this.dojangExpanded) { 
+            if (e.deltaY < 0 && window.pageYOffset == 0 && !this.dojangExpanded && !this.dojangAnimationOngoing) { 
                 this.showDojang();
             }
         });
@@ -113,11 +122,11 @@ export default {
         window.addEventListener("touchend", (e) => {
             let touchEnd = e.changedTouches[0].clientY;
 
-            if (this.dojangExpanded && touchEnd < touchOrigin) {
+            if (this.dojangExpanded && touchEnd < touchOrigin && !this.dojangAnimationOngoing) {
                 this.hideDojang();
             }
 
-            if (!this.dojangExpanded && touchOriginYOffset == 0 && touchEnd > touchOrigin) {
+            if (!this.dojangExpanded && touchOriginYOffset == 0 && touchEnd > touchOrigin && !this.dojangAnimationOngoing) {
                 this.showDojang();
             }
         })
