@@ -138,6 +138,7 @@ body{
     --blue-light-color: #00A3FF;
     --blue-strongLight-color: #00ccff ;
 
+    --red-dark-color: #a71010;
     --red-medium-color: #C21111;
     --red-light-color: #e71515;
 

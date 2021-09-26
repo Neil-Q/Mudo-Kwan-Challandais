@@ -1,32 +1,40 @@
 <template>
     <nav id="nav_bar">
-        <div id="nav_wrap">
             <div id="nav_home">
-                <a class="menu_item">MUDO KWAN CHALLANDAIS</a>
+                <a class="menu_item_link full">MUDO KWAN CHALLANDAIS</a>
+                <a class="menu_item_link short">MUDO KWAN <br />CHALLANDAIS</a>
             </div>
-            <ul id="nav_bar_menu">
-                <li><a class="menu_item">Le club</a></li>                
-                <li class="drop_item"><a class="menu_item">Taekwondo v</a>
-                    <ul class="drop_submenu">
-                        <li><a>Présentation</a></li>
-                        <li><a>Ressources pédagogiques</a></li>
-                    </ul>
-                </li>
-                <li class="drop_item"><a class="menu_item">Hapkimudo v</a>
-                    <ul class="drop_submenu">
-                        <li><a>Présentation</a></li>
-                        <li><a>Ressources pédagogiques</a></li>
-                    </ul>
-                </li>
-                <li class="drop_item"><a class="menu_item">Contact/infos v</a>
-                    <ul class="drop_submenu">
-                        <li><a>Inscriptions et tarifs</a></li>
-                        <li><a>FAQ</a></li>
-                        <li><a>Contact</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+
+            <div id="nav_bar_menu">
+                <div class="menu_item">
+                    <a class="menu_item_link">Le club</a>
+                </div>
+
+                <div class="menu_item menu_item_drop">
+                    <a class="menu_item_link">Taekwondo</a>
+                    <div class="drop_submenu">
+                        <div><a>Présentation</a></div>
+                        <div><a>Ressources</a></div>
+                    </div>
+                </div>
+
+                <div class="menu_item menu_item_drop">
+                    <a class="menu_item_link">Hapkimudo</a>
+                    <div class="drop_submenu">
+                        <div><a>Présentation</a></div>
+                        <div><a>Ressources</a></div>
+                    </div>
+                </div>
+
+                <div class="menu_item menu_item_drop">
+                    <a class="menu_item_link">Infos & contact</a>
+                    <div class="drop_submenu">
+                        <div><a>Inscriptions et tarifs</a></div>
+                        <div><a>FAQ</a></div>
+                        <div><a>Contact</a></div>
+                    </div>
+                </div>
+            </div>
     </nav>
 </template>
 
@@ -37,82 +45,84 @@ export default {
 </script>
 
 <style lang="scss">
-li {list-style-type: none; display: flex;}
-ul {padding: 0;}
-
 #nav_bar {
-    display: flex;
-    height: 5em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
     background: var(--red-medium-color);
-
-}
-
-#nav_wrap{
     display: flex;
     justify-content: space-between;
-    margin: 0 5em 0 5em;
+    box-sizing: border-box;
     width: 100%;
+    padding: 0.5rem clamp(0rem, 3vw, 5rem) 0.5rem clamp(0rem, 3vw, 5rem);
 }
 
 #nav_home {
-    align-self: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     background-color: #262626;
-    height: 3em;
-    padding: 0 1em 0 1em;
     border-radius: 0.2em;
+    padding: 0 clamp(0rem, 2vw, 1rem) 0 clamp(0rem, 2vw, 1rem);
+
+    .short {
+        display: none;
+    }
 }
 
 #nav_bar_menu {
     display: flex;
-    justify-content: space-between;
-    height: 100%;
-    width: 40em;
-    margin: 0;
-
-    .menu_item:hover {
-        text-decoration: underline;
-    }
 }
 
 .menu_item {
+    display: flex;
+    align-self: center;
+    height: clamp(0rem, 6vw, 3rem);
+    padding : 0 clamp(0rem, 1vw, 1rem) 0 clamp(0rem, 1vw, 1rem);
+    border-radius: 4px;
+    margin-left: clamp(0rem, 1vw, 1rem);
+
+    &:hover {
+        background-color: var(--red-dark-color);
+    }
+}
+
+.menu_item_link {
+    display: block;
     color: white;
-    font-size: 1.3em;
+    font-size: clamp(0rem, 2vw, 1.3rem);
     font-weight: bold;
     align-self: center;
     cursor: pointer;
 }
 
-.drop_item{
-    position: relative;
-
-    &:hover > .drop_submenu {
-        transform: scaleY(1);
-        opacity: 1;
-    }
+.menu_item_drop:hover > .drop_submenu {
+    opacity: 1;
 }
 
 .drop_submenu{
     background-color: var(--red-medium-color);
-    position: absolute;
-    top: 5em;
-    z-index: 1000;
-    width: 8em;
-    padding: 1em;
-    font-size: 1em;
     border-radius: 0 0 0.2em 0.2em;
+    text-align: left;
+
+    z-index: 1000;
+    position: absolute;
     transform-origin: top;
-    transition: 0.25s;
-    transform: scaleY(0);
+    transform: translateY(clamp(0rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0rem));
+
+    width: clamp(0rem, 20vw, 13rem);
+    font-size: clamp(0rem, 2vw, 1.2rem);
+    padding-left: clamp(0rem, 1vw, 1rem);
+    padding-top: clamp(0rem, 1vw, 1rem);
+
+    transition: 0.5s;
     opacity: 0;
 
+    div {
+        margin-bottom: 1rem;
+    }
     a {
-        padding-bottom: 1em;
+        
         text-decoration: none;
         color: white;
-        text-align: left;
         cursor: pointer;
 
         &:hover {
@@ -121,48 +131,25 @@ ul {padding: 0;}
     }
 }
 
+@media (max-width: 40em) {
 
-
-@media (max-width: 1200px) {
-    #nav_wrap {
-        margin: 0 6vw 0 6vw;
-    }
-    #nav_bar_menu {
-        width: 53.5vw;
-    }
-}
-
-@media (max-width: 992px) {
-    #nav_bar {
-        height: 8vw;
-    }
-    #nav_wrap {
-        margin: 0 calc(7vw - 1em) 0 calc(7vw - 1em);
-    }
     #nav_home {
-        height: 4.8vw;
-        padding: 0 1.7vw 0 1.7vw;
-    }
-    #nav_bar_menu {
-        width: 55vw;
+
+        height: 8vw;
+        .full {
+            display: none;
+        }
+        .short {
+            display: inline-block;
+        }
     }
 
-    .menu_item {
-        font-size: 2.1vw;
-        font-weight: bolder;
+    .menu_item_link {
+        font-size: 2.4vw;
     }
 
-    .drop_submenu{
-    top: 8vw;
-    width: 16vw;
-    padding: 1vw;
-
-    a {
-        text-decoration: none;
-        color: white;
-        text-align: left;
-        font-size: 2vw;
+    .drop_submenu {
+        transform: translateY(calc(6.5vw + 0.5rem));
     }
-}
 }
 </style>
