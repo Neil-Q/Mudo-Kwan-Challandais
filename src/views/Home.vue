@@ -70,11 +70,14 @@ export default {
 
             setTimeout(() => {
                 document.body.style.height = "auto";
-                console.log(navigator.appCodeName);
 
                 document.body.style.overflowX = "hidden";
                 document.body.style.overflowY = "auto"
                 document.body.style.overflow = "overlay";
+                
+                //Permet à l'illustration de l'hapkimudo de se dessiner directement une fois le dojang caché [components/practices.vue]
+                const hapkiEvent = new Event("drawHapki");
+                document.querySelector("#hapkimudo_SVG").dispatchEvent(hapkiEvent);
 
                 this.dojangExpanded = false;
                 this.dojangAnimationOngoing = false;
@@ -96,7 +99,7 @@ export default {
     },
 
     mounted() {
-        //this.showDojang();
+        this.showDojang();
         window.scrollTo(0, 0);    
 
         //Défillement depuis souris
@@ -158,7 +161,6 @@ body{
     height: 100%;
     width: 100vw;
     overflow: hidden;
-    //overflow-x: hidden;
 }
 
 #welcome_message {

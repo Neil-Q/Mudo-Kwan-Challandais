@@ -151,6 +151,7 @@ export default {
             type: "sync",
             duration: 1200,
             animTimingFunction: Vivus.ease_IN_OUT,
+            start: "manual"
         };
 
         const vivusHapkimudo = new Vivus("hapkimudo_SVG", vivusAnimProperties);
@@ -158,25 +159,29 @@ export default {
         const vivusTaekwondoChild = new Vivus("taekwondo_child_SVG", vivusAnimProperties);
         const vivusTaekwondoMoustique = new Vivus("taekwondo_moustique_SVG", vivusAnimProperties);
 
-        const hapkimudoIllustrationPosY = document.getElementById("hapkimudo_SVG").getBoundingClientRect().y;
-        const taekwondoAdultIllustrationPosY = document.getElementById("taekwondo_adult_SVG").getBoundingClientRect().y;
-        const taekwondoChildIllustrationPosY = document.getElementById("taekwondo_child_SVG").getBoundingClientRect().y;
-        const taekwondoMoustiqueIllustrationPosY = document.getElementById("taekwondo_moustique_SVG").getBoundingClientRect().y;
+
+        document.querySelector("#hapkimudo_SVG").addEventListener("drawHapki", () => {
+            vivusHapkimudo.play();
+        })
 
         window.addEventListener("scroll", () => {
-            const margin = window.innerHeight * 0.2;
-            const offsetY = window.scrollY + margin;
+            const hapkimudoIllustrationPosY = document.querySelector("#hapkimudo_SVG").getBoundingClientRect().y;
+            const taekwondoAdultIllustrationPosY = document.getElementById("taekwondo_adult_SVG").getBoundingClientRect().y;
+            const taekwondoChildIllustrationPosY = document.getElementById("taekwondo_child_SVG").getBoundingClientRect().y;
+            const taekwondoMoustiqueIllustrationPosY = document.getElementById("taekwondo_moustique_SVG").getBoundingClientRect().y;
+            
+            const margin = window.innerHeight * 0.6;
 
-            if (hapkimudoIllustrationPosY < offsetY) {
+            if (hapkimudoIllustrationPosY < margin) {
                 vivusHapkimudo.play();
             }
-            if (taekwondoAdultIllustrationPosY < offsetY) {
+            if (taekwondoAdultIllustrationPosY < margin) {
                 vivusTaekwondoAdult.play();
             }
-            if (taekwondoChildIllustrationPosY < offsetY) {
+            if (taekwondoChildIllustrationPosY < margin) {
                 vivusTaekwondoChild.play();
             }
-            if (taekwondoMoustiqueIllustrationPosY < offsetY) {
+            if (taekwondoMoustiqueIllustrationPosY < margin) {
                 vivusTaekwondoMoustique.play();                
             }
         });
