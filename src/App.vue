@@ -4,7 +4,7 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -16,6 +16,15 @@ html {
 }
 
 body {
+  --blue-dark-color: #006699;
+  --blue-medium-color: #0088CC;
+  --blue-light-color: #00A3FF;
+  --blue-strongLight-color: #00ccff ;
+  
+  --red-dark-color: #a71010;
+  --red-medium-color: #C21111;
+  --red-light-color: #e71515;
+
   margin: 0;
   padding: 0;
 

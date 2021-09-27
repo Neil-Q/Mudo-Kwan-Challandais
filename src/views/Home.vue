@@ -71,8 +71,8 @@ export default {
             setTimeout(() => {
                 document.body.style.height = "auto";
 
-                document.body.style.overflowX = "hidden";
                 document.body.style.overflowY = "auto"
+                document.body.style.overflowX = "hidden";
                 document.body.style.overflow = "overlay";
                 
                 //Permet à l'illustration de l'hapkimudo de se dessiner directement une fois le dojang caché [components/practices.vue]
@@ -149,15 +149,6 @@ export default {
 <style lang="scss">
 
 body{
-    --blue-dark-color: #006699;
-    --blue-medium-color: #0088CC;
-    --blue-light-color: #00A3FF;
-    --blue-strongLight-color: #00ccff ;
-
-    --red-dark-color: #a71010;
-    --red-medium-color: #C21111;
-    --red-light-color: #e71515;
- 
     height: 100%;
     width: 100vw;
     overflow: hidden;

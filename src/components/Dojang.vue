@@ -3627,7 +3627,7 @@
                         <button>Incriptions et tarifs</button>
                     </div>
                     <div class="dojang_carousel_slide slide_2">
-                        <p>Notre club est fier de n'avoir enristré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
+                        <p>Notre club est fier de n'avoir enregistré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire difficile. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
                         <button>Rapport d'activité 2020-2021</button>
                     </div>
                     <div class="dojang_carousel_slide slide_3">
@@ -3954,19 +3954,17 @@ export default {
         }
         button {
             height: 6vmin;
-            font-size: 2.5vmin;
+            font-size: 2vmin;
             font-weight: bold;
             padding: 0.25em;
             padding-left: 5vmin;
             padding-right: 5vmin;
-            background: black;
+            background: rgba($color: black, $alpha: 0.8);
             border: solid 0.25em;
+            border-radius: 0.25em;
             box-shadow: 0 0 2vmin black;
-
-            &:hover {
-                text-decoration: underline;
-                cursor: pointer;
-            }
+            cursor: pointer;
+            text-transform: uppercase;
         }        
     }
 
@@ -3997,12 +3995,12 @@ export default {
             display: none;
 
             button {
-                border-color: rgb(51, 255, 0);
-                color: rgb(51, 255, 0);
+                border-color: rgb(145, 214, 41);
+                color: rgb(145, 214, 41);
 
                 &:hover {
-                    border-color: rgb(172, 255, 47);
-                    color: rgb(172, 255, 47);
+                    border-color: rgb(157, 233, 43);
+                    color: rgb(157, 233, 43);
                 }
             }
         }

@@ -46,6 +46,7 @@ export default {
 
 <style lang="scss">
 #nav_bar {
+    font-family: Helvetica, Arial, sans-serif;
     position: -webkit-sticky;
     position: sticky;
     top: 0px;
@@ -62,6 +63,7 @@ export default {
     background-color: #262626;
     border-radius: 0.2em;
     padding: 0 clamp(0rem, 2vw, 1rem) 0 clamp(0rem, 2vw, 1rem);
+    font-size: clamp(0rem, 2vw, 1.3rem);
 
     .short {
         display: none;
@@ -79,6 +81,7 @@ export default {
     padding : 0 clamp(0rem, 1vw, 1rem) 0 clamp(0rem, 1vw, 1rem);
     border-radius: 4px;
     margin-left: clamp(0rem, 1vw, 1rem);
+    font-size: clamp(0rem, 1.7vw, 1.1rem);
 
     &:hover {
         background-color: var(--red-dark-color);
@@ -86,9 +89,9 @@ export default {
 }
 
 .menu_item_link {
+    text-transform: uppercase;
     display: block;
     color: white;
-    font-size: clamp(0rem, 2vw, 1.3rem);
     font-weight: bold;
     align-self: center;
     cursor: pointer;
@@ -108,7 +111,7 @@ export default {
     transform-origin: top;
     transform: translateY(clamp(0rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0rem));
 
-    width: clamp(0rem, 20vw, 13rem);
+    width: clamp(0rem, 20vw, 13.5rem);
     font-size: clamp(0rem, 2vw, 1.2rem);
     padding-left: clamp(0rem, 1vw, 1rem);
     padding-top: clamp(0rem, 1vw, 1rem);
@@ -135,6 +138,8 @@ export default {
 
     #nav_home {
 
+        font-size: 2.4vw;
+
         height: 8vw;
         .full {
             display: none;
@@ -144,8 +149,8 @@ export default {
         }
     }
 
-    .menu_item_link {
-        font-size: 2.4vw;
+    .menu_item {
+        font-size: 2vw;
     }
 
     .drop_submenu {
