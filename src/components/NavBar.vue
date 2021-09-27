@@ -109,7 +109,7 @@ export default {
     z-index: 1000;
     position: absolute;
     transform-origin: top;
-    transform: translateY(clamp(0.1rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0rem));
+    transform: translateY(clamp(0.1rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0.1rem));
 
     width: clamp(0.1rem, 20vw, 13.5rem);
     font-size: clamp(0.1rem, 2vw, 1.2rem);
