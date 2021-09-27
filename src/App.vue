@@ -18,5 +18,21 @@ html {
 body {
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar {
+    display: block;
+    width: 0.5vw;
+    margin-right: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    width: 5px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(40, 40, 40);
+    width: 10px;
+  }
 }
 </style>

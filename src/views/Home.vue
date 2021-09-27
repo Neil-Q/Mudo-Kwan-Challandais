@@ -69,8 +69,13 @@ export default {
             document.querySelector("#dojang_banner_overlay").classList.add("hidden");
 
             setTimeout(() => {
-                document.querySelector("body").style.height = "auto";
-                document.querySelector("body").style.overflow = "auto";
+                document.body.style.height = "auto";
+                console.log(navigator.appCodeName);
+
+                document.body.style.overflowX = "hidden";
+                document.body.style.overflowY = "auto"
+                document.body.style.overflow = "overlay";
+
                 this.dojangExpanded = false;
                 this.dojangAnimationOngoing = false;
             }, 1000);
@@ -79,8 +84,8 @@ export default {
             this.dojangAnimationOngoing = true;
 
             document.querySelector("#dojang_wrapper").classList.remove("hidden");
-            document.querySelector("body").style.height = "100%";
-            document.querySelector("body").style.overflow = "hidden";
+            document.body.style.height = "100%";
+            document.body.style.overflow = "hidden";
 
             setTimeout(() => {
                 document.querySelector("#dojang_banner_overlay").classList.remove("hidden");
@@ -91,9 +96,8 @@ export default {
     },
 
     mounted() {
-        window.scrollTo(0, 0);
-
-        
+        //this.showDojang();
+        window.scrollTo(0, 0);    
 
         //Défillement depuis souris
 
@@ -150,21 +154,12 @@ body{
     --red-dark-color: #a71010;
     --red-medium-color: #C21111;
     --red-light-color: #e71515;
-
-    scrollbar-width: none;
+ 
     height: 100%;
+    width: 100vw;
     overflow: hidden;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    //overflow-x: hidden;
 }
-//___________________________________________________________
-#footer_dummy {
-    height: 40rem;
-    background-color: var(--red-medium-color);
-}
-//___________________________________________________________
 
 #welcome_message {
     display: flex;
