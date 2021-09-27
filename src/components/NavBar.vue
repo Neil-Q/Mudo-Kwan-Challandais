@@ -55,15 +55,15 @@ export default {
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
-    padding: 0.5rem clamp(0rem, 3vw, 5rem) 0.5rem clamp(0rem, 3vw, 5rem);
+    padding: 0.5rem clamp(0.1rem, 3vw, 5rem) 0.5rem clamp(0.1rem, 3vw, 5rem);
 }
 
 #nav_home {
     display: flex;
     background-color: #262626;
     border-radius: 0.2em;
-    padding: 0 clamp(0rem, 2vw, 1rem) 0 clamp(0rem, 2vw, 1rem);
-    font-size: clamp(0rem, 2vw, 1.3rem);
+    padding: 0 clamp(0.1rem, 2vw, 1rem) 0 clamp(0.1rem, 2vw, 1rem);
+    font-size: clamp(0.1rem, 2vw, 1.3rem);
 
     .short {
         display: none;
@@ -77,11 +77,11 @@ export default {
 .menu_item {
     display: flex;
     align-self: center;
-    height: clamp(0rem, 6vw, 3rem);
-    padding : 0 clamp(0rem, 1vw, 1rem) 0 clamp(0rem, 1vw, 1rem);
+    height: clamp(0.1rem, 6vw, 3rem);
+    padding : 0 clamp(0.1rem, 1vw, 1rem) 0 clamp(0.1rem, 1vw, 1rem);
     border-radius: 4px;
-    margin-left: clamp(0rem, 1vw, 1rem);
-    font-size: clamp(0rem, 1.7vw, 1.1rem);
+    margin-left: clamp(0.1rem, 1vw, 1rem);
+    font-size: clamp(0.1rem, 1.7vw, 1.1rem);
 
     &:hover {
         background-color: var(--red-dark-color);
@@ -111,10 +111,10 @@ export default {
     transform-origin: top;
     transform: translateY(clamp(0rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0rem));
 
-    width: clamp(0rem, 20vw, 13.5rem);
-    font-size: clamp(0rem, 2vw, 1.2rem);
-    padding-left: clamp(0rem, 1vw, 1rem);
-    padding-top: clamp(0rem, 1vw, 1rem);
+    width: clamp(0.1rem, 20vw, 13.5rem);
+    font-size: clamp(0.1rem, 2vw, 1.2rem);
+    padding-left: clamp(0.1rem, 1vw, 1rem);
+    padding-top: clamp(0.1rem, 1vw, 1rem);
 
     transition: 0.5s;
     opacity: 0;
