@@ -67,6 +67,7 @@ export default {
 
             document.querySelector("#dojang_wrapper").classList.add("hidden");
             document.querySelector("#dojang_banner_overlay").classList.add("hidden");
+            document.body.style.overscrollBehaviorY = "contain";
 
             setTimeout(() => {
                 document.body.style.height = "auto";
@@ -87,6 +88,7 @@ export default {
             this.dojangAnimationOngoing = true;
 
             document.querySelector("#dojang_wrapper").classList.remove("hidden");
+            document.body.style.overscrollBehaviorY = "auto";
             document.body.style.height = "100%";
             document.body.style.overflow = "hidden";
 
@@ -100,7 +102,8 @@ export default {
 
     mounted() {
         this.showDojang();
-        window.scrollTo(0, 0);    
+        window.scrollTo(0, 1);
+        window.scrollTo(0, 0);
 
         //Défillement depuis souris
 
