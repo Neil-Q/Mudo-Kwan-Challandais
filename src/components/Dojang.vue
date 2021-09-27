@@ -3919,7 +3919,7 @@ export default {
     .dojang-scene {
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     }
 
     #dojang_banner_overlay {
