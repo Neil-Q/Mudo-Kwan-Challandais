@@ -1,5 +1,5 @@
 <template>
-    <div id="dojang_wrapper" @mousemove="dojangParallax">
+    <div id="dojang_wrapper" @mousemove="dojangParallaxMouse">
         <section class="dojang-scene">
             <transition appear @after-appear="dojangInitAnimations">        
                 <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
@@ -3659,7 +3659,11 @@ export default {
     data() {
         return {
             dojangPlacedElements: false,
-            carouselCurrentIndex: undefined
+            carouselCurrentIndex: undefined,
+            baseOrientationSet: false,
+            baseAlphaOrientation: null,
+            baseBetaOrientation: null,
+            baseGammaOrientation: null
         }
     },
     methods: {
@@ -3809,10 +3813,12 @@ export default {
             }, 2800);
         },
 
-        dojangParallax(event) {
-            if (this.dojangPlacedElements == true) {                
+        dojangParallaxMouse(event) {
+            if (this.dojangPlacedElements == true) {             
+                
+                //return a value between 0 and 1 
                 let posX = (event.pageX * 2 / document.body.clientWidth) - 1 ;
-                let posY = (event.pageY * 2 / document.body.clientWidth) - 1 ;
+                let posY = (event.pageY * 2 / document.body.clientHeight) - 1 ;
     
                 gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
                     x: posX * -35,
@@ -3834,6 +3840,49 @@ export default {
                     y: posY * -30
                 })
             }
+        },
+
+        dojangParallaxOrientation(orientation) {
+
+            if(!this.baseOrientationSet) {
+                this.baseAlphaOrientation = orientation.alpha
+                this.baseBetaOrientation = orientation.beta
+                this.baseGammaOrientation = orientation.gamma
+
+                this.baseOrientationSet = true;
+            }
+
+            if(this.dojangPlacedElements == true) {
+                orientation.beta > (this.baseBetaOrientation + 30) ? this.baseBetaOrientation = (orientation.beta - 30 ) : null;
+                orientation.beta < (this.baseBetaOrientation - 30) ? this.baseBetaOrientation = (orientation.beta + 30 ) : null;
+    
+                orientation.gamma > (this.baseGammaOrientation + 30) ? this.baseGammaOrientation = (orientation.gamma - 30 ) : null;
+                orientation.gamma < (this.baseGammaOrientation - 30) ? this.baseGammaOrientation = (orientation.gamma + 30 ) : null;
+    
+                let betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
+                let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
+    
+                gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
+                    x: gammaOffset * -245,
+                });
+    
+                gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
+                    x: gammaOffset * -210
+                })
+    
+                gsap.to("#dojang_local", {
+                    x: gammaOffset * -175
+                })
+    
+                gsap.to("#dojang_exterior", {
+                    x: gammaOffset * -140
+                })
+    
+                gsap.to(".dojang_scene", {
+                    y: betaOffset * -90
+                })
+            }
+
         },
 
         nextSlide() {
@@ -3901,6 +3950,10 @@ export default {
                 this.nextSlide();
             }, 1000);
         }, 10000);
+
+        window.addEventListener("deviceorientation", (event) => {
+            this.dojangParallaxOrientation(event);
+        });
     }
 }
 </script>
