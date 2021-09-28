@@ -9,7 +9,7 @@
             <div class="red_line"></div>
         </div>
         <div class="message">
-            <p>Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, recherchiez aussi bien la compétition que le simple loisir</p>
+            <p>Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, que vous recherchiez aussi bien la compétition que le simple loisir</p>
         </div>
     </section>
 
@@ -21,13 +21,13 @@
         </div>
         <div id="free_try_text">
             <p>2 cours d'essai gratuits</p>
-            <p>Viens découvrir le Taekwondo ou le Hapkimudo durant deux séances et trouve la voie martiale  qui te correspond</p>
+            <p>Viens découvrir le Taekwondo ou le Hapkimudo durant deux séances et trouve la voie martiale qui te correspond</p>
             <p>Tu peux venir avec un ou plusieurs de tes amis ou des membres de ta famille !</p>
         </div>
     </section>
 
     <section id="schedule_section">
-        <h2>Horraires des cours</h2>
+        <h2>Horaires des cours</h2>
         <Schedule />
         <button>Inscriptions et tarifs</button>
     </section>
