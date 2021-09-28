@@ -3863,19 +3863,19 @@ export default {
                 let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
     
                 gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
-                    x: gammaOffset * -245,
+                    x: gammaOffset * -105,
                 });
     
                 gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
-                    x: gammaOffset * -210
+                    x: gammaOffset * -90
                 })
     
                 gsap.to("#dojang_local", {
-                    x: gammaOffset * -175
+                    x: gammaOffset * -75
                 })
     
                 gsap.to("#dojang_exterior", {
-                    x: gammaOffset * -140
+                    x: gammaOffset * -60
                 })
     
                 gsap.to(".dojang_scene", {
