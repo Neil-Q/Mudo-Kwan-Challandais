@@ -3842,17 +3842,17 @@ export default {
             }
         },
 
-        dojangParallaxOrientation(orientation) {
-
-            if(!this.baseOrientationSet) {
-                this.baseAlphaOrientation = orientation.alpha
-                this.baseBetaOrientation = orientation.beta
-                this.baseGammaOrientation = orientation.gamma
-
-                this.baseOrientationSet = true;
-            }
-
+        dojangParallaxOrientation(orientation) {            
             if(this.dojangPlacedElements == true) {
+                
+                if(!this.baseOrientationSet) {
+                    this.baseAlphaOrientation = orientation.alpha
+                    this.baseBetaOrientation = orientation.beta
+                    this.baseGammaOrientation = orientation.gamma
+    
+                    this.baseOrientationSet = true;
+                }
+
                 orientation.beta > (this.baseBetaOrientation + 30) ? this.baseBetaOrientation = (orientation.beta - 30 ) : null;
                 orientation.beta < (this.baseBetaOrientation - 30) ? this.baseBetaOrientation = (orientation.beta + 30 ) : null;
     

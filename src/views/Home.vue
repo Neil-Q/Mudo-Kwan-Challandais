@@ -103,7 +103,10 @@ export default {
     mounted() {
         this.showDojang();
         window.scrollTo(0, 1);
-        window.scrollTo(0, 0);
+        
+        if(!navigator.userAgent.match(/Android/i)){
+            window.scrollTo(0,0);
+        }
 
         //Défillement depuis souris
 
