@@ -18,7 +18,7 @@
             </svg>
         </div>
         <div class="practice">
-            <h2>Hapkimudo</h2>
+            <h3>Hapkimudo</h3>
             <p class="practice_age">12 ans et +</p>
             <p class="practice_description">
                 L’hapkimudo est un art martial très complet qui aborde tous les
@@ -54,7 +54,7 @@
             </svg>
         </div>
         <div class="practice">
-            <h2>Taekwondo ados/adultes</h2>
+            <h3>Taekwondo ados/adultes</h3>
             <p class="practice_age">12 ans et +</p>
             <p class="practice_description">
                 Le taekwondo est un sport olympique hautement spécialisé dans
@@ -90,7 +90,7 @@
             </svg>
         </div>
         <div class="practice">
-            <h2>Taekwondo enfants</h2>
+            <h3>Taekwondo enfants</h3>
             <p class="practice_age">6 à 12 ans</p>
             <p class="practice_description">
                 Le taekwondo aide les enfants à dépenser leur énergie souvent
@@ -126,7 +126,7 @@
             </svg>
         </div>
         <div class="practice">
-            <h2>Taekwondo moustiques</h2>
+            <h3>Taekwondo moustiques</h3>
             <p class="practice_age">Dès 3 ans</p>
             <p class="practice_description">
                 Le taekwondo pour les très jeunes enfants délaisse en partie le
@@ -217,7 +217,7 @@ export default {
         align-self: center;
         border: solid black 0px;
 
-        h2 {
+        h3 {
             margin-bottom: 0;
             font-size: clamp(1.5rem, 2vw ,2rem);
             text-transform: uppercase;

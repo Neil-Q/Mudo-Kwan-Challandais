@@ -27,6 +27,7 @@ body {
 
   margin: 0;
   padding: 0;
+  overflow-Y: overlay;
 
   &::-webkit-scrollbar {
     display: block;

@@ -1,38 +1,47 @@
 <template>
     <nav id="nav_bar">
             <div id="nav_home">
-                <a class="menu_item_link full">MUDO KWAN CHALLANDAIS</a>
-                <a class="menu_item_link short">MUDO KWAN <br />CHALLANDAIS</a>
+                <router-link class="menu_item_link full" to="/">MUDO KWAN CHALLANDAIS</router-link>
+                <router-link class="menu_item_link short" to="/">MUDO KWAN <br />CHALLANDAIS</router-link>
             </div>
 
             <div id="nav_bar_menu">
                 <div class="menu_item">
-                    <a class="menu_item_link">Le club</a>
+                    <router-link class="menu_item_link" to="/le_club">Le club</router-link>
                 </div>
 
                 <div class="menu_item menu_item_drop">
-                    <a class="menu_item_link">Taekwondo</a>
+                    <router-link class="menu_item_link" to="/le_club">Taekwondo</router-link>
+
+                    <!--
                     <div class="drop_submenu">
                         <div><a>Présentation</a></div>
                         <div><a>Ressources</a></div>
                     </div>
+                    -->
                 </div>
 
                 <div class="menu_item menu_item_drop">
-                    <a class="menu_item_link">Hapkimudo</a>
+                    <router-link class="menu_item_link" to="/le_club">Hapkimudo</router-link>
+                    
+                    <!--
                     <div class="drop_submenu">
                         <div><a>Présentation</a></div>
                         <div><a>Ressources</a></div>
                     </div>
+                    -->
                 </div>
 
                 <div class="menu_item menu_item_drop">
-                    <a class="menu_item_link">Infos & contact</a>
+                    <router-link class="menu_item_link" to="/le_club">Infos & contact</router-link>
+
+                    <!--
                     <div class="drop_submenu">
                         <div><a>Inscriptions et tarifs</a></div>
                         <div><a>FAQ</a></div>
                         <div><a>Contact</a></div>
                     </div>
+                    -->
                 </div>
             </div>
     </nav>
@@ -47,15 +56,29 @@ export default {
 <style lang="scss">
 #nav_bar {
     font-family: Helvetica, Arial, sans-serif;
-    position: -webkit-sticky;
-    position: sticky;
+    position: absolute;
     top: 0px;
-    background: var(--red-medium-color);
+    background-color: var(--red-medium-color);
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     width: 100%;
     padding: 0.5rem clamp(0.1rem, 3vw, 5rem) 0.5rem clamp(0.1rem, 3vw, 5rem);
+    z-index: 1000;
+
+    &.sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+    }
+
+    &.transparent {
+        background-color: transparent;
+    }
+
+    &.blue {
+        background-color: var(--blue-dark-color);
+    }
 }
 
 #nav_home {
@@ -84,12 +107,13 @@ export default {
     font-size: clamp(0.1rem, 1.7vw, 1.1rem);
 
     &:hover {
-        background-color: var(--red-dark-color);
+        background-color: rgba($color: black, $alpha: 0.1);
     }
 }
 
 .menu_item_link {
     text-transform: uppercase;
+    text-decoration: none;
     display: block;
     color: white;
     font-weight: bold;
