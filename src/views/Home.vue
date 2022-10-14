@@ -1,7 +1,8 @@
 <template>
     <Dojang />
 
-    <NavBar class="sticky"/>
+    <!-- <NavBar class="sticky"/> -->
+    <NavBarBis/>
 
     <UnderlinedTitle
         class="darker"
@@ -35,18 +36,20 @@
 
 <script>
 
-import Dojang from "@/components/Dojang.vue";
-import NavBar from "@/components/NavBar.vue";
-import UnderlinedTitle from "@/components/UnderlinedTitle.vue";
-import Practices from "@/components/Practices.vue";
-import Schedule from "@/components/Schedule.vue";
-import Footer from "@/components/Footer.vue";
+import Dojang           from "@/components/Dojang.vue";
+//import NavBar           from "@/components/NavBar.vue";
+import NavBarBis        from "@/components/NavBarBis.vue";
+import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
+import Practices        from "@/components/Practices.vue";
+import Schedule         from "@/components/Schedule.vue";
+import Footer           from "@/components/Footer.vue";
 
 export default {
     name: "Home",
     components: {
         Dojang,
-        NavBar,
+    //    NavBar,
+        NavBarBis,
         UnderlinedTitle,
         Practices,
         Schedule,

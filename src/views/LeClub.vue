@@ -64,14 +64,14 @@
 </template>
 
 <script>
-    import NavBar from "@/components/NavBar.vue";
+    //import NavBar from "@/components/NavBar.vue";
     import UnderlinedTitle from "@/components/UnderlinedTitle.vue";
     import Footer from "@/components/Footer.vue";
 
     export default {
         name: "LeClub",
         components: {
-            NavBar,
+            //NavBar,
             UnderlinedTitle,
             Footer
         },

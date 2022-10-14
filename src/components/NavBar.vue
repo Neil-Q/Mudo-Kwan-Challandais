@@ -12,36 +12,30 @@
 
                 <div class="menu_item menu_item_drop">
                     <router-link class="menu_item_link" to="/le_club">Taekwondo</router-link>
-
-                    <!--
                     <div class="drop_submenu">
                         <div><a>Présentation</a></div>
                         <div><a>Ressources</a></div>
                     </div>
-                    -->
+                    
                 </div>
 
                 <div class="menu_item menu_item_drop">
                     <router-link class="menu_item_link" to="/le_club">Hapkimudo</router-link>
-                    
-                    <!--
                     <div class="drop_submenu">
                         <div><a>Présentation</a></div>
                         <div><a>Ressources</a></div>
                     </div>
-                    -->
+                   
                 </div>
 
                 <div class="menu_item menu_item_drop">
                     <router-link class="menu_item_link" to="/le_club">Infos & contact</router-link>
-
-                    <!--
                     <div class="drop_submenu">
                         <div><a>Inscriptions et tarifs</a></div>
                         <div><a>FAQ</a></div>
                         <div><a>Contact</a></div>
                     </div>
-                    -->
+                   
                 </div>
             </div>
     </nav>
