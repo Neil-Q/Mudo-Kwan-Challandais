@@ -1,6 +1,6 @@
 <template>
     <nav id="nav_bar">
-            <router-link id="nav_home" class="menu_item" to="/">Mudo Kwan Challandais</router-link>
+            <router-link id="nav_home" class="menu_item" to="/">Mudo Kwan<span> Challandais</span></router-link>
 
             <ul id="nav_bar_menu">
                 <li>
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
     #nav_bar {
-        --vert-padding: 12px;
+        --vert-padding: clamp(0px, 2vw, 12px);
 
         width: 100%;
         position: sticky;
@@ -66,7 +66,7 @@ export default {
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
-        padding: var(--vert-padding) clamp(1rem, 3vw, 2rem);
+        padding: var(--vert-padding) clamp(0px, 2vw, 30px);
         background-color: var(--red-medium-color);
         color: white;
         font-size: clamp(0px, 1.7vw, 1.1rem);
@@ -76,12 +76,10 @@ export default {
             background-color: #00000050;
 
             .dropdown_submenu ul{
-                //background-color: var(--dark-soft-color);
                 background-color: #00000080;
             }
 
             &:hover {
-                //background-color: var(--dark-soft-color);
                 background-color: #00000080;
             }
         }
@@ -110,6 +108,7 @@ export default {
         display: flex;
         background-color: rgba($color: #000000, $alpha: 0.2);
         width: auto;
+        white-space:pre;
 
         &:hover {
             background-color: var(--dark-color);
@@ -170,7 +169,8 @@ export default {
 
     .dropdown_item {
         display: block;
-        padding: 0.5em 1em;
+        //padding: 0.5em 1em;
+        padding: clamp(8px, 2vh, 12px);
 
         &:hover {
             background-color: rgba($color: #000000, $alpha: 0.2);
@@ -179,14 +179,17 @@ export default {
 
     @media (max-width: 60em) {
         #nav_bar {
-            font-size: 2vw;
+            font-size: 2.2vw;
         }
 
-        #nav_home {
-            max-width: 14vw;
+        #nav_home span{
+            display: none;
         }
     }
 
     @media (max-width: 40em) {
+        #nav_bar {
+            font-weight: bold;
+        }
     }
 </style>

@@ -57,46 +57,21 @@
         <UnderlinedTitle class="large" title="Les membres du bureau"/>
     </section>
 
-    <section id="club_body_dummy">        
-    </section>
-
     <Footer />
 </template>
 
 <script>
-    //import NavBar from "@/components/NavBar.vue";
+    import NavBar from "@/components/NavBar.vue";
     import UnderlinedTitle from "@/components/UnderlinedTitle.vue";
     import Footer from "@/components/Footer.vue";
 
     export default {
         name: "LeClub",
         components: {
-            //NavBar,
+            NavBar,
             UnderlinedTitle,
             Footer
         },
-
-        data() {
-            return {
-                carrousel1: [
-                    {
-                        src: "foo",
-                        alt: "foo",
-                        caption: "foo"
-                    },
-                    {
-                        src: "foo",
-                        alt: "foo",
-                        caption: "foo"
-                    },
-                    {
-                        src: "foo",
-                        alt: "foo",
-                        caption: "foo"
-                    },
-                ]                
-            }
-        }
     }
 </script>
 
