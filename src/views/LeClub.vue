@@ -1,5 +1,5 @@
 <template>
-    <NavBar class="blue sticky"/>
+    <NavBar class="blue"/>
 
     <section id="club_hero">
     </section>

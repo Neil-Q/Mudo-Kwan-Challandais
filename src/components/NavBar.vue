@@ -1,178 +1,192 @@
 <template>
     <nav id="nav_bar">
-            <div id="nav_home">
-                <router-link class="menu_item_link full" to="/">MUDO KWAN CHALLANDAIS</router-link>
-                <router-link class="menu_item_link short" to="/">MUDO KWAN <br />CHALLANDAIS</router-link>
-            </div>
+            <router-link id="nav_home" class="menu_item" to="/">Mudo Kwan Challandais</router-link>
 
-            <div id="nav_bar_menu">
-                <div class="menu_item">
-                    <router-link class="menu_item_link" to="/le_club">Le club</router-link>
-                </div>
+            <ul id="nav_bar_menu">
+                <li>
+                    <router-link class="menu_item" to="/le_club">Le club</router-link>
+                </li>
 
-                <div class="menu_item menu_item_drop">
-                    <router-link class="menu_item_link" to="/le_club">Taekwondo</router-link>
-                    <div class="drop_submenu">
-                        <div><a>Présentation</a></div>
-                        <div><a>Ressources</a></div>
+                <li class="nav_dropdown">
+                    <div class="menu_item">Taekwondo</div>
+                    <div class="dropdown_submenu">
+                        <div class="dropdown_spacer"></div>
+                        <ul>
+                            <li><router-link class="dropdown_item"  to="/">Histoire</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Présentation</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Baby taekwondo</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Passages de grade</router-link></li>
+                        </ul>
                     </div>
-                    
-                </div>
+                </li>
 
-                <div class="menu_item menu_item_drop">
-                    <router-link class="menu_item_link" to="/le_club">Hapkimudo</router-link>
-                    <div class="drop_submenu">
-                        <div><a>Présentation</a></div>
-                        <div><a>Ressources</a></div>
+                <li class="nav_dropdown">
+                    <div class="menu_item">Hapkimudo</div>
+                    <div class="dropdown_submenu">
+                        <div class="dropdown_spacer"></div>
+                        <ul>
+                            <li><router-link class="dropdown_item"  to="/">Histoire</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Présentation</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Passages de grade</router-link></li>
+                        </ul>
                     </div>
-                   
-                </div>
+                </li>
 
-                <div class="menu_item menu_item_drop">
-                    <router-link class="menu_item_link" to="/le_club">Infos & contact</router-link>
-                    <div class="drop_submenu">
-                        <div><a>Inscriptions et tarifs</a></div>
-                        <div><a>FAQ</a></div>
-                        <div><a>Contact</a></div>
+                <li class="nav_dropdown">
+                    <div class="menu_item">Infos & contact</div>
+                    <div class="dropdown_submenu">
+                        <div class="dropdown_spacer"></div>
+                        <ul>
+                            <li><router-link class="dropdown_item"  to="/">Inscriptions et tarifs</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">FAQ</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Contact</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/">Boutique</router-link></li>
+                        </ul>
                     </div>
-                   
-                </div>
-            </div>
+                </li>
+            </ul>
     </nav>
 </template>
 
 <script>
 export default {
-    name: "NavBar",
+    name: "NavBarBis"
 }
 </script>
 
-<style lang="scss">
-#nav_bar {
-    font-family: Helvetica, Arial, sans-serif;
-    position: absolute;
-    top: 0px;
-    background-color: var(--red-medium-color);
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0.5rem clamp(0.1rem, 3vw, 5rem) 0.5rem clamp(0.1rem, 3vw, 5rem);
-    z-index: 1000;
+<style lang="scss" scoped>
+    #nav_bar {
+        --vert-padding: 12px;
 
-    &.sticky {
+        width: 100%;
         position: sticky;
         position: -webkit-sticky;
         top: 0px;
-    }
-
-    &.transparent {
-        background-color: transparent;
-    }
-
-    &.blue {
-        background-color: var(--blue-dark-color);
-    }
-}
-
-#nav_home {
-    display: flex;
-    background-color: #262626;
-    border-radius: 0.2em;
-    padding: 0 clamp(0.1rem, 2vw, 1rem) 0 clamp(0.1rem, 2vw, 1rem);
-    font-size: clamp(0.1rem, 2vw, 1.3rem);
-
-    .short {
-        display: none;
-    }
-}
-
-#nav_bar_menu {
-    display: flex;
-}
-
-.menu_item {
-    display: flex;
-    align-self: center;
-    height: clamp(0.1rem, 6vw, 3rem);
-    padding : 0 clamp(0.1rem, 1vw, 1rem) 0 clamp(0.1rem, 1vw, 1rem);
-    border-radius: 4px;
-    margin-left: clamp(0.1rem, 1vw, 1rem);
-    font-size: clamp(0.1rem, 1.7vw, 1.1rem);
-
-    &:hover {
-        background-color: rgba($color: black, $alpha: 0.1);
-    }
-}
-
-.menu_item_link {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    color: white;
-    font-weight: bold;
-    align-self: center;
-    cursor: pointer;
-}
-
-.menu_item_drop:hover > .drop_submenu {
-    opacity: 1;
-}
-
-.drop_submenu{
-    background-color: var(--red-medium-color);
-    border-radius: 0 0 0.2em 0.2em;
-    text-align: left;
-
-    z-index: 1000;
-    position: absolute;
-    transform-origin: top;
-    transform: translateY(clamp(0.1rem, calc(6vw + 0.5rem), 3.5rem)) translateX(clamp(calc(-1rem + 1px), calc(-1vw + 1px), 0.1rem));
-
-    width: clamp(0.1rem, 20vw, 13.5rem);
-    font-size: clamp(0.1rem, 2vw, 1.2rem);
-    padding-left: clamp(0.1rem, 1vw, 1rem);
-    padding-top: clamp(0.1rem, 1vw, 1rem);
-
-    transition: 0.5s;
-    opacity: 0;
-
-    div {
-        margin-bottom: 1rem;
-    }
-    a {
-        
-        text-decoration: none;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: var(--vert-padding) clamp(1rem, 3vw, 2rem);
+        background-color: var(--red-medium-color);
         color: white;
-        cursor: pointer;
+        font-size: clamp(0px, 1.7vw, 1.1rem);
 
-        &:hover {
-            font-weight: bold;
+        &.transparent {
+            background-color: transparent;
+            background-color: #00000050;
+
+            .dropdown_submenu ul{
+                //background-color: var(--dark-soft-color);
+                background-color: #00000080;
+            }
+
+            &:hover {
+                //background-color: var(--dark-soft-color);
+                background-color: #00000080;
+            }
+        }
+
+        &.blue {
+            background-color: var(--blue-medium-color);
+
+            .dropdown_submenu ul{
+                background-color: var(--blue-medium-color);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        li {
+            margin-left: 0;
+            padding: 0;
+            list-style: none;
         }
     }
-}
-
-@media (max-width: 40em) {
 
     #nav_home {
+        display: flex;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        width: auto;
 
-        font-size: 2.4vw;
+        &:hover {
+            background-color: var(--dark-color);
+        }
 
-        height: 8vw;
-        .full {
-            display: none;
+        &.active {
+            background-color: var(--dark-color);
         }
-        .short {
-            display: inline-block;
-        }
+    }
+
+    #nav_bar_menu {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
     }
 
     .menu_item {
-        font-size: 2vw;
+        height: auto;
+        margin: 0;
+        border-radius: 4px;
+        padding: 0.5em 1em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba($color: #000000, $alpha: 0.2);
+        }
     }
 
-    .drop_submenu {
-        transform: translateY(calc(6.5vw + 0.5rem));
+    .nav_dropdown {
+        position: relative;
+
+        &:hover .dropdown_submenu {
+            display: block;
+        }
     }
-}
+
+    .dropdown_submenu {
+        position: absolute;
+        display: none;
+        width: 12em;
+        left: 0px;
+        padding-left: 0;
+        border-radius: 4px;
+        text-align: left;
+
+        .dropdown_spacer {
+            height: var(--vert-padding);
+        }
+
+        ul {
+            background-color: var(--red-medium-color);
+            border-radius: 0 0 4px 4px;
+            padding: 0;
+        }
+    }
+
+    .dropdown_item {
+        display: block;
+        padding: 0.5em 1em;
+
+        &:hover {
+            background-color: rgba($color: #000000, $alpha: 0.2);
+        }
+    }
+
+    @media (max-width: 60em) {
+        #nav_bar {
+            font-size: 2vw;
+        }
+
+        #nav_home {
+            max-width: 14vw;
+        }
+    }
+
+    @media (max-width: 40em) {
+    }
 </style>

@@ -27,6 +27,7 @@ export default {
     width: 100%;
     padding-top: clamp(0.5rem, 1vw, 2rem);
     padding-bottom: 2rem;    
+    overflow: hidden;
 
     * {
         align-self: center;

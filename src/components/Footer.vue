@@ -47,6 +47,7 @@ footer {
 #footer_main {
     width: 66%;
     color: white;
+    overflow: hidden;
 
     #footer_contact {
         background-color: var(--red-medium-color);
@@ -100,6 +101,7 @@ footer {
         display: flex;
         background-color: rgb(40, 40, 40);
         height: 15rem;
+        
 
         #footer_sponsors_wrapper {
             display: grid;

@@ -1,5 +1,7 @@
 <template>
     <div id="dojang_wrapper" @mousemove="dojangParallaxMouse">
+        <NavBar class="transparent dojang_scene_navbar"/>
+
         <section class="dojang-scene">
             <transition appear @after-appear="dojangInitAnimations">        
                 <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
@@ -3620,7 +3622,7 @@
         <section id="dojang_banner_overlay">
             <div id="dojang_banner">
                 <h1>MUDO KWAN CHALLANDAIS</h1>
-                <div id="dojang_carousel">
+                <!-- <div id="dojang_carousel">
                     <div class="dojang_carousel_slide slide_1">
                         <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
                         <p style="font-style: italic">Grand Maître Lee Kwan Young</p>
@@ -3639,8 +3641,8 @@
                     <span class="dojang_carousel_pin pin_active" @click="switchSlide(1)"></span>
                     <span class="dojang_carousel_pin" @click="switchSlide(2)"></span>
                     <span class="dojang_carousel_pin" @click="switchSlide(3)"></span>
-                </div>
-            </div>
+                </div>-->
+            </div> 
             <div id="dojang_scrolldown_button">
                 <div class="arrow arrow_1"></div>
                 <div class="arrow arrow_2"></div>
@@ -3652,10 +3654,13 @@
 
 <script>
 import { gsap } from "gsap";
+import NavBar   from "@/components/NavBar.vue";
 
 export default {
     name: "Dojang",
-    components: {},
+    components: {
+        NavBar
+    },
     data() {
         return {
             dojangPlacedElements: false,
@@ -3885,7 +3890,7 @@ export default {
 
         },
 
-        nextSlide() {
+        /*nextSlide() {
             let index = this.carouselCurrentIndex;
             index >= 3 ? index = 1 : index++;
 
@@ -3932,7 +3937,7 @@ export default {
                     this.showSlide(index);                 
                 }, 500);
             }
-        },
+        },*/
     },
     mounted() {
         setTimeout(() => {
@@ -3960,6 +3965,7 @@ export default {
 
 <style lang="scss">
     #dojang_wrapper {
+        position: relative;
         height: 100vh;
         overflow: hidden;
         transition: 1s;
@@ -3969,10 +3975,17 @@ export default {
         }
     }
 
+    .dojang_scene_navbar {
+        position: absolute;
+        top: 0px;
+    }
+
     .dojang-scene {
-    overflow: hidden;
-    width: 100vw;
-    height: 100%;
+        position: absolute;
+        top: 0px;
+        overflow: hidden;
+        width: 100vw;
+        height: 100%;
     }
 
     #dojang_banner_overlay {

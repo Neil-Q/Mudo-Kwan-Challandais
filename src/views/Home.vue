@@ -2,7 +2,7 @@
     <Dojang />
 
     <!-- <NavBar class="sticky"/> -->
-    <NavBarBis/>
+    <NavBar/>
 
     <UnderlinedTitle
         class="darker"
@@ -37,8 +37,7 @@
 <script>
 
 import Dojang           from "@/components/Dojang.vue";
-//import NavBar           from "@/components/NavBar.vue";
-import NavBarBis        from "@/components/NavBarBis.vue";
+import NavBar           from "@/components/NavBar.vue";
 import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
 import Practices        from "@/components/Practices.vue";
 import Schedule         from "@/components/Schedule.vue";
@@ -48,8 +47,7 @@ export default {
     name: "Home",
     components: {
         Dojang,
-    //    NavBar,
-        NavBarBis,
+        NavBar,
         UnderlinedTitle,
         Practices,
         Schedule,
