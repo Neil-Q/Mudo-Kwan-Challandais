@@ -1,7 +1,6 @@
 <template>
     <Dojang />
 
-    <!-- <NavBar class="sticky"/> -->
     <NavBar/>
 
     <UnderlinedTitle
@@ -57,99 +56,7 @@ export default {
     data() {
         return {
             clubPicture: require('@/assets/club_pictures/2021-2022_new_season_group.jpg'),
-            dojangExpanded: true,
-            dojangAnimationOngoing: false
         }
-    },
-
-    methods: {
-        hideDojang() {
-            this.dojangAnimationOngoing = true;
-
-            document.querySelector("#dojang_wrapper").classList.add("hidden");
-            document.querySelector("#dojang_banner_overlay").classList.add("hidden");
-            document.body.style.overscrollBehaviorY = "contain";
-
-            setTimeout(() => {
-                document.body.style.height = "auto";
-
-                document.body.style.overflowY = "auto"
-                document.body.style.overflowX = "hidden";
-                document.body.style.overflow = "overlay";
-                
-                //Permet à l'illustration de l'hapkimudo de se dessiner directement une fois le dojang caché [components/practices.vue]
-                const hapkiEvent = new Event("drawHapki");
-                document.querySelector("#hapkimudo_SVG").dispatchEvent(hapkiEvent);
-
-                this.dojangExpanded = false;
-                this.dojangAnimationOngoing = false;
-            }, 1000);
-        },
-        showDojang() {
-            this.dojangAnimationOngoing = true;
-
-            document.querySelector("#dojang_wrapper").classList.remove("hidden");
-            document.body.style.overscrollBehaviorY = "auto";
-            document.body.style.height = "100%";
-            document.body.style.overflow = "hidden";
-
-            setTimeout(() => {
-                document.querySelector("#dojang_banner_overlay").classList.remove("hidden");
-                this.dojangAnimationOngoing = false;
-                }, 1000);        
-            this.dojangExpanded = true;
-        },
-    },
-
-    mounted() {
-        this.showDojang();
-        window.scrollTo(0, 1);
-        document.body.style.overflow = "hidden"
-        
-        if(!navigator.userAgent.match(/Android/i)){
-            window.scrollTo(0,0);
-        }
-
-        //Défillement depuis souris
-
-        window.addEventListener("wheel", (e) => {
-            if (e.deltaY > 0 && this.dojangExpanded && !this.dojangAnimationOngoing) { 
-                this.hideDojang();
-            }
-        });
-
-        window.addEventListener("wheel", (e) => {
-            if (e.deltaY < 0 && window.pageYOffset == 0 && !this.dojangExpanded && !this.dojangAnimationOngoing) { 
-                this.showDojang();
-            }
-        });
-
-        //Défillement depuis écran tactil
-
-        let touchOrigin = undefined;
-        let touchOriginYOffset = undefined;
-
-        window.addEventListener("touchstart", (e) => {
-            touchOrigin = e.changedTouches[0].clientY;
-            touchOriginYOffset = parseInt(window.pageYOffset);
-        })
-
-        window.addEventListener("touchend", (e) => {
-            let touchEnd = e.changedTouches[0].clientY;
-
-            if (this.dojangExpanded && touchEnd < touchOrigin && !this.dojangAnimationOngoing) {
-                this.hideDojang();
-            }
-
-            if (!this.dojangExpanded && touchOriginYOffset == 0 && touchEnd > touchOrigin && !this.dojangAnimationOngoing) {
-                this.showDojang();
-            }
-        })
-
-        //Défillement depuis bouton
-
-        document.querySelector("#dojang_scrolldown_button").addEventListener("click", this.hideDojang);
-
     },
 }
 </script>

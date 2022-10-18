@@ -1,9 +1,6 @@
 <template>
-    <div id="dojang_wrapper" @mousemove="dojangParallaxMouse">
-        <NavBar class="transparent dojang_scene_navbar"/>
-
-        <section class="dojang-scene">
-            <transition appear @after-appear="dojangInitAnimations">        
+    <header id="dojang_wrapper" @mousemove="dojangParallaxMouse">
+        <div class="dojang-scene">      
                 <svg class="dojang_svg" viewBox="0 0 2645.8 2645.8">
                 <defs>
                     <linearGradient
@@ -3616,40 +3613,20 @@
                     />
                 </g>
                 </svg>         
-            </transition>
-        </section>
+        </div>
 
-        <section id="dojang_banner_overlay">
+        <div id="dojang_overlay">
+            <NavBar class="transparent dojang_scene_navbar"/>
             <div id="dojang_banner">
                 <h1>MUDO KWAN CHALLANDAIS</h1>
-                <!-- <div id="dojang_carousel">
-                    <div class="dojang_carousel_slide slide_1">
-                        <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
-                        <p style="font-style: italic">Grand Maître Lee Kwan Young</p>
-                        <button>Incriptions et tarifs</button>
-                    </div>
-                    <div class="dojang_carousel_slide slide_2">
-                        <p>Notre club est fier de n'avoir enregistré que 3 mois de fermeture sur la saison 2020-2021 malgrès le context sanitaire difficile. Retrouvez notre rapport d'activité ci-dessous pour en savoir plus.</p>
-                        <button>Rapport d'activité 2020-2021</button>
-                    </div>
-                    <div class="dojang_carousel_slide slide_3">
-                        <p>Nous sommes aussi présents sur les réseaux sociaux. Retrouvez nous sur instagram et facebook.</p>
-                        <span><button>Facebook</button><button>Instagram</button></span>
-                    </div>
-                </div>
-                <div id="dojang_carousel_timeline">
-                    <span class="dojang_carousel_pin pin_active" @click="switchSlide(1)"></span>
-                    <span class="dojang_carousel_pin" @click="switchSlide(2)"></span>
-                    <span class="dojang_carousel_pin" @click="switchSlide(3)"></span>
-                </div>-->
             </div> 
             <div id="dojang_scrolldown_button">
                 <div class="arrow arrow_1"></div>
                 <div class="arrow arrow_2"></div>
                 <div class="arrow arrow_3"></div>
             </div>
-        </section>
-    </div>
+        </div>
+    </header>
 </template>
 
 <script>
@@ -3661,18 +3638,17 @@ export default {
     components: {
         NavBar
     },
+
     data() {
         return {
-            dojangPlacedElements: false,
-            carouselCurrentIndex: undefined,
-            baseOrientationSet: false,
-            baseAlphaOrientation: null,
-            baseBetaOrientation: null,
-            baseGammaOrientation: null
+            dojangPlacedElements: true,
+            wrapperIsCollapsing: false,
         }
     },
+
     methods: {
-        dojangInitAnimations() {
+        initAnimations() {
+            if(!this.dojangPlacedElements) return;
 
             this.dojangPlacedElements = false;
             let animDuration = 0.6;
@@ -3818,149 +3794,151 @@ export default {
             }, 2800);
         },
 
-        dojangParallaxMouse(event) {
-            if (this.dojangPlacedElements == true) {             
-                
-                //return a value between 0 and 1 
-                let posX = (event.pageX * 2 / document.body.clientWidth) - 1 ;
-                let posY = (event.pageY * 2 / document.body.clientHeight) - 1 ;
-    
-                gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
-                    x: posX * -35,
-                });
-    
-                gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
-                    x: posX * -30
-                })
-    
-                gsap.to("#dojang_local", {
-                    x: posX * -24
-                })
-    
-                gsap.to("#dojang_exterior", {
-                    x: posX * -20
-                })
-    
-                gsap.to(".dojang_scene", {
-                    y: posY * -30
-                })
-            }
+        mouseParallax(event) {                      
+            //return a value between 0 and 1 
+            let posX = (event.pageX * 2 / document.body.clientWidth) - 1 ;
+            let posY = (event.pageY * 2 / document.body.clientHeight) - 1 ;
+
+            gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
+                x: posX * -35,
+            });
+
+            gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
+                x: posX * -30
+            })
+
+            gsap.to("#dojang_local", {
+                x: posX * -24
+            })
+
+            gsap.to("#dojang_exterior", {
+                x: posX * -20
+            })
+
+            gsap.to(".dojang_scene", {
+                y: posY * -30
+            })
         },
 
-        dojangParallaxOrientation(orientation) {            
-            if(this.dojangPlacedElements == true) {
-                
-                if(!this.baseOrientationSet) {
-                    this.baseAlphaOrientation = orientation.alpha
-                    this.baseBetaOrientation = orientation.beta
-                    this.baseGammaOrientation = orientation.gamma
-    
-                    this.baseOrientationSet = true;
-                }
-
-                orientation.beta > (this.baseBetaOrientation + 30) ? this.baseBetaOrientation = (orientation.beta - 30 ) : null;
-                orientation.beta < (this.baseBetaOrientation - 30) ? this.baseBetaOrientation = (orientation.beta + 30 ) : null;
-    
-                orientation.gamma > (this.baseGammaOrientation + 30) ? this.baseGammaOrientation = (orientation.gamma - 30 ) : null;
-                orientation.gamma < (this.baseGammaOrientation - 30) ? this.baseGammaOrientation = (orientation.gamma + 30 ) : null;
-    
-                let betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
-                let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
-    
-                gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
-                    x: gammaOffset * -105,
-                });
-    
-                gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
-                    x: gammaOffset * -90
-                })
-    
-                gsap.to("#dojang_local", {
-                    x: gammaOffset * -75
-                })
-    
-                gsap.to("#dojang_exterior", {
-                    x: gammaOffset * -60
-                })
-    
-                gsap.to(".dojang_scene", {
-                    y: betaOffset * -90
-                })
-            }
-
-        },
-
-        /*nextSlide() {
-            let index = this.carouselCurrentIndex;
-            index >= 3 ? index = 1 : index++;
-
-            this.switchSlide(index);
-        },
-
-        showSlide(index) {
-            let slides = document.querySelectorAll(".dojang_carousel_slide");
-            slides[index - 1].classList.add("slide_active");
-            slides[index - 1].style.display = "block";
-
-            let pins = document.querySelectorAll(".dojang_carousel_pin");
-            pins[index - 1].classList.add("pin_active");
-
-            gsap.fromTo(".slide_active", 
-                {
-                    x: -50,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    duration: 0.5
-                }
-            );
-
-            this.carouselCurrentIndex = index;
-        },
-
-        switchSlide(index) {
-            if (index != this.carouselCurrentIndex) {                
-                gsap.to(".slide_active", {
-                    x: 50,
-                    opacity: 0,
-                    duration: 0.5
-                });
-    
-                document.querySelector(".pin_active").classList.remove("pin_active");
-    
-                setTimeout(() => {
-                    document.querySelector(".slide_active").style.display = "none";
-                    document.querySelector(".slide_active").classList.remove("slide_active");
-    
-                    this.showSlide(index);                 
-                }, 500);
-            }
-        },*/
-    },
-    mounted() {
-        setTimeout(() => {
-            this.showSlide(1);
+        hideDojang() {
+            document.getElementById("dojang_wrapper").classList.add("collapsed");
+            this.wrapperIsCollapsing = true;
 
             setTimeout(() => {
-                document.getElementById("dojang_carousel_timeline").style.display = "flex";
-                gsap.from("#dojang_carousel_timeline", {x: -50, opacity: 0, duration: 0.5});                
-            }, 200);
-           
-        }, 2500);
-
-        setInterval(() => {
-            setTimeout(() => {
-                this.nextSlide();
+                this.wrapperIsCollapsing = false;
+                document.body.style.height = "auto";
+                document.body.style.overflow = "overlay";
             }, 1000);
-        }, 10000);
+        },
 
-        window.addEventListener("deviceorientation", (event) => {
-            this.dojangParallaxOrientation(event);
+        orientationParallax(orientation) {            
+            if(!this.baseOrientationSet) {
+                this.baseAlphaOrientation = orientation.alpha
+                this.baseBetaOrientation = orientation.beta
+                this.baseGammaOrientation = orientation.gamma
+
+                this.baseOrientationSet = true;
+            }
+
+            orientation.beta > (this.baseBetaOrientation + 30) ? this.baseBetaOrientation = (orientation.beta - 30 ) : null;
+            orientation.beta < (this.baseBetaOrientation - 30) ? this.baseBetaOrientation = (orientation.beta + 30 ) : null;
+
+            orientation.gamma > (this.baseGammaOrientation + 30) ? this.baseGammaOrientation = (orientation.gamma - 30 ) : null;
+            orientation.gamma < (this.baseGammaOrientation - 30) ? this.baseGammaOrientation = (orientation.gamma + 30 ) : null;
+
+            let betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
+            let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
+
+            gsap.to("#dojang_bob, #dojang_tatamis, #dojang_floor", {
+                x: gammaOffset * -105,
+            });
+
+            gsap.to("#dojang_wall, #dojang_pictures, #dojang_breastplate, #dojang_table, #dojang_bottle", {
+                x: gammaOffset * -90
+            })
+
+            gsap.to("#dojang_local", {
+                x: gammaOffset * -75
+            })
+
+            gsap.to("#dojang_exterior", {
+                x: gammaOffset * -60
+            })
+
+            gsap.to(".dojang_scene", {
+                y: betaOffset * -90
+            })
+        },
+
+        showDojang() {
+            document.getElementById("dojang_wrapper").classList.remove("collapsed");
+            this.wrapperIsCollapsing = true;
+
+            document.body.style.height = "100vw";
+            document.body.style.overflow = "hidden";
+
+            setTimeout(() => {
+                this.wrapperIsCollapsing = false;
+            }, 1000);
+        }
+    },
+
+    mounted() {
+        let wrapper = document.getElementById("dojang_wrapper");
+        document.body.style.height = "100vw";
+        document.body.style.overflow = "hidden";
+
+        this.initAnimations();
+
+        //Normal scroll
+        window.addEventListener("wheel", (e) => {
+            if (this.wrapperIsCollapsing) return
+            let isCollapsed = wrapper.classList.contains("collapsed");
+
+            if (e.deltaY > 0 && !isCollapsed) { 
+                this.hideDojang();
+            }
+            else if (e.deltaY < 0 && window.pageYOffset == 0 && isCollapsed) { 
+                this.showDojang();
+            }
+        });
+
+        //Simulate touch scroll (Body being set to full page only, scroll wont work)
+        let touchOrigin = undefined;
+        let touchOriginYOffset = undefined;
+
+        window.addEventListener("touchstart", (e) => {
+            touchOrigin = e.changedTouches[0].clientY;
+            touchOriginYOffset = parseInt(window.pageYOffset);
+        })
+
+        window.addEventListener("touchend", (e) => {
+            if (this.wrapperIsCollapsing) return
+            let touchEnd = e.changedTouches[0].clientY;
+            let isCollapsed = wrapper.classList.contains("collapsed");
+
+            if (isCollapsed && touchEnd < touchOrigin) {
+                this.hideDojang();
+            }
+
+            if (!isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) {
+                this.showDojang();
+            }
+        })
+
+        //Scroll from button
+        document.querySelector("#dojang_scrolldown_button").addEventListener("click", this.hideDojang);
+
+        // Parallax animations ->
+        wrapper.addEventListener("mousemove", (e) => {
+            if(this.dojangPlacedElements) this.mouseParallax(e);
+        });
+
+        window.addEventListener("deviceorientation", (e) => {
+            this.orientationParallax(e);
         });
     }
-}
+};
 </script>
 
 <style lang="scss">
@@ -3970,8 +3948,8 @@ export default {
         overflow: hidden;
         transition: 1s;
 
-        &.hidden {
-            height: 0vh;
+        &.collapsed {
+            height: 0;
         }
     }
 
@@ -3988,7 +3966,7 @@ export default {
         height: 100%;
     }
 
-    #dojang_banner_overlay {
+    #dojang_overlay {
         overflow: hidden;
         width: 100vw;
         height: 100vh;
@@ -4032,89 +4010,6 @@ export default {
             cursor: pointer;
             text-transform: uppercase;
         }        
-    }
-
-    #dojang_carousel {
-
-        display: flex;
-        flex-direction: column-reverse;
-        height: 32vmin;
-        width: 95%;        
-
-        .dojang_carousel_slide {
-            text-align: justify;
-        }
-        .slide_1 {
-            display: none;
-            button {
-                border-color: var(--blue-light-color);
-                color: var(--blue-light-color);
-
-                &:hover {
-                    border-color: var(--blue-strongLight-color);
-                    color: var(--blue-strongLight-color);
-                }
-            }
-        }
-
-        .slide_2 {
-            display: none;
-
-            button {
-                border-color: rgb(145, 214, 41);
-                color: rgb(145, 214, 41);
-
-                &:hover {
-                    border-color: rgb(157, 233, 43);
-                    color: rgb(157, 233, 43);
-                }
-            }
-        }
-
-        .slide_3 {
-            display: none;
-
-            button {
-                border-color: var(--blue-light-color);
-                color: var(--blue-light-color);
-                margin-right: 2vmin;
-
-                &:hover {
-                    border-color: var(--blue-medium-color);
-                    color: var(--blue-medium-color);
-                }
-            }
-        }
-    }
-
-    #dojang_carousel_timeline {
-        display: none;
-        justify-content: center;
-        height: 8vmin;
-
-        .dojang_carousel_pin {
-            border: 0.5vmin solid ;
-            height: 1.2vmin;
-            width: 1.2vmin;
-            border-color: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            margin: 2em;           
-            cursor: pointer;
-            align-self: center;
-            transition: 0.5s;
-    
-            &:hover {
-                border-color: rgba(255, 255, 255, 0.8);
-            }
-
-        }
-        .pin_active {
-            background: rgba(255, 255, 255, 0.5);
-            transform: translateY(-5px);
-            &:hover {
-                background: rgba(255, 255, 255, 0.8);
-            }
-        }
     }
 
     #dojang_scrolldown_button {
@@ -4219,15 +4114,6 @@ export default {
             padding-left: 2vmax;
             padding-right: 2vmax;
         }
-    }
-
-    #dojang_carousel {
-        height: 12vmax;
-        background: turquoise;
-    }
-
-    #dojang_carousel_timeline {
-        height: 3.2vmax;    
     }
 }
 

@@ -59,6 +59,7 @@ export default {
         --vert-padding: clamp(0px, 2vw, 12px);
 
         width: 100%;
+        max-width: 100vw;
         position: sticky;
         position: -webkit-sticky;
         top: 0px;
@@ -71,6 +72,20 @@ export default {
         color: white;
         font-size: clamp(0px, 1.7vw, 1.1rem);
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        li {
+            margin-left: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    // For different color schemes
+    #nav_bar {
         &.transparent {
             background-color: transparent;
             background-color: #00000050;
@@ -90,17 +105,6 @@ export default {
             .dropdown_submenu ul{
                 background-color: var(--blue-medium-color);
             }
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        li {
-            margin-left: 0;
-            padding: 0;
-            list-style: none;
         }
     }
 
@@ -169,7 +173,6 @@ export default {
 
     .dropdown_item {
         display: block;
-        //padding: 0.5em 1em;
         padding: clamp(8px, 2vh, 12px);
 
         &:hover {
