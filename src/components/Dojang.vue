@@ -574,9 +574,9 @@ export default {
         },
        
         mouseParallax(event) {                      
-            //return a value between 0 and 1 
-            let posX = (event.pageX * 2 / document.body.clientWidth) - 1 ;
-            let posY = (event.pageY * 4 / document.body.clientHeight) - 1 ;
+            //return a value between -1 and 1 
+            let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
+            let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
 
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
                 xPercent: posX * - 1.15
@@ -594,8 +594,8 @@ export default {
                 xPercent: posX * - 0.7
             })
 
-            gsap.to("#dojang_scene", {
-                yPercent: posY * - 3
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                yPercent: posY * - 1.5
             })
         },
         
@@ -646,7 +646,7 @@ export default {
                 xPercent: gammaOffset * - 2.1
             })
 
-            gsap.to(".dojang_scene", {
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
                 yPercent: betaOffset * - 9
             })
         },
@@ -668,19 +668,28 @@ export default {
         document.body.style.overflow = "hidden";
     },
     mounted() {
-        const animate = this.animateDojang();
-        animate.then(() => {
-            document.getElementById("dojang_wrapper").addEventListener("mousemove", (e) => {
-                this.mouseParallax(e);
-            });
 
-            window.addEventListener("deviceorientation", (e) => {
-                this.orientationParallax(e);
-            });
-        })
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            let dojang_parts = document.querySelectorAll(".dojang_part");
+
+            dojang_parts.forEach( part => {
+                part.classList.remove("unplaced");
+            })
+        } else {
+            const animate = this.animateDojang();
+            animate.then(() => {
+                document.getElementById("dojang_wrapper").addEventListener("mousemove", (e) => {
+                    this.mouseParallax(e);
+                });
+    
+                window.addEventListener("deviceorientation", (e) => {
+                    this.orientationParallax(e);
+                });
+            })
+        }
 
         let wrapper = document.getElementById("dojang_wrapper");
-        
+
         //Normal scroll
         window.addEventListener("wheel", (e) => {
             if (this.wrapperIsCollapsing) return
@@ -729,6 +738,7 @@ export default {
 
 <style lang="scss">
     #dojang_wrapper {
+        display: flex;
         position: relative;
         height: 100vh;
         overflow: hidden;
@@ -741,12 +751,17 @@ export default {
 
     #dojang_scene {
         --base-anim-dur: 0.8s;
+        --scale: 1.7;
+        --left: -40%;
+        position: relative;
+        align-self: center;
+        min-width: calc(100vw * var(--scale));
+        min-height: calc(100vw * var(--scale));
+        left: calc(var(--left) * var(--scale));
 
-        position: absolute;
-        top: 0px;
-        overflow: hidden;
-        width: 100vw;
-        height: 100vh;
+        svg {
+            padding-top: calc(17vw * var(--scale));
+        }
     }
 
     .dojang_layer {
@@ -950,7 +965,7 @@ export default {
             }
         }
     }
-    
+/*
 @media (max-height: 40vw) {
     #dojang_banner {
         width: 35vmax;
@@ -972,38 +987,19 @@ export default {
             padding-right: 2vmax;
         }
     }
-}
+}*/
 
-//petits téléphones
-@media (max-width: 27em) {
+@media (max-width: 60em) {
     #dojang_scene {
-        transform: scale(3.5) translateX(-23%) translateY(30%);
-    }
-    #dojang_banner {
-        padding-top: 50%;
-    }
-    
-}
-
-//tablettes portrait ou grands téléphones [688 - 992 px]
-@media (min-width: 27em) {
-    #dojang_scene {
-        transform: scale(2.2) translateX(-20%) translateY(15%);
-    }
-
-}
-
-//ordinateurs portables ou tablettes paysage [992 - 1200 px]
-@media (min-width: 992px) {
-    #dojang_scene {
-        transform: scale(1.9) translateX(-20%) translateY(10%);
+        --scale: 2.25;
+        --left: -55%;
     }
 }
 
-//écrans de bureau [1200+ px]
-@media (min-width: 64em) {
+@media (max-width: 40em) {
     #dojang_scene {
-        transform: scale(1.75) translateX(-20%) translateY(-18%);
+        --scale: 3.25;
+        --left: -60%;
     }
 }
 </style>
