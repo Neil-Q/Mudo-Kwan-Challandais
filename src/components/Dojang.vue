@@ -479,6 +479,10 @@ export default {
     data() {
         return {
             wrapperIsCollapsing: false,
+            onOrientationDevice: false,
+            baseBetaOrientation: undefined,
+            baseGammaOrientation: undefined,
+            parallaxTimeout: undefined,
         }
     },
 
@@ -562,18 +566,13 @@ export default {
                     yPercent: 1
                 });
             }, 500);
-
-            return new Promise( resolve => {
-                setTimeout(() => {
-                    dojang_parts.forEach(part => {
-                        part.classList.add("placed");
-                    })
-                    resolve();
-                }, 3000);        
-            })
         },
        
-        mouseParallax(event) {                      
+        mouseParallax(event) { 
+            if (this.onOrientationDevice) return
+
+            event = event || window.event;
+            
             //return a value between -1 and 1 
             let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
             let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
@@ -584,19 +583,19 @@ export default {
 
             gsap.to("#dojang_wall, #dojang_table", {
                 xPercent: posX * - 1
-            })
+            });
 
             gsap.to("#dojang_local_and_exit", {
                 xPercent: posX * - 0.85
-            })
+            });
 
             gsap.to("#dojang_exterior", {
                 xPercent: posX * - 0.7
-            })
+            });
 
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
                 yPercent: posY * - 1.5
-            })
+            });
         },
         
         hideDojang() {
@@ -610,27 +609,52 @@ export default {
             }, 1000);
         },
 
-        orientationParallax(orientation) {
-            if(!this.dojangPlacedElements) return
+        initAnimations() {
+            let dojang_parts = document.querySelectorAll(".dojang_part");
 
-            if(!this.baseOrientationSet) {
-                this.baseAlphaOrientation = orientation.alpha
-                this.baseBetaOrientation = orientation.beta
-                this.baseGammaOrientation = orientation.gamma
-
-                this.baseOrientationSet = true;
+            // kill animations if user have reduced motion preference
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                dojang_parts.forEach( part => part.classList.remove("unplaced"));
+                return
             }
 
-            orientation.beta > (this.baseBetaOrientation + 30) ? this.baseBetaOrientation = (orientation.beta - 30 ) : null;
-            orientation.beta < (this.baseBetaOrientation - 30) ? this.baseBetaOrientation = (orientation.beta + 30 ) : null;
+            this.animateDojang();
+            this.parallaxTimeout = setTimeout(() => {
+                dojang_parts.forEach(part => {
+                    part.classList.add("placed");
+                })
+                window.addEventListener("deviceorientation", this.orientationParallax);
+                document.getElementById("dojang_wrapper").addEventListener("mousemove", this.mouseParallax);
+            }, 3000);          
+        },
 
-            orientation.gamma > (this.baseGammaOrientation + 30) ? this.baseGammaOrientation = (orientation.gamma - 30 ) : null;
-            orientation.gamma < (this.baseGammaOrientation - 30) ? this.baseGammaOrientation = (orientation.gamma + 30 ) : null;
+        orientationParallax(orientation) {
+            orientation = orientation || window.event;
 
+            //verify if orientation device isn't just triggered automaticaly by browser without real sensor
+            if(orientation.beta === null && orientation.gamma == null) return
+
+            this.onOrientationDevice = true;
+
+            //setting initial Alpha and Gamma orientation
+            if(this.baseBetaOrientation === undefined || this.baseGammaOrientation === undefined) {
+                this.baseBetaOrientation = orientation.beta;
+                this.baseGammaOrientation = orientation.gamma;    
+            }
+
+            //updating base orientation if user move to far
+            if(orientation.beta > (this.baseBetaOrientation + 30)) this.baseBetaOrientation = (orientation.beta - 30 );
+            if(orientation.beta < (this.baseBetaOrientation - 30)) this.baseBetaOrientation = (orientation.beta + 30 );
+
+            if(orientation.gamma > (this.baseGammaOrientation + 30)) this.baseGammaOrientation = (orientation.gamma - 30 );
+            if(orientation.gamma < (this.baseGammaOrientation - 30)) this.baseGammaOrientation = (orientation.gamma + 30 );
+
+            //getting offset
             let betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
             let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
 
-            gsap.to("#dojang_tatamis, #dojang_floor", {
+            //applying parallax
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
                 xPercent: gammaOffset * - 3.45
             });
 
@@ -647,8 +671,15 @@ export default {
             })
 
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                yPercent: betaOffset * - 9
+                yPercent: betaOffset * - 5
             })
+        },
+
+        resetParallax() {
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                xPercent: 0,
+                yPercent: 0
+            });
         },
 
         showDojang() {
@@ -664,29 +695,14 @@ export default {
         }
     },
     beforeMount() {
-        document.body.style.height = "100vw";
-        document.body.style.overflow = "hidden";
+        
     },
     mounted() {
+        window.scrollTo(0, 1);
+        document.body.style.height = "100vw";
+        document.body.style.overflow = "hidden";
 
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            let dojang_parts = document.querySelectorAll(".dojang_part");
-
-            dojang_parts.forEach( part => {
-                part.classList.remove("unplaced");
-            })
-        } else {
-            const animate = this.animateDojang();
-            animate.then(() => {
-                document.getElementById("dojang_wrapper").addEventListener("mousemove", (e) => {
-                    this.mouseParallax(e);
-                });
-    
-                window.addEventListener("deviceorientation", (e) => {
-                    this.orientationParallax(e);
-                });
-            })
-        }
+        this.initAnimations();
 
         let wrapper = document.getElementById("dojang_wrapper");
 
@@ -732,6 +748,11 @@ export default {
     beforeUnmount() {
         document.body.style.height = "auto";
         document.body.style.overflow = "overlay";
+
+        clearTimeout(this.parallaxTimeout);
+        this.resetParallax();
+        window.removeEventListener("deviceorientation", this.orientationParallax);
+        document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
     }
 };
 </script>
