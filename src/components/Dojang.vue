@@ -479,9 +479,13 @@ export default {
     data() {
         return {
             wrapperIsCollapsing: false,
+
             onOrientationDevice: false,
             baseBetaOrientation: undefined,
             baseGammaOrientation: undefined,
+            betaOffset: 0,
+            gammaOffset: 0,
+
             parallaxTimeout: undefined,
         }
     },
@@ -634,13 +638,16 @@ export default {
             //verify if orientation device isn't just triggered automaticaly by browser without real sensor
             if(orientation.beta === null && orientation.gamma == null) return
 
+            //disable mouse parallax if orientation change detected
             this.onOrientationDevice = true;
 
+            //Lock gamma angle if beta is near 90° to avoid gimeball effect jumping of value
+            let lockGamma = false;
+            if (orientation.beta >= 85 && orientation.beta <= 95) lockGamma = true;
+
             //setting initial Alpha and Gamma orientation
-            if(this.baseBetaOrientation === undefined || this.baseGammaOrientation === undefined) {
-                this.baseBetaOrientation = orientation.beta;
-                this.baseGammaOrientation = orientation.gamma;    
-            }
+            if (this.baseBetaOrientation === undefined) this.baseBetaOrientation = orientation.beta;
+            if (!lockGamma && this.baseGammaOrientation === undefined) this.baseGammaOrientation = orientation.gamma;
 
             //updating base orientation if user move to far
             if(orientation.beta > (this.baseBetaOrientation + 30)) this.baseBetaOrientation = (orientation.beta - 30 );
@@ -649,29 +656,37 @@ export default {
             if(orientation.gamma > (this.baseGammaOrientation + 30)) this.baseGammaOrientation = (orientation.gamma - 30 );
             if(orientation.gamma < (this.baseGammaOrientation - 30)) this.baseGammaOrientation = (orientation.gamma + 30 );
 
-            //getting offset
-            let betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
-            let gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
+            //getting offsets
+            this.betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
+            if (!lockGamma) {
+                //help prevent jump when to much gamma tilt in the locked phase
+                let newGammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
+                if (newGammaOffset > (this.gammaOffset + 0.1) || newGammaOffset < (this.gammaOffset - 0.1)) this.baseGammaOrientation += (newGammaOffset - this.gammaOffset) * 30;
+
+                this.gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30 ;
+            }
+
+            console.log("Corrected offset : " + this.gammaOffset);
 
             //applying parallax
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
-                xPercent: gammaOffset * - 3.45
+                xPercent: this.gammaOffset * - 3.45
             });
 
             gsap.to("#dojang_wall, #dojang_table", {
-                xPercent: gammaOffset * - 3
+                xPercent: this.gammaOffset * - 3
             })
 
             gsap.to("#dojang_local_and_exit", {
-                xPercent: gammaOffset * - 2.55
+                xPercent: this.gammaOffset * - 2.55
             })
 
             gsap.to("#dojang_exterior", {
-                xPercent: gammaOffset * - 2.1
+                xPercent: this.gammaOffset * - 2.1
             })
 
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                yPercent: betaOffset * - 5
+                yPercent: this.betaOffset * - 3
             })
         },
 
@@ -695,7 +710,6 @@ export default {
         }
     },
     beforeMount() {
-        
     },
     mounted() {
         window.scrollTo(0, 1);
@@ -1019,7 +1033,7 @@ export default {
 
 @media (max-width: 40em) {
     #dojang_scene {
-        --scale: 3.25;
+        --scale: 3.5;
         --left: -60%;
     }
 }
