@@ -571,14 +571,6 @@ export default {
                 });
             }, 500);
         },
-       
-        setAppHeight() {
-            //Ensure good fullpage height for mobile
-            const wrapper = document.getElementById("dojang_wrapper");
-            const height = window.innerHeight * 0.01;
-
-            wrapper.style.setProperty("--vh", height + "px")
-        },
         
         hideDojang() {
             document.getElementById("dojang_wrapper").classList.add("collapsed");
@@ -705,11 +697,16 @@ export default {
             });
         },
 
+        setAppHeight() {
+            const height = window.innerHeight * 0.01;
+            document.body.style.setProperty("--vh", height + "px")
+        },
+
         showDojang() {
             document.getElementById("dojang_wrapper").classList.remove("collapsed");
             this.wrapperIsCollapsing = true;
 
-            document.body.style.height = "100vw";
+            document.body.style.height = "var(--viewport-height)";
             document.body.style.overflow = "hidden";
 
             setTimeout(() => {
@@ -717,13 +714,16 @@ export default {
             }, 1000);
         }
     },
-    beforeMount() {
+    beforeMount() { 
+        document.body.style.overscrollBehavior = "contain";
+        document.body.style.overflow = "hidden";
 
+        history.scrollRestoration = 'manual';
     },
     mounted() {
-        window.scrollTo(0, 1);
-        document.body.style.height = "100vw";
-        document.body.style.overflow = "hidden";
+
+        //Ensure good fullpage height for mobile
+        this.setAppHeight();
 
         this.initAnimations();
 
@@ -773,23 +773,29 @@ export default {
     beforeUnmount() {
         document.body.style.height = "auto";
         document.body.style.overflow = "overlay";
+        document.body.style.overscrollBehavior = "auto";
 
         clearTimeout(this.parallaxTimeout);
         this.resetParallax();
         window.removeEventListener("deviceorientation", this.orientationParallax);
         document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
+
+        history.scrollRestoration = 'auto';
     }
 };
 </script>
 
 <style lang="scss">
-    #dojang_wrapper {
-        --viewport-height: 1vh;
+    body {
+        --vh: 1vh;
+        --viewport-height: calc(var(--vh, 1vh) * 100);
+    }
 
+    #dojang_wrapper {
         display: flex;
         position: relative;
         height: 100vh;
-        height: calc(var(--viewport-height, 1vh) * 100);
+        height: var(--viewport-height);
         overflow: hidden;
         transition: 1s;
 
