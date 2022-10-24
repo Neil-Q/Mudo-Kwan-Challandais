@@ -698,8 +698,7 @@ export default {
         },
 
         setAppHeight() {
-            const height = window.innerHeight * 0.01;
-            document.body.style.setProperty("--vh", height + "px")
+            document.body.style.setProperty("--viewport-height", window.innerHeight + "px")
         },
 
         showDojang() {
@@ -721,7 +720,6 @@ export default {
         history.scrollRestoration = 'manual';
     },
     mounted() {
-
         //Ensure good fullpage height for mobile
         this.setAppHeight();
 
@@ -756,16 +754,14 @@ export default {
             let touchEnd = e.changedTouches[0].clientY;
             let isCollapsed = wrapper.classList.contains("collapsed");
 
-            if (isCollapsed && touchEnd < touchOrigin) {
-                this.hideDojang();
-            }
+            if (!isCollapsed && touchEnd < touchOrigin) this.hideDojang();
 
-            if (!isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) {
-                this.showDojang();
-            }
+            if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
         })
 
-        window.addEventListener("resize", this.setAppHeight());
+        window.addEventListener("resize", () => {
+            this.setAppHeight();
+        });
 
         //Scroll from button
         document.querySelector("#dojang_scrolldown_button").addEventListener("click", this.hideDojang);
@@ -787,8 +783,9 @@ export default {
 
 <style lang="scss">
     body {
-        --vh: 1vh;
-        --viewport-height: calc(var(--vh, 1vh) * 100);
+        //--vh: 1vh;
+        //--viewport-height: calc(var(--vh, 1vh) * 100);
+        --viewport-height: 100vh;
     }
 
     #dojang_wrapper {
