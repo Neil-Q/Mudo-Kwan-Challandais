@@ -572,34 +572,12 @@ export default {
             }, 500);
         },
        
-        mouseParallax(event) { 
-            if (this.onOrientationDevice) return
+        setAppHeight() {
+            //Ensure good fullpage height for mobile
+            const wrapper = document.getElementById("dojang_wrapper");
+            const height = window.innerHeight * 0.01;
 
-            event = event || window.event;
-            
-            //return a value between -1 and 1 
-            let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
-            let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
-
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
-                xPercent: posX * - 1.15
-            });
-
-            gsap.to("#dojang_wall, #dojang_table", {
-                xPercent: posX * - 1
-            });
-
-            gsap.to("#dojang_local_and_exit", {
-                xPercent: posX * - 0.85
-            });
-
-            gsap.to("#dojang_exterior", {
-                xPercent: posX * - 0.7
-            });
-
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                yPercent: posY * - 1.5
-            });
+            wrapper.style.setProperty("--vh", height + "px")
         },
         
         hideDojang() {
@@ -630,6 +608,36 @@ export default {
                 window.addEventListener("deviceorientation", this.orientationParallax);
                 document.getElementById("dojang_wrapper").addEventListener("mousemove", this.mouseParallax);
             }, 3000);          
+        },
+
+        mouseParallax(event) { 
+            if (this.onOrientationDevice) return
+
+            event = event || window.event;
+            
+            //return a value between -1 and 1 
+            let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
+            let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
+
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
+                xPercent: posX * - 1.15
+            });
+
+            gsap.to("#dojang_wall, #dojang_table", {
+                xPercent: posX * - 1
+            });
+
+            gsap.to("#dojang_local_and_exit", {
+                xPercent: posX * - 0.85
+            });
+
+            gsap.to("#dojang_exterior", {
+                xPercent: posX * - 0.7
+            });
+
+            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                yPercent: posY * - 1.5
+            });
         },
 
         orientationParallax(orientation) {
@@ -710,6 +718,7 @@ export default {
         }
     },
     beforeMount() {
+
     },
     mounted() {
         window.scrollTo(0, 1);
@@ -756,6 +765,8 @@ export default {
             }
         })
 
+        window.addEventListener("resize", this.setAppHeight());
+
         //Scroll from button
         document.querySelector("#dojang_scrolldown_button").addEventListener("click", this.hideDojang);
     },
@@ -773,9 +784,12 @@ export default {
 
 <style lang="scss">
     #dojang_wrapper {
+        --viewport-height: 1vh;
+
         display: flex;
         position: relative;
         height: 100vh;
+        height: calc(var(--viewport-height, 1vh) * 100);
         overflow: hidden;
         transition: 1s;
 
@@ -1034,7 +1048,7 @@ export default {
 @media (max-width: 40em) {
     #dojang_scene {
         --scale: 3.5;
-        --left: -60%;
+        --left: -61%;
     }
 }
 </style>
