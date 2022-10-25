@@ -454,10 +454,13 @@
             </div>
         </div>
 
-        <div id="dojang_overlay">
+        <div id="dojang_overlay" >
             <NavBar class="transparent dojang_scene_navbar"/>
             <div id="dojang_banner">
                 <h1>MUDO KWAN CHALLANDAIS</h1>
+                <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
+                <p>Grand Maître Lee Kwan Young</p>
+                <a href="#">Inscriptions et tarifs</a>
             </div> 
             <div id="dojang_scrolldown_button">
                 <div class="arrow arrow_1"></div>
@@ -493,7 +496,7 @@ export default {
     },
 
     methods: {
-        animateDojang() {
+        animateDojang(delay) {
             this.dojangPlacedElements = false;
             let dojang_parts = document.querySelectorAll(".dojang_part");
 
@@ -502,6 +505,7 @@ export default {
                 part.classList.add("unplaced");
             })
 
+            //scene animations
             setTimeout(() => {
                 dojang_parts.forEach(part => {
                     part.classList.remove("unplaced");
@@ -571,12 +575,84 @@ export default {
                     delay: 1.6,
                     yPercent: 1
                 });
-            }, 500);
+            }, delay * 1000);         
+        },
+
+        appearOverlay() {
+            const duration = 1;
+
+            gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
+                duration: duration,
+                x: 0,
+            });
+
+            gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
+                duration: duration,
+                x: 0,
+            });
+
+            gsap.to("#dojang_overlay", {
+                duration: duration,
+                opacity: 1
+            })
+        },
+
+        disappearOverlay() {
+            const duration = 1;
+
+            gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
+                duration: duration,
+                x: -40,
+            });
+
+            gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
+                duration: duration,
+                x: 40,
+            });
+
+            gsap.to("#dojang_overlay", {
+                duration: duration,
+                opacity: 0
+            })
         },
         
+        firstAppearOverlay(delay) {
+                gsap.from("#dojang_overlay", {
+                    duration: 1,
+                    delay: delay,
+                    opacity: 0
+                });
+    
+                gsap.from(".dojang_scene_navbar", {
+                    duration: 1,
+                    delay: delay + 0.15,
+                    yPercent: -100
+                });
+
+                gsap.from(".dojang_scene_navbar > #nav_bar_menu > li", {
+                    duration: 0.6,
+                    delay: delay + 1,
+                    stagger: 0.3,
+                    y: -15,
+                    opacity: 0
+                });
+
+                gsap.from("#dojang_banner > *", {
+                    duration: 1,
+                    delay: delay + 1,
+                    stagger: 0.3,
+                    y: -10,
+                    opacity: 0,
+                })
+        },
+
         hideDojang() {
+             if(this.wrapperIsCollapsing) return;
+
             document.getElementById("dojang_wrapper").classList.add("collapsed");
             this.wrapperIsCollapsing = true;
+            this.disappearOverlay();
+            history.scrollRestoration = 'manual';
 
             setTimeout(() => {
                 this.wrapperIsCollapsing = false;
@@ -588,12 +664,16 @@ export default {
             let dojang_parts = document.querySelectorAll(".dojang_part");
 
             // kill animations if user have reduced motion preference
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                dojang_parts.forEach( part => part.classList.remove("unplaced"));
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                dojang_parts.forEach( part => {
+                    part.classList.remove("unplaced");
+                    part.classList.add("placed");
+                });
                 return
             }
 
-            this.animateDojang();
+            this.animateDojang(0.5);
+            this.firstAppearOverlay(2.5);
             this.parallaxTimeout = setTimeout(() => {
                 dojang_parts.forEach(part => {
                     part.classList.add("placed");
@@ -703,20 +783,23 @@ export default {
         },
 
         showDojang() {
+            if(this.wrapperIsCollapsing) return;
+
             document.getElementById("dojang_wrapper").classList.remove("collapsed");
             this.wrapperIsCollapsing = true;
-
             document.body.classList.add("fullpage");
+
+            this.appearOverlay();
 
             setTimeout(() => {
                 this.wrapperIsCollapsing = false;
+                history.scrollRestoration = 'auto';
             }, 1000);
         }
     },
     beforeMount() { 
         document.body.style.overscrollBehavior = "contain";
         document.body.classList.add("fullpage");
-        history.scrollRestoration = 'manual';
     },
     mounted() {
         //Ensure good fullpage height for mobile
@@ -892,68 +975,57 @@ export default {
     }
 
     #dojang_overlay {
+        position: absolute;
+        top: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         overflow: hidden;
         width: 100vw;
         height: var(--viewport-height);
-        position: absolute;
-        top: 0px;
-
-        &.hidden {
-            display: none;
-        }
+        background-color: rgba($color: black, $alpha: 0.1);
     }
 
-    .dojang_scene_navbar {
-        position: absolute;
-        top: 0px;
-    }
- 
     #dojang_banner {
-        margin-top: 15vmin;
         margin-left: 8vmin;
-        width: 87vmin;        
+        width: 87vmin;
         color: white;
         text-align: left;
-        text-shadow: 0px 0px 2vmin black;
+        text-shadow: 0px 0px 2vmin black, 0px 0px 2vmin grey;
         font-weight: bold;
 
         h1 {
-            font-size: 12vmin;
-            height: 28vmin;
-            margin-bottom: 0;
+            margin: 0;
+            font-size: clamp(0px, 12vmin, 5.5rem);
         }
+
         p {
-            margin-top: 0;
-            font-size: 3vmin;
+            font-size: clamp(0px, 2.5vmin, 1.5rem);
         }
-        button {
-            height: 6vmin;
-            font-size: 2vmin;
-            font-weight: bold;
-            padding: 0.25em;
-            padding-left: 5vmin;
-            padding-right: 5vmin;
-            background: rgba($color: black, $alpha: 0.8);
-            border: solid 0.25em;
-            border-radius: 0.25em;
-            box-shadow: 0 0 2vmin black;
-            cursor: pointer;
+
+        a {
+            display: inline-block;
+            padding: clamp(1rem, 2vmin, 1.5rem) 2rem;
+            font-size: clamp(1rem, 2vmin, 1.5rem);
+            background: var(--blue-medium-color);
+            border-radius: 1vmin;
             text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: none;
+
+            &:visited {
+                color: inherit;
+            }
         }        
     }
 
     #dojang_scrolldown_button {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        height: 9vh;
-        width: 15vh;
-        padding-bottom: 2vh;
-        top: 100vh;
-        left: 50vw;
-        transform: translate(-50%, -100%);
-        border-radius: 50% 50% 0 0;
+        height: 20vh;
+        width: 100%;
         cursor: pointer;
+        //background-color: rgba($color: black, $alpha: 0.1);
 
         &:hover {
             .arrow {
@@ -1023,29 +1095,28 @@ export default {
             }
         }
     }
-/*
-@media (max-height: 40vw) {
-    #dojang_banner {
-        width: 35vmax;
-        margin-left: 3.2vmax;
-        margin-top: 6vmax;
-        text-shadow: 0px 0px 0.8vmax black;
 
-        h1 {
-            font-size: 4.8vmax;
-            height: 12vmax;
-        }
+@media (max-width: 100vh) {
+    #dojang_banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        flex: 1;
+        padding-top: 10vh;
+
         p {
-            font-size: 1.2vmax;
+            display: none;
         }
+
         button {
-            height: 2.4vmax;
-            font-size: 1vmax;
-            padding-left: 2vmax;
-            padding-right: 2vmax;
+            height: 3rem;
+            max-width: 20rem;
+            width: 80vw;
         }
     }
-}*/
+}
 
 @media (max-width: 60em) {
     #dojang_scene {
