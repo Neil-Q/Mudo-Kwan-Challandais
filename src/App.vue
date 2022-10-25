@@ -32,6 +32,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    height: auto;
     overflow-Y: overlay;
 
     &::-webkit-scrollbar {
