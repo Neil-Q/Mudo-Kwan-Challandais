@@ -581,39 +581,44 @@ export default {
         appearOverlay() {
             const duration = 1;
 
-            gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
+            gsap.to("#dojang_banner, .dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu", {
                 duration: duration,
                 x: 0,
-            });
-
-            gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
-                duration: duration,
-                x: 0,
+                y: 0
             });
 
             gsap.to("#dojang_overlay", {
                 duration: duration,
                 opacity: 1
-            })
+            });
         },
 
         disappearOverlay() {
             const duration = 1;
 
-            gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
-                duration: duration,
-                x: -40,
-            });
+            if (window.innerHeight <= window.innerWidth) {
+                gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
+                    duration: duration,
+                    x: -40,
+                });
+    
+                gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
+                    duration: duration,
+                    x: 40,
+                });
 
-            gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
-                duration: duration,
-                x: 40,
-            });
+            } else {
+                gsap.to("#dojang_banner, .dojang_scene_navbar", {
+                    duration: duration,
+                    y: -40,
+                });
+            }
 
             gsap.to("#dojang_overlay", {
                 duration: duration,
                 opacity: 0
-            })
+            });
+
         },
         
         firstAppearOverlay(delay) {
@@ -664,7 +669,7 @@ export default {
             let dojang_parts = document.querySelectorAll(".dojang_part");
 
             // kill animations if user have reduced motion preference
-            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 dojang_parts.forEach( part => {
                     part.classList.remove("unplaced");
                     part.classList.add("placed");
@@ -1005,7 +1010,7 @@ export default {
 
         a {
             display: inline-block;
-            padding: clamp(1rem, 2vmin, 1.5rem) 2rem;
+            padding: clamp(0.66rem, 1.32vmin, 1rem) clamp(1.33rem, 2.66vmin, 2rem);
             font-size: clamp(1rem, 2vmin, 1.5rem);
             background: var(--blue-medium-color);
             border-radius: 1vmin;
