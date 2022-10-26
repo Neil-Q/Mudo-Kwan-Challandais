@@ -462,10 +462,11 @@
                 <p>Grand Maître Lee Kwan Young</p>
                 <a href="#">Inscriptions et tarifs</a>
             </div> 
-            <div id="dojang_scrolldown_button">
-                <div class="arrow arrow_1"></div>
-                <div class="arrow arrow_2"></div>
-                <div class="arrow arrow_3"></div>
+            <div id="dojang_scrolldown">
+                <div id="dojang_scrolldown_mouse">
+                    <span></span>
+                </div>
+                <span>SCROLL</span>
             </div>
         </div>
     </header>
@@ -480,7 +481,6 @@ export default {
     components: {
         NavBar
     },
-
     data() {
         return {
             wrapperIsCollapsing: false,
@@ -494,7 +494,6 @@ export default {
             parallaxTimeout: undefined,
         }
     },
-
     methods: {
         animateDojang(delay) {
             this.dojangPlacedElements = false;
@@ -519,7 +518,7 @@ export default {
                     stagger: 0.05
                 });
 
-                let breastplateTimeline = gsap.timeline();
+                const breastplateTimeline = gsap.timeline();
                 breastplateTimeline.to("#dojang_breastplate",{
                     transformOrigin: "50% 0%",
                     rotate: -8,
@@ -578,6 +577,20 @@ export default {
             }, delay * 1000);         
         },
 
+        animateMouse() {
+            const   mouseAnimation = gsap.timeline({repeat: -1}),
+                    mouseHeight = document.getElementById("dojang_scrolldown_mouse").clientHeight,
+                    wheel = "#dojang_scrolldown_mouse > span";
+
+            mouseAnimation.to(wheel, {
+                duration: 1,
+                y: mouseHeight * 0.2
+            })
+            mouseAnimation.to(wheel, {
+                y: 0
+            })
+        },
+
         appearOverlay() {
             const duration = 1;
 
@@ -622,12 +635,13 @@ export default {
         },
         
         firstAppearOverlay(delay) {
-                gsap.from("#dojang_overlay", {
-                    duration: 1,
-                    delay: delay,
-                    opacity: 0
-                });
-    
+            gsap.from("#dojang_overlay", {
+                duration: 1,
+                delay: delay,
+                opacity: 0
+            });
+
+            if (window.innerHeight <= window.innerWidth) {
                 gsap.from(".dojang_scene_navbar", {
                     duration: 1,
                     delay: delay + 0.15,
@@ -642,27 +656,51 @@ export default {
                     opacity: 0
                 });
 
-                gsap.from("#dojang_banner > *", {
+                gsap.from("#dojang_banner > *, #dojang_scrolldown", {
                     duration: 1,
                     delay: delay + 1,
-                    stagger: 0.3,
+                    stagger: 0.15,
                     y: -10,
                     opacity: 0,
-                })
+                });
+
+            } else {
+                gsap.from(".dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu > li, #dojang_banner > h1, #dojang_banner > a, #dojang_scrolldown", {
+                    duration: 1,
+                    delay: delay,
+                    stagger: 0.15,
+                    y: -15,
+                    opacity: 0
+                });
+            }
+
+            setTimeout(() => this.animateMouse(), 1000);
         },
 
         hideDojang() {
-             if(this.wrapperIsCollapsing) return;
+            if(this.wrapperIsCollapsing) return;
 
-            document.getElementById("dojang_wrapper").classList.add("collapsed");
-            this.wrapperIsCollapsing = true;
-            this.disappearOverlay();
-            history.scrollRestoration = 'manual';
+            const wrapper = document.getElementById("dojang_wrapper");
 
-            setTimeout(() => {
-                this.wrapperIsCollapsing = false;
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                this.disappearOverlay();
+
+                wrapper.classList.add("smooth");
+                this.wrapperIsCollapsing = true;
+
+                setTimeout(() => {
+                    this.wrapperIsCollapsing = false;
+                    wrapper.classList.remove("smooth");
+                    document.body.classList.remove("fullpage");
+                    history.scrollRestoration = 'manual';
+                }, 1000);
+
+            } else {
                 document.body.classList.remove("fullpage");
-            }, 1000);
+                history.scrollRestoration = 'manual';
+            }
+
+            wrapper.classList.add("collapsed");
         },
 
         initAnimations() {
@@ -790,16 +828,27 @@ export default {
         showDojang() {
             if(this.wrapperIsCollapsing) return;
 
-            document.getElementById("dojang_wrapper").classList.remove("collapsed");
-            this.wrapperIsCollapsing = true;
-            document.body.classList.add("fullpage");
+            const wrapper = document.getElementById("dojang_wrapper");
 
-            this.appearOverlay();
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                this.appearOverlay();
+                
+                wrapper.classList.add("smooth");
+                this.wrapperIsCollapsing = true;
 
-            setTimeout(() => {
-                this.wrapperIsCollapsing = false;
+                setTimeout(() => {
+                    this.wrapperIsCollapsing = false;
+                    wrapper.classList.remove("smooth");
+                    document.body.classList.add("fullpage");
+                    history.scrollRestoration = 'auto';
+                }, 1000);
+
+            } else {
+                document.body.classList.add("fullpage");
                 history.scrollRestoration = 'auto';
-            }, 1000);
+            }
+
+            wrapper.classList.remove("collapsed");
         }
     },
     beforeMount() { 
@@ -851,7 +900,7 @@ export default {
         });
 
         //Scroll from button
-        document.querySelector("#dojang_scrolldown_button").addEventListener("click", this.hideDojang);
+        document.querySelector("#dojang_scrolldown").addEventListener("click", this.hideDojang);
     },
     beforeUnmount() {
         document.body.classList.remove("fullpage");
@@ -882,10 +931,13 @@ export default {
         height: 100vh;
         height: var(--viewport-height);
         overflow: hidden;
-        transition: 1s;
 
         &.collapsed {
             height: 0;
+        }
+
+        &.smooth {
+            transition: 1s;
         }
     }
 
@@ -992,8 +1044,8 @@ export default {
     }
 
     #dojang_banner {
-        margin-left: 8vmin;
-        width: 87vmin;
+        margin-left: 3rem;
+        width: clamp(33rem, 100vmin, 50rem);
         color: white;
         text-align: left;
         text-shadow: 0px 0px 2vmin black, 0px 0px 2vmin grey;
@@ -1001,103 +1053,64 @@ export default {
 
         h1 {
             margin: 0;
-            font-size: clamp(0px, 12vmin, 5.5rem);
+            font-size: clamp(3.7rem, 11vmin, 5.5rem);
         }
 
         p {
-            font-size: clamp(0px, 2.5vmin, 1.5rem);
+            font-size: clamp(1rem, 3vmin, 1.5rem);
         }
 
         a {
             display: inline-block;
             padding: clamp(0.66rem, 1.32vmin, 1rem) clamp(1.33rem, 2.66vmin, 2rem);
-            font-size: clamp(1rem, 2vmin, 1.5rem);
+            font-size: clamp(1rem, 3vmin, 1.5rem);
             background: var(--blue-medium-color);
             border-radius: 1vmin;
-            text-transform: uppercase;
+            //text-transform: uppercase;
             text-decoration: none;
             text-shadow: none;
 
             &:visited {
                 color: inherit;
             }
+
+            &:hover {
+                background: var(--blue-light-color);
+            }
         }        
     }
 
-    #dojang_scrolldown_button {
+    #dojang_scrolldown {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
         height: 20vh;
-        width: 100%;
+        min-height: 10rem;
         cursor: pointer;
-        //background-color: rgba($color: black, $alpha: 0.1);
+        color: white;
+        font-weight: bold;
+        text-shadow: 0px 0px 5px black;
+    }
 
-        &:hover {
-            .arrow {
-                border: solid rgba($color: white, $alpha: 0.2);
-                border-left: 0;
-                border-top: 0;
-            }        
-        }
+    #dojang_scrolldown_mouse {
+        box-sizing: border-box;
+        height: 5rem;
+        width: 3rem;
+        margin-bottom: 1rem;
+        border-radius: 1.5rem;
+        outline: 2px solid white;
+        background-color: rgba($color: black, $alpha: 0.3);
+        padding-top: 1rem;
+        animation: mouse_scrolldown 3s infinite;
 
-        .arrow {
-            border: solid rgba($color: black, $alpha: 0.2);
-            border-left: 0;
-            border-top: 0;
-            border-radius: 3px;
-            transform: rotate(45deg);
-            margin-bottom: 0;
-            margin: auto;
-            top: -1.5vh;
-
-            &:after {          
-                content: '';
-                position: absolute;
-                border: solid rgba($color: white, $alpha: 0.8);
-                border-radius: 3px;
-                border-left: 0;
-                border-top: 0;
-            }
-
-            &:nth-child(3) {
-                width: 1.2vh;
-                height: 1.2vh;
-                border-width: 0.3vh;
-
-                &:after {
-                    top: 0px;
-                    left: 0px;
-                    width: 1.5vh;
-                    height: 1.5vh;
-                    border-width: 0.3vh;
-                }
-            }
-            &:nth-child(2) {
-                width: 1.6vh;
-                height: 1.6vh;
-                border-width: 0.4vh;
-
-                &:after {
-                    top: 0px;
-                    left: 0px;
-                    width: 2vh;
-                    height: 2vh;
-                    border-width: 0.4vh;
-                }
-            }
-            &:nth-child(1) {
-                width: 2.1vh;
-                height: 2.1vh;
-                border-width: 0.5vh;
-
-                &:after {
-                    top: 0px;
-                    left: 0px;
-                    width: 2.5vh;
-                    height: 2.5vh;
-                    border-width: 0.5vh;
-                }
-            }
+        span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: white;
         }
     }
 
@@ -1109,7 +1122,13 @@ export default {
         text-align: center;
         justify-content: space-between;
         flex: 1;
+        margin-left: 0;
         padding-top: 10vh;
+        width: 100vw;
+
+        h1 {
+            font-size: 11vmin;
+        }
 
         p {
             display: none;
@@ -1120,6 +1139,11 @@ export default {
             max-width: 20rem;
             width: 80vw;
         }
+    }
+
+    #dojang_scrolldown_mouse {
+        transform: scale(0.7);
+        margin-bottom: 0;
     }
 }
 
