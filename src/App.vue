@@ -51,4 +51,47 @@ body {
         width: 10px;
     }
 }
+
+section {
+    box-sizing: border-box;
+    padding: 2rem;
+    
+    &.blue {
+        background-color: var(--blue-dark-color);
+    }
+
+    &.red {
+        background-color: var(--red-dark-color);
+    }
+
+    &.grey {
+        background-color: rgb(245, 245, 245);
+    }
+
+    &> .content {
+        box-sizing: border-box;
+        margin: auto;
+        width: 100%;
+        max-width: 1600px;
+    }
+}
+
+.blue_light {
+    color: var(--blue-light-color);
+}
+.blue {
+    color: var(--blue-medium-color);
+}
+.blue_dark {
+    color: var(--blue-dark-color);
+}
+.red {
+    color: var(--red-medium-color);
+}
+
+@media (min-width: 60em) {
+    section {
+        padding: 5rem 3rem;
+    }
+}
 </style>

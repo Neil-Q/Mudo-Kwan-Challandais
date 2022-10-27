@@ -1,5 +1,5 @@
 <template>
-    <div class="schedule">
+    <div id="courses_schedule">
         <div class="schedule_day">            
             <div class="schedule_day_label">
                 <p>Mardi</p>
@@ -103,7 +103,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#courses_schedule {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
 .schedule_day {
     display: flex;
     justify-content: space-between;

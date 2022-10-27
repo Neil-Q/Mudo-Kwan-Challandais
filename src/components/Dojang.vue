@@ -896,7 +896,7 @@ export default {
             if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
         })
 
-        window.addEventListener("resize", this.setAppHeight());
+        window.addEventListener("resize", this.setAppHeight);
 
         //Scroll from button
         document.querySelector("#dojang_scrolldown").addEventListener("click", this.hideDojang);
