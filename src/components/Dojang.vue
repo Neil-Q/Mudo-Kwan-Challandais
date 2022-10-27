@@ -496,13 +496,8 @@ export default {
     },
     methods: {
         animateDojang(delay) {
-            this.dojangPlacedElements = false;
+            this.resetDojang();
             let dojang_parts = document.querySelectorAll(".dojang_part");
-
-            dojang_parts.forEach( part => {
-                part.classList.remove("placed");
-                part.classList.add("unplaced");
-            })
 
             //scene animations
             setTimeout(() => {
@@ -814,6 +809,14 @@ export default {
             })
         },
 
+        resetDojang() {
+            this.dojangPlacedElements = false;
+            let dojang_parts = document.querySelectorAll(".dojang_part");
+
+            dojang_parts.forEach( part => part.classList.add("unplaced"));
+            dojang_parts.forEach( part => part.classList.remove("placed"));
+        },
+
         resetParallax() {
             gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
                 xPercent: 0,
@@ -833,18 +836,17 @@ export default {
             if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
                 this.appearOverlay();
                 
+                document.body.classList.add("fullpage");
                 wrapper.classList.add("smooth");
                 this.wrapperIsCollapsing = true;
 
                 setTimeout(() => {
                     this.wrapperIsCollapsing = false;
                     wrapper.classList.remove("smooth");
-                    document.body.classList.add("fullpage");
                     history.scrollRestoration = 'auto';
                 }, 1000);
 
             } else {
-                document.body.classList.add("fullpage");
                 history.scrollRestoration = 'auto';
             }
 
@@ -884,7 +886,6 @@ export default {
             touchOrigin = e.changedTouches[0].clientY;
             touchOriginYOffset = parseInt(window.pageYOffset);
         })
-
         window.addEventListener("touchend", (e) => {
             if (this.wrapperIsCollapsing) return
             let touchEnd = e.changedTouches[0].clientY;
@@ -895,9 +896,7 @@ export default {
             if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
         })
 
-        window.addEventListener("resize", () => {
-            this.setAppHeight();
-        });
+        window.addEventListener("resize", this.setAppHeight());
 
         //Scroll from button
         document.querySelector("#dojang_scrolldown").addEventListener("click", this.hideDojang);
@@ -907,6 +906,7 @@ export default {
         document.body.style.overscrollBehavior = "auto";
 
         clearTimeout(this.parallaxTimeout);
+        this.resetDojang();
         this.resetParallax();
         window.removeEventListener("deviceorientation", this.orientationParallax);
         document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
