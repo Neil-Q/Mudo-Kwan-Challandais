@@ -15,6 +15,8 @@
     --dark-color: #262626;
     --dark-soft-color: #404040;
 
+    --grey-soft-color: #f5f5f5;
+
     --blue-dark-color: #006699;
     --blue-medium-color: #0088CC;
     --blue-light-color: #00A3FF;
@@ -52,12 +54,17 @@ body {
     }
 }
 
+h3 {
+    font-size: clamp(1.5rem, 2vw ,2rem);
+    text-transform: uppercase;
+}
+
 section {
     box-sizing: border-box;
     padding: 2rem;
     
     &.blue {
-        background-color: var(--blue-dark-color);
+        background-color: var(--blue-medium-color);
     }
 
     &.red {
@@ -65,14 +72,14 @@ section {
     }
 
     &.grey {
-        background-color: rgb(245, 245, 245);
+        background-color: var(--grey-soft-color);
     }
 
     &> .content {
         box-sizing: border-box;
         margin: auto;
         width: 100%;
-        max-width: 1600px;
+        max-width: 1200px;
     }
 }
 

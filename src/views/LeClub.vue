@@ -5,56 +5,104 @@
     </section>
 
     <section id="mudo_kwan_challandais">
-        <UnderlinedTitle title="Le Mudo Kwan Challandais"/>
+        <div class="content">
+            <UnderlinedTitle title="Le Mudo Kwan Challandais"/>
 
-        <div class="club_strength">
-            <div class="club_strength_text">
-                <h3>Plus de 40 ans d'histoire</h3>
-                <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
-                <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
+            <div class="club_strength">
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                <div class="club_strength_text">
+                    <h3>Plus de 40 ans d'histoire</h3>
+                    <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
+                    <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
+                </div>
             </div>
-            <div class="club_strength_pictures">
-            </div>
-        </div>
 
-        <div class="club_strength reversed">
-            <div class="club_strength_text">
-                <h3>Une grande famille</h3>
-                <p>Notre club se veut avant tout être une grande famille. Nous mettons un point d’honneur à nous raprocher de tout le monde et veillons à ce que chacun trouve ce qu’il recherche et parvienne à ses objectifs.</p>
-                <p>Nous organisons aussi régulièrement des événements conviviaux ouverts à l'entourage des membres en dehors des entraînements</p>
-                <p>Nous pensons sincerement qu’il s’agit d’une de nos principales forces et nombre d’entre nous viennent autant par plaisir du sport que par plaisir de nous retrouver ensemble.</p>
+            <div class="club_strength reversed">
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                <div class="club_strength_text">
+                    <h3>Une grande famille</h3>
+                    <p>Notre club se veut avant tout être une grande famille. Nous mettons un point d’honneur à nous raprocher de tout le monde et veillons à ce que chacun trouve ce qu’il recherche et parvienne à ses objectifs.</p>
+                    <p>Nous organisons aussi régulièrement des événements conviviaux ouverts à l'entourage des membres en dehors des entraînements</p>
+                    <p>Nous pensons sincerement qu’il s’agit d’une de nos principales forces et nombre d’entre nous viennent autant par plaisir du sport que par plaisir de nous retrouver ensemble.</p>
+                </div>
             </div>
-            <div class="club_strength_pictures">
-            </div>
-        </div>
 
-        <div class="club_strength">
-            <div class="club_strength_text">
-                <h3>Des événements internes</h3>
-                <p>Nous organisons réguliérement des événements au sein de notre pratique sportive tels que des mini competitions internes, des cours de découverte ouvers à tous ou encore la venue de Maîtres tels que le grand Maître Lee Kang Jong</p>
+            <div class="club_strength">
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                <div class="club_strength_text">
+                    <h3>Des événements internes</h3>
+                    <p>Nous organisons réguliérement des événements au sein de notre pratique sportive tels que des mini competitions internes, des cours de découverte ouvers à tous ou encore la venue de Maîtres tels que le grand Maître Lee Kang Jong</p>
+                </div>
             </div>
-            <div class="club_strength_pictures">
-            </div>
-        </div>
 
-        <div class="club_strength reversed">
-            <div class="club_strength_text">
-                <h3>Ouverts à l'exterieur</h3>
-                <p>Nous somme aussi très présents à l’exterieur lors de stages organisés principalements sur Nantes, la Roche sur Yon et les Herbiers.</p>
-                <p>Enfin, nous souhaitons affirmer de plus en plus notre volontés à nous ouvrir aux pratiquants d’autres disciplines afin d’échanger sur nos techniques et nos manières de pratiquer.</p>
+            <div class="club_strength reversed">
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                <div class="club_strength_text">
+                    <h3>Ouverts à l'exterieur</h3>
+                    <p>Nous somme aussi très présents à l’exterieur lors de stages organisés principalements sur Nantes, la Roche sur Yon et les Herbiers.</p>
+                    <p>Enfin, nous souhaitons affirmer de plus en plus notre volontés à nous ouvrir aux pratiquants d’autres disciplines afin d’échanger sur nos techniques et nos manières de pratiquer.</p>
+                </div>
             </div>
-            <div class="club_strength_pictures">
-            </div>
-        </div>
-         
+        </div>        
     </section>
 
-    <section id="our_teachers">
-        <UnderlinedTitle class="large white" title="Nos professeurs"/>
+    <section id="director_comite" class="grey">
+        <div class="content">
+            <UnderlinedTitle class="large" title="Les membres du bureau"/>
+
+            <div id="members_list">
+                <div class="member">
+                    <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                    <p class="name">Anthony Moinardeau</p>
+                    <p class="function">Président</p>
+                </div>
+
+                <div class="member">
+                    <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                    <p class="name">Dany Villay</p>
+                    <p class="function">Trésorier</p>
+                </div>
+
+                <div class="member">
+                    <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                    <p class="name">Stéphane Noel</p>
+                    <p class="function">Secrétaire adjoint et responsable communication </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="director_comite">
-        <UnderlinedTitle class="large" title="Les membres du bureau"/>
+    <section id="our_teachers" >
+        <div class="content">
+            <UnderlinedTitle class="large" title="Nos professeurs"/>
+
+            <div id="teachers_list">
+                <div class="teacher">
+                    <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                    <p class="name">Anthony moinardeau</p>
+                    <div class="qualifications">
+                        <p>BPJEPS Activités Physiques pour Tous</p>
+                        <p>Instructeur Fédéral</p>
+                    </div>
+                    <div class="degrees">
+                        <p>2° dan Hapkimudo</p>
+                        <p>2° dan Hapkido</p>
+                        <p>1° dan Taekwondo</p>
+                    </div>
+                </div>
+
+                <div class="teacher">
+                    <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+                    <p class="name">Dany Vilay</p>
+                    <div class="qualifications">
+                        <p>Instructeur Fédéral</p>
+                    </div>
+                    <div class="degrees">
+                        <p>2° dan Taekwondo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <Footer />
@@ -72,6 +120,11 @@
             UnderlinedTitle,
             Footer
         },
+        data() {
+            return {
+                pictures: require('@/assets/club_pictures/2021-2022_new_season_group.jpg')
+            }
+        }
     }
 </script>
 
@@ -85,82 +138,102 @@
 }
 
 #mudo_kwan_challandais {
-    padding-bottom: 3rem;
+    text-align: center;
 }
 
 .club_strength {
-    display: flex;
-    justify-content: space-between;
     margin: auto;
-    width: 90%;
-    max-width: 1600px;
     padding: 2.5rem 0 2.5rem 0;
 
-    &.reversed {
-        flex-direction: row-reverse;
+    img {
+        margin: auto;
+        width: 35rem;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
     }
 }
 
-.club_strength_text {
-    margin-top: auto;
-    margin-bottom: auto;
-    max-width: calc(100% - clamp(30rem, 40vw, 40rem));
 
-    h3 {
-        font-size: clamp(1.5rem, 2vw ,2rem);
+#teachers_list, #members_list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    img {
+        width: 20rem;
+    }
+
+    .name {
+        font-size: 1.5rem;
         text-transform: uppercase;
-        text-align: left;
-    }
-
-    p {
-        font-size: clamp(0.85em, 1vw, 1rem);
-        text-align: justify;;
+        font-weight: bold;
     }
 }
 
-.club_strength_pictures {
-    background-color: gray;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: clamp(28rem, 35vw, 35rem);
-    height: clamp(16rem, 20vw, 20rem);
+.teacher {
+    img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .name {
+        color: var(--dark-color);
+    }
+
+    .qualifications {
+        margin-bottom: 1rem;
+        color: var(--red-medium-color);
+    
+        p {
+            margin: 0;
+        }
+    }
+
+    .degrees p {
+        margin: 0;
+        color: var(--dark-color);
+        font-weight: bold;
+    }
 }
 
-#our_teachers {
-    height: 50em;
-    background-color: var(--blue-medium-color);
+.member {
+    img {
+        aspect-ratio: 1 / 1;
+        border-radius: 10rem;
+    }
+
+    .name {
+        color: var(--red-medium-color);
+    }
+
+    .function {
+        max-width: 15rem;
+        font-weight: bold;
+        margin: auto;
+    }
 }
 
-#director_comite {
-    height: 50em;
+@media (min-width: 40em) {
+
 }
 
-@media (max-width: 60em) {
-
+@media (min-width: 60em) {
     .club_strength {
-        flex-direction: column-reverse;
-        padding: 3rem 0 0 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
 
         &.reversed {
-            flex-direction: column-reverse;
+            flex-direction: row;
+        }
+    
+        img {
+            width: 45%;
         }
     }
 
-    .club_strength_text {
-        width: clamp(1rem, 90vw, 40rem);
-        margin: auto;
-        max-width: 100%;
 
-        h3 {
-            text-align: center;
-        }
-    }
-
-    .club_strength_pictures {
-        width: clamp(1rem, 90vw, 40rem);
-        height: clamp(1rem, 45vw, 20rem);
-        margin: auto;
-    }
 }
-
 </style>
