@@ -15,7 +15,7 @@
                         <div class="schedule_cours tkd_adult">
                             <p>Taekwondo adultes/ados (12 ans +)*</p>
                             <p>Taekwondo enfants (6 à 12 ans)*</p>
-                            <p class="small">*cours commun</p>
+                            <!-- <p class="small">*cours commun</p> -->
                         </div>
                     </div>
                 </div>
