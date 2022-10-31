@@ -158,16 +158,19 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 5rem;
 
     img {
         width: 20rem;
+        max-width: 70vw;
+        object-fit: cover;
     }
 
     .name {
         font-size: 1.5rem;
         text-transform: uppercase;
         font-weight: bold;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -183,6 +186,7 @@
     .qualifications {
         margin-bottom: 1rem;
         color: var(--red-medium-color);
+        font-weight: bold;
     
         p {
             margin: 0;
