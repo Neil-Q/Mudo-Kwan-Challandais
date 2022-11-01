@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import LeClub from '../views/LeClub.vue'
 
 const routes = [
     {
@@ -11,9 +10,13 @@ const routes = [
     {
         path: '/le_club',
         name: 'LeClub',
-        component: LeClub
-        //component: () => import ("@/components/NavBar.vue")
-    }
+        component: () => import ("@/views/LeClub.vue")
+    },
+    {
+        path: '/histoire_du_taekwondo',
+        name: 'TaekwondoHistoire',
+        component: () => import ("@/views/TaekwondoHistoire.vue")
+    },
 ]   
 
 const router = createRouter({

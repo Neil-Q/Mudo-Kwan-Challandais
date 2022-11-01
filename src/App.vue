@@ -96,6 +96,12 @@ section {
     color: var(--red-medium-color);
 }
 
+@media (min-width: 40em) {
+    section {
+        padding: 5rem 3rem;
+    }
+}
+
 @media (min-width: 60em) {
     section {
         padding: 5rem 3rem;

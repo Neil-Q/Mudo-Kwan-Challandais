@@ -168,7 +168,7 @@
         </div>
     </section>
 
-    <Footer />
+    <MudoFooter />
 </template>
 
 <script>
@@ -177,7 +177,7 @@ import Dojang           from "@/components/Dojang.vue";
 import NavBar           from "@/components/NavBar.vue";
 import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
 import Schedule         from "@/components/Schedule.vue";
-import Footer           from "@/components/Footer.vue";
+import MudoFooter       from "@/components/MudoFooter.vue";
 
 // libraries
 import * as Vivus       from "vivus";
@@ -189,7 +189,7 @@ export default {
         NavBar,
         UnderlinedTitle,
         Schedule,
-        Footer
+        MudoFooter
     },
     data() {
         return {

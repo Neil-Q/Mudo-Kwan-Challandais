@@ -1,8 +1,6 @@
 <template>
     <NavBar class="blue"/>
-
-    <section id="club_hero">
-    </section>
+    <Hero title="Le club" class="blue" />
 
     <section id="mudo_kwan_challandais">
         <div class="content">
@@ -105,20 +103,22 @@
         </div>
     </section>
 
-    <Footer />
+    <MudoFooter />
 </template>
 
 <script>
-    import NavBar from "@/components/NavBar.vue";
-    import UnderlinedTitle from "@/components/UnderlinedTitle.vue";
-    import Footer from "@/components/Footer.vue";
+    import NavBar           from "@/components/NavBar.vue";
+    import Hero             from "@/components/Hero.vue";
+    import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
+    import MudoFooter       from "@/components/MudoFooter.vue";
 
     export default {
         name: "LeClub",
         components: {
             NavBar,
+            Hero,
             UnderlinedTitle,
-            Footer
+            MudoFooter
         },
         data() {
             return {
@@ -129,17 +129,6 @@
 </script>
 
 <style lang="scss">
-
-#club_hero {
-    min-height: 40rem;
-    max-height: 60vh;
-    width: 100%;
-    background-color: var(--blue-medium-color);
-}
-
-#mudo_kwan_challandais {
-    text-align: center;
-}
 
 .club_strength {
     margin: auto;
