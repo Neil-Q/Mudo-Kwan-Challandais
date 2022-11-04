@@ -17,6 +17,11 @@ const routes = [
         name: 'TaekwondoHistoire',
         component: () => import ("@/views/TaekwondoHistoire.vue")
     },
+    {
+        path: '/le_taekwondo',
+        name: 'TaekwondoPresentation',
+        component: () => import ("@/views/TaekwondoPresentation.vue")
+    },
 ]   
 
 const router = createRouter({

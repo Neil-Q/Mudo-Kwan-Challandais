@@ -13,7 +13,7 @@
                         <div class="dropdown_spacer"></div>
                         <ul>
                             <li><router-link class="dropdown_item"  to="/histoire_du_taekwondo">Histoire</router-link></li>
-                            <li><router-link class="dropdown_item"  to="/">Présentation</router-link></li>
+                            <li><router-link class="dropdown_item"  to="/le_taekwondo">Présentation</router-link></li>
                             <li><router-link class="dropdown_item"  to="/">Baby taekwondo</router-link></li>
                             <li><router-link class="dropdown_item"  to="/">Passages de grade</router-link></li>
                         </ul>

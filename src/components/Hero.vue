@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    min-height: 40rem;
+    height: 40rem;
     max-height: 50vh;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ h1 {
     border: solid 3px white;
     border-radius: 3px;
     padding: 1rem 2rem;
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3rem);
     text-transform: uppercase;
 }
 </style>

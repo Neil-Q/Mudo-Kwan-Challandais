@@ -15,6 +15,9 @@
     --dark-color: #262626;
     --dark-soft-color: #404040;
 
+    --white-color: #FBF7ED;
+    //--white-dark-color: #F6F2E8;
+
     --grey-soft-color: #f5f5f5;
 
     --blue-dark-color: #006699;
@@ -25,6 +28,8 @@
     --red-dark-color: #a71010;
     --red-medium-color: #C21111;
     --red-light-color: #e71515;
+
+    --font-korean: "Noto Serif KR";
 }
 
 html {
@@ -36,6 +41,7 @@ body {
     padding: 0;
     height: auto;
     overflow-Y: overlay;
+    background-color: var(--white-color);
 
     &::-webkit-scrollbar {
         display: block;
@@ -72,7 +78,7 @@ section {
     }
 
     &.grey {
-        background-color: var(--grey-soft-color);
+        background-color: rgba($color: #000000, $alpha: 0.02);
     }
 
     &> .content {
@@ -96,6 +102,22 @@ section {
     color: var(--red-medium-color);
 }
 
+.hangul {
+    font-family: var(--font-korean);
+}
+
+.illustrated_text {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 2.5rem 0 2.5rem 0;
+
+    img, .illustration {
+        margin: auto;
+        width: 35rem;
+        max-width: 100%;
+    }
+}
+
 @media (min-width: 40em) {
     section {
         padding: 5rem 3rem;
@@ -105,6 +127,28 @@ section {
 @media (min-width: 60em) {
     section {
         padding: 5rem 3rem;
+    }
+
+    .illustrated_text {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+
+        &.reversed {
+            flex-direction: row;
+        }
+    
+        img, .illustration {
+            width: 45%;
+            flex: .45;
+            background-color: red;
+        }
+
+        .text {
+            flex: 0.5;
+        }
     }
 }
 </style>

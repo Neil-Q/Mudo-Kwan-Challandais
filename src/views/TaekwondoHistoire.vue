@@ -92,7 +92,6 @@
 <script>
     import NavBar           from "@/components/NavBar.vue";
     import Hero             from "@/components/Hero.vue";
-    //import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
     import MudoFooter       from "@/components/MudoFooter.vue";
 
     export default {
@@ -100,7 +99,6 @@
         components: {
             NavBar,
             Hero,
-            //UnderlinedTitle,
             MudoFooter
         },
         data() {
@@ -135,6 +133,10 @@ small {
 @media (min-width: 60em) {
     section, p {
         text-align: left;
+    }
+
+    small {
+        margin-left: 0.5rem;
     }
 }
 
