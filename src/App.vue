@@ -12,12 +12,11 @@
 }
 
 :root {
+    // colors ->
     --dark-color: #262626;
     --dark-soft-color: #404040;
 
-    --white-color: #FBF7ED;
-    //--white-dark-color: #F6F2E8;
-
+    --white-color: #fdfcfa;
     --grey-soft-color: #f5f5f5;
 
     --blue-dark-color: #006699;
@@ -29,7 +28,11 @@
     --red-medium-color: #C21111;
     --red-light-color: #e71515;
 
+    //fonts ->
     --font-korean: "Noto Serif KR";
+
+    --font-sz-medium: clamp(0.8rem, 2vw, 1rem);
+    --font-sz-large: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 html {
@@ -42,6 +45,7 @@ body {
     height: auto;
     overflow-Y: overlay;
     background-color: var(--white-color);
+    font-size: var(--font-sz-medium);
 
     &::-webkit-scrollbar {
         display: block;

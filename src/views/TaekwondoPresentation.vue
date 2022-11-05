@@ -2,7 +2,7 @@
     <NavBar class="blue" />
     <Hero class="blue" title="Le taekwondo" />
 
-     <section>
+     <section id="taekwondo_presentation">
         <div class="content">
             <div id="taekwondo_hanguls">
                 <div class="character">
@@ -22,16 +22,25 @@
                 </div>
             </div>
 
-            <div id="taekwondo_presentation">
+            <div id="taekwondo_presentation_text">
                 <p>Originaire de Corée le Taekwondo, littéralement la voie (Do) des pieds (Tae) et des poings (Kwon) a de nombreuses facettes. Il peut ressembler en certains points à du Karaté mais avec de nombreuses différences dans la pratique. Le travail des frappes de pied, la recherche de l’enchainement ainsi que du déplacement y est beaucoup plus présent, créant ainsi un style plus fluide, plus aérien</p>
                 <p>Le Taekwondo est souvent considéré comme un art martial spectaculaire et spécialisé dans les coups de pied. Plus largement, on parlera d’art martial de percussion pieds/poings. Une dimension sportive lui est également vouée depuis sa première inscription en sport de démonstration puis aux jeux olympiques.</p>
             </div>
+        </div>
+    </section>
 
-            <div id="taekwondo_short_history">
+    <section id="taekwondo_short_history">
+        <div class="content">
+            <div class="illustration"></div>
+            <div id="taekwondo_short_history_text">
+                <h3>Un peu d'histoire</h3>
                 <p>Le taekwondo est un art relativement récent, moins de 70 ans, mais il constitue la synthèse de plusieurs art martiaux coréens anciens et japonais. Il est crée suite à la fin de la domination nipponne du pays, resultant en une volonté de reconstruire l'identité nationale autour d'un art martial totalement Coréen. Il arrive en France avec maître Lee Kwan Young en 1969 et ne cesse de se développer depuis, devenant même discipline olympique à partir des années 2000.</p>
             </div>
+        </div>
+    </section>
 
-            <div id="taekwondo_benefits">
+    <section id="taekwondo_benefits">
+        <div class="content">
                 <div id="taekwondo_tenets">
                     <div class="taekwondo_tenet">
                         <div class="tenet_hanguls hangul">예의</div>
@@ -63,8 +72,9 @@
                     <p>Le respect, la persévérance, le fair-play, l'humilité et la maitrise de soit sont au cœur de l'enseignement. Des exercices ludiques viennent agrémenter l'enseignement pour développer les liens entre les pratiquants et travailler sur d'autres types d'apprentissages.</p>
                 </div>
             </div>
-        </div>
     </section>
+
+ 
 
     <div id="presentation_videos">
             <iframe src="https://www.youtube.com/embed/iai8YbMEues" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -104,23 +114,46 @@
 </script>
 
 <style lang="scss" scoped>
+
+
+
 #taekwondo_hanguls {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 2rem;
     margin-bottom: 4rem;
+
+    .character_hangul {
+        font-size: clamp(0px, 25vw, 10rem);
+    }
+    .character_romanization {
+        font-size: clamp(1rem, 5vw, 2rem);
+        font-weight: bold;
+    }
+    .character_translation {
+        text-transform: uppercase;
+        font-size: clamp(0.6rem, 3vw, 1.2rem);
+    }
 }
-.character_hangul {
-    font-size: clamp(0px, 25vw, 10rem);
+#taekwondo_presentation_text {
+    max-width: 40rem;
+    margin: auto;
+    font-size: var(--font-sz-large);
+    text-align: center;
 }
-.character_romanization {
-    font-size: clamp(1rem, 5vw, 2rem);
-    font-weight: bold;
-}
-.character_translation {
-    text-transform: uppercase;
-    font-size: clamp(0.6rem, 3vw, 1.2rem);
+
+#taekwondo_short_history {
+    font-size: var(--font-sz-large);
+
+    .illustration {
+        position: absolute;
+        right: -15vw;
+        transform: translateY(-10vw);
+        width: 70vw;
+        height: 34vw;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+    }
 }
 
 #taekwondo_tenets {
@@ -155,11 +188,25 @@
 }
 
 @media (min-width: 60em) {
-    h3, h4, p{
+    h3, h4 {
         text-align: left;
     }
 
-    #taekwondo_benefits {
+    #taekwondo_short_history {
+        text-align: left;
+
+        .content {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+        }
+
+        .illustration {
+            position: initial;
+            transform: translateY(0);
+        }
+    }
+
+    #taekwondo_benefits .content {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
     }
