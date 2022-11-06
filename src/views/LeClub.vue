@@ -2,8 +2,7 @@
     <NavBar class="blue"/>
     <Hero title="Le club" class="blue" />
 
-    <section id="mudo_kwan_challandais">
-        <div class="content">
+    <!-- <section id="mudo_kwan_challandais">
             <UnderlinedTitle title="Le Mudo Kwan Challandais"/>
 
             <div class="illustrated_text">
@@ -40,9 +39,29 @@
                     <p>Nous somme aussi très présents à l’exterieur lors de stages organisés principalements sur Nantes, la Roche sur Yon et les Herbiers.</p>
                     <p>Enfin, nous souhaitons affirmer de plus en plus notre volontés à nous ouvrir aux pratiquants d’autres disciplines afin d’échanger sur nos techniques et nos manières de pratiquer.</p>
                 </div>
-            </div>
-        </div>        
-    </section>
+            </div>      
+    </section> -->
+    <SlideInIllustratedText>
+        <template v-slot:illustration>
+            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+        </template>
+        <template v-slot:text>
+            <h3>Plus de 40 ans d'histoire</h3>
+            <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
+            <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
+        </template>
+    </SlideInIllustratedText>
+
+    <SlideInIllustratedText>
+        <template v-slot:illustration>
+            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+        </template>
+        <template v-slot:text>
+            <h3>Plus de 40 ans d'histoire</h3>
+            <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
+            <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
+        </template>
+    </SlideInIllustratedText>
 
     <section id="director_comite" class="grey">
         <div class="content">
@@ -107,10 +126,11 @@
 </template>
 
 <script>
-    import NavBar           from "@/components/NavBar.vue";
-    import Hero             from "@/components/Hero.vue";
-    import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
-    import MudoFooter       from "@/components/MudoFooter.vue";
+    import NavBar                   from "@/components/NavBar.vue";
+    import Hero                     from "@/components/Hero.vue";
+    import UnderlinedTitle          from "@/components/UnderlinedTitle.vue";
+    import SlideInIllustratedText   from "@/components/SlideInIllustratedText.vue"
+    import MudoFooter               from "@/components/MudoFooter.vue";
 
     export default {
         name: "LeClub",
@@ -118,20 +138,62 @@
             NavBar,
             Hero,
             UnderlinedTitle,
+            SlideInIllustratedText,
             MudoFooter
         },
         data() {
             return {
                 pictures: require('@/assets/club_pictures/2021-2022_new_season_group.jpg')
             }
+        },
+        mounted() {
+            // const illustratedTextsImages = gsap.utils.toArray('.illustrated_text img');
+            // illustratedTextsImages.forEach(image => {
+            //     gsap.from(image, {
+            //         scrollTrigger: {
+            //             trigger: image,
+            //             start: "center center",
+            //             end: "top top",
+            //             scrub: 1,
+            //             pin: true,
+            //             markers: true
+            //         },
+            //         xPercent: image.parentElement.classList.contains("reversed") ? -70 : 70,
+            //     })
+            // })
+
+            // const illustratedTexts = gsap.utils.toArray('.illustrated_text div');
+            // illustratedTexts.forEach(text => {
+            //     gsap.from(text, {
+            //         scrollTrigger: {
+            //             trigger: text,
+            //             start: "top 20%",
+            //         },
+            //         opacity: 0,
+            //         duration: 1,
+            //         y: 50
+            //     })
+            // })
         }
     }
 </script>
 
 <style lang="scss">
-.illustrated_text img {
-    aspect-ratio: 16 / 9;
-}
+// .illustrated_text {
+//     overflow: hidden;
+//     height: 100vh;
+
+//     img {
+//         aspect-ratio: 3/2;
+//         object-fit: cover;
+//     }
+
+//     div {
+//         box-sizing: border-box;
+//         padding: 5%;
+//         font-size: var(--font-sz-large);
+//     }
+// }
 
 #teachers_list, #members_list{
     display: flex;
