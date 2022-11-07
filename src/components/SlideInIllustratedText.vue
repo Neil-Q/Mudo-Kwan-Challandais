@@ -16,37 +16,59 @@
 
     export default {
         name: "SlideInIllustratedText",
+        props: {
+            reversed: {
+                type: Boolean,
+                default: false
+            }
+        },
         mounted() {
             const   wrapper = this.$refs.wrapper,
-                    illustration = this.$refs.illustration;
-                    //text = this.$refs.text;
+                    illustration = this.$refs.illustration,
+                    text = this.$refs.text;
+
+            if(this.reversed) wrapper.classList.add("reversed");
 
             gsap.from(illustration, {
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: "top center",
-                    end: "top top",
+                    start: "top 60%",
+                    end: "top 5%",
                     scrub: 1,
                 },
-                xPercent: 70,
+                xPercent: wrapper.classList.contains("reversed") ? -70 : 70,
+                opacity: 0.7
             })
 
-            gsap.to(wrapper, {
+            gsap.from(text, {
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: "center center",
-                    end: "center top",
-                    scrub: true,
-                    pin: wrapper,
-                    markers: true
-                }
+                    start: "center 65%",
+                    toggleActions: "restart none none reverse"
+                },
+                opacity: 0,
+                duration: 0.5,
+                y: 20
             })
+
+            // gsap.to(wrapper, {
+            //     scrollTrigger: {
+            //         trigger: wrapper,
+            //         start: "center center",
+            //         end: "center top",
+            //         scrub: true,
+            //         pin: wrapper,
+            //     }
+            // })
         }
     }
 </script>
 
 <style lang="scss">
 .illustrated_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
     height: 100vh;
 
@@ -56,7 +78,7 @@
         &> * {
             aspect-ratio: 3/2;
             object-fit: cover;
-            width: 100%;
+            width: 95%;
         }
     }
 
@@ -82,6 +104,7 @@
         .text {
             grid-area: left;
             text-align: left;
+            padding: 15%;
         }
     }
 

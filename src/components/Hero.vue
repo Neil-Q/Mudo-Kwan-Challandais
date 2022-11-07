@@ -15,8 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    height: 40rem;
-    max-height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

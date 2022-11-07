@@ -1,5 +1,5 @@
 <template>
-    <nav id="nav_bar">
+    <nav id="nav_bar" ref="nav_bar">
             <router-link id="nav_home" class="menu_item" to="/">Mudo Kwan<span> Challandais</span></router-link>
 
             <ul id="nav_bar_menu">
@@ -50,7 +50,17 @@
 
 <script>
 export default {
-    name: "NavBarBis"
+    name: "NavBarBis",
+    props: {
+        sticky: {
+            type: Boolean,
+            default: false
+        }
+    },
+    mounted() {
+        if(this.sticky) this.$refs.nav_bar.classList.add("sticky");
+        console.log(this.sticky);
+    }
 }
 </script>
 
@@ -60,8 +70,7 @@ export default {
 
         width: 100%;
         max-width: 100vw;
-        position: sticky;
-        position: -webkit-sticky;
+        position: fixed;
         top: 0px;
         z-index: 100;
         display: flex;
@@ -82,12 +91,16 @@ export default {
             padding: 0;
             list-style: none;
         }
+
+        &.sticky {
+            position: sticky;
+            position: -webkit-sticky;
+        }
     }
 
     // For different color schemes
     #nav_bar {
         &.transparent {
-            background-color: transparent;
             background-color: #00000050;
 
             .dropdown_submenu ul{

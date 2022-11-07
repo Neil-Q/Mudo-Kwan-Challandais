@@ -1,5 +1,7 @@
 <template>
     <header id="dojang_wrapper">
+        <NavBar class="transparent dojang_scene_navbar"/>
+
         <div id="scene_container">
             <div id="dojang_scene">
                 <svg id="dojang_exterior" class="dojang_layer dojang_part unplaced" viewBox="0 0 2645.8332 2645.8332">
@@ -455,12 +457,13 @@
         </div>
 
         <div id="dojang_overlay" >
-            <NavBar class="transparent dojang_scene_navbar"/>
             <div id="dojang_banner">
                 <h1>MUDO KWAN CHALLANDAIS</h1>
                 <p>"Dans la vie, voir une fois est mieux que d'écouter mille fois. Mais en arts martiaux, faire une fois est mille fois mieux que de voir."</p>
                 <p>Grand Maître Lee Kwan Young</p>
-                <a href="#">Inscriptions et tarifs</a>
+                <div>
+                    <a href="#">Inscriptions et tarifs</a>
+                </div>
             </div> 
             <div id="dojang_scrolldown">
                 <div id="dojang_scrolldown_mouse">
@@ -809,6 +812,11 @@ export default {
             })
         },
 
+        removelisteners() {
+            window.removeEventListener("deviceorientation", this.orientationParallax);
+            document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
+        },
+
         resetDojang() {
             this.dojangPlacedElements = false;
             let dojang_parts = document.querySelectorAll(".dojang_part");
@@ -908,8 +916,7 @@ export default {
         clearTimeout(this.parallaxTimeout);
         this.resetDojang();
         this.resetParallax();
-        window.removeEventListener("deviceorientation", this.orientationParallax);
-        document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
+        this.removelisteners();
 
         history.scrollRestoration = 'auto';
     }
@@ -1044,6 +1051,10 @@ export default {
     }
 
     #dojang_banner {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
         margin-left: 3rem;
         width: clamp(33rem, 100vmin, 50rem);
         color: white;
@@ -1116,12 +1127,10 @@ export default {
 
 @media (max-width: 100vh) {
     #dojang_banner {
-        display: flex;
-        flex-direction: column;
+        
         align-items: center;
         text-align: center;
         justify-content: space-between;
-        flex: 1;
         margin-left: 0;
         padding-top: 10vh;
         width: 100vw;
@@ -1132,12 +1141,6 @@ export default {
 
         p {
             display: none;
-        }
-
-        button {
-            height: 3rem;
-            max-width: 20rem;
-            width: 80vw;
         }
     }
 

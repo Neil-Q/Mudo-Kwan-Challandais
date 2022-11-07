@@ -1,7 +1,7 @@
 <template>
     <Dojang />
 
-    <NavBar/>
+    <NavBar :sticky="true"/>
 
     <UnderlinedTitle
         class="darker"

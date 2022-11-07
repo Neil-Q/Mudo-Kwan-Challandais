@@ -1,8 +1,8 @@
 <template>
-    <div class="underlined_title">
+    <div class="underlined_title" ref="wrapper">
         <div class="title">
-            <h2>{{title}}</h2>
-            <div class="line"></div>
+            <h2 ref="title">{{title}}</h2>
+            <div class="line" ref="line"></div>
         </div>
         <div v-if="text" class="text">
             <p>{{text}}</p>
@@ -11,13 +11,45 @@
 </template>
 
 <script>
-export default {
-    name: "UnderlinedTitle",
-    props: [
-        "title",
-        "text",
-    ]
-}
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    export default {
+        name: "UnderlinedTitle",
+        props: [
+            "title",
+            "text",
+        ],
+        mounted() {
+            const   wrapper = this.$refs.wrapper,
+                    title = this.$refs.title,
+                    line = this.$refs.line;
+    
+
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: "top 65%",
+                    toggleActions: "restart none none reverse"
+                },
+                opacity: 0,
+                duration: 0.5,
+                y: -10
+            });
+
+            gsap.from(line, {
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: "top 65%",
+                    toggleActions: "restart none none reverse"
+                },
+                delay: 0.5,
+                duration: 0.5,
+                width: 0
+            });
+        }
+    }
 </script>
 
 <style lang="scss">
@@ -64,7 +96,7 @@ export default {
         background: var(--red-medium-color);
         border-radius: 0.2rem;
         width: 90%;
-        height: 5px;
+        height: 3px;
         margin: auto;
     }
 }
