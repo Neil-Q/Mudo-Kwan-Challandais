@@ -23,7 +23,7 @@
             </div>
 
             <div id="taekwondo_presentation_text">
-                <p>Originaire de Corée le Taekwondo, littéralement la voie (Do) des pieds (Tae) et des poings (Kwon) a de nombreuses facettes. Il peut ressembler en certains points à du Karaté mais avec de nombreuses différences dans la pratique. Le travail des frappes de pied, la recherche de l’enchainement ainsi que du déplacement y est beaucoup plus présent, créant ainsi un style plus fluide, plus aérien</p>
+                <p>Originaire de Corée le Taekwondo, littéralement la voie (Do) des pieds (Tae) et des poings (Kwon) a de nombreuses facettes. Il peut ressembler en certains points à du Karaté mais avec de nombreuses différences dans la pratique. Le travail des frappes de pied, la recherche de l’enchainement ainsi que du déplacement y sont beaucoup plus présents, créant ainsi un style plus fluide, plus aérien.</p>
                 <p>Le Taekwondo est souvent considéré comme un art martial spectaculaire et spécialisé dans les coups de pied. Plus largement, on parlera d’art martial de percussion pieds/poings. Une dimension sportive lui est également vouée depuis sa première inscription en sport de démonstration puis aux jeux olympiques.</p>
             </div>
         </div>
@@ -102,6 +102,10 @@
     import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
     import MudoFooter       from "@/components/MudoFooter.vue";
 
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
     export default {
         name: "TaekwondoPresentation",
         components: {
@@ -110,12 +114,58 @@
             UnderlinedTitle,
             MudoFooter
         },
+        mounted() {
+
+            // Taekwondo hanguls
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#taekwondo_presentation .content",
+                    start: "center center",
+                    end: "+=200%",
+                    pin: "#taekwondo_presentation",
+                    scrub: true,
+                },
+            })
+            .from(".character_hangul", {opacity: 0, y: 30, stagger: 1})
+            .from("#taekwondo_hanguls", {duration: 1})
+            .from(".character_romanization, .character_translation", {opacity: 0, y: 20, duration: 0.5})
+            .from("#taekwondo_hanguls", {duration: 1})
+            .from("#taekwondo_presentation_text p", {opacity: 0, y: 20, stagger: 1})
+            .from("#taekwondo_hanguls", {duration: 3})
+
+            // .from("#taekwondo_presentation_text", {
+            //     scrollTrigger: {
+            //         trigger: "#taekwondo_presentation_text",
+            //         start: "top 55%",
+            //         markers: true
+            //     },
+            //     duration: 1
+            // })
+
+            // Taekwondo presentation
+            // gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: "#taekwondo_presentation_text",
+            //         start: "top center",
+            //         pin: "#taekwondo_presentation",
+            //         end: "+=150%",
+            //         scrub: true,
+            //         markers: true
+            //     },
+            // })
+            // .from("#taekwondo_presentation_text", {opacity: 0})
+        }
     }
 </script>
 
 <style lang="scss" scoped>
 
-
+#taekwondo_presentation {
+    padding: 50vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #taekwondo_hanguls {
     display: flex;
@@ -140,7 +190,7 @@
     max-width: 40rem;
     margin: auto;
     font-size: var(--font-sz-large);
-    text-align: center;
+    text-align: justify;
 }
 
 #taekwondo_short_history {

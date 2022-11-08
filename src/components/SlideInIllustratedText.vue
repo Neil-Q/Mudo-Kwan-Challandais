@@ -74,6 +74,8 @@
 
     .illustration {
         width: 100%;
+        max-width: 40em;
+        margin: 0 auto;
 
         &> * {
             aspect-ratio: 3/2;
@@ -99,6 +101,7 @@
 
         .illustration {
             grid-area: right;
+            max-width: none;
         }
 
         .text {
