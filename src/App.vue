@@ -71,6 +71,7 @@ h3 {
 
 section {
     box-sizing: border-box;
+    // padding: 2rem;
     
     &.blue {
         background-color: var(--blue-medium-color);
