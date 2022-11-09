@@ -1,25 +1,31 @@
 <template>
-    <header>
+    <header ref="hero">
         <h1>{{title}}</h1>
     </header>
 </template>
 
 <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
 export default {
     name: "Hero",
     props: [
         "title"
-    ]
+    ],
 }
 </script>
 
 <style lang="scss" scoped>
 header {
+    box-sizing: border-box;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    overflow: hidden;
 
     &.blue {
         background-color: var(--blue-medium-color);

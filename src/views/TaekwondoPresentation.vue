@@ -58,14 +58,15 @@
                     </g>
                 </svg>
             </div>
+
             <div id="taekwondo_short_history_text">
                 <h3>Un peu d'histoire ?</h3>
-                <p>Le taekwondo est un art relativement récent, moins de 70 ans, mais il constitue la synthèse de plusieurs art martiaux coréens anciens et japonais. Il est crée suite à la fin de la domination nipponne du pays, resultant en une volonté de reconstruire l'identité nationale autour d'un art martial totalement Coréen. Il arrive en France avec maître Lee Kwan Young en 1969 et ne cesse de se développer depuis, devenant même discipline olympique à partir des années 2000.</p>
+                <p>Le taekwondo est un art relativement récent, moins de 70 ans, mais il constitue la synthèse de plusieurs art martiaux coréens anciens et japonais. Il est crée suite à la fin de la domination nipponne du pays, resultant en une volonté de reconstruire l'identité nationale autour d'un art martial totalement Coréen.</p>
+                <p>Il arrive en France avec maître Lee Kwan Young en 1969 et ne cesse de se développer depuis, devenant même discipline olympique à partir des années 2000.</p>
             </div>
     </section>
 
     <section id="taekwondo_benefits">
-        <div class="content">
                 <div id="taekwondo_tenets">
                     <div class="taekwondo_tenet">
                         <div class="tenet_hanguls hangul">예의</div>
@@ -89,32 +90,38 @@
                     </div>
                 </div>
 
-                <div id="taekwondo_benefits_text">
-                    <p>Les gains du Taekwondo pour les adolescents et les adultes sont à la fois physiques et psychologiques.</p>
-                    <p>Sur le plan physique, le gain principal est à la fois la souplesse et la capacité à supporter l’effort, sur le plan respiratoire. Le travail sur la décontraction et sur les montées en pression cardiaque aidant beaucoup sur ces aspects.</p>
-                    <p>Sur le plan psychologique, le Taekwondo adulte permet de s’évader complètement, venir à un cours permet de se vider complètement l’esprit.</p>
-                    <p>Il permet aussi de gagner en assurance. Que ce soit pour de la pratique loisir ou pour la compétition, notre club soutient une pratique martiale de la discipline. </p>
-                    <p>Le respect, la persévérance, le fair-play, l'humilité et la maitrise de soit sont au cœur de l'enseignement. Des exercices ludiques viennent agrémenter l'enseignement pour développer les liens entre les pratiquants et travailler sur d'autres types d'apprentissages.</p>
+                <div id="taekwondo_benefits_texts">
+                    <div class="taekwondo_benefit">
+                        <p>Les arts martiaux, tel le taekwondo, ne sont pas juste des techniques de combat, le terme « DO » induit la notion de « sens ».</p>
+                        <p>Il s’agit de donner du sens à sa pratique, en connaître le but, prendre conscience d’un chemin, sur lequel chaque pratiquant s’engage. La pratique du Taekwondo est une philosophie.</p>
+                    </div>
+                    <div class="taekwondo_benefit">
+                        <p>Le respect, la persévérance, le fair-play, l'humilité et la maitrise de soit sont au cœur de la pratique.</p>
+                        <p>La diversification des formes de pratiques du Taekwondo permet à tous de trouver sa voie et de s'épanouir quelque soit son niveau, son âge, ses envies et ses besoins.</p>
+                    </div>
+                    <div class="taekwondo_benefit">
+                        <p>Antidote contre l'anxiété et le stress de la vie moderne, libérez votre énergie tout en canalisant votre agressivité.</p>
+                        <p>La mise en situation d'opposition permet d'évacuer de façon positive les tensions accumulées dans la journée et d'augementer confiance en soi et assurance nécessaire en situation de conflit.</p>
+                    </div>
+                    <div class="taekwondo_benefit">
+                        <p>lorem ipsum dolor sit amet</p>
+                        <p>lorem ipsum dolor sit amet</p>
+                    </div>
+                    <div class="taekwondo_benefit">
+                        <p>Le taekwondo est une activité complète qui met en mouvement la totalité du corps et développera des qualités physiques de puissance et d'endurance.</p>
+                        <p>Par la pratique des enchaînements et la mise en situation de combat, il améliore aussi réflexes, coordination, précision des mouvements et équilibre. On y développe aussi souplesse, agilité et force musculaire.</p>
+                    </div>
+                    <!-- Grâce à cet encadrement où sont prônés la courtoisie, l'intégrité et le contrôle de soi, l'enfant est encouragé à développer un bon esprit sportif et de respect de l'autre. L'enfant étant confronté à des situations où il est tantôt vainqueur et tantôt vaincu, il apprend rapidement de l'échec tout en développant l'esprit de groupe et de persévérance. -->
                 </div>
-            </div>
     </section>
 
     <div id="presentation_videos">
-            <iframe src="https://www.youtube.com/embed/iai8YbMEues" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/dBjoz4tUq8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="container">
+            <iframe src="https://tube.rvere.com/embed?v=iai8YbMEues" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe src="https://youtube.com/embed/iai8YbMEues" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <iframe src="https://tube.rvere.com/embed?v=dBjoz4tUq8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
-
-    <section class="grey">
-        <div class="content">
-            <UnderlinedTitle title="Les différentes parties de la pratique" />
-        </div>
-    </section>
-
-    <section>
-        <div class="content">
-            <UnderlinedTitle title="Tenue et équipements" />
-        </div>
-    </section>
 
     <MudoFooter />
 </template>
@@ -122,7 +129,7 @@
 <script>
     import NavBar           from "@/components/NavBar.vue";
     import Hero             from "@/components/Hero.vue";
-    import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
+    // import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
     import MudoFooter       from "@/components/MudoFooter.vue";
 
     import { gsap } from "gsap";
@@ -134,7 +141,7 @@
         components: {
             NavBar,
             Hero,
-            UnderlinedTitle,
+            // UnderlinedTitle,
             MudoFooter
         },
         mounted() {
@@ -178,6 +185,69 @@
             .to("#korean_flag", {opacity: 0, scale: 2, duration: 1}, "<")
             .from("#taekwondo_short_history_text", {opacity: 0, duration: 0.5, delay: 0.5}, "<")
             .to("#taekwondo_short_history_text", {duration: 0.5})
+
+
+            // Taekwondo tenets
+            const   tenets = document.querySelectorAll(".taekwondo_tenet"),
+                    tenetsHanguls = document.querySelectorAll(".tenet_hanguls"),
+                    tenetsSignifications = document.querySelectorAll(".tenet_signification"),
+                    texts = document.querySelectorAll(".taekwondo_benefit");
+
+            const tenets_timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#taekwondo_benefits",
+                    start: "center center",
+                    end: "+=400%",
+                    pin: true,
+                    scrub: 0.5,
+                    snap: {
+                        snapTo: 1/4,
+                        duration: 1
+                    }
+                }
+            })
+            
+            for(let i = 0; i < tenets.length; i++) {
+                const tenetHanguls = tenetsHanguls[i],
+                      tenetSignification = tenetsSignifications[i],
+                      text = texts[i],
+                      transition = 0.8;
+
+                if (i !== 0) {
+                    tenets_timeline
+                        .from(tenetHanguls, {opacity: 0, x: -40, duration: transition})
+                        .from(tenetSignification, {opacity: 0, x: 40, duration: transition}, "<")
+                        .from(text, {opacity: 0, y: 20, duration: transition}, "<")
+    
+                        .to(tenetHanguls, {duration: 1})
+                }
+
+                if (i == tenets.length - 1) break;
+                tenets_timeline
+                    .to(tenetHanguls, {opacity: 0, x: 40, duration: transition})
+                    .to(tenetSignification, {opacity: 0, x:-40, duration: transition},"<")
+                    .to(text, {opacity: 0, y: -20, duration: transition},"<")
+            }
+
+            // Taekwondo videos
+            let taekwondoVideos = gsap.matchMedia();
+
+            taekwondoVideos.add("(min-width: 60em)", () => {
+                gsap.to("#presentation_videos .container", {
+                    scrollTrigger: {
+                        trigger:"#presentation_videos",
+                        start: "top top",
+                        end: "bottom top",
+                        pin: "#presentation_videos .container",
+                        scrub: true,
+                        snap: {
+                            snapTo: 1,
+                            duration: 2
+                        }
+                    },
+                    xPercent: -50
+                })
+            });
         }
     }
 </script>
@@ -218,8 +288,6 @@
 }
 
 
-
-
 #taekwondo_short_history {
     display: flex;
     justify-content: center;
@@ -251,37 +319,57 @@
 }
 
 
-
+#taekwondo_benefits {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #taekwondo_tenets {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    box-sizing: border-box;
-    border: solid var(--dark-color) 15px;
-    padding: clamp(1rem, 6vw ,3rem) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 50vh;
 }
 .taekwondo_tenet {
-    margin-bottom: 1rem;
+    position: absolute;
 }
 .tenet_hanguls {
-    font-size: clamp(1rem, 10vw, 5rem);
+    font-size: clamp(0px, 25vw, 10rem);    
 }
 .tenet_signification {
-    text-transform: uppercase;
-    font-size: small;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: var(--font-sz-large);
 }
-#taekwondo_benefits_text {
-    grid-column-start: 7;
-    grid-column-end: end;
+#taekwondo_benefits_texts {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    flex: 1;
+    padding-top: 1rem;
 }
+.taekwondo_benefit {
+    position: absolute;
+    font-size: var(--font-sz-large);
+    max-width: 40em;
+    margin: 0 2rem;
+}
+
 
 #presentation_videos {
     iframe {
         display: block;
         width: 100%;
-        aspect-ratio: 560 / 315;
+        aspect-ratio: 16 / 9;
     }
 }
+
+
+
 @media (min-width: 40em) {
     #taekwondo_presentation_text {
         text-align: justify;
@@ -298,16 +386,36 @@
         width: 50%;
     }
 
-    #taekwondo_benefits .content {
+    #taekwondo_benefits {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        width: 80%;
+        margin: auto;
+        grid-template-columns: 7fr 5fr;
+        grid-template-areas: "text tenet";
+    }
+    #taekwondo_tenets {
+        grid-area: tenet;
+        justify-content: center;
+    }
+    .tenet_hanguls {
+        font-size: 6vw;    
+    }
+    #taekwondo_benefits_texts {
+        grid-area: text;
+        justify-content: center;
     }
 
     #presentation_videos {
-        display: flex;
-        
+        overflow: hidden;
+
+        .container {
+            display: flex;
+            width: 200%;
+        }
+
         iframe {
-            width: 50vw;
+            height: 100vh;
+            width: 100vw;
         }
     }
 }
