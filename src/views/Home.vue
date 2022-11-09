@@ -7,10 +7,10 @@
         class="darker"
         title="Bienvenue"
         text="Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, que vous recherchiez aussi bien la compétition que le simple loisir."
+        style="height: 20vh"
     />
 
-    <section id="hapkimudo" >
-        <div class="content red practice_presentation" >
+    <section id="hapkimudo" class="hapkimudo practice_presentation">
             <svg viewBox="0 0 119.06 119.06">
                 <g transform="translate(-400.72 -126.49)">
                     <path
@@ -20,8 +20,6 @@
                             fill: none;
                             stroke-linecap: round;
                             stroke-linejoin: round;
-                            stroke-width: 0.926;
-                            stroke: #c21111;
                         "
                     />
                 </g>
@@ -29,6 +27,16 @@
             <div class="description">
                 <h3>Hapkimudo</h3>
                 <p>12 ans et +</p>
+                <div class="practice_hours">
+                    <div class="session">
+                        <div class="day">Jeudi</div>
+                        <div class="hour">19:15 - 21:15</div>
+                    </div>
+                    <div class="session">
+                        <div class="day">Samedi</div>
+                        <div class="hour">16:30 - 18:00</div>
+                    </div>
+                </div>
                 <p class="presentation">
                     L’hapkimudo est un art martial très complet qui aborde tous les
                     aspects du combat tels que les poings, les pieds, le sol, la
@@ -37,18 +45,12 @@
                     sexes qui se veut en racord avec son temps. Cela, tout en
                     gardant les valeurs des arts martiaux au coeur de ses principes
                 </p>
-                <a>En savoir plus</a>
-                <div class="practice_hours">
-                    <p><b>Jeudi :</b> 19h15 - 21h15</p>
-                    <p><b>Samedi :</b> 16h30 - 18h00</p>
-                </div>
+                <router-link to="#">En découvrir plus</router-link>
             </div>
-        </div>
     </section>
 
-    <section id="taekwondo" class="grey">
-        <div class="content blue_dark practice_presentation reversed">
-            <svg viewBox="-3 0 116.06 119.06">
+    <section id="taekwondo" class="grey_bg taekwondo practice_presentation reversed">
+            <svg viewBox="0 0 116.06 119.06">
                 <g>
                     <path
                         d="m35.049 63.139c-0.3918 1.9494 0.36188 4.4567-0.12574 6.8438-0.29439 1.4411-1.4565 2.7949-1.6525 3.9437-0.3323 1.9483-0.10896 2.2526-0.5396 4.2485-0.31555 1.4625-1.3839 2.6097-1.6774 4.071-0.40229 2.0031 0.09344 4.6534-0.42974 6.6341-0.35946 1.3609-0.72857 2.7408-1.1692 4.0855 3.2392 1.678 6.3177 2.3917 9.3485 2.8194 0.23198-1.2282 0.11478-2.5722 0.35309-3.7362 0.31299-1.5287 1.1324-2.8359 1.4563-4.2576 0.64244-2.82 0.82083-8.3652 1.4975-10.791 1.329-4.7652 5.2753-7.7426 6.7308-11.118 0.86242-2 0.5191-4.208 1.5218-5.729 2.5539-3.8739 7.1263-8.4374 10.388-10.673 3.0385-2.0822 4.8035-2.9481 7.5733-4.3481 2.0977-1.0603 3.761-5.7472 5.7391-7.4047 1.9343-1.6209 3.7794-3.1198 6.734-4.006-2.664-7.5018-1.5038-9.7889-4.2291-9.4598-1.5741 1.5641-2.1973 2.8434-3.8565 4.346-1.2913 1.1695-3.5455 2.8666-4.7907 4.2264-1.9563 2.1365-3.623 4.8249-5.9638 6.4649-3.6362 2.5475-7.6256 3.6203-13.731 4.55m-2.9505-0.56662s2.6267-0.51617 2.8763-0.0084c0.24959 0.50778-1.3666 2.2454-1.6962 3.2753-0.30966 0.96758-0.51773 2.4537-0.87435 3.6081-0.37821 1.2244-2.334 3.1208-3.3072 4.1921-0.88159 0.97056-1.2934 2.1928-1.8592 3.6119m-6.7337 2.2404c-0.19751 2.2165 0.70606 2.8371 0.9676 3.025 0.35973 0.25836 3.7569-2.3705 4.4757-3.4404m-10.811-2.7357 5.3676 3.1512c1.2399 0.85717 1.1709 0.03505 2.5457-0.02453 1.303-0.05647 2.8678-0.01797 3.4614-0.84111 1.6391-2.2731 0.23088-2.822 1.7447-6.4838 0.78037-1.8877 2.1661-3.7002 2.8417-5.3029 0.95526-2.266 1.001-4.2671 1.001-4.2671-5.4528-1.9805-11.746-8.2997-18.104-6.1121m-4.4098 15.796c0.19774-3.9114 3.7453-3.7634 2.1921-8.9621m-0.72977 8.7853c-1.6044 0.8568-5.5094-1.2809-9.0146-1.2242-0.05283 1.309-0.60832 3.0673-0.7425 4.6768-0.14848 1.7811 0.13946 3.3592 0.44797 3.491 0.72492 0.30958 1.1206-0.1044 1.6744-0.25505 0.73193-0.19913 1.5011-0.2127 2.1929-0.09946 1.7877 0.29261 4.7248 1.0665 6.15 0.7291 0.8572-0.20291 1.7868-0.22829 2.2525-0.90364 0.76845-1.1144 0.99253-2.1986 1.8803-3.4038 0.69713-0.94639 1.8728-2.6409 1.9567-3.8559 0.18961-2.7465 1.222-4.4922 1.4712-7.0725 0.07787-1.0276-0.4544-3.4204-0.55548-4.2243-0.17206-1.3684-0.53718-1.8568-1.2278-2.2652-0.96414-0.57018-1.587-0.38986-3.429 0.0026m-4.0149-0.58175s1.9302-1.469 3.147-1.7445c1.1012-0.24934 0.92276 3.9064 0.7234 4.3589-0.65717 1.4915-2.5351 4.0855-2.5351 4.0855m-2.6482 1.6251c3.0767-0.0352 3.1514-1.3922 1.8863-3.5242m-10.596 1.3192c-7.7281-7.2158 1.4618-11.817 5.1194-8.9033 0.4862-0.67061 1.1138-0.71738 1.2613-0.63065 4.273 2.721 3.7186 3.3878 3.4871 4.192 1.1594 1.0518 1.5485 3.0041 0.63065 4.1549-0.12677-0.24529-2.0024-3.6034-2.7864-3.3902 0 0-3.2497 4.262-3.5687 4.8199-0.38117 0.66672 1.1738 1.3943 4.5002 1.7606 0.53242 1.1468-1.9003 1.0228-4.7855 0.70484-0.9531 1.0949-4.9063-1.8997-3.8581-2.7081zm64.96-19.148s1.726-1.5777 2.2596-2.6094c0.37433-0.7238 0.18139-1.5479 0.81614-2.0589 1.5107-1.2162 2.1406-0.49026 3.1533-0.81614 1.7419-0.56054 4.6-2.5041 4.6-2.5041 0.94435-0.46385 1.0503-0.28123 1.1028 0.11615 0.64637-0.18259 1.4944-0.10212 1.0674 0.49595 1.2265-0.15796 0.97924 0.28842 1.0016 0.6121 1.0325-0.0735 0.62886 0.394 0.81614 0.6492 1.049 0.12341 0.67568 1.8391-0.20404 2.3371-2.6733 1.5134-5.357 3.4628-7.7533 5.2121-0.68877 0.50283-1.2838 0.29757-1.92 0.86542-1.5751 1.4057-2.9407 4.8664-2.9407 4.8664m-51.127 2.5925c1.7219-1.121 2.3221-2.7067 2.8837-4.0211 0.61919-1.4038 1.5222-0.71891 1.4468-0.29678 0.93377-1.2677 1.6786-0.29642 1.4097 0.48226 0.71483-0.70759 1.4787-0.27513 0.98307 0.87178 2.2553-0.1818-0.39168 3.3086-0.37097 3.7654 0.02071 0.45674 1.6137 0.11129 1.6137 0.11129 0.79274-0.11178 0.78078 1.0853-0.0742 1.2428 0 0-1.5397 0.15484-1.9661 0.48226-0.42648 0.32742-0.54745 0.52639-0.54745 0.52639m-14.392-3.0262c8.2097-4.0757 8.5475-0.25122 10.697 2.0826m-16.332 20.338c-0.99938-0.19097-1.8305-0.87031-2.7549-1.6551-0.45577-0.38692-1.0227-0.12646-1.3179-0.10083-1.8212 0.15839-4.7589-0.87007-5.3633-2.1299-0.15739-0.32809-0.52925-0.6355-0.60179-0.95773-0.10238-0.45475 0.094353-0.81047 0.15839-1.2475 0.034838-0.23777-0.15701-0.5865-0.094693-0.82168 0.073747-0.27831 0.23783-0.37894 0.37003-0.63655 0.10493-0.20448 0.090623-0.49 0.21374-0.70122 0.12591-0.21601 0.54007-0.14188 0.70345-0.33601 0.24648-0.29287 0.34627-0.34046 0.56573-0.5946 0.36135-0.41846 1.0524-0.11502 1.9993 0.08167 0.69575 0.14453 1.8684-0.02792 2.4153 0.64172 1.6235 1.9879 2.7332 2.5542 4.4643 3.2803m4.0211-4.3877c1.0597 0.81425 2.2933 1.1956 4.5191-0.04614m-4.2336 2.3511c4.284-0.81963 4.3998-2.2472 4.5439-4.1239m-10.837-0.99012c-0.15438 1.2915-0.05096 2.2519 0.22795 2.9891m2.7343 2.4395c1.275 0.55892 2.7224 1.0363 3.3487 2.0908m-0.79672-5.4462s0.85413 1.0435 1.0024 2.0926c0.09688 0.68566-0.21314 1.1202-0.66661 1.1608-3.5136 0.31455-5.1116 0.06477-5.9873-1.0548-0.42565-0.54417 0.61632-2.0243 2.0774-2.5463m24.38 13.083c1.0839 4.5155-3.7052 7.4258-2.4584 12.646l1.8549-1.0016c-1.3709-3.9479 3.5585-6.5926 1.1893-12.487 4.9122 2.0193 2.0858 7.692 2.1866 13.693l2.8379-2.1145c-0.99704-4.292 1.8367-8.5218-4.5809-12.902m-2.6654 38.286s-0.09729 1.3331 0.1011 1.9886c0.22784 0.75289 1.1293 1.847 0.89187 2.5969-0.68658 2.1686-3.7374 2.002-6.0353 2.9691-1.765 0.74284-2.7294 2.0389-4.4312 2.4346-1.2593 0.29282-2.1799 0.47018-2.9642-0.23608-0.5428-0.48881 1.076-2.3324 2.64-3.7193 1.4537-1.2892 3.0534-2.3761 3.6819-3.7829 0.5532-1.2383 0.76008-3.5915 0.76008-3.5915m49.142 8.238s0.16649 1.1457 0.62016 1.2556c1.3542 0.32817 5.2309 3.9281 5.5873 4.6168 0.93663 0.0544 2.406 0.60577 2.2378 1.1365-0.17306 0.54598-0.14412 1.4245-2.4476 1.3555-1.9942 0.40866-5.0441-2.1037-8.192-1.6001-4.6928 0.75073-1.9713-5.052-3.0433-6.6748m-2.6675 0.19555c1.858-0.16222 3.5313-0.36839 7.3973-0.0525 0.73743-0.19194 0.65298-0.5013 0.73449-0.78695-0.26363-0.38018-0.69092-0.91533-0.81936-1.6002-0.18678-0.99606-0.03105-2.3502-0.22704-4.3489-0.17033-1.737-0.3811-3.8405-0.5237-6.1468-0.12197-1.9725-0.15424-4.0933-0.51133-6.2599-0.19983-1.2124-1.3899-2.5776-1.5531-3.7758-0.19979-1.4665-0.02846-2.742-0.09124-4.1031-0.05992-1.2992-0.35623-2.6897-0.44424-3.8573-0.11114-1.4744 0.75929-2.4906 1.1434-2.6362m-10.278-2.8104c0.33516 1.6383 1.0914 3.4852 1.3 5.3834 0.35172 3.2003-0.56846 4.2301 0.03919 7.7706 0.34336 2.0006 1.3579 4.3698 1.9815 6.8059 0.34725 1.3564 0.27477 2.9348 0.52565 4.2395 0.40484 2.1053 0.80032 3.8344 1.0127 5.2874 0.72263 4.943-2.2845 6.7589-0.18695 7.9464 0.97084 0.54962 1.9799 0.40784 3.4208 0.36082m-16.526-54.342c3.3058 5.3021 7.6248 10.571 8.0134 15.21m0.65931-20.309c0.09151 0.77281 0.45934 1.3698 0.99777 1.8582 0.36069 0.32718 1.2439 0.39579 1.7259 0.64576 0.57755 0.2995 0.69476 1.0565 1.3462 1.3089 0.55868 0.21649 1.2031 0.13992 1.7415 0.36933m-1.8644 15.001c-2.654 5.5073 3.7012 10.018 1.1434 15.732-0.34802 0.77746 1.7301-0.66272 2.0723-1.4427 1.7522-3.9934-3.4985-9.4132-2.2046-13.181m-0.6022-4.3938c0.37416 3.57-10.382 3.5683-9.5144 13.49 0.05264 0.6019 2.8286 0.59983 2.7824 0.11129-0.96143-10.17 5.9194-8.2409 7.9159-11.948m5.0592 5.6918c0.34775 1.1775-0.02696 1.3115-0.56088 1.2155-0.99616-1.131-2.0266-2.5367-2.9307-2.9307-1.2665-0.55196-1.6397-0.16169-2.0032-0.77904-0.5459-0.92691 0.43562-3.1976 0.43562-3.1976m1.754-13.457c-0.56835-0.71189-0.91412-0.68235-1.4825 0.08956 0.13867 1.9707 0.31369 4.76-0.23766 7.0384-0.54111 2.2361-2.11 2.7119-1.2178 4.6762l0.80606 0.28205m24.923-14.66s-2.473-4.2579-4.3932-5.6637c-0.53047-0.38837-1.1116 0.42003-1.1116 0.42003-0.66755 1.9912 1.656 14.342-5.1676 6.3481-2.7784-0.12838-5.5864-0.3919-11.798 1.2599-0.14226 0.03783-0.20803 0.07074-0.32106 0.20912 0.6117 7.8489-3.0297 8.9307-1.9936 12.749 0.95421 3.5162 3.9872 3.1838 5.2988 6.4005 0.09305 0.16028 0.30843 0.19823 0.59908 0.16092 4.6132-0.9598 9.2352-1.9531 14.091-3.8333 0.04319-1.2637 0.66467-1.9047 1.9936-1.7838 7.8629-2.854 11.604 1.1064 12.775 0.28855s-2.3397-8.432-5.572-10.236m-54.61-26.642c0.31965-1.2458-0.09587-3.2733-1.0643-4.9332-0.8257-1.4153-1.7852-2.0189-2.4907-2.8322-2.0941-2.4144-3.0643-3.8952-3.1972-4.052-0.30452-0.35908-0.2327-1.6694 0.11338-0.7223-0.08084 0.05357-0.30449-1.696 0.51377-0.85401 6e-3 -0.5421-0.0344-1.458 0.7313-0.56859-0.38401-0.62544 0.43746-1.7178 0.84578-0.3932-0.0778-1.3424 0.73612-2.5963 1.7204-0.47403 0.7702 1.6606 2.2758 2.9438 3.1872 3.7395 1.1043 0.96412 1.5948 0.96578 2.8474 1.3552 0.62063 0.19296 1.0598 0.84354 1.3116 1.4427 0.3528 0.83978 0.0408 1.9126 0.36142 2.7652 0.3267 0.86875 1.5071 2.1596 1.5071 2.1596m-0.02533 19.834c-1.1456-2.0753-2.4596-4.0833-3.1988-5.8432-1.0399-2.4757-1.3531-4.5116-2.0462-6.0009-1.112-2.3894-2.2073-3.161-1.8054-3.7384 2.188-3.1436 4.4917-3.0418 5.9602-3.7413 2.1168-1.0084 2.9788-1.2187 3.3008-1.2272 1.224-0.03252 1.1194 1.7638 0.99238 2.5357-0.18538 1.1263-0.72591 2.602-0.25904 3.5333 2.0041 3.998 3.3192 6.9109 5.5143 9.9906m24.137 9.4255c-17.935-8.9375-9.0449-10.437-6.7532-11.581 0.16184 2.5497 2.4085 2.9504 4.4313 2.9633 0.0999 1.655-3.4646 2.0405-3.4646 2.0405m11.397 1.6212c-2.6283-0.31839-6.2548-1.0435-8.1866-2.8942m14.078 24.893c0.76826 0.88338 1.0965 2.0333 1.6377 2.8769 0.49669 0.77412 1.3388 1.3129 1.7008 2.0431 0.32916 0.66405-0.0667 1.5062 0.14259 2.1604 0.32665 1.0211 0.93714 1.9986 1.2243 2.9656 0.38809 1.307-0.13697 4.0426 1.2228 3.9453l5.1326-0.36724s0.39304-1.0495 0.31478-1.7051c-0.24947-2.0897-1.7912-3.7022-2.1772-5.771-0.25726-1.3785 0.26703-2.6855-0.18362-4.0134-0.19112-0.56317-0.9181-1.4165-0.97058-1.7051-0.0525-0.28855-0.22059-2.2735-0.22059-2.2735m-12.869 1.7751c3.4644-0.05617 7.0054-0.26553 9.5221 1.5739m-6.7431-11.823c2.9644-0.81264 4.4749-0.25211 6.2401 0.06778m-5.2032-5.5832c-4.4978 7.5472 3.7269 9.6571 5.6274 4.7467m-3.8825-2.4208c-4.1286-1.6889 0.08947-5.6405 1.8178-7.8646m0 0c-0.52992-0.81288 1.9983-3.5955 5.2849-2.9425 4.3566 0.86551 9.1671 5.9319 2.4313 10.844-0.0419 1.3617-3.1616 3.2131-4.3404 1.7807-0.38289 0.13348-0.78699 0.24045-1.5581-0.11129-2.1397 0.59097-3.0676-0.3327-3.6355-1.7065 4.2785-0.53173 4.7248-2.3399 5.713-3.821-1.1196 0.05313-3.042-2.6957-3.8952-4.0436zm-20.599-6.975c0.61752-0.80663 1.0756-1.756 1.9411-2.3608 2.3233-1.6234 4.8951-0.52234 5.4427 0.86564 0.20083 0.50906-0.38788 1.0357-0.42871 1.5848-0.03446 0.46346 0.14301 0.92054-0.08242 1.3269-0.53268 0.96031-3.0953 1.128-3.0953 1.128m25.222 39.439c1.8015 2.5267 1.9053 3.6198 2.1904 4.866 0.442 1.9322-0.88357 1.3785-1.9805-0.40658-0.34362 2.6589-1.6523 4.7112-2.5182 3.2658-0.59877 0.95033-1.4196 0.52963-1.469-0.34101-0.97087 0.54177-1.4577-0.06184-1.1935-0.89188-1.6851 0.40213-0.40293-1.8726 0.93122-2.2035-0.0525 0-0.61317-0.70839-0.76203-1.1497-0.30211-0.89558-0.0118-2.7588-0.0118-2.7588m-72.675-34.943c2.0004-4.5013 0.53888-4.7495 0.62348-6.3131m54.844 71.213c0.05574 0.94546-0.76152 1.7094-1.4752 2.445m-9.7607-5.4046c2.4837-0.0608 4.0206 0.84755 3.5749 3.7858m-3.5317-4.9975c1.4399-0.80471 2.973-1.0505 4.4774-1.4685m-38.382-87.465c0.32505-1.613 1.6102-2.7232 3.401-3.5685m7.2596 8.0073c-2.5855-0.73156-3.6549-2.1287-3.3726-4.1193m-1.9765 6.3172c1.4656-0.73024 3.1298-1.4037 5.6403-1.1588m-5.1837 2.4461c1.8004-1.1842 3.7997-1.4732 5.8787-1.4037m33.594-4.3882c2.6827 0.61586 3.5549 2.1801 4.8575 3.5189m-8.7315 5.6405c-0.55298-1.3486-0.82069-2.6565-3.7322-4.342 3.2827-0.28905 3.1415-1.6433 3.3952-2.8748m-0.84567 7.8615c-0.4359-1.3386-1.3397-2.334-2.8246-2.9033m-67.378 16.89c2.1743-2.1085 3.1488-3.3786 4.1226-5.2056l0.74158 0.5873c-0.75629 1.7564-1.6281 3.142-4.1226 5.2056zm-0.36872-2.6894c0.62646-0.43214 0.91879-0.97565 1.2613-1.5024m1.9823 5.6111c1.7672-1.9959 4.0323-3.9641 3.3369-5.8666m-1.6203 7.6984c-0.44274 0.32391-1.6388 0.2322-4.107-0.5614 1.2369 0.64086 2.4225 1.0079 3.8581 2.7081m2.1524-12.25c-0.58618 2.0707-1.1887 1.563 1.7016 4.9647m-1.7016-4.9647c-0.08912 0.75996-0.02764 1.59 3.8574 4.2m11.342-0.8833c-0.32118-1.0083 0.34466-1.8932 1.126-2.7637m-4.2989-2.9187c1.8573 0.81861 3.2092 1.821 4.2989 2.9187m-30.498 18.433c0.68713-1.5633 1.2008-3.1614 2.8923-4.5238 1.2424 0.88141 2.0382 0.34869 2.8754-0.0531m1.8331 1.7925c-1.4104 1.1999-2.14 2.6772-1.6651 4.6451m1.2779 0.72655c0.15238-1.6212 0.29462-3.2438 1.4019-4.7286m12.759 52.068c0.38045 0.75438 0.87045 1.5197 1.9426 2.3433m3.998-10.281c1.8558 1.5277 3.6803 2.2198 5.5361 2.0697-1.862 0.95379-5.7119 3.525-1.3075 4.6881m-5.4761-51.289 0.46402 3.3711-1.6404 0.28075m11.019-0.8499c-1.3536 0-9.089-13.81-7.5254-13.797m-4.4998 17.605c1.7879-2.1028 10.415-11.654 7.0923-19.022m-4.2176 20.71c2.554-0.68138 11.352-14.69 8.5957-18.286m-4.8773 19.447c3.1038-2.644 5.2015-6.0516 6.0366-7.8078m36.462 13.59c1.1493 0.11547 2.3974 0.49436 3.9636 1.7217m-6.5684-12.309c2.5771-2.3886 4.4699-5.0338 5.929-7.8416m10.309 2.4552c-1.2578 2.4097-2.24 5.035-4.0247 8.143 4.7591 1.6236 6.3612 3.0109 8.4444 4.3553m-10.808-15.259c1.1013 6.0662 2.2188 12.134 5.0968 18.337m-11.119-17.655c1.1945 6.1617 1.8714 12.11 5.3261 19.202m-9.1537-11.737c0.70336 4.4363 1.6238 7.6788 2.6048 10.588m13.633-15.974c2.6927 4.0306 4.2448 8.1879 4.4198 12.498m-13.906-28.289c0.60723 0.59653 0.22912 1.7804 1.7083 2.0033m-0.1126-3.0895c-0.1476-0.15169-0.70589 3.5661 0.82723 3.3323m0.70304-3.62c-0.30098 1.1395-1.2647 2.6104-0.69665 3.3153m2.5297-2.8315c-0.73365 0.86056-2.0093 1.2394-2.1701 2.6091m3.3279-1.2096c-0.71892 0.30962-0.60241-0.1605-2.2577 1.0231m0.49966 2.4551-0.34227-1.0911c0.15802 0-0.40887-0.50418-1.1017-0.4984-0.80831 0.0067-0.91502-0.76778 0.94434-0.86564l1.7897 0.66777m22.252 46.038-0.44816-0.88706m-4.7326 2.92c0.72827-0.50199 1.3802-1.0149 1.7648-1.566m0.89769 2.7988c0.39734-1.1174 0.92883-2.2013 0.95717-3.411m-2.4261 3.0699c0.53777-0.90584 1.076-1.8117 1.5172-2.7175m-1.7796-0.37781c2.0733-1.0474 2.8419-0.69015 3.8014-0.71655 0.48025-0.79007 1.0327-1.0026 1.5574-1.4369m-6.5883-39.055c0.6854 1.212 1.4191 2.4447 3.0648 4.0683l-0.67914 0.58987c-1.9836-1.8162-2.6752-3.0145-3.0648-4.0683zm2.9164 0.68639c0.12402 0.35042 0.21208 0.69485 0.74194 1.1129m-2.8936 4.1549c0.41625-0.76274 4.3104-1.7076 6.7616 0.54436m-8.839 4.9831c-1.4936-3.1544 6.8827-5.0094 6.6704-2.2748m-5.1123 2.3861c-0.38398-1.1045 3.0042-3.0573 4.3404-1.7807"
@@ -56,8 +58,6 @@
                             fill: none;
                             stroke-linecap: round;
                             stroke-linejoin: round;
-                            stroke-width: 0.92604;
-                            stroke: #069;
                         "
                     />
                 </g>
@@ -65,6 +65,16 @@
             <div class="description">
                 <h3>Taekwondo ados/adultes</h3>
                 <p>12 ans et +</p>
+                <div class="practice_hours">
+                    <div class="session">
+                        <div class="day">mardi</div>
+                        <div class="hour">19:30 - 21:30</div>
+                    </div>
+                    <div class="session">
+                        <div class="day">Samedi</div>
+                        <div class="hour">15:00 - 16:30</div>
+                    </div>
+                </div>
                 <p class="presentation">
                     Le taekwondo est un sport olympique hautement spécialisé dans
                     les techniques de jambes pour des coups de pieds puissants,
@@ -73,17 +83,11 @@
                     d'entraîner son esprit et d'atteindre la maîtrise de soi par des
                     mouvements de combat
                 </p>
-                <a>En savoir plus</a>
-                <div class="practice_hours">
-                    <p><b>Mardi :</b> 19h30 - 21h30</p>
-                    <p><b>Samedi :</b> 15h00 - 16h30</p>
-                </div>
+                <router-link to="/le_taekwondo">En découvrir plus</router-link>
             </div>
-        </div>
     </section>
 
-    <section id="taekwondo_children">
-        <div class="content blue practice_presentation">
+    <section id="taekwondo_children" class="taekwondo_childrens practice_presentation">
             <svg viewBox="0 0 119.06 119.06">
                 <g>
                     <path
@@ -92,8 +96,6 @@
                             fill: none;
                             stroke-linecap: round;
                             stroke-linejoin: round;
-                            stroke-width: 0.92604;
-                            stroke: #08c;
                         "
                     />
                 </g>
@@ -101,6 +103,16 @@
             <div class="description">
                 <h3>Taekwondo enfants</h3>
                 <p>6 à 12 ans</p>
+                <div class="practice_hours">
+                    <div class="session">
+                        <div class="day">mardi</div>
+                        <div class="hour">18:30 - 19:30</div>
+                    </div>
+                    <div class="session">
+                        <div class="day">Samedi</div>
+                        <div class="hour">16:30 - 18:00</div>
+                    </div>
+                </div>
                 <p class="presentation">
                     Le taekwondo aide les enfants à dépenser leur énergie souvent
                     déborbante dans un cadre sain et encadré <br /><br />
@@ -108,17 +120,11 @@
                     telles que le respect, le goût de l’éffort et la confiance en
                     soit
                 </p>
-                <a>En savoir plus</a>
-                <div class="practice_hours">
-                    <p><b>Mardi :</b> 18h30 - 19h30</p>
-                    <p><b>Samedi :</b> 16h30 - 18h00</p>
-                </div>
+                <router-link to="/le_taekwondo">En découvrir plus</router-link>
             </div>
-        </div>
     </section>
 
-    <section id="taekwondo_baby" class="grey">
-        <div class="content blue_light practice_presentation reversed">
+    <section id="taekwondo_baby" class="grey_bg taekwondo_baby practice_presentation reversed">
             <svg viewBox="0 0 119.06 119.06">
                 <g>
                     <path
@@ -127,8 +133,6 @@
                             fill: none;
                             stroke-linecap: round;
                             stroke-linejoin: round;
-                            stroke-width: 0.92604;
-                            stroke: #00a3ff;
                         "
                     />
                 </g>
@@ -136,20 +140,22 @@
             <div class="description">
                 <h3>Taekwondo moustiques</h3>
                 <p>Dès 3 ans</p>
+                <div class="practice_hours">
+                    <div class="session">
+                        <div class="day">Samedi</div>
+                        <div class="hour">14:00 - 15:00</div>
+                    </div>
+                </div>
                 <p class="presentation">
                     Le taekwondo pour les très jeunes enfants délaisse en partie le
                     côté martial pour se concentrer sur l’eveil de leurs capacités
                     motrices dans un milieu à la fois sécurisé, structuré et ludique
                 </p>
-                <a>En savoir plus</a>
-                <div class="practice_hours">
-                    <p><b>Samedi :</b> 14h00 - 15h00</p>
-                </div>
+                <router-link to="#">En découvrir plus</router-link>
             </div>
-        </div>
     </section>
 
-    <section id="free_try" class="blue">
+    <section id="free_try" class="blue_bg">
         <div class="content">
             <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
             <div id="free_try_text">
@@ -172,206 +178,275 @@
 </template>
 
 <script>
-// components
-import Dojang           from "@/components/Dojang.vue";
-import NavBar           from "@/components/NavBar.vue";
-import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
-import Schedule         from "@/components/Schedule.vue";
-import MudoFooter       from "@/components/MudoFooter.vue";
+    // components
+    import Dojang           from "@/components/Dojang.vue";
+    import NavBar           from "@/components/NavBar.vue";
+    import UnderlinedTitle  from "@/components/UnderlinedTitle.vue";
+    import Schedule         from "@/components/Schedule.vue";
+    import MudoFooter       from "@/components/MudoFooter.vue";
 
-// libraries
-import * as Vivus       from "vivus";
+    // libraries
+    import * as Vivus           from "vivus";
+    import { gsap }             from "gsap";
+    import { ScrollTrigger }    from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
-export default {
-    name: "Home",
-    components: {
-        Dojang,
-        NavBar,
-        UnderlinedTitle,
-        Schedule,
-        MudoFooter
-    },
-    data() {
-        return {
-            clubPicture: require('@/assets/club_pictures/2021-2022_new_season_group.jpg'),
-        }
-    },
-    methods: {
-        initVivusAnimations() {
-            const vivusAnimProperties = {
-                type: "sync",
-                duration: 1200,
-                animTimingFunction: Vivus.ease_IN_OUT,
-                start: "manual"
-            };
+    export default {
+        name: "Home",
+        components: {
+            Dojang,
+            NavBar,
+            UnderlinedTitle,
+            Schedule,
+            MudoFooter
+        },
+        data() {
+            return {
+                clubPicture: require('@/assets/club_pictures/2021-2022_new_season_group.jpg'),
+            }
+        },
+        methods: {
+            animate() {
+                const vivusAnimProperties = {
+                    type: "sync",
+                    duration: 1200,
+                    animTimingFunction: Vivus.ease_IN_OUT,
+                    start: "manual"
+                };
 
-            const illustrations = document.querySelectorAll(".practice_presentation svg");
-            illustrations.forEach(illustration => {
-                const vivus = new Vivus(illustration, vivusAnimProperties);
+                gsap.utils.toArray(".practice_presentation").forEach(presentation => {
 
-                window.addEventListener("scroll", () => {
-                    const posY = illustration.getBoundingClientRect().y;
-                    const margin = window.innerHeight * 0.6;
+                    const illustration = presentation.querySelector("svg"),
+                          vivus = new Vivus(illustration, vivusAnimProperties);
 
-                    if (posY < margin) {
-                        vivus.play();
-                    }
+                    gsap.from(presentation.querySelectorAll(".session"), {
+                        scrollTrigger: {
+                            trigger: presentation,
+                            start: "top 10%",
+                            onEnter: () => vivus.play(),
+                        },
+                        scaleX: 0
+                    })
+
+                    gsap.to(presentation, {
+                        scrollTrigger: {
+                            trigger: presentation,
+                            start: "top bottom",
+                            onLeaveBack: () => {
+                                vivus.stop().reset()
+                            }
+                        }
+                    })
+                });
+
+            },
+            initVivusAnimations() {
+                const vivusAnimProperties = {
+                    type: "sync",
+                    duration: 1200,
+                    animTimingFunction: Vivus.ease_IN_OUT,
+                    start: "manual"
+                };
+
+                const illustrations = document.querySelectorAll(".practice_presentation svg");
+                illustrations.forEach(illustration => {
+                    const vivus = new Vivus(illustration, vivusAnimProperties);
+
+                    window.addEventListener("scroll", () => {
+                        const posY = illustration.getBoundingClientRect().y;
+                        const margin = window.innerHeight * 0.6;
+
+                        if (posY < margin) {
+                            vivus.play();
+                        }
+                    })
                 })
-            })
+            }
+        },
+        mounted() {
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) this.animate();
         }
-    },
-    mounted() {
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) this.initVivusAnimations();
     }
-}
 </script>
 
 <style lang="scss">
-
-.practice_presentation {
-    font-weight: bold;
-
-    svg {
-        margin: auto;
-    }
-
-    h3 {
-        margin-bottom: 0;
-        font-size: clamp(1.5rem, 2vw ,2rem);
-        text-transform: uppercase;
-        text-align: center;
-
-        &+ p {
-            margin-top: 0;
-            font-size: clamp(1.125rem, 1.5vw ,1.5rem);
-        }
-    }
-
-    .presentation {
-        font-size: clamp(0.85em, 1.125vw, 1.125rem);
-        text-align: justify;
-        max-width: 40rem;
-        margin: auto auto 1rem auto;
-    }
-
-    a {
-        display: inline-block;
-        padding: 1em 4em 1em 4em;
-        margin-bottom: clamp(1rem,3vw, 3rem);
-        border: 3px solid;
-        border-radius: 3px;
-        font-weight: bold;
-        font-size: clamp(0.85em, 1vw, 1rem);
-        background: none;
-        cursor: pointer;
-        transition: 0.5s;
-        text-decoration: none;
-        color: inherit;
-
-        &:hover{
-            border-radius: 10px;
-        }
-    }
-
-    .practice_hours {
-        font-weight: normal;
-        font-size: clamp(0.85em, 1vw, 1rem);
-    }
-}
-
-
-#free_try .content {
-    img {
-        width: 100%;
-    }
-
-    #free_try_text{
-        color: white;
-        font-size: clamp(0.85em, 1vw, 1.125rem);
-        font-weight: bold;
-
-        h3 {
-            text-transform: uppercase;
-            font-size: clamp(1.5rem, 2vw ,2rem);
-        }
-    }
-}
-
-#schedule .content button {
-    margin-top: clamp(3rem, 5vw, 5rem);
-    background-color: var(--red-medium-color);
-    border: none;
-    color: white;
-    font-weight: bold;
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-    cursor: pointer;
-    transition: 0.5s;
-
-    &:hover {
-        background-color: var(--red-light-color);
-        border-radius: 25px;
-    }
-}
-
-@media (min-width: 40em) {
-    .practice_presentation {
-        svg {
-            width: 60%;
-        }
-
-        .presentation {
-            text-align: center;
-        }
-    }
-}
-
-@media (min-width: 60em) {
     .practice_presentation {
         display: flex;
-        gap: 3rem;
-        align-items: center;
-
-        &.reversed {
-            flex-direction: row-reverse;
-        }
+        flex-direction: column;
+        height: 100vh;
 
         svg {
-            width: 40%;
+            flex: 1;
+            margin: auto;
+            stroke-width: 0.3;
+            stroke: var(--color-scheme);
+            max-width: 100%;
         }
 
         h3 {
-            text-align: left;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            text-align: center;
 
             &+ p {
-                padding-left: 0.5em;
+                color: var(--color-scheme);
+                margin-top: 0;
+                font-size: clamp(1.125rem, 1.5vw ,1.5rem);
             }
         }
 
         .description {
-            flex: 1;
-            text-align: left;
+            max-width: 40rem;
+            min-height: 50%;
+            margin: auto;
         }
 
         .presentation {
-            text-align: left;
-            max-width: auto;
-            margin: 0 0 1rem 0;
+            font-size: var(--font-sz-large);
+            text-align: justify;
+            margin: auto auto 1rem auto;
+        }
+
+        a {
+            display: inline-block;
+            background-color: var(--dark-soft-color);
+            color: var(--white-color);
+            padding: 0.8em 2em;
+            margin: 1rem 0;
+            border: 1px solid var(--dark-color);
+            border-radius: 100px;
+            font-size: clamp(0.85em, 1vw, 1rem);
+            font-weight: bold;
+
+            &:hover {
+                background-color: var(--dark-softest-color);
+            }
+        }
+
+        .practice_hours {
+            font-weight: normal;
+            font-size: var(--font-sz-medium);
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            row-gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .session {
+            width: calc(11 * var(--font-sz-medium));
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--color-scheme);
+        }
+        .day {
+            font-weight: bold;
         }
     }
+
 
     #free_try .content {
-        display: flex;
-        gap: 5%;
-        align-items: center;
-
+        height: 100vh;
         img {
-            width: 45%;
+            width: 100%;
         }
 
-        #free_try_text {
-            flex: 1;
+        #free_try_text{
+            color: white;
+            font-size: clamp(0.85em, 1vw, 1.125rem);
+            font-weight: bold;
+
+            h3 {
+                text-transform: uppercase;
+                font-size: clamp(1.5rem, 2vw ,2rem);
+            }
         }
     }
-}
+
+    #schedule .content button {
+        margin-top: clamp(3rem, 5vw, 5rem);
+        background-color: var(--red-medium-color);
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 1rem 2.5rem 1rem 2.5rem;
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: var(--red-light-color);
+            border-radius: 25px;
+        }
+    }
+
+    @media (min-width: 40em) {
+        .practice_presentation {
+            svg {
+                width: 60%;
+            }
+
+            .presentation {
+                text-align: center;
+            }
+        }
+    }
+
+    @media (min-width: 60em) {
+        .practice_presentation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "left right";
+            align-items: center;
+
+            &.reversed {
+                grid-template-areas: "right left";
+            }
+
+            svg {
+                grid-area: left;
+                width: 80%;
+            }
+
+            h3 {
+                text-align: left;
+
+                &+ p {
+                    padding-left: 0.5em;
+                }
+            }
+
+            .description {
+                grid-area: right;
+                text-align: left;
+                justify-self: center;
+            }
+
+            .presentation {
+                text-align: left;
+                max-width: auto;
+                margin: 0 0 1rem 0;
+            }
+            .practice_hours {
+                justify-content: left;
+            }
+            .session {
+                padding-right: 1rem;
+            }
+        }
+
+        #free_try .content {
+            display: flex;
+            gap: 5%;
+            align-items: center;
+
+            img {
+                width: 45%;
+            }
+
+            #free_try_text {
+                flex: 1;
+            }
+        }
+    }
 </style>

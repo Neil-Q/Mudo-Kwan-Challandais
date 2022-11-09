@@ -8,13 +8,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: var(--dark-color);
 }
 
 :root {
     // colors ->
-    --dark-color: #262626;
-    --dark-soft-color: #404040;
+    // --dark-color: #262626;
+    // --dark-soft-color: #404040;
+    --dark-color: #1a1a1a;
+    --dark-soft-color: #262626;
+    --dark-softest-color: #404040;
 
     --white-color: #ffffff;
     --grey-soft-color: #f5f5f5;
@@ -64,26 +67,10 @@ body {
     }
 }
 
-h3 {
-    font-size: clamp(1.5rem, 2vw ,2rem);
-    text-transform: uppercase;
-}
-
 section {
     box-sizing: border-box;
-    // padding: 2rem;
-    
-    &.blue {
-        background-color: var(--blue-medium-color);
-    }
-
-    &.red {
-        background-color: var(--red-dark-color);
-    }
-
-    &.grey {
-        background-color: rgba($color: #000000, $alpha: 0.05);
-    }
+    min-height: 100vh;
+    padding: 2rem;
 
     &> .content {
         box-sizing: border-box;
@@ -91,6 +78,47 @@ section {
         width: 100%;
         max-width: 1200px;
     }
+
+    &.hapkimudo {
+        --color-scheme: var(--red-medium-color);
+    }
+
+    &.taekwondo {
+        --color-scheme: var(--blue-medium-color);
+    }
+
+    &.taekwondo_childrens {
+        --color-scheme: var(--blue-light-color);
+    }
+
+    &.taekwondo_baby {
+        --color-scheme: var(--blue-strongLight-color);
+    }
+}
+
+h3 {
+    font-size: clamp(1.5rem, 2vw ,2rem);
+    text-transform: uppercase;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    :visited {
+        color: inherit;
+    }
+}
+
+
+.blue_bg {
+    background-color: var(--blue-medium-color);
+}
+.red_bg {
+    background-color: var(--red-dark-color);
+}
+.grey_bg {
+    background-color: rgba($color: #000000, $alpha: 0.05);
 }
 
 .blue_light {

@@ -153,6 +153,7 @@
                     start: "center center",
                     end: "+=150%",
                     pin: "#taekwondo_presentation",
+                    anticipatePin: 1,
                     scrub: 1,
                 },
             })
@@ -199,6 +200,7 @@
                     start: "center center",
                     end: "+=400%",
                     pin: true,
+                    anticipatePin: 4,
                     scrub: 0.5,
                     snap: {
                         snapTo: 1/4,
@@ -239,10 +241,11 @@
                         start: "top top",
                         end: "bottom top",
                         pin: "#presentation_videos .container",
-                        scrub: true,
+                        scrub: 1,
                         snap: {
                             snapTo: 1,
-                            duration: 2
+                            duration: 1,
+                            ease: "none"
                         }
                     },
                     xPercent: -50
@@ -252,7 +255,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 #taekwondo_presentation {
     height: 100vh;
@@ -356,7 +359,7 @@
     position: absolute;
     font-size: var(--font-sz-large);
     max-width: 40em;
-    margin: 0 2rem;
+    // margin: 0 2rem;
 }
 
 
