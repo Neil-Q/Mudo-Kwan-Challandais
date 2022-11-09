@@ -476,451 +476,456 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import NavBar   from "@/components/NavBar.vue";
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
 
-export default {
-    name: "Dojang",
-    components: {
-        NavBar
-    },
-    data() {
-        return {
-            wrapperIsCollapsing: false,
+    import NavBar   from "@/components/NavBar.vue";
 
-            onOrientationDevice: false,
-            baseBetaOrientation: undefined,
-            baseGammaOrientation: undefined,
-            betaOffset: 0,
-            gammaOffset: 0,
-
-            parallaxTimeout: undefined,
-        }
-    },
-    methods: {
-        animateDojang(delay) {
-            this.resetDojang();
-            let dojang_parts = document.querySelectorAll(".dojang_part");
-
-            //scene animations
-            setTimeout(() => {
-                dojang_parts.forEach(part => {
-                    part.classList.remove("unplaced");
-                });
-
-                gsap.from(".dojang_picture", {
-                    duration: 0.5,
-                    delay: 0.8,
-                    scale: 0,
-                    ease: "bounce.out",
-                    stagger: 0.05
-                });
-
-                const breastplateTimeline = gsap.timeline();
-                breastplateTimeline.to("#dojang_breastplate",{
-                    transformOrigin: "50% 0%",
-                    rotate: -8,
-                    duration: 0.6,
-                    delay: 0.20,
-                });
-                breastplateTimeline.to("#dojang_breastplate",{
-                    transformOrigin: "50% 0%",
-                    rotate: 6,
-                    duration: 0.4,
-                });
-                breastplateTimeline.to("#dojang_breastplate",{
-                    transformOrigin: "50% 0%",
-                    rotate: 0,
-                    duration: 1.25,
-                    ease: "elastic.out(0.5,0.4)"
-                });
-
-                gsap.from("#dojang_bottle", {
-                    x: -170,
-                    duration: 0.5,
-                    delay: 0.9,
-                    ease: "power2.out"
-                });
-                gsap.to("#dojang_bottle", {
-                    duration: 0.3,
-                    yoyo: true,
-                    transformOrigin: "100% 100%",
-                    repeat: 1,
-                    delay: 1,
-                    rotation: 25,
-                    ease: "slow (0.7, 0.7, false)"
-                });
-
-                gsap.from("#dojang_bob", {
-                    yPercent: -38,
-                    duration: 1.2,
-                    delay: 1.15,
-                    ease: "bounce.out",
-                });
-                gsap.from("#dojang_bob > g", {
-                    rotation: 5,
-                    transformOrigin: "50% 100%",
-                    duration: 1.3,
-                    delay: 1.8,
-                    ease: "elastic.out(1,0.3)"
-                });
-
-                gsap.to("#dojang_scene", {
-                    duration: 0.08,
-                    yoyo: true,
-                    repeat: 3,
-                    delay: 1.6,
-                    yPercent: 1
-                });
-            }, delay * 1000);         
+    export default {
+        name: "Dojang",
+        components: {
+            NavBar
         },
+        data() {
+            return {
+                wrapperIsCollapsing: false,
 
-        animateMouse() {
-            const   mouseAnimation = gsap.timeline({repeat: -1}),
-                    mouseHeight = document.getElementById("dojang_scrolldown_mouse").clientHeight,
-                    wheel = "#dojang_scrolldown_mouse > span";
+                onOrientationDevice: false,
+                baseBetaOrientation: undefined,
+                baseGammaOrientation: undefined,
+                betaOffset: 0,
+                gammaOffset: 0,
 
-            mouseAnimation.to(wheel, {
-                duration: 1,
-                y: mouseHeight * 0.2
-            })
-            mouseAnimation.to(wheel, {
-                y: 0
-            })
-        },
-
-        appearOverlay() {
-            const duration = 1;
-
-            gsap.to("#dojang_banner, .dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu", {
-                duration: duration,
-                x: 0,
-                y: 0
-            });
-
-            gsap.to("#dojang_overlay", {
-                duration: duration,
-                opacity: 1
-            });
-        },
-
-        disappearOverlay() {
-            const duration = 1;
-
-            if (window.innerHeight <= window.innerWidth) {
-                gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
-                    duration: duration,
-                    x: -40,
-                });
-    
-                gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
-                    duration: duration,
-                    x: 40,
-                });
-
-            } else {
-                gsap.to("#dojang_banner, .dojang_scene_navbar", {
-                    duration: duration,
-                    y: -40,
-                });
+                parallaxTimeout: undefined,
             }
-
-            gsap.to("#dojang_overlay", {
-                duration: duration,
-                opacity: 0
-            });
-
         },
-        
-        firstAppearOverlay(delay) {
-            gsap.from("#dojang_overlay", {
-                duration: 1,
-                delay: delay,
-                opacity: 0
-            });
+        methods: {
+            animateDojang(delay) {
+                this.resetDojang();
+                let dojang_parts = document.querySelectorAll(".dojang_part");
 
-            if (window.innerHeight <= window.innerWidth) {
-                gsap.from(".dojang_scene_navbar", {
+                //scene animations
+                setTimeout(() => {
+                    dojang_parts.forEach(part => {
+                        part.classList.remove("unplaced");
+                    });
+
+                    gsap.from(".dojang_picture", {
+                        duration: 0.5,
+                        delay: 0.8,
+                        scale: 0,
+                        ease: "bounce.out",
+                        stagger: 0.05
+                    });
+
+                    const breastplateTimeline = gsap.timeline();
+                    breastplateTimeline.to("#dojang_breastplate",{
+                        transformOrigin: "50% 0%",
+                        rotate: -8,
+                        duration: 0.6,
+                        delay: 0.20,
+                    });
+                    breastplateTimeline.to("#dojang_breastplate",{
+                        transformOrigin: "50% 0%",
+                        rotate: 6,
+                        duration: 0.4,
+                    });
+                    breastplateTimeline.to("#dojang_breastplate",{
+                        transformOrigin: "50% 0%",
+                        rotate: 0,
+                        duration: 1.25,
+                        ease: "elastic.out(0.5,0.4)"
+                    });
+
+                    gsap.from("#dojang_bottle", {
+                        x: -170,
+                        duration: 0.5,
+                        delay: 0.9,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#dojang_bottle", {
+                        duration: 0.3,
+                        yoyo: true,
+                        transformOrigin: "100% 100%",
+                        repeat: 1,
+                        delay: 1,
+                        rotation: 25,
+                        ease: "slow (0.7, 0.7, false)"
+                    });
+
+                    gsap.from("#dojang_bob", {
+                        yPercent: -38,
+                        duration: 1.2,
+                        delay: 1.15,
+                        ease: "bounce.out",
+                    });
+                    gsap.from("#dojang_bob > g", {
+                        rotation: 5,
+                        transformOrigin: "50% 100%",
+                        duration: 1.3,
+                        delay: 1.8,
+                        ease: "elastic.out(1,0.3)"
+                    });
+
+                    gsap.to("#dojang_scene", {
+                        duration: 0.08,
+                        yoyo: true,
+                        repeat: 3,
+                        delay: 1.6,
+                        yPercent: 1
+                    });
+                }, delay * 1000);         
+            },
+
+            animateMouse() {
+                const   mouseAnimation = gsap.timeline({repeat: -1}),
+                        mouseHeight = document.getElementById("dojang_scrolldown_mouse").clientHeight,
+                        wheel = "#dojang_scrolldown_mouse > span";
+
+                mouseAnimation.to(wheel, {
                     duration: 1,
-                    delay: delay + 0.15,
-                    yPercent: -100
+                    y: mouseHeight * 0.2
+                })
+                mouseAnimation.to(wheel, {
+                    y: 0
+                })
+            },
+
+            appearOverlay() {
+                const duration = 1;
+
+                gsap.to("#dojang_banner, .dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu", {
+                    duration: duration,
+                    x: 0,
+                    y: 0
                 });
 
-                gsap.from(".dojang_scene_navbar > #nav_bar_menu > li", {
-                    duration: 0.6,
-                    delay: delay + 1,
-                    stagger: 0.3,
-                    y: -15,
+                gsap.to("#dojang_overlay", {
+                    duration: duration,
+                    opacity: 1
+                });
+            },
+
+            disappearOverlay() {
+                const duration = 1;
+
+                if (window.innerHeight <= window.innerWidth) {
+                    gsap.to("#dojang_banner, .dojang_scene_navbar > #nav_home", {
+                        duration: duration,
+                        x: -40,
+                    });
+        
+                    gsap.to(".dojang_scene_navbar > #nav_bar_menu", {
+                        duration: duration,
+                        x: 40,
+                    });
+
+                } else {
+                    gsap.to("#dojang_banner, .dojang_scene_navbar", {
+                        duration: duration,
+                        y: -40,
+                    });
+                }
+
+                gsap.to("#dojang_overlay", {
+                    duration: duration,
                     opacity: 0
                 });
 
-                gsap.from("#dojang_banner > *, #dojang_scrolldown", {
-                    duration: 1,
-                    delay: delay + 1,
-                    stagger: 0.15,
-                    y: -10,
-                    opacity: 0,
-                });
-
-            } else {
-                gsap.from(".dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu > li, #dojang_banner > h1, #dojang_banner > a, #dojang_scrolldown", {
+            },
+            
+            firstAppearOverlay(delay) {
+                gsap.from("#dojang_overlay", {
                     duration: 1,
                     delay: delay,
-                    stagger: 0.15,
-                    y: -15,
                     opacity: 0
                 });
-            }
 
-            setTimeout(() => this.animateMouse(), 1000);
-        },
+                if (window.innerHeight <= window.innerWidth) {
+                    gsap.from(".dojang_scene_navbar", {
+                        duration: 1,
+                        delay: delay + 0.15,
+                        yPercent: -100
+                    });
 
-        hideDojang() {
-            if(this.wrapperIsCollapsing) return;
+                    gsap.from(".dojang_scene_navbar > #nav_bar_menu > li", {
+                        duration: 0.6,
+                        delay: delay + 1,
+                        stagger: 0.3,
+                        y: -15,
+                        opacity: 0
+                    });
 
-            const wrapper = document.getElementById("dojang_wrapper");
+                    gsap.from("#dojang_banner > *, #dojang_scrolldown", {
+                        duration: 1,
+                        delay: delay + 1,
+                        stagger: 0.15,
+                        y: -10,
+                        opacity: 0,
+                    });
 
-            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                this.disappearOverlay();
+                } else {
+                    gsap.from(".dojang_scene_navbar, .dojang_scene_navbar > #nav_home, .dojang_scene_navbar > #nav_bar_menu > li, #dojang_banner > h1, #dojang_banner > a, #dojang_scrolldown", {
+                        duration: 1,
+                        delay: delay,
+                        stagger: 0.15,
+                        y: -15,
+                        opacity: 0
+                    });
+                }
 
-                wrapper.classList.add("smooth");
-                this.wrapperIsCollapsing = true;
+                setTimeout(() => this.animateMouse(), 1000);
+            },
 
-                setTimeout(() => {
-                    this.wrapperIsCollapsing = false;
-                    wrapper.classList.remove("smooth");
+            hideDojang() {
+                if(this.wrapperIsCollapsing) return;
+
+                const wrapper = document.getElementById("dojang_wrapper");
+
+                if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    this.disappearOverlay();
+
+                    wrapper.classList.add("smooth");
+                    this.wrapperIsCollapsing = true;
+
+                    setTimeout(() => {
+                        this.wrapperIsCollapsing = false;
+                        wrapper.classList.remove("smooth");
+                        document.body.classList.remove("fullpage");
+                        history.scrollRestoration = 'manual';
+                        ScrollTrigger.refresh();
+                    }, 1000);
+
+                } else {
                     document.body.classList.remove("fullpage");
                     history.scrollRestoration = 'manual';
-                }, 1000);
+                }
 
-            } else {
-                document.body.classList.remove("fullpage");
-                history.scrollRestoration = 'manual';
-            }
+                wrapper.classList.add("collapsed");
+            },
 
-            wrapper.classList.add("collapsed");
-        },
+            initAnimations() {
+                let dojang_parts = document.querySelectorAll(".dojang_part");
 
-        initAnimations() {
-            let dojang_parts = document.querySelectorAll(".dojang_part");
+                // kill animations if user have reduced motion preference
+                if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    dojang_parts.forEach( part => {
+                        part.classList.remove("unplaced");
+                        part.classList.add("placed");
+                    });
+                    return
+                }
 
-            // kill animations if user have reduced motion preference
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                dojang_parts.forEach( part => {
-                    part.classList.remove("unplaced");
-                    part.classList.add("placed");
-                });
-                return
-            }
+                this.animateDojang(0.5);
+                this.firstAppearOverlay(2.5);
+                this.parallaxTimeout = setTimeout(() => {
+                    dojang_parts.forEach(part => {
+                        part.classList.add("placed");
+                    })
+                    window.addEventListener("deviceorientation", this.orientationParallax);
+                    document.getElementById("dojang_wrapper").addEventListener("mousemove", this.mouseParallax);
+                }, 3000);          
+            },
 
-            this.animateDojang(0.5);
-            this.firstAppearOverlay(2.5);
-            this.parallaxTimeout = setTimeout(() => {
-                dojang_parts.forEach(part => {
-                    part.classList.add("placed");
-                })
-                window.addEventListener("deviceorientation", this.orientationParallax);
-                document.getElementById("dojang_wrapper").addEventListener("mousemove", this.mouseParallax);
-            }, 3000);          
-        },
+            mouseParallax(event) { 
+                if (this.onOrientationDevice) return
 
-        mouseParallax(event) { 
-            if (this.onOrientationDevice) return
-
-            event = event || window.event;
-            
-            //return a value between -1 and 1 
-            let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
-            let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
-
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
-                xPercent: posX * - 1.15
-            });
-
-            gsap.to("#dojang_wall, #dojang_table", {
-                xPercent: posX * - 1
-            });
-
-            gsap.to("#dojang_local_and_exit", {
-                xPercent: posX * - 0.85
-            });
-
-            gsap.to("#dojang_exterior", {
-                xPercent: posX * - 0.7
-            });
-
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                yPercent: posY * - 1.5
-            });
-        },
-
-        orientationParallax(orientation) {
-            orientation = orientation || window.event;
-
-            //verify if orientation device isn't just triggered automaticaly by browser without real sensor
-            if(orientation.beta === null && orientation.gamma == null) return
-
-            //disable mouse parallax if orientation change detected
-            this.onOrientationDevice = true;
-
-            //Lock gamma angle if beta is near 90° to avoid gimeball effect jumping of value
-            let lockGamma = false;
-            if (orientation.beta >= 85 && orientation.beta <= 95) lockGamma = true;
-
-            //setting initial Alpha and Gamma orientation
-            if (this.baseBetaOrientation === undefined) this.baseBetaOrientation = orientation.beta;
-            if (!lockGamma && this.baseGammaOrientation === undefined) this.baseGammaOrientation = orientation.gamma;
-
-            //updating base orientation if user move to far
-            if(orientation.beta > (this.baseBetaOrientation + 30)) this.baseBetaOrientation = (orientation.beta - 30 );
-            if(orientation.beta < (this.baseBetaOrientation - 30)) this.baseBetaOrientation = (orientation.beta + 30 );
-
-            if(orientation.gamma > (this.baseGammaOrientation + 30)) this.baseGammaOrientation = (orientation.gamma - 30 );
-            if(orientation.gamma < (this.baseGammaOrientation - 30)) this.baseGammaOrientation = (orientation.gamma + 30 );
-
-            //getting offsets
-            this.betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
-            if (!lockGamma) {
-                //help prevent jump when to much gamma tilt in the locked phase
-                let newGammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
-                if (newGammaOffset > (this.gammaOffset + 0.1) || newGammaOffset < (this.gammaOffset - 0.1)) this.baseGammaOrientation += (newGammaOffset - this.gammaOffset) * 30;
-
-                this.gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30 ;
-            }
-
-            console.log("Corrected offset : " + this.gammaOffset);
-
-            //applying parallax
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
-                xPercent: this.gammaOffset * - 3.45
-            });
-
-            gsap.to("#dojang_wall, #dojang_table", {
-                xPercent: this.gammaOffset * - 3
-            })
-
-            gsap.to("#dojang_local_and_exit", {
-                xPercent: this.gammaOffset * - 2.55
-            })
-
-            gsap.to("#dojang_exterior", {
-                xPercent: this.gammaOffset * - 2.1
-            })
-
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                yPercent: this.betaOffset * - 3
-            })
-        },
-
-        removelisteners() {
-            window.removeEventListener("deviceorientation", this.orientationParallax);
-            document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
-        },
-
-        resetDojang() {
-            this.dojangPlacedElements = false;
-            let dojang_parts = document.querySelectorAll(".dojang_part");
-
-            dojang_parts.forEach( part => part.classList.add("unplaced"));
-            dojang_parts.forEach( part => part.classList.remove("placed"));
-        },
-
-        resetParallax() {
-            gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
-                xPercent: 0,
-                yPercent: 0
-            });
-        },
-
-        setAppHeight() {
-            document.body.style.setProperty("--viewport-height", window.innerHeight + "px")
-        },
-
-        showDojang() {
-            if(this.wrapperIsCollapsing) return;
-
-            const wrapper = document.getElementById("dojang_wrapper");
-
-            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                this.appearOverlay();
+                event = event || window.event;
                 
-                document.body.classList.add("fullpage");
-                wrapper.classList.add("smooth");
-                this.wrapperIsCollapsing = true;
+                //return a value between -1 and 1 
+                let posX = (event.pageX * 2 / window.innerWidth) - 1 ;
+                let posY = (event.pageY * 2 / window.innerHeight) - 1 ;
 
-                setTimeout(() => {
-                    this.wrapperIsCollapsing = false;
-                    wrapper.classList.remove("smooth");
+                gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
+                    xPercent: posX * - 1.15
+                });
+
+                gsap.to("#dojang_wall, #dojang_table", {
+                    xPercent: posX * - 1
+                });
+
+                gsap.to("#dojang_local_and_exit", {
+                    xPercent: posX * - 0.85
+                });
+
+                gsap.to("#dojang_exterior", {
+                    xPercent: posX * - 0.7
+                });
+
+                gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                    yPercent: posY * - 1.5
+                });
+            },
+
+            orientationParallax(orientation) {
+                orientation = orientation || window.event;
+
+                //verify if orientation device isn't just triggered automaticaly by browser without real sensor
+                if(orientation.beta === null && orientation.gamma == null) return
+
+                //disable mouse parallax if orientation change detected
+                this.onOrientationDevice = true;
+
+                //Lock gamma angle if beta is near 90° to avoid gimeball effect jumping of value
+                let lockGamma = false;
+                if (orientation.beta >= 85 && orientation.beta <= 95) lockGamma = true;
+
+                //setting initial Alpha and Gamma orientation
+                if (this.baseBetaOrientation === undefined) this.baseBetaOrientation = orientation.beta;
+                if (!lockGamma && this.baseGammaOrientation === undefined) this.baseGammaOrientation = orientation.gamma;
+
+                //updating base orientation if user move to far
+                if(orientation.beta > (this.baseBetaOrientation + 30)) this.baseBetaOrientation = (orientation.beta - 30 );
+                if(orientation.beta < (this.baseBetaOrientation - 30)) this.baseBetaOrientation = (orientation.beta + 30 );
+
+                if(orientation.gamma > (this.baseGammaOrientation + 30)) this.baseGammaOrientation = (orientation.gamma - 30 );
+                if(orientation.gamma < (this.baseGammaOrientation - 30)) this.baseGammaOrientation = (orientation.gamma + 30 );
+
+                //getting offsets
+                this.betaOffset = (orientation.beta - this.baseBetaOrientation) / 30;
+                if (!lockGamma) {
+                    //help prevent jump when to much gamma tilt in the locked phase
+                    let newGammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30;
+                    if (newGammaOffset > (this.gammaOffset + 0.1) || newGammaOffset < (this.gammaOffset - 0.1)) this.baseGammaOrientation += (newGammaOffset - this.gammaOffset) * 30;
+
+                    this.gammaOffset = (orientation.gamma - this.baseGammaOrientation) / 30 ;
+                }
+
+                console.log("Corrected offset : " + this.gammaOffset);
+
+                //applying parallax
+                gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob", {
+                    xPercent: this.gammaOffset * - 3.45
+                });
+
+                gsap.to("#dojang_wall, #dojang_table", {
+                    xPercent: this.gammaOffset * - 3
+                })
+
+                gsap.to("#dojang_local_and_exit", {
+                    xPercent: this.gammaOffset * - 2.55
+                })
+
+                gsap.to("#dojang_exterior", {
+                    xPercent: this.gammaOffset * - 2.1
+                })
+
+                gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                    yPercent: this.betaOffset * - 3
+                })
+            },
+
+            removelisteners() {
+                window.removeEventListener("deviceorientation", this.orientationParallax);
+                document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
+            },
+
+            resetDojang() {
+                this.dojangPlacedElements = false;
+                let dojang_parts = document.querySelectorAll(".dojang_part");
+
+                dojang_parts.forEach( part => part.classList.add("unplaced"));
+                dojang_parts.forEach( part => part.classList.remove("placed"));
+            },
+
+            resetParallax() {
+                gsap.to("#dojang_tatamis, #dojang_floor, #dojang_bob, #dojang_wall, #dojang_table, #dojang_local_and_exit, #dojang_exterior", {
+                    xPercent: 0,
+                    yPercent: 0
+                });
+            },
+
+            setAppHeight() {
+                document.body.style.setProperty("--viewport-height", window.innerHeight + "px")
+            },
+
+            showDojang() {
+                if(this.wrapperIsCollapsing) return;
+
+                const wrapper = document.getElementById("dojang_wrapper");
+
+                if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    this.appearOverlay();
+                    
+                    document.body.classList.add("fullpage");
+                    wrapper.classList.add("smooth");
+                    this.wrapperIsCollapsing = true;
+
+                    setTimeout(() => {
+                        this.wrapperIsCollapsing = false;
+                        wrapper.classList.remove("smooth");
+                        history.scrollRestoration = 'auto';
+                        ScrollTrigger.refresh();
+                    }, 1000);
+
+                } else {
                     history.scrollRestoration = 'auto';
-                }, 1000);
+                }
 
-            } else {
-                history.scrollRestoration = 'auto';
+                wrapper.classList.remove("collapsed");
             }
+        },
+        beforeMount() { 
+            document.body.style.overscrollBehavior = "contain";
+            document.body.classList.add("fullpage");
+        },
+        mounted() {
+            //Ensure good fullpage height for mobile
+            this.setAppHeight();
 
-            wrapper.classList.remove("collapsed");
+            this.initAnimations();
+
+            let wrapper = document.getElementById("dojang_wrapper");
+
+            //Normal scroll
+            window.addEventListener("wheel", (e) => {
+                if (this.wrapperIsCollapsing) return
+                let isCollapsed = wrapper.classList.contains("collapsed");
+
+                if (e.deltaY > 0 && !isCollapsed) { 
+                    this.hideDojang();
+                }
+                else if (e.deltaY < 0 && window.pageYOffset == 0 && isCollapsed) { 
+                    this.showDojang();
+                }
+            });
+
+            //Simulate touch scroll (Body being set to full page only, scroll wont work)
+            let touchOrigin = undefined;
+            let touchOriginYOffset = undefined;
+
+            window.addEventListener("touchstart", (e) => {
+                touchOrigin = e.changedTouches[0].clientY;
+                touchOriginYOffset = parseInt(window.pageYOffset);
+            })
+            window.addEventListener("touchend", (e) => {
+                if (this.wrapperIsCollapsing) return
+                let touchEnd = e.changedTouches[0].clientY;
+                let isCollapsed = wrapper.classList.contains("collapsed");
+
+                if (!isCollapsed && touchEnd < touchOrigin) this.hideDojang();
+
+                if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
+            })
+
+            window.addEventListener("resize", this.setAppHeight);
+
+            //Scroll from button
+            document.querySelector("#dojang_scrolldown").addEventListener("click", this.hideDojang);
+        },
+        beforeUnmount() {
+            document.body.classList.remove("fullpage");
+            document.body.style.overscrollBehavior = "auto";
+
+            clearTimeout(this.parallaxTimeout);
+            this.resetDojang();
+            this.resetParallax();
+            this.removelisteners();
+
+            history.scrollRestoration = 'auto';
         }
-    },
-    beforeMount() { 
-        document.body.style.overscrollBehavior = "contain";
-        document.body.classList.add("fullpage");
-    },
-    mounted() {
-        //Ensure good fullpage height for mobile
-        this.setAppHeight();
-
-        this.initAnimations();
-
-        let wrapper = document.getElementById("dojang_wrapper");
-
-        //Normal scroll
-        window.addEventListener("wheel", (e) => {
-            if (this.wrapperIsCollapsing) return
-            let isCollapsed = wrapper.classList.contains("collapsed");
-
-            if (e.deltaY > 0 && !isCollapsed) { 
-                this.hideDojang();
-            }
-            else if (e.deltaY < 0 && window.pageYOffset == 0 && isCollapsed) { 
-                this.showDojang();
-            }
-        });
-
-        //Simulate touch scroll (Body being set to full page only, scroll wont work)
-        let touchOrigin = undefined;
-        let touchOriginYOffset = undefined;
-
-        window.addEventListener("touchstart", (e) => {
-            touchOrigin = e.changedTouches[0].clientY;
-            touchOriginYOffset = parseInt(window.pageYOffset);
-        })
-        window.addEventListener("touchend", (e) => {
-            if (this.wrapperIsCollapsing) return
-            let touchEnd = e.changedTouches[0].clientY;
-            let isCollapsed = wrapper.classList.contains("collapsed");
-
-            if (!isCollapsed && touchEnd < touchOrigin) this.hideDojang();
-
-            if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
-        })
-
-        window.addEventListener("resize", this.setAppHeight);
-
-        //Scroll from button
-        document.querySelector("#dojang_scrolldown").addEventListener("click", this.hideDojang);
-    },
-    beforeUnmount() {
-        document.body.classList.remove("fullpage");
-        document.body.style.overscrollBehavior = "auto";
-
-        clearTimeout(this.parallaxTimeout);
-        this.resetDojang();
-        this.resetParallax();
-        this.removelisteners();
-
-        history.scrollRestoration = 'auto';
-    }
-};
+    };
 </script>
 
 <style lang="scss">
