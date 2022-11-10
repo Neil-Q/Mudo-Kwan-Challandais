@@ -50,16 +50,6 @@
                 duration: 0.5,
                 y: 20
             })
-
-            // gsap.to(wrapper, {
-            //     scrollTrigger: {
-            //         trigger: wrapper,
-            //         start: "center center",
-            //         end: "center top",
-            //         scrub: true,
-            //         pin: wrapper,
-            //     }
-            // })
         }
     }
 </script>

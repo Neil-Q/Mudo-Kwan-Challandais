@@ -105,7 +105,7 @@
             return {
                 pictures: require('@/assets/club_pictures/2021-2022_new_season_group.jpg')
             }
-        }
+        },
     }
 </script>
 

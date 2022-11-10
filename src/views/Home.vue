@@ -7,10 +7,10 @@
         class="darker"
         title="Bienvenue"
         text="Le Mudo Kwan Challandais vous accueille en toute simplicité dans son dojang que vous soyez débutants ou confirmés, que vous recherchiez aussi bien la compétition que le simple loisir."
-        style="height: 20vh"
     />
 
     <section id="hapkimudo" class="hapkimudo practice_presentation">
+        <div class="container">
             <svg viewBox="0 0 119.06 119.06">
                 <g transform="translate(-400.72 -126.49)">
                     <path
@@ -47,9 +47,11 @@
                 </p>
                 <router-link to="#">En découvrir plus</router-link>
             </div>
+        </div>
     </section>
 
     <section id="taekwondo" class="grey_bg taekwondo practice_presentation reversed">
+        <div class="container">
             <svg viewBox="0 0 116.06 119.06">
                 <g>
                     <path
@@ -85,9 +87,11 @@
                 </p>
                 <router-link to="/le_taekwondo">En découvrir plus</router-link>
             </div>
+        </div>
     </section>
 
     <section id="taekwondo_children" class="taekwondo_childrens practice_presentation">
+        <div class="container">
             <svg viewBox="0 0 119.06 119.06">
                 <g>
                     <path
@@ -122,9 +126,11 @@
                 </p>
                 <router-link to="/le_taekwondo">En découvrir plus</router-link>
             </div>
+        </div>
     </section>
 
     <section id="taekwondo_baby" class="grey_bg taekwondo_baby practice_presentation reversed">
+        <div class="container">
             <svg viewBox="0 0 119.06 119.06">
                 <g>
                     <path
@@ -153,6 +159,7 @@
                 </p>
                 <router-link to="#">En découvrir plus</router-link>
             </div>
+        </div>
     </section>
 
     <section id="free_try" class="blue_bg">
@@ -207,6 +214,7 @@
         },
         methods: {
             animate() {
+
                 const vivusAnimProperties = {
                     type: "sync",
                     duration: 1200,
@@ -214,20 +222,61 @@
                     start: "manual"
                 };
 
+                // Setting animations for each section
                 gsap.utils.toArray(".practice_presentation").forEach(presentation => {
 
                     const illustration = presentation.querySelector("svg"),
+                          description = presentation.querySelector(".description"),
+                          link = presentation.querySelector("a"),
                           vivus = new Vivus(illustration, vivusAnimProperties);
 
-                    gsap.from(presentation.querySelectorAll(".session"), {
-                        scrollTrigger: {
-                            trigger: presentation,
-                            start: "top 10%",
-                            onEnter: () => vivus.play(),
-                        },
-                        scaleX: 0
+
+                    // Setting animations for description
+                    const descriptionTimeline = gsap.timeline({paused: true});
+                    descriptionTimeline
+                        .from(presentation.querySelectorAll(".day, .hour"), {yPercent: 100})
+                        // .fromTo(link, {scaleX: 0, scaleY: 0.1}, {scaleX: 1, scaleY: 0.1})
+                        // .to(link, {scaleY: 1})
+                        .from(link, {scaleX: 0})
+                        .from(link, {color: "transparent", duration: 0.25})
+
+
+                    // Setting differents triggers according to layout
+                    gsap.matchMedia()
+                    .add("(min-width: 60rem)", () => {
+                        gsap.to(presentation, {
+                            scrollTrigger: {
+                                trigger: presentation,
+                                start: "top 25%",
+                                onEnter: () => {
+                                    descriptionTimeline
+                                        .play()
+                                        .eventCallback("onComplete", () => vivus.play())
+                                },
+                                onLeaveBack: () => descriptionTimeline.reverse()
+                            }
+                        })
+                    })
+                    .add("(max-width: calc(60rem - 1px)", () => {
+                        gsap.to(illustration, {
+                            scrollTrigger: {
+                                trigger: illustration,
+                                start: "center 60%",
+                                onEnter: () => vivus.play()
+                            }
+                        })
+                        gsap.to(description, {
+                            scrollTrigger: {
+                                trigger: description,
+                                start: "top 60%",
+                                onEnter: () => descriptionTimeline.play(),
+                                onLeaveBack: () => descriptionTimeline.reverse()
+                            }
+                        })
                     })
 
+
+                    // Reset svg when back and off screen
                     gsap.to(presentation, {
                         scrollTrigger: {
                             trigger: presentation,
@@ -240,28 +289,6 @@
                 });
 
             },
-            initVivusAnimations() {
-                const vivusAnimProperties = {
-                    type: "sync",
-                    duration: 1200,
-                    animTimingFunction: Vivus.ease_IN_OUT,
-                    start: "manual"
-                };
-
-                const illustrations = document.querySelectorAll(".practice_presentation svg");
-                illustrations.forEach(illustration => {
-                    const vivus = new Vivus(illustration, vivusAnimProperties);
-
-                    window.addEventListener("scroll", () => {
-                        const posY = illustration.getBoundingClientRect().y;
-                        const margin = window.innerHeight * 0.6;
-
-                        if (posY < margin) {
-                            vivus.play();
-                        }
-                    })
-                })
-            }
         },
         mounted() {
             if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) this.animate();
@@ -271,9 +298,17 @@
 
 <style lang="scss">
     .practice_presentation {
+        min-height: 100vh;
         display: flex;
-        flex-direction: column;
-        height: 100vh;
+        align-items: center;
+        justify-content: center;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 100rem;
+            height: 80vh;
+        }
 
         svg {
             flex: 1;
@@ -281,6 +316,7 @@
             stroke-width: 0.3;
             stroke: var(--color-scheme);
             max-width: 100%;
+            max-height: 100%;
         }
 
         h3 {
@@ -313,10 +349,11 @@
             color: var(--white-color);
             padding: 0.8em 2em;
             margin: 1rem 0;
-            border: 1px solid var(--dark-color);
             border-radius: 100px;
             font-size: clamp(0.85em, 1vw, 1rem);
             font-weight: bold;
+            overflow-x: hidden;
+            white-space: nowrap;
 
             &:hover {
                 background-color: var(--dark-softest-color);
@@ -332,6 +369,7 @@
             row-gap: 1rem;
             justify-content: center;
             margin-bottom: 2rem;
+            overflow: hidden;
         }
         .session {
             width: calc(11 * var(--font-sz-medium));
@@ -380,6 +418,8 @@
         }
     }
 
+
+    // Media sizes
     @media (min-width: 40em) {
         .practice_presentation {
             svg {
@@ -393,13 +433,34 @@
     }
 
     @media (min-width: 60em) {
-        .practice_presentation {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas: "left right";
+        #free_try .content {
+            display: flex;
+            gap: 5%;
             align-items: center;
 
-            &.reversed {
+            img {
+                width: 45%;
+            }
+
+            #free_try_text {
+                flex: 1;
+            }
+        }
+    }
+
+    // Media landscape
+    @media (min-width: 100vh) {
+        .practice_presentation {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "left right";
+                align-items: center;
+                margin: auto;
+                height: 100%;
+            }
+
+            &.reversed .container{
                 grid-template-areas: "right left";
             }
 
@@ -420,6 +481,7 @@
                 grid-area: right;
                 text-align: left;
                 justify-self: center;
+                min-height: auto;
             }
 
             .presentation {
@@ -432,20 +494,6 @@
             }
             .session {
                 padding-right: 1rem;
-            }
-        }
-
-        #free_try .content {
-            display: flex;
-            gap: 5%;
-            align-items: center;
-
-            img {
-                width: 45%;
-            }
-
-            #free_try_text {
-                flex: 1;
             }
         }
     }

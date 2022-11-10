@@ -1,6 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
+// Import gsap to automaticaly kill all animations on routing
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const routes = [
     {
         path: '/',
@@ -31,6 +36,7 @@ const router = createRouter({
 
 router.beforeEach(() => {
     window.scrollTo({top: 0, behavior: "instant"});
+    ScrollTrigger.killAll();
 })
 
 export default router
