@@ -489,14 +489,22 @@
         },
         data() {
             return {
+                
                 wrapperIsCollapsing: false,
 
+                // For tactil devices
+                touchStartPoint: undefined,
+                touchEndPoint: undefined,
+                onTop: true,
+
+                // Device orientation datas
                 onOrientationDevice: false,
                 baseBetaOrientation: undefined,
                 baseGammaOrientation: undefined,
                 betaOffset: 0,
                 gammaOffset: 0,
 
+                // Timeout - to be closed on routing, preventing late fire
                 parallaxTimeout: undefined,
             }
         },
@@ -816,8 +824,12 @@
                 })
             },
 
-            removelisteners() {
+            removeListeners() {
                 window.removeEventListener("deviceorientation", this.orientationParallax);
+                window.removeEventListener("wheel", this.wheelScroll);
+                window.removeEventListener("touchstart", this.touchStart);
+                window.removeEventListener("touchend", this.touchEnd)
+                window.removeEventListener("resize", this.setAppHeight);
                 document.getElementById("dojang_wrapper").removeEventListener("mousemove", this.mouseParallax);
             },
 
@@ -864,6 +876,34 @@
                 }
 
                 wrapper.classList.remove("collapsed");
+            },
+
+            touchEnd(event) {
+                if (this.wrapperIsCollapsing) return
+                this.touchEndPoint = event.changedTouches[0].clientY;
+                let isCollapsed = document.getElementById("dojang_wrapper").classList.contains("collapsed");
+                console.log(this.onTop);
+
+
+                if (!isCollapsed && this.touchEndPoint < this.touchStartPoint) this.hideDojang();
+                if (isCollapsed && this.onTop == true && this.touchEndPoint > this.touchStartPoint) this.showDojang();
+            },
+
+            touchStart(event) {
+                this.touchStartPoint = event.changedTouches[0].clientY;
+                this.onTop = parseInt(window.pageYOffset) == 0 ? true : false;
+            },
+
+            wheelScroll(event) {
+                if (this.wrapperIsCollapsing) return
+                let isCollapsed = document.getElementById("dojang_wrapper").classList.contains("collapsed");
+
+                if (event.deltaY > 0 && !isCollapsed) { 
+                    this.hideDojang();
+                }
+                else if (event.deltaY < 0 && window.pageYOffset == 0 && isCollapsed) { 
+                    this.showDojang();
+                }
             }
         },
         beforeMount() { 
@@ -876,38 +916,10 @@
 
             this.initAnimations();
 
-            let wrapper = document.getElementById("dojang_wrapper");
-
-            //Normal scroll
-            window.addEventListener("wheel", (e) => {
-                if (this.wrapperIsCollapsing) return
-                let isCollapsed = wrapper.classList.contains("collapsed");
-
-                if (e.deltaY > 0 && !isCollapsed) { 
-                    this.hideDojang();
-                }
-                else if (e.deltaY < 0 && window.pageYOffset == 0 && isCollapsed) { 
-                    this.showDojang();
-                }
-            });
-
-            //Simulate touch scroll (Body being set to full page only, scroll wont work)
-            let touchOrigin = undefined;
-            let touchOriginYOffset = undefined;
-
-            window.addEventListener("touchstart", (e) => {
-                touchOrigin = e.changedTouches[0].clientY;
-                touchOriginYOffset = parseInt(window.pageYOffset);
-            })
-            window.addEventListener("touchend", (e) => {
-                if (this.wrapperIsCollapsing) return
-                let touchEnd = e.changedTouches[0].clientY;
-                let isCollapsed = wrapper.classList.contains("collapsed");
-
-                if (!isCollapsed && touchEnd < touchOrigin) this.hideDojang();
-
-                if (isCollapsed && touchOriginYOffset == 0 && touchEnd > touchOrigin) this.showDojang();
-            })
+            //listen for collapsing/opening scene
+            window.addEventListener("wheel", this.wheelScroll);
+            window.addEventListener("touchstart", this.touchStart);
+            window.addEventListener("touchend", this.touchEnd)
 
             window.addEventListener("resize", this.setAppHeight);
 
@@ -921,7 +933,7 @@
             clearTimeout(this.parallaxTimeout);
             this.resetDojang();
             this.resetParallax();
-            this.removelisteners();
+            this.removeListeners();
         }
     };
 </script>

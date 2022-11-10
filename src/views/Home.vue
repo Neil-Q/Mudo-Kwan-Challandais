@@ -247,9 +247,8 @@
                                 trigger: presentation,
                                 start: "top 25%",
                                 onEnter: () => {
-                                    descriptionTimeline
-                                        .play()
-                                        .eventCallback("onComplete", () => vivus.play())
+                                    descriptionTimeline.play();
+                                    vivus.play();
                                 },
                                 onLeaveBack: () => descriptionTimeline.reverse()
                             }
@@ -304,6 +303,7 @@
         .container {
             display: flex;
             flex-direction: column;
+            width: 100%;
             max-width: 100rem;
             height: 90vh;
         }
@@ -363,7 +363,7 @@
             font-size: var(--font-sz-medium);
             display: flex;
             flex-wrap: wrap;
-            column-gap: 3rem;
+            column-gap: calc(3 * var(--font-sz-medium));
             row-gap: 1rem;
             justify-content: center;
             margin-bottom: 2rem;

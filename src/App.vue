@@ -34,8 +34,8 @@
     //fonts ->
     --font-korean: "Noto Serif KR";
 
-    --font-sz-medium: clamp(0.8rem, 2vw, 1rem);
-    --font-sz-large: clamp(1rem, 2.5vw, 1.2rem);
+    --font-sz-medium: clamp(0.75rem, 2vw, 1rem);
+    --font-sz-large: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 
 html {
