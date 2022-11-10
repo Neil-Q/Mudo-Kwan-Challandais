@@ -235,8 +235,6 @@
                     const descriptionTimeline = gsap.timeline({paused: true});
                     descriptionTimeline
                         .from(presentation.querySelectorAll(".day, .hour"), {yPercent: 100})
-                        // .fromTo(link, {scaleX: 0, scaleY: 0.1}, {scaleX: 1, scaleY: 0.1})
-                        // .to(link, {scaleY: 1})
                         .from(link, {scaleX: 0})
                         .from(link, {color: "transparent", duration: 0.25})
 
@@ -307,7 +305,7 @@
             display: flex;
             flex-direction: column;
             max-width: 100rem;
-            height: 80vh;
+            height: 90vh;
         }
 
         svg {
@@ -369,13 +367,14 @@
             row-gap: 1rem;
             justify-content: center;
             margin-bottom: 2rem;
-            overflow: hidden;
+            
         }
         .session {
             width: calc(11 * var(--font-sz-medium));
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid var(--color-scheme);
+            overflow: hidden;
         }
         .day {
             font-weight: bold;

@@ -922,8 +922,6 @@
             this.resetDojang();
             this.resetParallax();
             this.removelisteners();
-
-            history.scrollRestoration = 'auto';
         }
     };
 </script>
