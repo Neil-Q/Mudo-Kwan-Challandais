@@ -110,39 +110,18 @@ export default {
     align-items: center;
     background-color: var(--red-medium-color);
     padding: 1rem;
-    margin-bottom: 1rem;
     text-transform: uppercase;
 }
-
-.session {
-    width: 100%;
-    gap: 2rem;
-}
-
 .hours {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-color);
     padding: 1rem;
-    margin-bottom: 1rem;
 }
-
-.session_classes {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    flex: 1;
-
-    div:last-child {
-        margin-bottom: 0;
-    }
-}
-
 .class {
     padding: 1rem;
     border: 5px solid;
-    margin-bottom: 1rem;
 
     &.blue_light {
         border-color: var(--blue-light-color);
@@ -171,38 +150,51 @@ export default {
     }
 }
 
+.schedule_day{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 2rem;
+}
+.sessions_wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.session {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    width: 100%;
+}
+.session_classes {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    row-gap: 0.5rem;
+}
+
 .separator {
     width: 100%;
     height: 3px;
     background-color: var(--dark-color);
-    margin: 2.5rem 0 2.5rem 0;
+    margin: 1.5rem 0;
 }
 
 @media (min-width: 40em) {
-    .sessions_wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
     .session {
-        display: flex;
-    }
-
-    .session_classes {
-        margin-bottom: 0;
+        flex-direction: row;
     }
 
     .hours {
         width: 25%;
-        margin-bottom: 0;
     }
 }
 
 @media (min-width: 60em) {
     .schedule_day {
-        display: flex;
-        gap: 2rem;
+        flex-direction: row;
     }
 
     .sessions_wrap {
@@ -211,7 +203,6 @@ export default {
 
     .day {
         width: 25%;
-        margin-bottom: 0;
     }
 }
 </style>
