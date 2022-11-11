@@ -46,7 +46,7 @@
         </template>
     </SlideInIllustratedText>
 
-    <section id="director_comite" class="grey">
+    <section id="director_comite" class="grey_bg">
         <div class="content">
             <UnderlinedTitle class="large" title="Les membres du bureau"/>
 
