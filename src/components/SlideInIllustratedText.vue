@@ -60,7 +60,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    height: 100vh;
+    padding: 5rem 0;
 
     .illustration {
         width: 100%;
