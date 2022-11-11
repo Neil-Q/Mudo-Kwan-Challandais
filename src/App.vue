@@ -20,7 +20,9 @@
     --dark-softest-color: #404040;
 
     --white-color: #ffffff;
-    --grey-soft-color: #f5f5f5;
+    --white-soft-color: #f5f5f5;
+
+    --darker-color: rgba(0, 0, 0, 0.05);
 
     --blue-dark-color: #006699;
     --blue-medium-color: #0088CC;
@@ -35,7 +37,9 @@
     --font-korean: "Noto Serif KR";
 
     --font-sz-medium: clamp(0.75rem, 2vw, 1rem);
-    --font-sz-large: clamp(0.9rem, 2.5vw, 1.2rem);
+    --font-sz-large: clamp(0.9rem, 2.4vw, 1.2rem);
+    --font-sz-xl: clamp(1.2rem, 3.2vw ,1.6rem);
+    --font-sz-xxl: clamp(1.5rem, 4vw ,2rem);
 }
 
 html {
@@ -97,8 +101,11 @@ section {
 }
 
 h3 {
-    font-size: clamp(1.5rem, 2vw ,2rem);
+    font-size: var(--font-sz-xxl);
     text-transform: uppercase;
+}
+h4 {
+    font-size: var(--font-sz-xl);
 }
 
 a {
@@ -114,11 +121,14 @@ a {
 .blue_bg {
     background-color: var(--blue-medium-color);
 }
+.blueLight_bg {
+    background-color: var(--blue-light-color);
+}
 .red_bg {
     background-color: var(--red-dark-color);
 }
 .grey_bg {
-    background-color: rgba($color: #000000, $alpha: 0.05);
+    background-color: var(--darker-color);
 }
 
 .blue_light {

@@ -50,7 +50,7 @@
         </div>
     </section>
 
-    <section id="taekwondo" class="grey_bg taekwondo practice_presentation reversed">
+    <section id="taekwondo" class="taekwondo practice_presentation reversed">
         <div class="container">
             <svg viewBox="0 0 116.06 119.06">
                 <g>
@@ -129,7 +129,7 @@
         </div>
     </section>
 
-    <section id="taekwondo_baby" class="grey_bg taekwondo_baby practice_presentation reversed">
+    <section id="taekwondo_baby" class="taekwondo_baby practice_presentation reversed">
         <div class="container">
             <svg viewBox="0 0 119.06 119.06">
                 <g>
@@ -161,25 +161,44 @@
             </div>
         </div>
     </section>
-
-    <section id="free_try" class="blue_bg">
-        <div class="content">
-            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
-            <div id="free_try_text">
-                <h3>2 cours d'essai gratuits</h3>
-                <p>Viens découvrir le Taekwondo ou le Hapkimudo durant deux séances et trouve la voie martiale qui te correspond</p>
-                <p>Tu peux venir avec un ou plusieurs de tes amis ou des membres de ta famille !</p>
+    
+    <section id="free_try">
+            <div class="illustration">
+                <svg id="free_try_illustration" viewBox="0 0 250 250">
+                    <g class="jogging">
+                        <path class="shadow" d="m71.1716 216.207-19.9875-12.32 8.6244-13.991 45.1035-99.0601-68.2319 84.8031-8.6244 13.991-19.9875-12.32 8.6244-13.992c13.5625-25.129 31.1512-61.057 44.1379-85.8549 12.9867-24.7982 23.2139-41.6735 46.1055-54.1532l7.304-11.8498 57.393 35.3776-7.304 11.8498c-0.864 26.058-11.345 42.7765-27.664 65.5215-16.319 22.744-40.5124 54.6-56.869 78.007z"/>
+                        <g class="strokes">
+                            <path class="main_strokes" d="m152.725 99.6999c-14.194-10.9884 2.008-28.538 7.219-43.7151m-84.4338-3.8811c16.1944 7.7435 24.5928-14.6166 35.8108-26.0911m-51.5124 163.883 45.1034-99.0601-68.2318 84.8031m70.2558-152.329c-22.8915 12.4798-33.1188 29.355-46.1055 54.1532-12.9866 24.7979-30.5754 60.7259-44.1378 85.8549m90.2433-140.008 7.304-11.8497 57.393 35.3776-7.304 11.8497zm57.393 35.3776c-0.864 26.058-11.345 42.7775-27.664 65.5215s-40.5124 54.6-56.8689 78.007"/>
+                            <path class="colored_strokes" d="m113.717 63.5955 25.568-28.5217-13.269 28.2317m28.803-18.6559-4.517-2.7847m13.3 8.1986-4.518-2.7847m-26.299-16.2113 12.999 8.0127m-22.034-13.5822 4.517 2.7847m-13.3-8.1985 4.518 2.7847m-39.6889 179.347-19.9875-12.32-8.6244 13.991 19.9875 12.32zm-63.1034-38.898 19.9875 12.321-8.6244 13.991-19.9875-12.32z"/>
+                        </g>
+                    </g>
+                    <g class="bottle">
+                        <path class="shadow" d="m173.367 147.329c1.697-1.247 4.068-0.886 5.315 0.812l2.253 3.063c1.874-1.378 4.578-1.042 5.956 0.833l8.687 11.735c0.785 1.068 0.557 2.56-0.466 3.312-0.984 0.724-1.203 2.161-0.447 3.19l4.775 6.494c0.757 1.029 2.194 1.249 3.141 0.552 1.038-0.763 2.601-0.524 3.424 0.595l29.59 40.247c2.21 3.006 1.569 7.206-1.437 9.417l-22.132 16.272c-3.007 2.21-7.207 1.569-9.418-1.437l-29.59-40.247c-0.822-1.119-0.584-2.682 0.454-3.445 0.947-0.697 1.167-2.134 0.41-3.163l-4.775-6.495c-0.756-1.028-2.193-1.248-3.177-0.524-1.024 0.752-2.516 0.524-3.301-0.544l-8.61-11.791c-1.378-1.874-0.886-4.561 0.988-5.939l-2.259-3.058c-1.248-1.697-0.886-4.068 0.811-5.316l5.84-4.293-3.588-4.879c-0.323-0.44-0.229-1.055 0.211-1.378l6.352-4.67c0.44-0.324 1.054-0.23 1.378 0.21l3.587 4.879z" style="fill-opacity:.187067;paint-order:stroke markers fill"/>
+                        <g class="strokes">
+                            <path class="colored_strokes" d="m159.399 157.599-3.588-4.879c-0.323-0.44-0.229-1.055 0.211-1.378l6.352-4.67c0.44-0.324 1.054-0.23 1.378 0.21l3.587 4.879m42.034 60.55c0.046 0.395 0.182 1.596-2.032 3.224-2.215 1.628-3.318 1.138-3.682 0.977-2.6-1.151-4.35-7.122-4.877-12.19 0.084-0.156 0.234-0.267 0.409-0.3 6.666 2.874 9.947 6.31 10.182 8.289z"/>
+                            <path class="main_strokes" d="m195.157 167.051c-1.029 0.757-1.248 2.194-0.492 3.223l4.775 6.494c0.757 1.029 2.194 1.249 3.141 0.552 1.038-0.763 2.601-0.524 3.424 0.595l29.59 40.247c2.21 3.006 1.569 7.206-1.437 9.417l-22.132 16.272c-3.007 2.21-7.207 1.569-9.418-1.437l-29.59-40.247c-0.822-1.119-0.584-2.682 0.535-3.505l20.239-14.88m-20.402 15c1.029-0.757 1.249-2.194 0.492-3.223l-4.775-6.495c-0.756-1.028-2.193-1.248-3.177-0.524-1.024 0.752-2.516 0.524-3.301-0.544l-8.61-11.791c-1.378-1.874-0.979-4.493 0.895-5.871l26.107-19.193c1.874-1.378 4.492-0.979 5.87 0.896l8.687 11.735c0.785 1.068 0.557 2.56-0.511 3.345l-19.9 14.632m-20.154-11.487-2.265-3.054c-1.248-1.697-0.886-4.068 0.811-5.316l19.808-14.563c1.697-1.247 4.068-0.886 5.315 0.812l2.253 3.063"/>
+                        </g>
+                    </g>
+                </svg>
             </div>
-        </div>
+            <div class="text">
+                <h4>Trouve ta voie martiale</h4>
+                <h3>2 cours d'essai gratuits</h3>
+                <p>
+                    Viens découvrir le <b>Taekwondo</b> ou le <b>Hapkimudo</b> durant deux séances<br>
+                    Tout ce qu'il te faut c'est <b>une tenue de sport</b> et <b>une bouteille d'eau</b> !
+                </p>
+            </div>
     </section>
 
     <section id="schedule">
-        <div class="content">
-            <UnderlinedTitle title="Horaires des entraînements" />
-            <Schedule />
-            <button>Inscriptions et tarifs</button>
-        </div>
+        <UnderlinedTitle title="Horaires des entraînements" />
+        <Schedule />
+        <button>Inscriptions et tarifs</button>
     </section>
+
+
+    
 
     <MudoFooter />
 </template>
@@ -300,6 +319,10 @@
         align-items: center;
         justify-content: center;
 
+        &.reversed {
+            background-color: var(--darker-color);
+        }
+
         .container {
             display: flex;
             flex-direction: column;
@@ -322,11 +345,11 @@
             text-transform: uppercase;
             text-align: center;
 
-            &+ p {
-                color: var(--color-scheme);
-                margin-top: 0;
-                font-size: clamp(1.125rem, 1.5vw ,1.5rem);
-            }
+        }
+        h3 + p {
+            color: var(--color-scheme);
+            margin-top: 0;
+            font-size: clamp(1.125rem, 1.5vw ,1.5rem);
         }
 
         .description {
@@ -381,41 +404,84 @@
         }
     }
 
+    #free_try {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 50vh;
+        padding: 0;
+        background-color: var(--dark-color);
 
-    #free_try .content {
-        height: 100vh;
-        img {
+        .illustration {
+            display: flex;
+            justify-content: center;
             width: 100%;
+            background: linear-gradient(to bottom, var(--dark-soft-color) 0%, var(--dark-soft-color) 60%, transparent 60%, transparent 100%);
+        }
+        .text{
+            box-sizing: border-box;
+            font-size: var(--font-sz-large);
+            color: var(--white-color);
+            padding: 2rem;
         }
 
-        #free_try_text{
-            color: white;
-            font-size: clamp(0.85em, 1vw, 1.125rem);
-            font-weight: bold;
+        h3 {
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+        h4 {
+            color: var(--blue-light-color);
+            margin-bottom: 0;
+        }
+    }
+    #free_try_illustration {
+        width: 20rem;
+        max-width: 100%;
+        aspect-ratio: 1;
+        margin: auto;
+        // background-color: rgba($color: white, $alpha: 0.5);
 
-            h3 {
-                text-transform: uppercase;
-                font-size: clamp(1.5rem, 2vw ,2rem);
+        .strokes {
+            fill: none;
+            stroke-linejoin:round;
+            stroke-width: 1px;
+        }
+        .main_strokes {
+            stroke: var(--white-color);
+        }
+        .colored_strokes {
+            stroke: var(--blue-light-color);
+        }
+
+        .shadow {
+            fill: var(--blue-dark-color);
+            fill-opacity: 0.2;
+            transform: translateX(3%) translateY(1%);
+        }
+    }
+
+    #schedule {
+        &> * {
+            margin-bottom: 2rem;
+        }
+
+        button {
+            margin-top: clamp(3rem, 5vw, 5rem);
+            background-color: var(--red-medium-color);
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 2.5rem 1rem 2.5rem;
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            cursor: pointer;
+            transition: 0.5s;
+    
+            &:hover {
+                background-color: var(--red-light-color);
+                border-radius: 25px;
             }
         }
-    }
-
-    #schedule .content button {
-        margin-top: clamp(3rem, 5vw, 5rem);
-        background-color: var(--red-medium-color);
-        border: none;
-        color: white;
-        font-weight: bold;
-        padding: 1rem 2.5rem 1rem 2.5rem;
-        font-size: clamp(1rem, 1.2vw, 1.2rem);
-        cursor: pointer;
-        transition: 0.5s;
-
-        &:hover {
-            background-color: var(--red-light-color);
-            border-radius: 25px;
-        }
-    }
+    } 
 
 
     // Media sizes
@@ -429,21 +495,26 @@
                 text-align: center;
             }
         }
+
+        #free_try {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            text-align: left;
+            
+            .illustration {
+                padding: 2rem 0;
+                background: linear-gradient(to right, var(--dark-soft-color) 0%, var(--dark-soft-color) 60%, transparent 60%, transparent 100%);
+            }
+        }
+        #free_try_illustration {
+            width: 30rem;
+        }
     }
 
     @media (min-width: 60em) {
-        #free_try .content {
-            display: flex;
-            gap: 5%;
-            align-items: center;
-
-            img {
-                width: 45%;
-            }
-
-            #free_try_text {
-                flex: 1;
-            }
+        #free_try_illustration {
+            width: 40rem;
         }
     }
 
