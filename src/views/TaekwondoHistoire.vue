@@ -14,9 +14,7 @@
         </div>
     </section>
 
-
-
-    <section class="grey">
+    <section class="grey_bg">
         <div class="content">
             <small>1910 - 1945</small>
             <h3>Interdiction des arts martiaux sous l'occupation japonaise</h3>
@@ -40,7 +38,7 @@
         </div>
     </section>
 
-    <section class="grey">
+    <section class="grey_bg">
         <div class="content">
             <small>1959 - 1965</small>
             <h3>Promotion internationale</h3>
@@ -63,7 +61,7 @@
         </div>
     </section>
 
-    <section class="grey">
+    <section class="grey_bg">
         <div class="content">
             <small>1969 - ajd.</small>
             <h3>Arrivée du taekwondo en France</h3>
@@ -110,6 +108,9 @@
 </script>
 
 <style lang="scss" scoped>
+section {
+    min-height: 0;
+}
 
 p {
     text-align: justify;
@@ -127,6 +128,7 @@ small {
 @media (min-width: 40em) {
     p {
         text-align: center;
+        
     }
 }
 

@@ -2,49 +2,51 @@
     <NavBar class="blue"/>
     <Hero title="Le club" class="blue" />
 
-    <SlideInIllustratedText>
-        <template v-slot:illustration>
-            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
-        </template>
-        <template v-slot:text>
-            <h3>Plus de 40 ans d'histoire</h3>
-            <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
-            <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
-        </template>
-    </SlideInIllustratedText>
+    <section id="club_strengths">
+        <SlideInIllustratedText>
+            <template v-slot:illustration>
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+            </template>
+            <template v-slot:text>
+                <h3>Plus de 40 ans d'histoire</h3>
+                <p>C’est en 1980 que le club fut crée sous le nom de BUDOKAN 85 alors qu'aucune fédération de taekwondo n’existait alors en France. Il sera alors rataché au club de karaté pendant ses premières années.</p>
+                <p>En 1986, Gilles LEDUBY reprendra le rôle d’enseignant et accompagnera bénévolement de nombreux pratiquants pendant 34 ans. Nous le remercions grandement pour son dévouement et il est, et restera, toujours le bienvenu parmi nous.</p>
+            </template>
+        </SlideInIllustratedText>
 
-    <SlideInIllustratedText reversed="true">
-        <template v-slot:illustration>
-            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
-        </template>
-        <template v-slot:text>
-            <h3>Une grande famille</h3>
-            <p>Notre club se veut avant tout être une grande famille. Nous mettons un point d’honneur à nous raprocher de tout le monde et veillons à ce que chacun trouve ce qu’il recherche et parvienne à ses objectifs.</p>
-            <p>Nous organisons aussi régulièrement des événements conviviaux ouverts à l'entourage des membres en dehors des entraînements</p>
-            <p>Nous pensons sincerement qu’il s’agit d’une de nos principales forces et nombre d’entre nous viennent autant par plaisir du sport que par plaisir de nous retrouver ensemble.</p>
-        </template>
-    </SlideInIllustratedText>
+        <SlideInIllustratedText reversed="true">
+            <template v-slot:illustration>
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+            </template>
+            <template v-slot:text>
+                <h3>Une grande famille</h3>
+                <p>Notre club se veut avant tout être une grande famille. Nous mettons un point d’honneur à nous raprocher de tout le monde et veillons à ce que chacun trouve ce qu’il recherche et parvienne à ses objectifs.</p>
+                <p>Nous organisons aussi régulièrement des événements conviviaux ouverts à l'entourage des membres en dehors des entraînements</p>
+                <p>Nous pensons sincerement qu’il s’agit d’une de nos principales forces et nombre d’entre nous viennent autant par plaisir du sport que par plaisir de nous retrouver ensemble.</p>
+            </template>
+        </SlideInIllustratedText>
 
-    <SlideInIllustratedText>
-        <template v-slot:illustration>
-            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
-        </template>
-        <template v-slot:text>
-            <h3>Des événements internes</h3>
-            <p>Nous organisons réguliérement des événements au sein de notre pratique sportive tels que des mini competitions internes, des cours de découverte ouvers à tous ou encore la venue de Maîtres tels que le grand Maître Lee Kang Jong</p>
-        </template>
-    </SlideInIllustratedText>
+        <SlideInIllustratedText>
+            <template v-slot:illustration>
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+            </template>
+            <template v-slot:text>
+                <h3>Des événements internes</h3>
+                <p>Nous organisons réguliérement des événements au sein de notre pratique sportive tels que des mini competitions internes, des cours de découverte ouvers à tous ou encore la venue de Maîtres tels que le grand Maître Lee Kang Jong</p>
+            </template>
+        </SlideInIllustratedText>
 
-    <SlideInIllustratedText reversed="true">
-        <template v-slot:illustration>
-            <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
-        </template>
-        <template v-slot:text>
-            <h3>Ouverts à l'exterieur</h3>
-            <p>Nous somme aussi très présents à l’exterieur lors de stages organisés principalements sur Nantes, la Roche sur Yon et les Herbiers.</p>
-            <p>Enfin, nous souhaitons affirmer de plus en plus notre volontés à nous ouvrir aux pratiquants d’autres disciplines afin d’échanger sur nos techniques et nos manières de pratiquer.</p>
-        </template>
-    </SlideInIllustratedText>
+        <SlideInIllustratedText reversed="true">
+            <template v-slot:illustration>
+                <img src="../assets/club_pictures/2021-2022_new_season_group.jpg" alt="Photo de groupe du premier cours de la saison 2021-2022" />
+            </template>
+            <template v-slot:text>
+                <h3>Ouverts à l'exterieur</h3>
+                <p>Nous somme aussi très présents à l’exterieur lors de stages organisés principalements sur Nantes, la Roche sur Yon et les Herbiers.</p>
+                <p>Enfin, nous souhaitons affirmer de plus en plus notre volontés à nous ouvrir aux pratiquants d’autres disciplines afin d’échanger sur nos techniques et nos manières de pratiquer.</p>
+            </template>
+        </SlideInIllustratedText>
+    </section>
 
     <section id="director_comite" class="grey_bg">
         <div class="content">
@@ -154,6 +156,10 @@
 </script>
 
 <style lang="scss">
+#club_strengths {
+    padding: 2.5rem 0;
+}
+
 #director_comite, #our_teachers {
     display: flex;
     align-items: center;
