@@ -32,8 +32,8 @@
             gsap.from(illustration, {
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: "top 60%",
-                    end: "top 5%",
+                    start: "top 70%",
+                    end: "top 50%",
                     scrub: 1,
                 },
                 xPercent: wrapper.classList.contains("reversed") ? -70 : 70,
@@ -60,7 +60,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    padding: 5rem 0;
+    padding: 2.5rem 0;
 
     .illustration {
         width: 100%;
@@ -97,7 +97,7 @@
         .text {
             grid-area: left;
             text-align: left;
-            padding: 15%;
+            padding: 0 15%;
         }
     }
 

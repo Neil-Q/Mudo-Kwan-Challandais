@@ -277,6 +277,7 @@
     .character_romanization {
         font-size: clamp(1rem, 5vw, 2rem);
         font-weight: bold;
+        color: var(--blue-medium-color);
     }
     .character_translation {
         text-transform: uppercase;
@@ -319,6 +320,10 @@
     text-align: justify;
     max-width: 40rem;
     margin: 2rem;
+
+    h3 {
+        border-bottom: solid 1px var(--blue-medium-color);
+    }
 }
 
 

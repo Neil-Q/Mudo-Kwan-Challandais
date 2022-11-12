@@ -40,6 +40,7 @@
     --font-sz-large: clamp(0.9rem, 2.4vw, 1.2rem);
     --font-sz-xl: clamp(1.2rem, 3.2vw ,1.6rem);
     --font-sz-xxl: clamp(1.5rem, 4vw ,2rem);
+
 }
 
 html {
