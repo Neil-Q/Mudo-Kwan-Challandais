@@ -233,6 +233,50 @@
         },
         methods: {
             animate() {
+                this.animatePractices();
+                this.animateFreeTrial();
+            },
+            animateFreeTrial() {
+
+                const   bottle = document.querySelector("#free_try_illustration .bottle"),
+                        jogging = document.querySelector("#free_try_illustration .jogging"),
+                        shadows = document.querySelectorAll("#free_try_illustration .shadow");
+                        
+
+                gsap.fromTo(jogging, {
+                        y: 10
+                    },
+                    {
+                        y: -3,
+                        duration: 3,
+                        yoyo: true,
+                        repeat: -1,
+                        ease: "sine.inOut"
+                    });
+
+                gsap.fromTo(bottle, {
+                        y: 3
+                    },
+                    {
+                        y: -7,
+                        duration: 2.5,
+                        yoyo: true,
+                        repeat: -1,
+                        ease: "sine.inOut"
+                    });
+
+                gsap.to(shadows, {
+                    scrollTrigger: {
+                        trigger: "#free_try_illustration",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    },
+                    x: 10,
+                    y: 4
+                })
+            },
+            animatePractices() {
 
                 const vivusAnimProperties = {
                     type: "sync",
@@ -439,7 +483,6 @@
         max-width: 100%;
         aspect-ratio: 1;
         margin: auto;
-        // background-color: rgba($color: white, $alpha: 0.5);
 
         .strokes {
             fill: none;
@@ -456,7 +499,7 @@
         .shadow {
             fill: var(--blue-dark-color);
             fill-opacity: 0.2;
-            transform: translateX(3%) translateY(1%);
+            // transform: translateX(3%) translateY(1%);
         }
     }
 
