@@ -27,6 +27,11 @@ const routes = [
         name: 'TaekwondoPresentation',
         component: () => import ("@/views/TaekwondoPresentation.vue")
     },
+    {
+        path: '/passages_grades_taekwondo',
+        name: 'TaekwondoPassagesGrades',
+        component: () => import ("@/views/TaekwondoPassagesGrades.vue")
+    },
 ]   
 
 const router = createRouter({
