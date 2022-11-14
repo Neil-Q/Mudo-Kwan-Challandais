@@ -33,6 +33,15 @@
     --red-medium-color: #C21111;
     --red-light-color: #e71515;
 
+    --belt-white: var(--white-color);
+    --belt-yellow: #FCE700;
+    --belt-orange: #FCA400;
+    --belt-green: #258C00;
+    --belt-purple: #8100AC;
+    --belt-blue: var(--blue-dark-color);
+    --belt-red: var(--red-medium-color);
+    --belt-black: var(--dark-soft-color);
+
     //fonts ->
     --font-korean: "Noto Serif KR";
 
