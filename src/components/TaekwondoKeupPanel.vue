@@ -1,27 +1,32 @@
 <template>
     <div id="rank_selector_panel">
-        <input id="show_all_radio_selector" class="grade_global_selector" type="radio" name="grade_global_selector" checked>
-        <label for="show_all_radio_selector" @click="updateShowAll(true)">
+        <input id="show_everything_radio" class="radio_inputs" type="radio" name="radio_inputs" checked>
+        <label class="show_everything" for="show_everything_radio" @click="updateShowAll(true)">
             <div class="illustration"></div>
             <div class="caption">Voire tout</div>
         </label>
 
         <div class="separator"></div>
 
-        <div id="age_selectors">
-            <input id="minus_twelve_radio_selector" class="grade_global_selector" type="radio" name="grade_global_selector">
-            <label for="minus_twelve_radio_selector" @click="updateShowAll(false); updateIsAdult(false)">
-                <div class="illustration"></div>
-                <div class="caption">-12 ans</div>
-            </label>
-            <input id="over_twelve_radio_selector" class="grade_global_selector" type="radio" name="grade_global_selector">
-            <label for="over_twelve_radio_selector" @click="updateShowAll(false); updateIsAdult(true)">
-                <div class="illustration"></div>
-                <div class="caption">+12 ans</div>
-            </label>
-        </div>
+        <input id="minus_twelve_radio" class="radio_inputs" type="radio" name="radio_inputs">
+        <label class="minus_twelve" for="minus_twelve_radio" @click="updateShowAll(false); updateIsAdult(false)">
+            <div class="illustration"></div>
+            <div class="caption">-12 ans</div>
+        </label>
 
-        <BeltRankDropdown id="keup_selector" :discipline="isAdult ? 'taekwondo' : 'taekwondo_children'"/>
+        <input id="over_twelve_radio" class="radio_inputs" type="radio" name="radio_inputs">
+        <label class="over_twelve" for="over_twelve_radio" @click="updateShowAll(false); updateIsAdult(true)">
+            <div class="illustration"></div>
+            <div class="caption">+12 ans</div>
+        </label>
+
+        <BeltRankDropdown 
+            id="belt_dropdown"
+            :discipline="isAdult ? 'taekwondo' : 'taekwondo_children'"
+            :keup="keup"
+            @update-keup="(n) => updateKeup(n)"
+        />
+
     </div>
 </template>
 
@@ -43,54 +48,43 @@
             }
         },
         methods: {
-            // setSelectors(showAll, isAdult, keup) {
-                
-            // },
             updateShowAll(boolean) {
                 this.showAll = boolean;
-                // alert("showAll: " + this.showAll);
             },
             updateIsAdult(boolean) {
                 this.isAdult = boolean;
-                // alert("isAdulte: " + this.isAdulte);
             },
             updateKeup(keup) {
                 this.keup = keup;
-                // alert("keup: " + this.keup);
             }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     input[type="radio"] {
         display: none;
     }
 
     #rank_selector_panel{
-        --global-padding: clamp(1rem, 7vw, 2rem);
-
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        gap: var(--global-padding);
-        padding: var(--global-padding);
         border-radius: 30px;
         max-width: 25rem;
         min-width: 15rem;
         background-color: var(--dark-color);
         margin: auto;
 
-        label, #keup_selector {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr 5fr 1fr;
+        grid-template-rows: 1fr 3fr 1fr 1fr 5fr 1fr 3fr 1fr;
+
+        label, #belt_dropdown {
             box-sizing: border-box;
             border-radius: 10px;
         }
-
-        .separator {
-            border: solid 1px var(--white-color);
-        }
     }
-    .grade_global_selector {
+
+    .radio_inputs {
         + label {
             display: block;
             background-color: silver;
@@ -104,57 +98,83 @@
             outline-offset: 2px;
         }
     }
-    #show_all_radio_selector + label {
+
+    .show_everything {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        margin: auto;
         width: 100%;
-        aspect-ratio: 4/1;
+        height: 100%;
         padding: 0.5rem;
+        grid-column: 2 / 5;
+        grid-row: 2 / 3;
 
         .illustration {
-            flex: 1;
-            width: 80%;
             background-color: grey;
         }
     }
-    #age_selectors {
-        display: flex;
-        justify-content: center;
-        gap: var(--global-padding);
 
-        label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            flex: 1;
-            padding: 1rem;
-            aspect-ratio: 1/1;
+    .separator {
+        width: 100%;
+        height: 0;
+        outline: 1px solid var(--white-color);
+        grid-column: 2 / 5;
+        grid-row: 4 / 4;
+    }
+
+    .over_twelve, .minus_twelve {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        aspect-ratio: 1 / 1;
+    }
+    .minus_twelve {
+        grid-column: 2 / 3;
+        grid-row: 5 / 5;
+    }
+    .over_twelve {
+        grid-column: 4 / 5;
+        grid-row: 5 / 6;
+    }
+
+    #belt_dropdown {
+        grid-column: 2 / 5;
+        grid-row: 7 / 8;
+    }
+
+    @media (min-width: 60rem) {
+        #rank_selector_panel {
+            flex-direction: row;
+            min-width: 55rem;
+
+            grid-template-columns: 1fr 9fr 1fr 1fr 5fr 1fr 5fr 1fr;
+            grid-template-rows: 1fr 5fr 1fr 2fr 1fr;
+        }
+
+        .show_everything {
+            grid-column: 2 / 3;
+            grid-row: 2 / 5;
+        }
+        .separator {
+            width: 0;
+            height: 100%;
+            grid-column: 4 / 4;
+            grid-row: 2 / 5;
+        }
+        .minus_twelve {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+        }
+        .over_twelve {
+            grid-column: 7 / 8;
+            grid-row: 2 / 3;
+        }
+        #belt_dropdown {
+            grid-column: 5 / 8;
+            grid-row: 4 / 5;
         }
     }
-    #keup_selector {
-        aspect-ratio: 5/1;
-    }
-
-    // @media (min-width: 60rem) {
-    //     #rank_selector_panel {
-    //         flex-direction: row;
-    //         min-width: 55rem;
-    //         max-height: 10rem;
-
-    //     }
-
-    //     #show_all_radio_selector + label {
-    //         width: auto;
-    //         aspect-ratio: 1 / 1;
-    //     }
-
-    //     #keup_selector {
-    //         flex: 2;
-    //     }
-    // }
 
 </style>
