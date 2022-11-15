@@ -24,6 +24,9 @@
 </script>
 
 <style lang="scss" scoped>
+
+    @import "@/scss/_variables.scss";
+
     .belt {
         box-sizing: border-box;
         width: 100%;
@@ -33,7 +36,7 @@
         display: grid;
         grid-template-rows: 1fr;
         grid-template-areas: "a b c d e";
-        border: 2px solid var(--dark-color);
+        border: 2px solid $dark;
         border-radius: 3px;
 
         &.wide {
@@ -66,19 +69,19 @@
     .taekwondo {
         // Belt color
         &.keup_10 {
-            background-color: var(--belt-white);
+            background-color: $belt-white;
         }
         &.keup_9, &.keup_8, &.keup_7 {
-            background-color: var(--belt-yellow);
-            --stripes-color: var(--belt-blue);
+            background-color: $belt-yellow;
+            --stripes-color: #{$belt-blue};
         }
         &.keup_6, &.keup_5, &.keup_4 {
-            background-color: var(--belt-blue);
-            --stripes-color: var(--belt-red);
+            background-color: $belt-blue;
+            --stripes-color: #{$belt-red};
         }
         &.keup_3, &.keup_2, &.keup_1 {
-            background-color: var(--belt-red);
-            --stripes-color: var(--belt-black);
+            background-color: $belt-red;
+            --stripes-color: #{$belt-black};
         }
 
         // Stripes 
@@ -99,31 +102,31 @@
     .taekwondo_children {
         // Belt color
         &.keup_15 {
-            background-color: var(--belt-white);
+            background-color: $belt-white;
         }
         &.keup_14, &.keup_13 {
-            background-color: var(--belt-yellow);
-            --stripes-color: var(--belt-orange);
+            background-color: $belt-yellow;
+            --stripes-color: #{$belt-orange};
         }
         &.keup_12, &.keup_11 {
-            background-color: var(--belt-orange);
-            --stripes-color: var(--belt-green);
+            background-color: $belt-orange;
+            --stripes-color: #{$belt-green};
         }
         &.keup_10, &.keup_9 {
-            background-color: var(--belt-green);
-            --stripes-color: var(--belt-purple);
+            background-color: $belt-green;
+            --stripes-color: #{$belt-purple};
         }
         &.keup_8, &.keup_7 {
-            background-color: var(--belt-purple);
-            --stripes-color: var(--belt-blue);
+            background-color: $belt-purple;
+            --stripes-color: #{$belt-blue};
         }
         &.keup_6, &.keup_5, &.keup_4 {
-            background-color: var(--belt-blue);
-            --stripes-color: var(--belt-red);
+            background-color: $belt-blue;
+            --stripes-color: #{$belt-red};
         }
         &.keup_3, &.keup_2, &.keup_1 {
-            background-color: var(--belt-red);
-            --stripes-color: var(--belt-black);
+            background-color: $belt-red;
+            --stripes-color: #{$belt-black};
         }
 
         // Stripes 
@@ -144,23 +147,23 @@
     .hapkimudo {
         // Belt color
         &.keup_10 {
-            background-color: var(--belt-white);
+            background-color: $belt-white;
         }
         &.keup_9, &.keup_8 {
-            background-color: var(--belt-yellow);
-            --stripes-color: var(--belt-green);
+            background-color: $belt-yellow;
+            --stripes-color: #{$belt-green};
         }
         &.keup_7, &.keup_6 {
-            background-color: var(--belt-green);
-            --stripes-color: var(--belt-blue);
+            background-color: $belt-green;
+            --stripes-color: #{$belt-blue};
         }
         &.keup_5, &.keup_4 {
-            background-color: var(--belt-blue);
-            --stripes-color: var(--belt-red);
+            background-color: $belt-blue;
+            --stripes-color: #{$belt-red};
         }
         &.keup_3, &.keup_2, &.keup_1 {
-            background-color: var(--belt-red);
-            --stripes-color: var(--belt-black);
+            background-color: $belt-red;
+            --stripes-color: #{$belt-black};
         }
 
         // Stripes 
@@ -179,8 +182,8 @@
     }
 
     .dan_1 {
-        background-color: var(--belt-black);
-        --stripes-color: var(--belt-yellow);
+        background-color: $belt-black;
+        --stripes-color: #{$belt-yellow};
 
         .stripe_1 {
             display: none;

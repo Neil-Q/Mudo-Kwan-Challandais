@@ -364,7 +364,7 @@
         justify-content: center;
 
         &.reversed {
-            background-color: var(--darker-color);
+            background-color: $darker-1;
         }
 
         .container {
@@ -403,15 +403,15 @@
         }
 
         .presentation {
-            font-size: var(--font-sz-large);
+            font-size: $font-sz-large;
             text-align: justify;
             margin: auto auto 1rem auto;
         }
 
         a {
             display: inline-block;
-            background-color: var(--dark-soft-color);
-            color: var(--white-color);
+            background-color: $dark-1;
+            color: $white;
             padding: 0.8em 2em;
             margin: 1rem 0;
             border-radius: 100px;
@@ -421,23 +421,23 @@
             white-space: nowrap;
 
             &:hover {
-                background-color: var(--dark-softest-color);
+                background-color: $dark-2;
             }
         }
 
         .practice_hours {
             font-weight: normal;
-            font-size: var(--font-sz-medium);
+            font-size: $font-sz-medium;
             display: flex;
             flex-wrap: wrap;
-            column-gap: calc(3 * var(--font-sz-medium));
+            column-gap: calc(3 * $font-sz-medium);
             row-gap: 1rem;
             justify-content: center;
             margin-bottom: 2rem;
             
         }
         .session {
-            width: calc(11 * var(--font-sz-medium));
+            width: calc(11 * $font-sz-medium);
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid var(--color-scheme);
@@ -454,18 +454,18 @@
         align-items: center;
         min-height: 50vh;
         padding: 0;
-        background-color: var(--dark-color);
+        background-color: $dark;
 
         .illustration {
             display: flex;
             justify-content: center;
             width: 100%;
-            background: linear-gradient(to bottom, var(--dark-soft-color) 0%, var(--dark-soft-color) 60%, transparent 60%, transparent 100%);
+            background: linear-gradient(to bottom, $dark-1 0%, $dark-1 60%, transparent 60%, transparent 100%);
         }
         .text{
             box-sizing: border-box;
-            font-size: var(--font-sz-large);
-            color: var(--white-color);
+            font-size: $font-sz-large;
+            color: $white;
             padding: 2rem;
         }
 
@@ -474,7 +474,7 @@
             text-transform: uppercase;
         }
         h4 {
-            color: var(--blue-light-color);
+            color: $blue-light;
             margin-bottom: 0;
         }
     }
@@ -490,14 +490,14 @@
             stroke-width: 1px;
         }
         .main_strokes {
-            stroke: var(--white-color);
+            stroke: $white;
         }
         .colored_strokes {
-            stroke: var(--blue-light-color);
+            stroke: $blue-light;
         }
 
         .shadow {
-            fill: var(--blue-dark-color);
+            fill: $blue-dark;
             fill-opacity: 0.2;
             // transform: translateX(3%) translateY(1%);
         }
@@ -510,7 +510,7 @@
 
         button {
             margin-top: clamp(3rem, 5vw, 5rem);
-            background-color: var(--red-medium-color);
+            background-color:$red;
             border: none;
             color: white;
             font-weight: bold;
@@ -520,7 +520,7 @@
             transition: 0.5s;
     
             &:hover {
-                background-color: var(--red-light-color);
+                background-color: $red-light;
                 border-radius: 25px;
             }
         }
@@ -547,7 +547,7 @@
             
             .illustration {
                 padding: 2rem 0;
-                background: linear-gradient(to right, var(--dark-soft-color) 0%, var(--dark-soft-color) 60%, transparent 60%, transparent 100%);
+                background: linear-gradient(to right, $dark-1 0%, $dark-1 60%, transparent 60%, transparent 100%);
             }
         }
         #free_try_illustration {

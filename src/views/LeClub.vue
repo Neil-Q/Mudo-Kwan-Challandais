@@ -198,12 +198,12 @@
     }
 
     .name {
-        color: var(--dark-color);
+        color: $dark;
     }
 
     .qualifications {
         margin-bottom: 1rem;
-        color: var(--red-medium-color);
+        color:$red;
         font-weight: bold;
     
         p {
@@ -213,7 +213,7 @@
 
     .degrees p {
         margin: 0;
-        color: var(--dark-color);
+        color: $dark;
         font-weight: bold;
     }
 }
@@ -225,7 +225,7 @@
     }
 
     .name {
-        color: var(--red-medium-color);
+        color:$red;
     }
 
     .function {

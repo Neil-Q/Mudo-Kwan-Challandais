@@ -108,7 +108,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--red-medium-color);
+    background-color:$red;
     padding: 1rem;
     text-transform: uppercase;
 }
@@ -116,7 +116,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark-color);
+    background-color: $dark;
     padding: 1rem;
 }
 .class {
@@ -124,21 +124,21 @@ export default {
     border: 5px solid;
 
     &.blue_light {
-        border-color: var(--blue-light-color);
-        color: var(--blue-light-color);
+        border-color: $blue-light;
+        color: $blue-light;
     }
     &.blue {
-        border-color: var(--blue-medium-color);
-        color: var(--blue-medium-color);
+        border-color: $blue;
+        color: $blue;
     }
     &.blue_dark {
-        border-color: var(--blue-dark-color);
-        color: var(--blue-dark-color);
+        border-color: $blue-dark;
+        color: $blue-dark;
     }
 
     &.red {
-        border-color: var(--red-medium-color);
-        color: var(--red-medium-color);
+        border-color:$red;
+        color:$red;
     }
 
     p {
@@ -178,7 +178,7 @@ export default {
 .separator {
     width: 100%;
     height: 3px;
-    background-color: var(--dark-color);
+    background-color: $dark;
     margin: 1.5rem 0;
 }
 

@@ -78,7 +78,7 @@
         width: 100%;
         box-sizing: border-box;
         padding: 5%;
-        font-size: var(--font-sz-large);
+        font-size: $font-sz-large;
     }
 }
 

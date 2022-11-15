@@ -77,7 +77,7 @@ export default {
         justify-content: space-between;
         box-sizing: border-box;
         padding: var(--vert-padding) clamp(0px, 2vw, 30px);
-        background-color: var(--red-medium-color);
+        background-color:$red;
         color: white;
         font-size: clamp(0px, 1.7vw, 1.1rem);
 
@@ -113,10 +113,10 @@ export default {
         }
 
         &.blue {
-            background-color: var(--blue-medium-color);
+            background-color: $blue;
 
             .dropdown_submenu ul{
-                background-color: var(--blue-medium-color);
+                background-color: $blue;
             }
         }
     }
@@ -128,11 +128,11 @@ export default {
         white-space:pre;
 
         &:hover {
-            background-color: var(--dark-color);
+            background-color: $dark;
         }
 
         &.active {
-            background-color: var(--dark-color);
+            background-color: $dark;
         }
     }
 
@@ -178,7 +178,7 @@ export default {
         }
 
         ul {
-            background-color: var(--red-medium-color);
+            background-color:$red;
             border-radius: 0 0 4px 4px;
             padding: 0;
         }

@@ -93,7 +93,7 @@
     }
 
     .line {
-        background: var(--red-medium-color);
+        background:$red;
         border-radius: 0.2rem;
         width: 90%;
         height: 3px;

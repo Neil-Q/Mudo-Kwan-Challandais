@@ -57,7 +57,7 @@
         height: 100%;
         width: 100%;
         display: grid;
-        background-color: var(--white-color);
+        background-color: $white;
         border-radius: inherit;
         border: none;
         padding: 0;
@@ -103,7 +103,7 @@
         width: 100%;
         padding-right: 5%;
         grid-area: belt;
-        font-size: var(--font-sz-xl);
+        font-size: $font-sz-xl;
 
         .rank {
             grid-area: keup;
@@ -123,7 +123,7 @@
         top: 110%;
         display: flex;
         flex-direction: column-reverse;
-        background-color: var(--white-color);
+        background-color: $white;
         border-radius: 10px;
         z-index: 2;
     }
@@ -136,7 +136,7 @@
         padding: 10px 0;
 
         &:hover {
-            background-color: var(--darker-color);
+            background-color: $darker-1;
         }
     }
 

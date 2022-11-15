@@ -1090,7 +1090,7 @@
             display: inline-block;
             padding: clamp(0.66rem, 1.32vmin, 1rem) clamp(1.33rem, 2.66vmin, 2rem);
             font-size: clamp(1rem, 3vmin, 1.5rem);
-            background: var(--blue-medium-color);
+            background: $blue;
             border-radius: 1vmin;
             //text-transform: uppercase;
             text-decoration: none;
@@ -1101,7 +1101,7 @@
             }
 
             &:hover {
-                background: var(--blue-light-color);
+                background: $blue-light;
             }
         }        
     }

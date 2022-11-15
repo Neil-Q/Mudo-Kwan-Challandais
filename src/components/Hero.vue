@@ -28,11 +28,11 @@ header {
     overflow: hidden;
 
     &.blue {
-        background-color: var(--blue-medium-color);
+        background-color: $blue;
     }
 
     &.red {
-        background-color: var(--red-dark-color);
+        background-color: $red-dark;
     }
 }
 

@@ -3,53 +3,14 @@
 </template>
 
 <style lang="scss">
+@import "@/scss/_variables";
+
 #app {
     font-family: Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: var(--dark-color);
-}
-
-:root {
-    // colors ->
-    // --dark-color: #262626;
-    // --dark-soft-color: #404040;
-    --dark-color: #1a1a1a;
-    --dark-soft-color: #262626;
-    --dark-softest-color: #404040;
-
-    --white-color: #ffffff;
-    --white-soft-color: #f5f5f5;
-
-    --darker-color: rgba(0, 0, 0, 0.05);
-
-    --blue-dark-color: #006699;
-    --blue-medium-color: #0088CC;
-    --blue-light-color: #00A3FF;
-    --blue-strongLight-color: #00ccff ;
-
-    --red-dark-color: #a71010;
-    --red-medium-color: #C21111;
-    --red-light-color: #e71515;
-
-    --belt-white: var(--white-color);
-    --belt-yellow: #FCE700;
-    --belt-orange: #FCA400;
-    --belt-green: #258C00;
-    --belt-purple: #8100AC;
-    --belt-blue: var(--blue-dark-color);
-    --belt-red: var(--red-medium-color);
-    --belt-black: var(--dark-soft-color);
-
-    //fonts ->
-    --font-korean: "Noto Serif KR";
-
-    --font-sz-medium: clamp(0.75rem, 2vw, 1rem);
-    --font-sz-large: clamp(0.9rem, 2.4vw, 1.2rem);
-    --font-sz-xl: clamp(1.2rem, 3.2vw ,1.6rem);
-    --font-sz-xxl: clamp(1.5rem, 4vw ,2rem);
-
+    color: $dark;
 }
 
 html {
@@ -61,8 +22,8 @@ body {
     padding: 0;
     height: auto;
     overflow-Y: overlay;
-    background-color: var(--white-color);
-    font-size: var(--font-sz-medium);
+    background-color: $white;
+    font-size: $font-sz-medium;
 
     &::-webkit-scrollbar {
         display: block;
@@ -94,28 +55,28 @@ section {
     }
 
     &.hapkimudo {
-        --color-scheme: var(--red-medium-color);
+        --color-scheme: #{$red};
     }
 
     &.taekwondo {
-        --color-scheme: var(--blue-medium-color);
+        --color-scheme: #{$blue};
     }
 
     &.taekwondo_childrens {
-        --color-scheme: var(--blue-light-color);
+        --color-scheme: #{$blue-light};
     }
 
     &.taekwondo_baby {
-        --color-scheme: var(--blue-strongLight-color);
+        --color-scheme: #{$blue-lighter};
     }
 }
 
 h3 {
-    font-size: var(--font-sz-xxl);
+    font-size: $font-sz-xxl;
     text-transform: uppercase;
 }
 h4 {
-    font-size: var(--font-sz-xl);
+    font-size: $font-sz-xl;
 }
 
 a {
@@ -129,33 +90,33 @@ a {
 
 
 .blue_bg {
-    background-color: var(--blue-medium-color);
+    background-color: $blue;
 }
 .blueLight_bg {
-    background-color: var(--blue-light-color);
+    background-color: $blue-light;
 }
 .red_bg {
-    background-color: var(--red-dark-color);
+    background-color: $red-dark;
 }
 .grey_bg {
-    background-color: var(--darker-color);
+    background-color: $darker-1;
 }
 
 .blue_light {
-    color: var(--blue-light-color);
+    color: $blue-light;
 }
 .blue {
-    color: var(--blue-medium-color);
+    color: $blue;
 }
 .blue_dark {
-    color: var(--blue-dark-color);
+    color: $blue-dark;
 }
 .red {
-    color: var(--red-medium-color);
+    color:$red;
 }
 
 .hangul {
-    font-family: var(--font-korean);
+    font-family: $korean-serif;
 }
 
 @media (min-width: 40em) {

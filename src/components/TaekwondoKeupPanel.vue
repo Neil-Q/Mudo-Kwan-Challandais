@@ -71,8 +71,9 @@
         border-radius: 30px;
         max-width: 25rem;
         min-width: 15rem;
-        background-color: var(--dark-color);
         margin: auto;
+        background-color: $dark;
+        box-shadow: $shadow-4;
 
         display: grid;
         grid-template-columns: 1fr 5fr 1fr 5fr 1fr;
@@ -87,14 +88,14 @@
     .radio_inputs {
         + label {
             display: block;
-            background-color: silver;
+            background-color: $dark-3;
             cursor: pointer;
         }
 
         &:checked + label {
-            background-color: var(--white-color);
-            color: var(--blue-medium-color);
-            outline: 3px solid var(--blue-light-color);
+            background-color: $white;
+            color: $blue;
+            outline: 3px solid $blue-light;
             outline-offset: 2px;
         }
     }
@@ -118,7 +119,7 @@
     .separator {
         width: 100%;
         height: 0;
-        outline: 1px solid var(--white-color);
+        outline: 1px solid $white;
         grid-column: 2 / 5;
         grid-row: 4 / 4;
     }

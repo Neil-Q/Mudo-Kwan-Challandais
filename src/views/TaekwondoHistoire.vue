@@ -121,7 +121,7 @@ h3 {
 }
 
 small {
-    color: var(--red-medium-color);
+    color:$red;
     font-weight: bold;
 }
 

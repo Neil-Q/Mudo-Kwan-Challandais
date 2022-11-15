@@ -50,7 +50,7 @@ footer {
     overflow: hidden;
 
     #footer_contact {
-        background-color: var(--red-medium-color);
+        background-color:$red;
         padding: 2rem 0 3rem 0;
 
         #footer_contact_infos {
@@ -134,7 +134,7 @@ footer {
 
 #footer_map {
     width: 34%;
-    background-color: var(--blue-dark-color);
+    background-color: $blue-dark;
 }
 
 @media (max-width: 60em) {

@@ -53,8 +53,8 @@
                 </svg>
                 <svg id="korean_flag_center" viewBox="0 0 176.471 176.551">
                     <g transform="translate(-167.801 -79.4474)">
-                        <path d="m305.009 94.256c-40.563-27.042-95.35-15.986-122.374 24.506-13.555 20.211-8.045 47.674 12.235 61.195 20.265 13.521 47.64 8.03 61.161-12.252 13.521-20.281 40.914-25.704 61.178-12.254 20.298 13.521 25.757 40.984 12.217 61.195 27.042-40.559 16.111-95.347-24.417-122.39" style="fill:var(--blue-dark-color)"/>
-                        <path d="m182.634 118.763c-13.555 20.211-8.045 47.674 12.235 61.195 20.265 13.521 47.64 8.03 61.161-12.252 13.521-20.281 40.914-25.704 61.178-12.254 20.298 13.521 25.757 40.984 12.217 61.195-27.006 40.632-81.775 51.549-122.338 24.507-40.526-27.039-51.494-81.827-24.453-122.391" style="fill:var(--red-dark-color)"/>
+                        <path d="m305.009 94.256c-40.563-27.042-95.35-15.986-122.374 24.506-13.555 20.211-8.045 47.674 12.235 61.195 20.265 13.521 47.64 8.03 61.161-12.252 13.521-20.281 40.914-25.704 61.178-12.254 20.298 13.521 25.757 40.984 12.217 61.195 27.042-40.559 16.111-95.347-24.417-122.39" style="fill: #006699"/>
+                        <path d="m182.634 118.763c-13.555 20.211-8.045 47.674 12.235 61.195 20.265 13.521 47.64 8.03 61.161-12.252 13.521-20.281 40.914-25.704 61.178-12.254 20.298 13.521 25.757 40.984 12.217 61.195-27.006 40.632-81.775 51.549-122.338 24.507-40.526-27.039-51.494-81.827-24.453-122.391" style="fill: #a71010"/>
                     </g>
                 </svg>
             </div>
@@ -277,7 +277,7 @@
     .character_romanization {
         font-size: clamp(1rem, 5vw, 2rem);
         font-weight: bold;
-        color: var(--blue-medium-color);
+        color: $blue;
     }
     .character_translation {
         text-transform: uppercase;
@@ -286,7 +286,7 @@
 }
 #taekwondo_presentation_text {
     max-width: 40rem;
-    font-size: var(--font-sz-large);
+    font-size: $font-sz-large;
     text-align: center;
     margin: 0 2rem;
 }
@@ -297,7 +297,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    font-size: var(--font-sz-large);
+    font-size: $font-sz-large;
     min-height: 100vh;
     width: 100%;
 }
@@ -322,7 +322,7 @@
     margin: 2rem;
 
     h3 {
-        border-bottom: solid 1px var(--blue-medium-color);
+        border-bottom: solid 1px $blue;
     }
 }
 
@@ -349,7 +349,7 @@
 .tenet_signification {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: var(--font-sz-large);
+    font-size: $font-sz-large;
 }
 #taekwondo_benefits_texts {
     box-sizing: border-box;
@@ -362,7 +362,7 @@
 }
 .taekwondo_benefit {
     position: absolute;
-    font-size: var(--font-sz-large);
+    font-size: $font-sz-large;
     max-width: 40em;
     // margin: 0 2rem;
 }
