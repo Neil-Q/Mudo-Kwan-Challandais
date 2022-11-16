@@ -3,7 +3,10 @@
     <Hero title="Passages de grade" class="blue" />
 
     <section id="rank_selector">
-        <TaekwondoKeupPanel />
+        <TaekwondoKeupPanel
+            @update-keup="(newKeup) => updateKeup(newKeup)"
+            @update-is-adult="(boolean) => updateIsAdult(boolean)"
+        />
     </section>
 
     <MudoFooter />
@@ -25,13 +28,18 @@
         },
         data() {
             return {
-                isAdulte: true,
-                keup: 0
+                isAdult: true,
+                keup: 0 // 0 -> All
             }
         },
         methods: {
-            knowIfAdult() {
-                alert(this.isAdulte)
+            updateIsAdult(boolean) {
+                this.isAdult = boolean;
+                console.log(this.isAdult);
+            },
+            updateKeup(keup) {
+                this.keup = keup;
+                console.log(this.keup);
             }
         }
     }

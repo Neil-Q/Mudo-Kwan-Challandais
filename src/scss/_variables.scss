@@ -1,16 +1,23 @@
 // COLORS
     // Gray shades
-        $dark: #171717;
-        $dark-1: #262626;
-        $dark-2: #404040;
-        $dark-3: #525252;
-        $dark-4: #737373;
-
-        $white: #fafafa;
-        $white-1: #f5f5f5;
-        $white-2: #e5e5e5;
-        $white-3: #d4d4d4;
-        $white-4: #a3a3a3;
+        $dark:    #171717;
+        $dark-05: #121212;
+        $dark-1:  #262626;
+        $dark-15: #333333;
+        $dark-2:  #404040;
+        $dark-25: #474747;
+        $dark-3:  #525252;
+        $dark-35: #616161;
+        $dark-4:  #737373;
+        
+        $white:    #fafafa;
+        $white-1:  #f5f5f5;
+        $white-15: #E8E8E8;
+        $white-2:  #e5e5e5;
+        $white-25: #DADADA;
+        $white-3:  #d4d4d4;
+        $white-35: #BFBFBF;
+        $white-4:  #a3a3a3;
 
     // Main colors
         $blue: #0088CC;
@@ -34,8 +41,16 @@
 
     // Opacity
         $darker-1: rgba(0, 0, 0, 0.05);
-        $darker-2: rgba(0, 0, 0, 0.15);
-        $darker-3: rgba(0, 0, 0, 0.25);
+        $darker-2: rgba(0, 0, 0, 0.1);
+        $darker-3: rgba(0, 0, 0, 0.15);
+        $darker-4: rgba(0, 0, 0, 0.2);
+        $darker-5: rgba(0, 0, 0, 0.25);
+
+        $lighter-1: rgba(255, 255, 255, 0.05);
+        $lighter-2: rgba(255, 255, 255, 0.1);
+        $lighter-3: rgba(255, 255, 255, 0.15);
+        $lighter-4: rgba(255, 255, 255, 0.2);
+        $lighter-5: rgba(255, 255, 255, 0.25);
 
 
 // FONTS

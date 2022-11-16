@@ -22,7 +22,7 @@ body {
     padding: 0;
     height: auto;
     overflow-Y: overlay;
-    background-color: $white;
+    background-color: $white-1;
     font-size: $font-sz-medium;
 
     &::-webkit-scrollbar {

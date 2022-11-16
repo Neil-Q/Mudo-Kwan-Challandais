@@ -1,23 +1,36 @@
 <template>
-    <button class="rank_dropdown">
-        <div class="rank_menu">
+    <button class="keup_dropdown" ref="main_element" @mousedown="preventDropdown">
+
+        <div class="keup_menu">
             <div class="menu_belt">
-                <div class="menu_belt_none" v-show="keup == 0">-  KEUP  -</div>
+                <div class="menu_unchoosed" v-show="keup == 0">
+                    <svg viewBox="0 0 52.9167 5.29167">
+                        <g transform="translate(-.518049 31.7671)">
+                            <text transform="translate(-54.5344 -105.701)"><tspan x="57.330078" y="78.555647"><tspan style="font-family:Montserrat;font-size:5.64444px; fill: currentColor">- CHOISIR KEUP -</tspan></tspan></text>
+                        </g>
+                    </svg>
+                </div>
                 <div class="keup_and_belt" v-show="keup >= 1">
                     <div class="rank">{{keup}} K</div>
                     <BeltIcon class="belt medium" :class="discipline + ' keup_'+ keup" />
                 </div>
             </div>
-            <div class="dropdown_indicator">
-                <span></span>
+            
+            <div class="dropdown_arrow">
+                <span>&#9650;</span>
             </div>
         </div>
 
-        <div class="dropdown">
-            <div v-for="i in (discipline == 'taekwondo_children' ? 14 : 9) " :key="i" class="dropdown_item" @click="updateKeup(i)">
+        <div class="dropdown" ref="dropdown">
+            <div
+                v-for="i in [...Array(discipline == 'taekwondo_children' ? 14 : 9).keys()].slice().reverse()"
+                :key="i"
+                class="dropdown_item"
+                @click="updateKeup(i + 1)
+            ">
                 <div class="keup_and_belt">
-                    <div class="rank">{{i}} K</div>
-                    <BeltIcon class="medium" :class="discipline + ' keup_'+ i" />
+                    <div class="rank">{{(i + 1)}} K</div>
+                    <BeltIcon class="medium" :class="discipline + ' keup_'+ (i + 1)" />
                 </div>
             </div>
         </div>
@@ -39,37 +52,62 @@
             keup: {
                 type: Number,
                 default: 1
+            },
+            locked: {
+                type: Boolean,
+                default: false
             }
+        },
+        watch: {
+            locked: function() {this.lock()}
         },
         methods: {
             updateKeup(keup) {
                 this.$emit("updateKeup", keup);
                 document.activeElement.blur();
+            },
+            preventDropdown(event) {
+                if(this.locked) event.preventDefault();
+            },
+            lock() {
+                this.locked == true ? this.$refs.main_element.classList.add("locked") : this.$refs.main_element.classList.remove("locked");
             }
+        },
+        mounted() {
+            this.lock();
         }
     }
 </script>
 
 <style lang="scss" scoped>
 
-    .rank_dropdown {
+    .keup_dropdown {
         position: relative;
         height: 100%;
         width: 100%;
         display: grid;
-        background-color: $white;
-        border-radius: inherit;
+        background-color: $white-1;
+        border-radius: 10px;
         border: none;
         padding: 0;
+        color: $dark-2;
+    }
+    .keup_dropdown.locked {
+        background-color: $dark-2;
+        color: $dark-4;
+
+        .dropdown_arrow {
+            border-color: $dark-4;
+        }
     }
 
-    .rank_dropdown:not(:focus) {
+    .keup_dropdown:not(:focus) {
         .dropdown {
             display: none;
         }
     }
 
-    .rank_menu {
+    .keup_menu {
         display: grid;
         grid-template-columns: 8fr 2fr;
         grid-template-areas: "belt indicator";
@@ -82,17 +120,31 @@
         padding: 0;
     }
 
+    .menu_unchoosed {
+        @extend %flex-center;
+
+        svg {
+            display: block;
+            width: 80%;
+        }
+    }
     .menu_belt {
         grid-area: belt;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .dropdown_indicator {
-        height: 100%;
+    .dropdown_arrow {
+        @extend %flex-center;
+        height: 80%;
         width: 100%;
         grid-area: indicator;
-        background-color: rgba($color: #000000, $alpha: 0.5);
+        border-left: solid 2px $dark-2;
+
+        span {
+            font-size: $font-sz-xxl;
+            transform: rotate(180deg);
+        }
     }
     .keup_and_belt {
         box-sizing: border-box;
@@ -122,7 +174,7 @@
         position: absolute;
         top: 110%;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         background-color: $white;
         border-radius: 10px;
         z-index: 2;
