@@ -84,7 +84,7 @@
 </template>
 
 <script>
-    import BeltRankDropdown     from "@/components/BeltRankDropdown.vue";
+    import BeltRankDropdown     from "@/components/belt_exams/BeltRankDropdown.vue";
 
     export default {
         name: "TaekwondoKeupPanel",

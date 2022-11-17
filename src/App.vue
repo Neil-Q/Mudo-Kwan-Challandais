@@ -88,31 +88,8 @@ a {
     }
 }
 
-
-.blue_bg {
-    background-color: $blue;
-}
-.blueLight_bg {
-    background-color: $blue-light;
-}
-.red_bg {
-    background-color: $red-dark;
-}
 .grey_bg {
-    background-color: $darker-1;
-}
-
-.blue_light {
-    color: $blue-light;
-}
-.blue {
-    color: $blue;
-}
-.blue_dark {
-    color: $blue-dark;
-}
-.red {
-    color:$red;
+    background-color: $white-2;
 }
 
 .hangul {

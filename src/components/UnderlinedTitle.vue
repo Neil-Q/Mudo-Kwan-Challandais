@@ -1,6 +1,7 @@
 <template>
     <div class="underlined_title" ref="wrapper">
         <div class="title">
+            <h3 v-if="subtitle" ref="subtitle">{{subtitle}}</h3>
             <h2 ref="title">{{title}}</h2>
             <div class="line" ref="line"></div>
         </div>
@@ -18,16 +19,18 @@
     export default {
         name: "UnderlinedTitle",
         props: [
+            "subtitle",
             "title",
             "text",
         ],
         mounted() {
             const   wrapper = this.$refs.wrapper,
+                    subtitle = this. $refs.subtitle,
                     title = this.$refs.title,
                     line = this.$refs.line;
     
 
-            gsap.from(title, {
+            gsap.from([title, subtitle] , {
                 scrollTrigger: {
                     trigger: wrapper,
                     start: "top 65%",
@@ -35,7 +38,8 @@
                 },
                 opacity: 0,
                 duration: 0.5,
-                y: -10
+                y: -10,
+                stagger: 0.2
             });
 
             gsap.from(line, {
@@ -54,27 +58,28 @@
 
 <style lang="scss">
 .underlined_title {
+    --color-theme : #{$red};
+
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     padding-top: clamp(0.5rem, 1vw, 2rem);
     padding-bottom: 2rem;    
-    overflow: hidden;
-
-    * {
-        align-self: center;
-    }
 
     &.darker {
         background-color: rgba(0,0,0,0.02);
     }
-
     &.white {
         color: white;
 
         .title .line {
             background: white;
         }
+    }
+
+    &.blue {
+        --color-theme: #{$blue};
     }
 
     &.large {
@@ -88,12 +93,19 @@
 
     h2 {
         font-size: clamp(2rem, 3vw, 3rem);
-        margin-bottom: 0;
+        margin: 0;
         text-transform: uppercase;
     }
 
+    h3 {
+        font-size: $font-sz-large;
+        color: var(--color-theme);
+        margin: 0;
+        margin-bottom: 0;
+    }
+
     .line {
-        background:$red;
+        background:var(--color-theme);
         border-radius: 0.2rem;
         width: 90%;
         height: 3px;

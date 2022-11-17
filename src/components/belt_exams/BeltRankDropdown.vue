@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import BeltIcon     from "@/components/BeltIcon.vue"
+    import BeltIcon     from "@/components/belt_exams/BeltIcon.vue"
 
     export default {
         name: "BeltRankDropdown",

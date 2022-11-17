@@ -3,3 +3,13 @@
     justify-content: center;
     align-items: center;
 }
+
+%gray-bg {
+    background-color: $white-2;
+}
+
+%section-container {
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: auto;
+}
