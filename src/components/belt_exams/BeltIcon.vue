@@ -55,7 +55,8 @@
             width: 100%;
             height: 100%;
             background-color: var(--stripes-color);
-            outline: 5px solid var(--stripes-color);
+            border-radius: 4px;
+            transform: scaleY(1.25);
         }
         .stripe_1 {
             grid-area: b;
