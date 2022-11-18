@@ -108,6 +108,7 @@
         background:var(--color-theme);
         border-radius: 0.2rem;
         width: 90%;
+        max-width: 80vw;
         height: 3px;
         margin: auto;
     }
