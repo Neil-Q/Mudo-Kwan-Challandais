@@ -46,7 +46,9 @@
                             </g>
                         </g>
                     </svg>
-                    <span>PLAN</span>
+                    <span>
+                        PLAN
+                    </span>
                 </button>
                 <PopUp id="poomse_img_popup" ref="poomse_img_popup" shape="auto_max">
                     <template v-slot:content>
@@ -59,7 +61,7 @@
                 <div class="separator"></div>
 
                 <a id="poomse_plan_pdf" :href="currentPoomsePDF" target="_blank">
-                    <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <svg fill="none" viewBox="2 2 20 20" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                     </svg>
                     <span>
@@ -86,7 +88,10 @@
             }
         },
         watch: {
-            poomse: function() {this.updateMandatory()}
+            poomse: function() {
+                        this.updateMandatory()
+                        this.currentPoomse = this.poomse;
+                    }
         },
         computed: {
             currentPoomseName() {
@@ -221,7 +226,14 @@
 </script>
 
 <style lang="scss">
+    #poomse_table {
+        @extend %section-container;
 
+        background-color: $white-1;
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: $shadow-2;
+    }
     #poomse_list {
         display: flex;
         justify-content: space-between;
@@ -244,14 +256,6 @@
             display: none;
         }
         
-    }
-
-    #poomse_table {
-        @extend %section-container;
-
-        background-color: $white-1;
-        padding: 1rem;
-        border-radius: 15px;
     }
 
     .poomse_choice {
@@ -291,7 +295,7 @@
 
         iframe {
             width: 100%;
-            max-width: 60rem;
+            max-width: 50rem;
             aspect-ratio: 16 / 9;
         }
     }
@@ -314,27 +318,28 @@
         @extend %flex-center;
         box-sizing: border-box;
         flex-direction: column;
-        gap: 1rem;
-        height: clamp(4rem, 12vw, 12rem);
-        padding: 2rem;
+        height: clamp(3rem, 6vw, 12rem);
         aspect-ratio: 1/ 1;
         background-color: $white;
         border: 1px solid $white-3;
-        color: $dark-2;
-        font-weight: bold;
-        font-size: $font-sz-large;
+        padding: clamp(0rem, 2vw, 2rem);
         cursor: pointer;
 
         filter: grayscale(1) opacity(0.7);
         transition: 0.5s;
 
+        &:hover {
+           filter: grayscale(0.5) opacity(1);
+        }
+
         svg {
             flex: 1;
         }
 
-        &:hover {
-           filter: grayscale(0.5) opacity(1);
+        span {
+            display: none;
         }
+
     }
     #poomse_plan_image svg {
         .horizontal {
@@ -362,6 +367,16 @@
                 max-height: 100%;
                 max-width: 100%;
             }
+        }
+    }
+
+    @media (min-width: 60rem) {
+        #poomse_plan_image, #poomse_plan_pdf {
+            gap: clamp(0rem, 1vw, 1rem);
+            padding: clamp(0rem, 1vw, 2rem);
+            color: $dark-2;
+            font-weight: bold;
+            font-size: $font-sz-medium;
         }
     }
 </style>
