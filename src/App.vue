@@ -40,6 +40,11 @@ body {
         background-color: rgb(40, 40, 40);
         width: 10px;
     }
+
+    &.locked {
+        height: 100%;
+        overflow-y: hidden;
+    }
 }
 
 section {
