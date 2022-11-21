@@ -5,41 +5,26 @@
     <section id="rank_selector">
         <TaekwondoKeupPanel
             @update-keup="(newKeup) => updateKeup(newKeup)"
-            @update-is-adult="(boolean) => updateIsAdult(boolean)"
+            @update-is-over-twelve="(boolean) => updateIsOverTwelve(boolean)"
         />
     </section>
 
-    <section id="poomse">
-        <UnderlinedTitle
-            class="blue"
-            title="Poomse"
-            subtitle="Formes"
-        />
-
-        <div id="poomse_caption" v-show="poomseToDo >= 1">
-            <div class="container">
-                <div class="mandatory">
-                    <div class="caption">.</div> Poomse obligatoire(s)
-                </div>
-                <div class="random">
-                    <div class="caption">.</div> Un poomse tiré au hasard
-                </div>
-            </div>
-        </div>
-
-        <PoomseTable
+    <section id="trials">
+        <PoomsePanel
             :poomse="poomseToDo"
         />
-    </section>
-
-    <section id="kibons">
-        <UnderlinedTitle
-            class="blue"
-            title="Kibon"
-            subtitle="Bases"
+ 
+        <KibonPanel
+            :keup="keup"
+            :isOverTwelve="isOverTwelve"
         />
 
-        <KibonTable />
+        <HanBonKyoruguiPanel />
+        <HoShinSoulPanel />
+        <AttackSeriesPanel />
+        <KyoruguiPanel />
+        <QuestionsPanel />
+
     </section>
 
     <MudoFooter />
@@ -48,10 +33,14 @@
 <script>
     import NavBar                   from "@/components/NavBar.vue";
     import Hero                     from "@/components/Hero.vue";
-    import UnderlinedTitle          from "@/components/UnderlinedTitle.vue";
     import TaekwondoKeupPanel       from "@/components/belt_exams/TaekwondoKeupPanel.vue";
-    import PoomseTable              from "@/components/belt_exams/PoomseTable.vue";
-    import KibonTable              from "@/components/belt_exams/KibonTable.vue";
+    import PoomsePanel              from "@/components/belt_exams/PoomsePanel.vue";
+    import KibonPanel               from "@/components/belt_exams/KibonPanel.vue";
+    import HanBonKyoruguiPanel      from "@/components/belt_exams/HanBonKyoruguiPanel.vue";
+    import AttackSeriesPanel        from "@/components/belt_exams/AttackSeriesPanel.vue";
+    import HoShinSoulPanel          from "@/components/belt_exams/HoShinSoulPanel.vue";
+    import KyoruguiPanel            from "@/components/belt_exams/KyoruguiPanel.vue";
+    import QuestionsPanel           from "@/components/belt_exams/QuestionsPanel.vue";
     import MudoFooter               from "@/components/MudoFooter.vue"; 
 
     export default {
@@ -59,22 +48,26 @@
         components: {
             NavBar,
             Hero,
-            UnderlinedTitle,
             TaekwondoKeupPanel,
-            PoomseTable,
-            KibonTable,
+            PoomsePanel,
+            KibonPanel,
+            HanBonKyoruguiPanel,
+            HoShinSoulPanel,
+            AttackSeriesPanel,
+            KyoruguiPanel,
+            QuestionsPanel,
             MudoFooter
         },
         data() {
             return {
-                isAdult: true,
+                isOverTwelve: true,
                 keup: 0, // 0 -> All
                 poomseToDo: 0,
             }
         },
         methods: {
             calculatePoomse() {
-                if(this.isAdult) {
+                if(this.isOverTwelve) {
                     switch (this.keup) {
                         case 9 :
                             this.poomseToDo = 1;
@@ -147,8 +140,8 @@
                     }
                 }
             },
-            updateIsAdult(boolean) {
-                this.isAdult = boolean;
+            updateIsOverTwelve(boolean) {
+                this.isOverTwelve = boolean;
                 this.calculatePoomse();
             },
             updateKeup(keup) {
@@ -162,52 +155,19 @@
 <style lang="scss">
     #rank_selector {
         min-height: 0;
+        background-color: $white-2
     }
 
-    #poomse {
-        @extend %gray-bg;
-    }
-    #poomse_caption {
-        display: inline-block;
-        font-size: $font-sz-large;
-        text-align: left;
-        margin-bottom: 2rem;
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            row-gap: 1rem;
-        }
-
-        .caption {
-            display: inline-block;
-            margin-right: 1rem;
-            color: transparent;
-            padding: 0.5rem;
-            width: clamp(3rem, 15vw, 10rem);
-            border-radius: 100px;
-            border: solid 2px;
-        }
-
-        .mandatory .caption{
-            background-color: $dark-1;
-            border-color: $dark-1
-        }
-
-        .random .caption {
-            background-color: $white-1;
-            border-color: $white-3;
-        }
-    }
-    
-    #kibon {
-        height: 50rem;
+    #trials{
+        background-color: $white-2;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;      
     }
 
-    @media (min-width: 60rem) {
-        #poomse_caption .container {
-            flex-direction: row;
-            column-gap: 5rem;
+    @media (max-width: 40rem) {
+        #trials {
+            padding: 1rem;
         }
     }
 </style>

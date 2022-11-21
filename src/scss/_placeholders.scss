@@ -8,8 +8,61 @@
     background-color: $white-2;
 }
 
+%material-panel {
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: $shadow-2;
+}
+
 %section-container {
     box-sizing: border-box;
-    max-width: 1600px;
+    width: 1600px;
+    max-width: 100%;
     margin: auto;
+}
+
+%tab-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $font-sz-medium;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+        flex-grow: 1;
+        list-style: none;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 3rem;
+        padding: 0.5rem;
+        background-color: $white;
+        border-radius: 100px;
+        border: solid 2px;
+        border-color: $white-3;
+
+        &.mandatory {
+            background-color: $dark-1;
+            border-color: $dark-1;
+            color: $white-2;
+        }
+    }
+
+    input:checked + label {
+        outline: solid 3px $blue;
+        border-color: $white-1;
+    }
 }

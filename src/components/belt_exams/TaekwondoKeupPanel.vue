@@ -6,6 +6,7 @@
             for="show_everything_radio"
             @click="
                 updateKeup(0);
+                updateIsOverTwelve(true);
                 lockDropdown(true);"
         >
 
@@ -34,7 +35,7 @@
                 class="minus_twelve"
                 for="minus_twelve_radio"
                 @click="
-                    updateIsAdult(false);
+                    updateIsOverTwelve(false);
                     lockDropdown(false);"
             >
                 <div class="illustration">
@@ -55,7 +56,7 @@
                 class="over_twelve"
                 for="over_twelve_radio"
                 @click="
-                    updateIsAdult(true);
+                    updateIsOverTwelve(true);
                     lockDropdown(false);"
             >
                 <div class="illustration">
@@ -73,7 +74,7 @@
 
             <BeltRankDropdown 
                 id="keup_dropdown"
-                :discipline="isAdult ? 'taekwondo' : 'taekwondo_children'"
+                :discipline="isOverTwelve ? 'taekwondo' : 'taekwondo_children'"
                 :keup="keup"
                 :locked="lockedDropdown"
                 @update-keup="(newKeup) => updateKeup(newKeup)"
@@ -93,7 +94,7 @@
         },
         data() {
             return {
-                isAdult: true,
+                isOverTwelve: true,
                 keup: 0,
                 lockedDropdown: true
             }
@@ -102,10 +103,10 @@
             lockDropdown(boolean) {
                 this.lockedDropdown = boolean;
             },
-            updateIsAdult(boolean) {
-                this.isAdult = boolean;
-                if(this.isAdult == true && this.keup >= 7) this.updateKeup(0); 
-                this.$emit("updateIsAdult", boolean);
+            updateIsOverTwelve(boolean) {
+                this.isOverTwelve = boolean;
+                if(this.isOverTwelve == true && this.keup >= 7) this.updateKeup(0); 
+                this.$emit("updateIsOverTwelve", boolean);
             },
             updateKeup(keup) {
                 this.keup = keup;
