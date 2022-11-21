@@ -33,7 +33,7 @@
             gsap.from([title, subtitle] , {
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: "top 65%",
+                    start: "top 75%",
                     toggleActions: "restart none none reverse"
                 },
                 opacity: 0,
@@ -45,7 +45,7 @@
             gsap.from(line, {
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: "top 65%",
+                    start: "top 75%",
                     toggleActions: "restart none none reverse"
                 },
                 delay: 0.5,
@@ -108,7 +108,7 @@
         background:var(--color-theme);
         border-radius: 0.2rem;
         width: 90%;
-        max-width: 80vw;
+        max-width: 90%;
         height: 3px;
         margin: auto;
     }
