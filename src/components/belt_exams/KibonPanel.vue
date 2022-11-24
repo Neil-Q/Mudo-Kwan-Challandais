@@ -6,6 +6,10 @@
             subtitle="Bases"
         />
 
+        <div class="marking">
+            xx pt / xxx pt 
+        </div>
+
         <div id="kibon_table">
             <ul id="kibon_categories_list">
                 <li v-for="number in kibonDatas.length" :key="number">

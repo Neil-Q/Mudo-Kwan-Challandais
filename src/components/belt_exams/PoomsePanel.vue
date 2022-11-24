@@ -6,6 +6,10 @@
             subtitle="Formes"
         />
 
+        <div class="marking">
+            xx pt / xxx pt 
+        </div>
+
         <div id="poomse_caption" v-show="poomse >= 1">
             <div class="container">
                 <div class="mandatory">
@@ -16,7 +20,6 @@
                 </div>
             </div>
         </div>
-
 
         <div id="poomse_table">
             <ul id="poomse_list" ref="poomse_list">

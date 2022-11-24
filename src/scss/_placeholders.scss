@@ -9,6 +9,7 @@
 }
 
 %material-panel {
+    box-sizing: border-box;
     padding: 1rem;
     border-radius: 15px;
     box-shadow: $shadow-2;

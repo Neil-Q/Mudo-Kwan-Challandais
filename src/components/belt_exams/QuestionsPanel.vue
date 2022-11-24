@@ -4,6 +4,10 @@
             class="blue"
             title="Questions"
         />
+
+        <div class="marking">
+            xx pt / xxx pt 
+        </div>
     </div>
 </template>
 
@@ -23,6 +27,5 @@
         @extend %material-panel;
         @extend %section-container;
         background-color: $white-1;
-        height: 20rem;
     }
 </style>

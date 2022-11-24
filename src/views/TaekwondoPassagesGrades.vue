@@ -19,11 +19,29 @@
             :isOverTwelve="isOverTwelve"
         />
 
-        <HanBonKyoruguiPanel />
-        <HoShinSoulPanel />
-        <AttackSeriesPanel />
-        <KyoruguiPanel />
-        <QuestionsPanel />
+        <HanBonKyoruguiPanel
+            v-if="(isOverTwelve === true || keup <= 6) && keup !== 0"
+            :keup="keup"
+        />
+        <AttackSeriesPanel
+            v-if="isOverTwelve === false && keup > 6 && keup !== 0"
+            :keup="keup"
+        />
+
+        <HoShinSoulPanel
+            v-if="keup !== 0 && keup <= 6"
+            :keup="keup"
+        />
+
+        <KyoruguiPanel
+            v-if="keup !== 0"
+            :isOverTwelve="isOverTwelve"
+            :keup="keup"
+        />
+
+        <QuestionsPanel
+            v-if="keup !== 0"
+        />
 
     </section>
 
@@ -158,11 +176,19 @@
         background-color: $white-2
     }
 
-    #trials{
+    #trials {
         background-color: $white-2;
         display: flex;
         flex-direction: column;
         gap: 3rem;      
+    }
+
+    .marking {
+        font-size: $font-sz-large;
+        font-weight: bold;
+        color: $red;
+        text-transform: uppercase;
+        margin-bottom: clamp(1rem, 4vw, 2rem);
     }
 
     @media (max-width: 40rem) {

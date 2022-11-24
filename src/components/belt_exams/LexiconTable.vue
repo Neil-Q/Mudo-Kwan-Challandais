@@ -120,10 +120,6 @@
     }
 
     @media (max-width: 60rem) {
-        .lexicon_table {
-            background-color: $darker-1;
-        }
-
         .lexicon_term {
             grid-template-columns: 4rem 1fr 3fr 4rem;
             grid-template-areas: "belt name description audio";
@@ -135,10 +131,6 @@
     }
 
     @media (max-width: 40rem) {
-        .lexicon_table {
-            background-color: $lighter-1;
-        }
-
         .lexicon_term {
             text-align: center;
 
