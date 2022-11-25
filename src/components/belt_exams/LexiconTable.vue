@@ -12,7 +12,7 @@
 
             <div class="description"> {{term.description}} </div>
 
-            <div class="hangeul">백철불굴</div>
+            <div class="hangeul">{{term.hangeul}}</div>
 
             <div class="audio"></div>
         </li>
@@ -83,10 +83,10 @@
 
     .lexicon_term {
         display: grid;
-        grid-template-columns: 5rem 1fr 3fr 7rem 7rem;
+        grid-template-columns: 5rem 1fr 3fr 8rem 4rem;
         grid-template-areas: "belt name description hangeul audio";
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         padding: 0.5rem;
         list-style: none;
         text-align: left;
@@ -113,15 +113,21 @@
             grid-area: audio;
             justify-self: end;
             width: 100%;
-            height: 1.5rem;
+            height: 1.8rem;
             background-color: $blue;
             border-radius: 100px;
         }
     }
 
+    @media (max-width: 80rem) {
+        .lexicon_term {
+            grid-template-columns: 4rem 1fr 3fr 8rem 3rem;
+        }
+    }
+
     @media (max-width: 60rem) {
         .lexicon_term {
-            grid-template-columns: 4rem 1fr 3fr 4rem;
+            grid-template-columns: 4rem 1fr 3fr 3rem;
             grid-template-areas: "belt name description audio";
 
             .hangeul {

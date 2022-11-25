@@ -103,7 +103,7 @@
                                         keupChild: 14,
                                         name: "dojang",
                                         description: "la salle d'entrainement",
-                                        hangeul: "",
+                                        hangeul: "도장",
                                         audio: ""
                                     },
                                     {
@@ -111,7 +111,7 @@
                                         keupChild: 14,
                                         name: "dobok",
                                         description: "la tenue d'entrainement",
-                                        hangeul: "",
+                                        hangeul: "도복",
                                         audio: ""
                                     },
                                     {
@@ -119,7 +119,7 @@
                                         keupChild: 14,
                                         name: "tchaliot",
                                         description: "garde à vous",
-                                        hangeul: "",
+                                        hangeul: "차렷",
                                         audio: ""
                                     },
                                     {
@@ -127,7 +127,7 @@
                                         keupChild: 14,
                                         name: "kyongnye",
                                         description: "saluez",
-                                        hangeul: "",
+                                        hangeul: "경례",
                                         audio: ""
                                     },
                                     {
@@ -135,7 +135,7 @@
                                         keupChild: 14,
                                         name: "poomse",
                                         description: "forme",
-                                        hangeul: "",
+                                        hangeul: "품세",
                                         audio: ""
                                     },
                                     {
@@ -143,7 +143,7 @@
                                         keupChild: 12,
                                         name: "tchoumbi",
                                         description: "position de départ",
-                                        hangeul: "",
+                                        hangeul: "준비",
                                         audio: ""
                                     },
                                     {
@@ -151,7 +151,15 @@
                                         keupChild: 12,
                                         name: "kibon",
                                         description: "base",
-                                        hangeul: "",
+                                        hangeul: "기본",
+                                        audio: ""
+                                    },
+                                    {
+                                        keupAdult: 8,
+                                        keupChild: 12,
+                                        name: "kihap",
+                                        description: "cri",
+                                        hangeul: "기합",
                                         audio: ""
                                     },
                                     {
@@ -159,7 +167,7 @@
                                         keupChild: 12,
                                         name: "keup",
                                         description: "grades ceinture de couleur",
-                                        hangeul: "",
+                                        hangeul: "급",
                                         audio: ""
                                     },
                                     {
@@ -167,7 +175,7 @@
                                         keupChild: 12,
                                         name: "dan",
                                         description: "grades ceinture noire",
-                                        hangeul: "",
+                                        hangeul: "단",
                                         audio: ""
                                     },                                                                      
                                     {
@@ -175,7 +183,7 @@
                                         keupChild: 10,
                                         name: "shijak",
                                         description: "commencez",
-                                        hangeul: "",
+                                        hangeul: "시작",
                                         audio: ""
                                     },                                    
                                     {
@@ -183,7 +191,7 @@
                                         keupChild: 10,
                                         name: "keuman",
                                         description: "arretez",
-                                        hangeul: "",
+                                        hangeul: "그만",
                                         audio: ""
                                     },
                                     {
@@ -191,7 +199,7 @@
                                         keupChild: 10,
                                         name: "chwio",
                                         description: "repos",
-                                        hangeul: "",
+                                        hangeul: "쉬어",
                                         audio: ""
                                     },                                    
                                     {
@@ -199,7 +207,7 @@
                                         keupChild: 10,
                                         name: "baro",
                                         description: "revenez",
-                                        hangeul: "",
+                                        hangeul: "바로",
                                         audio: ""
                                     },
                                     {
@@ -207,7 +215,7 @@
                                         keupChild: 8,
                                         name: "ti",
                                         description: "ceinture",
-                                        hangeul: "",
+                                        hangeul: "띠",
                                         audio: ""
                                     },
                                     {
@@ -215,7 +223,7 @@
                                         keupChild: 6,
                                         name: "chong",
                                         description: "bleu",
-                                        hangeul: "",
+                                        hangeul: "청",
                                         audio: ""
                                     },
                                     {
@@ -223,7 +231,7 @@
                                         keupChild: 6,
                                         name: "hong",
                                         description: "rouge",
-                                        hangeul: "",
+                                        hangeul: "홍",
                                         audio: ""
                                     },
                                     {
@@ -231,7 +239,7 @@
                                         keupChild: 6,
                                         name: "dwiro dora",
                                         description: "demi-tour",
-                                        hangeul: "",
+                                        hangeul: "뒤로돌아",
                                         audio: ""
                                     },
                                     {
@@ -239,7 +247,7 @@
                                         keupChild: 6,
                                         name: "kyorugui",
                                         description: "combat",
-                                        hangeul: "",
+                                        hangeul: "겨루기",
                                         audio: ""
                                     },
                                     {
@@ -247,7 +255,7 @@
                                         keupChild: 6,
                                         name: "balbakosso",
                                         description: "changez de garde",
-                                        hangeul: "",
+                                        hangeul: "발 바겄어",
                                         audio: ""
                                     },
                                     {
@@ -255,7 +263,7 @@
                                         keupChild: 5,
                                         name: "wen",
                                         description: "gauche",
-                                        hangeul: "",
+                                        hangeul: "왼",
                                         audio: ""
                                     },
                                     {
@@ -263,7 +271,7 @@
                                         keupChild: 5,
                                         name: "oreun",
                                         description: "droite",
-                                        hangeul: "",
+                                        hangeul: "오른",
                                         audio: ""
                                     },
                                     {
@@ -271,7 +279,7 @@
                                         keupChild: 5,
                                         name: "ho shin soul",
                                         description: "auto défense",
-                                        hangeul: "",
+                                        hangeul: "호신술",
                                         audio: ""
                                     },
                                     {
@@ -279,7 +287,7 @@
                                         keupChild: 4,
                                         name: "ann ja",
                                         description: "à genoux",
-                                        hangeul: "",
+                                        hangeul: "앉아",
                                         audio: ""
                                     },
                                     {
@@ -287,7 +295,7 @@
                                         keupChild: 3,
                                         name: "kyo sa nim",
                                         description: "instructeur",
-                                        hangeul: "",
+                                        hangeul: "교사님",
                                         audio: ""
                                     },
                                     {
@@ -295,15 +303,16 @@
                                         keupChild: 3,
                                         name: "sa beum nim",
                                         description: "Maître",
-                                        hangeul: "",
+                                        hangeul: "사범님",
                                         audio: ""
                                     },
+
                                     {
                                         keupAdult: 3,
                                         keupChild: 3,
                                         name: "hogou",
                                         description: "plastron",
-                                        hangeul: "",
+                                        hangeul: "호구",
                                         audio: ""
                                     },
                                 ]
@@ -316,7 +325,7 @@
                                         keupChild: 14,
                                         name: "ale",
                                         description: "niveau bas",
-                                        hangeul: "",
+                                        hangeul: "아래",
                                         audio: ""
                                     },
                                     {
@@ -324,7 +333,7 @@
                                         keupChild: 14,
                                         name: "momtong",
                                         description: "niveau moyen",
-                                        hangeul: "",
+                                        hangeul: "몸통",
                                         audio: ""
                                     },
                                     {
@@ -332,7 +341,7 @@
                                         keupChild: 14,
                                         name: "oulgoul",
                                         description: "niveau haut",
-                                        hangeul: "",
+                                        hangeul: "얼굴",
                                         audio: ""
                                     },
                                     {
@@ -340,7 +349,7 @@
                                         keupChild: 14,
                                         name: "ap",
                                         description: "avant / vers devant",
-                                        hangeul: "",
+                                        hangeul: "앞",
                                         audio: ""
                                     },
                                     {
@@ -348,7 +357,7 @@
                                         keupChild: 14,
                                         name: "tchagui",
                                         description: "coup de pied",
-                                        hangeul: "",
+                                        hangeul: "차기",
                                         audio: ""
                                     },
                                     {
@@ -356,7 +365,7 @@
                                         keupChild: 14,
                                         name: "maki",
                                         description: "défense",
-                                        hangeul: "",
+                                        hangeul: "막기",
                                         audio: ""
                                     },
                                     {
@@ -364,7 +373,23 @@
                                         keupChild: 14,
                                         name: "seugi",
                                         description: "position",
-                                        hangeul: "",
+                                        hangeul: "서기",
+                                        audio: ""
+                                    },
+                                    {
+                                        keupAdult: 8,
+                                        keupChild: 12,
+                                        name: "tchigui",
+                                        description: "frappe avec mouvement fouetté",
+                                        hangeul: "치기",
+                                        audio: ""
+                                    },
+                                    {
+                                        keupAdult: 8,
+                                        keupChild: 12,
+                                        name: "jireugui",
+                                        description: "frappe avec mouvement droit",
+                                        hangeul: "지르기",
                                         audio: ""
                                     },
                                     {
@@ -372,7 +397,7 @@
                                         keupChild: 12,
                                         name: "tchireugui",
                                         description: "frappe des extrémités",
-                                        hangeul: "",
+                                        hangeul: "찌르기",
                                         audio: ""
                                     },
                                     {
@@ -380,7 +405,7 @@
                                         keupChild: 12,
                                         name: "an",
                                         description: "bers l'intérieur",
-                                        hangeul: "",
+                                        hangeul: "안",
                                         audio: ""
                                     },
                                     {
@@ -388,7 +413,7 @@
                                         keupChild: 12,
                                         name: "bakkat",
                                         description: "vers l'extérieur",
-                                        hangeul: "",
+                                        hangeul: "바깥",
                                         audio: ""
                                     },
                                     {
@@ -396,7 +421,7 @@
                                         keupChild: 10,
                                         name: "dolyeu",
                                         description: "circulaire",
-                                        hangeul: "",
+                                        hangeul: "돌려",
                                         audio: ""
                                     },
                                     {
@@ -404,15 +429,15 @@
                                         keupChild: 10,
                                         name: "yop",
                                         description: "sur le côté",
-                                        hangeul: "",
+                                        hangeul: "옆",
                                         audio: ""
                                     },
                                     {
                                         keupAdult: 7,
                                         keupChild: 8,
-                                        name: "dwitt",
+                                        name: "dwi",
                                         description: "par derrière",
-                                        hangeul: "",
+                                        hangeul: "뒤",
                                         audio: ""
                                     },
                                     {
@@ -420,7 +445,7 @@
                                         keupChild: 6,
                                         name: "nelyeu",
                                         description: "descendant",
-                                        hangeul: "",
+                                        hangeul: "내려",
                                         audio: ""
                                     },
                                     {
@@ -428,7 +453,7 @@
                                         keupChild: 6,
                                         name: "eulyeu",
                                         description: "ascendant",
-                                        hangeul: "",
+                                        hangeul: "올려",
                                         audio: ""
                                     },
                                     {
@@ -436,7 +461,7 @@
                                         keupChild: 6,
                                         name: "tchigui",
                                         description: "attaque avec impact fouetté",
-                                        hangeul: "",
+                                        hangeul: "치기",
                                         audio: ""
                                     },
                                     {
@@ -444,7 +469,7 @@
                                         keupChild: 6,
                                         name: "tuyeu",
                                         description: "sauté",
-                                        hangeul: "",
+                                        hangeul: "뛰어",
                                         audio: ""
                                     },
                                     {
@@ -452,7 +477,15 @@
                                         keupChild: 4,
                                         name: "pyo jeuk",
                                         description: "frappé dans la main",
-                                        hangeul: "",
+                                        hangeul: "표적",
+                                        audio: ""
+                                    },
+                                    {
+                                        keupAdult: 3,
+                                        keupChild: 3,
+                                        name: "biteuro",
+                                        description: "torsion",
+                                        hangeul: "비틀어",
                                         audio: ""
                                     },
                                 ]
@@ -464,8 +497,8 @@
                                         keupAdult: 9,
                                         keupChild: 14,
                                         name: "bal",
-                                        description: "la jambe",
-                                        hangeul: "",
+                                        description: "le pied",
+                                        hangeul: "발",
                                         audio: ""
                                     },
                                     {
@@ -473,7 +506,7 @@
                                         keupChild: 12,
                                         name: "ap tchouk",
                                         description: "le bol du pied",
-                                        hangeul: "",
+                                        hangeul: "앞축",
                                         audio: ""
                                     },
                                     {
@@ -481,7 +514,7 @@
                                         keupChild: 12,
                                         name: "dwitt tchouk",
                                         description: "le talon",
-                                        hangeul: "",
+                                        hangeul: "뒤축",
                                         audio: ""
                                     },
                                     {
@@ -489,15 +522,15 @@
                                         keupChild: 10,
                                         name: "sonn",
                                         description: "la main",
-                                        hangeul: "",
-                                        audio: ""
+                                        hangeul: "손",
+                                        audio: "손"
                                     },
                                     {
                                         keupAdult: 7,
                                         keupChild: 10,
                                         name: "sonnal",
                                         description: "tranchant de la main",
-                                        hangeul: "",
+                                        hangeul: "손날",
                                         audio: ""
                                     },
                                     {
@@ -505,7 +538,7 @@
                                         keupChild: 8,
                                         name: "han sonnal",
                                         description: "main à la ceinture",
-                                        hangeul: "",
+                                        hangeul: "한손날",
                                         audio: ""
                                     },
                                     {
@@ -513,7 +546,7 @@
                                         keupChild: 8,
                                         name: "mok",
                                         description: "le cou",
-                                        hangeul: "",
+                                        hangeul: "목",
                                         audio: ""
                                     },
                                     {
@@ -521,7 +554,7 @@
                                         keupChild: 6,
                                         name: "joumok",
                                         description: "le poing",
-                                        hangeul: "",
+                                        hangeul: "주먹",
                                         audio: ""
                                     },
                                     {
@@ -529,7 +562,7 @@
                                         keupChild: 6,
                                         name: "deung joumok",
                                         description: "le revers poing",
-                                        hangeul: "",
+                                        hangeul: "등주먹",
                                         audio: ""
                                     },
                                     {
@@ -537,7 +570,7 @@
                                         keupChild: 6,
                                         name: "pyon sonn keut",
                                         description: "l'extrémité des doigts",
-                                        hangeul: "",
+                                        hangeul: "편손끝",
                                         audio: ""
                                     },
                                     {
@@ -545,7 +578,7 @@
                                         keupChild: 6,
                                         name: "batangsonn",
                                         description: "la paume",
-                                        hangeul: "",
+                                        hangeul: "바탕손",
                                         audio: ""
                                     },
                                     {
@@ -553,7 +586,7 @@
                                         keupChild: 5,
                                         name: "palkoup",
                                         description: "le coude",
-                                        hangeul: "",
+                                        hangeul: "팔굽",
                                         audio: ""
                                     },
                                     {
@@ -561,7 +594,7 @@
                                         keupChild: 2,
                                         name: "moureup",
                                         description: "le genou",
-                                        hangeul: "",
+                                        hangeul: "무릎",
                                         audio: ""
                                     },
                                     {
@@ -569,15 +602,23 @@
                                         keupChild: 1,
                                         name: "pal",
                                         description: "le bras",
-                                        hangeul: "",
+                                        hangeul: "팔",
                                         audio: ""
                                     },
                                     {
                                         keupAdult: 1,
                                         keupChild: 1,
                                         name: "palmok",
+                                        description: "avant bras",
+                                        hangeul: "팔목",
+                                        audio: ""
+                                    },
+                                    {
+                                        keupAdult: 1,
+                                        keupChild: 1,
+                                        name: "an palmok",
                                         description: "tranchant intérieur du bras (radius)",
-                                        hangeul: "",
+                                        hangeul: "안팔목",
                                         audio: ""
                                     },
                                     {
@@ -585,7 +626,7 @@
                                         keupChild: 1,
                                         name: "bakkat palmok",
                                         description: "tranchant extérieur du bras (cubitus)",
-                                        hangeul: "",
+                                        hangeul: "바깥팔목",
                                         audio: ""
                                     },
                                 ]
@@ -598,7 +639,7 @@
                                         keupChild: 14,
                                         name: "hana",
                                         description: "1",
-                                        hangeul: "",
+                                        hangeul: "하나",
                                         audio: ""
                                     },
                                     {
@@ -606,7 +647,7 @@
                                         keupChild: 14,
                                         name: "doul",
                                         description: "2",
-                                        hangeul: "",
+                                        hangeul: "둘",
                                         audio: ""
                                     },
                                     {
@@ -614,7 +655,7 @@
                                         keupChild: 14,
                                         name: "set",
                                         description: "3",
-                                        hangeul: "",
+                                        hangeul: "셋",
                                         audio: ""
                                     },
                                     {
@@ -622,7 +663,7 @@
                                         keupChild: 14,
                                         name: "net",
                                         description: "4",
-                                        hangeul: "",
+                                        hangeul: "넷",
                                         audio: ""
                                     },
                                     {
@@ -630,7 +671,7 @@
                                         keupChild: 14,
                                         name: "dasot",
                                         description: "5",
-                                        hangeul: "",
+                                        hangeul: "다섯",
                                         audio: ""
                                     },
                                     {
@@ -638,7 +679,7 @@
                                         keupChild: 12,
                                         name: "yosot",
                                         description: "6",
-                                        hangeul: "",
+                                        hangeul: "여섯",
                                         audio: ""
                                     },
                                     {
@@ -646,7 +687,7 @@
                                         keupChild: 12,
                                         name: "ilgop",
                                         description: "7",
-                                        hangeul: "",
+                                        hangeul: "일곱",
                                         audio: ""
                                     },
                                     {
@@ -654,7 +695,7 @@
                                         keupChild: 12,
                                         name: "yeudol",
                                         description: "8",
-                                        hangeul: "",
+                                        hangeul: "여덟",
                                         audio: ""
                                     },
                                     {
@@ -662,7 +703,7 @@
                                         keupChild: 12,
                                         name: "ahop",
                                         description: "9",
-                                        hangeul: "",
+                                        hangeul: "아홉",
                                         audio: ""
                                     },
                                     {
@@ -670,7 +711,7 @@
                                         keupChild: 12,
                                         name: "yeul",
                                         description: "10",
-                                        hangeul: "",
+                                        hangeul: "열",
                                         audio: ""
                                     },
                                 ]
@@ -685,7 +726,7 @@
                                 keupChild: 14,
                                 name: "tchaliot seugi",
                                 description: "position de salut",
-                                hangeul: "",
+                                hangeul: "차렷",
                                 audio: ""
                             },
                             {
@@ -693,7 +734,7 @@
                                 keupChild: 14,
                                 name: "tchoumbi seugi",
                                 description: "position de préparation",
-                                hangeul: "",
+                                hangeul: "준비",
                                 audio: ""
                             },
                             {
@@ -701,7 +742,7 @@
                                 keupChild: 14,
                                 name: "ap seugi",
                                 description: "position de marche",
-                                hangeul: "",
+                                hangeul: "앞서기)",
                                 audio: ""
                             },
                             {
@@ -709,7 +750,7 @@
                                 keupChild: 14,
                                 name: "ap koubi seugi",
                                 description: "grande position",
-                                hangeul: "",
+                                hangeul: "앞굽이",
                                 audio: ""
                             },
                             {
@@ -717,7 +758,7 @@
                                 keupChild: 10,
                                 name: "joutchoum seugi",
                                 description: "position du cavalier ",
-                                hangeul: "",
+                                hangeul: "주춤서기",
                                 audio: ""
                             },
                             {
@@ -725,7 +766,7 @@
                                 keupChild: 10,
                                 name: "dwitt koubi seugi",
                                 description: "position fléchie vers l’arrière",
-                                hangeul: "",
+                                hangeul: "뒷굽이",
                                 audio: ""
                             },
                             {
@@ -733,7 +774,7 @@
                                 keupChild: 4,
                                 name: "wen/orun seugi",
                                 description: "position pied gauche/ droit ouverts à 90° (talons collés)",
-                                hangeul: "",
+                                hangeul: "왼/오른 서기",
                                 audio: ""
                             },
                             {
@@ -741,15 +782,7 @@
                                 keupChild: 4,
                                 name: "dwitt koa seugi",
                                 description: "position jambes croisés, talon arrière levé, dans un déplacement vers l’avant",
-                                hangeul: "",
-                                audio: ""
-                            },
-                            {
-                                keupAdult: 3,
-                                keupChild: 3,
-                                name: "natchoa seugi",
-                                description: "grande position du cavalier",
-                                hangeul: "",
+                                hangeul: "뒤 꼬아서기",
                                 audio: ""
                             },
                             {
@@ -757,7 +790,7 @@
                                 keupChild: 2,
                                 name: "moa seugi",
                                 description: "position pieds joints",
-                                hangeul: "",
+                                hangeul: "모아서기",
                                 audio: ""
                             },
                             {
@@ -765,15 +798,15 @@
                                 keupChild: 2,
                                 name: "beum seugi",
                                 description: "position du tigre",
-                                hangeul: "",
+                                hangeul: "범서기",
                                 audio: ""
                             },
                             {
                                 keupAdult: 2,
                                 keupChild: 2,
-                                name: "bo joumok",
+                                name: "bo joumok tchoumbi",
                                 description: "position de préparation avec le poing recouvert de l’autre main",
-                                hangeul: "",
+                                hangeul: "보주먹준비",
                                 audio: ""
                             },
                         ]
@@ -789,7 +822,7 @@
                                         keupChild: 12,
                                         name: "ap bal",
                                         description: "jambe avant",
-                                        hangeul: "",
+                                        hangeul: "앞발",
                                         audio: ""
                                     },
                                     {
@@ -797,7 +830,7 @@
                                         keupChild: 10,
                                         name: "dwitt bal",
                                         description: "jambe arrière",
-                                        hangeul: "",
+                                        hangeul: "뒷발",
                                         audio: ""
                                     },
                                     {
@@ -809,19 +842,11 @@
                                         audio: ""
                                     },
                                     {
-                                        keupAdult: 6,
-                                        keupChild: 6,
-                                        name: "hoeri",
-                                        description: "coup de pied avec rotation vers l'avant",
-                                        hangeul: "",
-                                        audio: ""
-                                    },
-                                    {
                                         keupAdult: 5,
                                         keupChild: 5,
                                         name: "mon dora",
                                         description: "coup de pied avec rotation vers arrière",
-                                        hangeul: "",
+                                        hangeul: "몸돌아",
                                         audio: ""
                                     },
                                     {
@@ -829,7 +854,7 @@
                                         keupChild: 1,
                                         name: "dou bal dang sang",
                                         description: "deux coups de pieds enchainés sans reposer au sol",
-                                        hangeul: "",
+                                        hangeul: "두발당성",
                                         audio: ""
                                     },
                                 ]
@@ -842,7 +867,7 @@
                                         keupChild: 14,
                                         name: "ap tchagui",
                                         description: "coup de pied de face impacté",
-                                        hangeul: "",
+                                        hangeul: "앞차기",
                                         audio: ""
                                     },
                                     {
@@ -850,7 +875,7 @@
                                         keupChild: 14,
                                         name: "bandal tchagui",
                                         description: "coup de pied semi-circulaire (ascendant 45°)",
-                                        hangeul: "",
+                                        hangeul: "반달차기",
                                         audio: ""
                                     },
                                     {
@@ -858,7 +883,7 @@
                                         keupChild: 12,
                                         name: "ann tchagui",
                                         description: "coup de pied en demi lune vers l'intérieur ",
-                                        hangeul: "",
+                                        hangeul: "안차기",
                                         audio: ""
                                     },
                                     {
@@ -866,7 +891,7 @@
                                         keupChild: 12,
                                         name: "bakkat tchagui",
                                         description: "coup de pied en demi lune vers l'extérieur ",
-                                        hangeul: "",
+                                        hangeul: "바깥차기",
                                         audio: ""
                                     },
                                     {
@@ -874,7 +899,7 @@
                                         keupChild: 10,
                                         name: "dolyeu tchagui",
                                         description: "coup de pied circulaire (minimum 90° - horizontal)",
-                                        hangeul: "",
+                                        hangeul: "돌려차기",
                                         audio: ""
                                     },
                                     {
@@ -882,15 +907,15 @@
                                         keupChild: 10,
                                         name: "yop tchagui",
                                         description: "coup de pied de côté",
-                                        hangeul: "",
+                                        hangeul: "옆차기",
                                         audio: ""
                                     },
                                     {
                                         keupAdult: 7,
                                         keupChild: 8,
-                                        name: "dwitt tchagui",
+                                        name: "dwi tchagui",
                                         description: "coup de pied vers l'arrière (cheval)",
-                                        hangeul: "",
+                                        hangeul: "뒤차기",
                                         audio: ""
                                     },
                                     {
@@ -898,7 +923,7 @@
                                         keupChild: 6,
                                         name: "nelyeu tchagui",
                                         description: "coup de pied descendant (marteau)",
-                                        hangeul: "",
+                                        hangeul: "내려차기",
                                         audio: ""
                                     },
                                     {
@@ -906,7 +931,7 @@
                                         keupChild: 6,
                                         name: "mireu tchagui",
                                         description: "coup de pied de face poussé",
-                                        hangeul: "",
+                                        hangeul: "밀어차기",
                                         audio: ""
                                     },
                                     {
@@ -914,7 +939,7 @@
                                         keupChild: 5,
                                         name: "nakka/foulyeu tchagui",
                                         description: "coup de pied de profil crocheté",
-                                        hangeul: "",
+                                        hangeul: "낚아/후려 차기",
                                         audio: ""
                                     },
                                     {
@@ -922,7 +947,7 @@
                                         keupChild: 4,
                                         name: "mon dolyeu tchagui",
                                         description: "coup de pied circulaire retourné avec le talon jambe tendue",
-                                        hangeul: "",
+                                        hangeul: "몸돌려차기",
                                         audio: ""
                                     },
                                     {
@@ -930,7 +955,7 @@
                                         keupChild: 3,
                                         name: "biteuro tchagui",
                                         description: "coup de pied torsion (ascendant 45° de l'intérieur vers l'extérieur)",
-                                        hangeul: "",
+                                        hangeul: "비틀어차기",
                                         audio: ""
                                     },
                                     {
@@ -938,7 +963,7 @@
                                         keupChild: 2,
                                         name: "pyo jeuk tchagui",
                                         description: "an tchagui frappé dans la main ouvert du côté opposé",
-                                        hangeul: "",
+                                        hangeul: "표적차기",
                                         audio: ""
                                     },
                                 ]
@@ -953,7 +978,7 @@
                                 keupChild: 14,
                                 name: "bande jileugui",
                                 description: "coup de poing côté jambe avant",
-                                hangeul: "",
+                                hangeul: "반대지르기",
                                 audio: ""
                             },
                             {
@@ -961,7 +986,7 @@
                                 keupChild: 14,
                                 name: "baro jileugui",
                                 description: "coup de poing côté jambe arrière",
-                                hangeul: "",
+                                hangeul: "바로지르기",
                                 audio: ""
                             },
                             {
@@ -969,7 +994,7 @@
                                 keupChild: 10,
                                 name: "dou bon jileugi",
                                 description: "coup de poing côté jambe avant suivi de coup de poing jambe arrière",
-                                hangeul: "",
+                                hangeul: "두번지르기",
                                 audio: ""
                             },
                             {
@@ -977,7 +1002,7 @@
                                 keupChild: 8,
                                 name: "han sonnal mok tchigui",
                                 description: "frappe du tranchant de la main niveau cou, vers l'intérieur, côté jambe avant",
-                                hangeul: "",
+                                hangeul: "한손날목치기",
                                 audio: ""
                             },
                             {
@@ -985,7 +1010,7 @@
                                 keupChild: 8,
                                 name: "han sonnal bakkat tchigui",
                                 description: "frappe du tranchant de la main vers l'extérieur, côté jambe avant",
-                                hangeul: "",
+                                hangeul: "한손날바깥치기",
                                 audio: ""
                             },
                             {
@@ -993,23 +1018,23 @@
                                 keupChild: 6,
                                 name: "Je bi poom mok chigui",
                                 description: "frappe du tranchant de la main dans le cou et defense haute main ouverte simultanées",
-                                hangeul: "",
+                                hangeul: "제비품목치기",
                                 audio: ""
                             },
                             {
                                 keupAdult: 6,
                                 keupChild: 6,
-                                name: "han sonnal je bi poum mok tchigui / je bi poom sonnal mok tchigui",
+                                name: "han sonnal je bi poum mok tchigui",
                                 description: "frappe du tranchant de la main niveau cou, vers l'intérieur, côté jambe arrière",
-                                hangeul: "",
+                                hangeul: "한손날제비품목치기",
                                 audio: ""
                             },
                             {
                                 keupAdult: 6,
                                 keupChild: 6,
-                                name: "pyon son keut sewo thireugui",
+                                name: "pyon son keut sewo jireugui",
                                 description: "pique de doigts paume sur le côté",
-                                hangeul: "",
+                                hangeul: "편손끝세워찌르기",
                                 audio: ""
                             },
                             {
@@ -1017,7 +1042,7 @@
                                 keupChild: 6,
                                 name: "deung joumok ap tchigui",
                                 description: "coup de poing en revers de face",
-                                hangeul: "",
+                                hangeul: "등주먹 앞치기",
                                 audio: ""
                             },
                             {
@@ -1025,15 +1050,7 @@
                                 keupChild: 6,
                                 name: "deung joumok bakkat tchigui",
                                 description: "coup de poing en revers vers l'extérieur",
-                                hangeul: "",
-                                audio: ""
-                            },
-                            {
-                                keupAdult: 5,
-                                keupChild: 5,
-                                name: "batangsonn teuk tchigui",
-                                description: "frappe directe de la paume niveau tête",
-                                hangeul: "",
+                                hangeul: "등주먹 바깥치기",
                                 audio: ""
                             },
                             {
@@ -1041,7 +1058,7 @@
                                 keupChild: 4,
                                 name: "me joumok nelyeu tchigui",
                                 description: "frappe du poing en marteau",
-                                hangeul: "",
+                                hangeul: "메주먹 내려치기",
                                 audio: ""
                             },
                             {
@@ -1049,7 +1066,7 @@
                                 keupChild: 4,
                                 name: "palkoup dolyeu tchigui",
                                 description: "frappe circulaire du coude vers l'intérieur",
-                                hangeul: "",
+                                hangeul: "팔굽 돌려치기",
                                 audio: ""
                             },
                             {
@@ -1057,7 +1074,7 @@
                                 keupChild: 4,
                                 name: "palkoup pyo jeuk tchigui",
                                 description: "frappe circulaire du coude vers l'intérieur frappé dans la main opposée",
-                                hangeul: "",
+                                hangeul: "팔굽 표적치기",
                                 audio: ""
                             },
                             {
@@ -1065,7 +1082,7 @@
                                 keupChild: 4,
                                 name: "palkoup yop tchigui",
                                 description: "frappe du coude de profil",
-                                hangeul: "",
+                                hangeul: "팔굽 옆치기",
                                 audio: ""
                             },
                             {
@@ -1073,7 +1090,7 @@
                                 keupChild: 2,
                                 name: "jetcho jileugi",
                                 description: "coup de poing remontant",
-                                hangeul: "",
+                                hangeul: "젖혀지르기",
                                 audio: ""
                             },
                             {
@@ -1081,7 +1098,7 @@
                                 keupChild: 2,
                                 name: "dou jomouk jetcho jileugi",
                                 description: "double coup de poing remontant simultané",
-                                hangeul: "",
+                                hangeul: "두주먹 젖혀지르기",
                                 audio: ""
                             },
                             {
@@ -1089,7 +1106,7 @@
                                 keupChild: 2,
                                 name: "yop jileugi",
                                 description: "coup de poing de profil",
-                                hangeul: "",
+                                hangeul: "옆지르기",
                                 audio: ""
                             },
                             {
@@ -1097,7 +1114,7 @@
                                 keupChild: 1,
                                 name: "dang kyeu teuk jileugi",
                                 description: "coup de poing remontant en tirant simultanément l'adversaire vers soi",
-                                hangeul: "",
+                                hangeul: "당겨특지르기",
                                 audio: ""
                             },
                         ]
@@ -1106,10 +1123,138 @@
                         name: "Défenses",
                         datas: [
                             {
-                                keupAdult: 1,
-                                keupChild: 1,
-                                name: "in building",
-                                description: "lorem ipsum dolor sit amet",
+                                keupAdult: 9,
+                                keupChild: 14,
+                                name: "ale maki",
+                                description: "défense niveau bas",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 9,
+                                keupChild: 14,
+                                name: "momtong maki",
+                                description: "défense niveau moyen côté jambe avant",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 9,
+                                keupChild: 14,
+                                name: "momtong an maki",
+                                description: "défense niveau moyen côté jambe arrière",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 7,
+                                keupChild: 10,
+                                name: "Han sonnal momtong makki",
+                                description: "défense avec le tranchant de la main côté jambe avant vers l'extérieur, niveau moyen, l'autre bras poing fermé à la ceinture",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 6,
+                                keupChild: 6,
+                                name: "batangsonn nelyeu maki",
+                                description: "blocage vers le bas avec la paume de main",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 6,
+                                keupChild: 6,
+                                name: "sonnal momtong maki",
+                                description: "défense avec le tranchant de la main côté jambe avant vers l'extérieur, niveau moyen, l'autre bras au plexus paume vers le haut",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 6,
+                                keupChild: 6,
+                                name: "momtong bakkat maki",
+                                description: "défense niveau moyen vers l'extérieur avec le tranchant externe du bras",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 3,
+                                keupChild: 3,
+                                name: "han sonnal biteuro eulgoul maki",
+                                description: "défense avec tranchant de la main côté jambe arrière, avec torsion du buste, niveau haut",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 3,
+                                keupChild: 3,
+                                name: "hetcheu maki",
+                                description: "blocage double similtané",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 3,
+                                keupChild: 3,
+                                name: "ale hetcheu maki",
+                                description: "blocage double simultané, niveau bas",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "batangsonn momtong maki",
+                                description: "blocage vers l'intérieur avec la paume de main",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "batangsonn momtong an maki",
+                                description: "blocage vers l'intérieur avec la paume de main, côté jambe arrière",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "sonnal ale maki",
+                                description: "blocage bas avec tranchant de la main",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "keudeuro batangson momtong an maki",
+                                description: "blocage vers l'intérieur niveau moyen avec la paume de la main côté jambe arrière, l'autre main en soutient sous le coude",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "momtong hetcheu maki",
+                                description: "blocage double simultané, niveau moyen, avec le tranchant externe des avants-bras vers l'extérieur",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "kawi maki",
+                                description: "blocage double simultané de face, l'un niveau moyen vers l'extérieur avec le tranchant de l'avant bras, l'autre en défense basse",
+                                hangeul: "",
+                                audio: ""
+                            },
+                            {
+                                keupAdult: 2,
+                                keupChild: 2,
+                                name: "eut keuro ale maki",
+                                description: "blocage double croisé niveau bas",
                                 hangeul: "",
                                 audio: ""
                             },
